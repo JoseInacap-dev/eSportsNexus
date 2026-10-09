@@ -1,0 +1,29 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+/media/
+/staticfiles/
+
+# Entorno / editores
+.env
+*.log
+.idea/
+.vscode/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+
+# Repositorios anidados accidentales
+NexusEsports/
+eSports/

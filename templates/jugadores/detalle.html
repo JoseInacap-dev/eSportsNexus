@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ jugador.nickname }} — Perfil de Jugador{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <div class="d-flex align-items-center gap-3">
+        <div class="profile-avatar" style="width: 60px; height: 60px; font-size: 1.25rem;">
+            <span>{{ jugador.nickname|slice:":2"|upper }}</span>
+        </div>
+        <div>
+            <div class="d-flex align-items-center gap-2">
+                <h2 class="h3 text-light fw-bold mb-0">{{ jugador.nickname }}</h2>
+                {% if active_assignment %}
+                    <span class="badge-nexus {% if active_assignment.status == 'active' %}badge-nexus-active{% elif active_assignment.status == 'bench' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
+                        {{ active_assignment.get_status_display }}
+                    </span>
+                {% else %}
+                    <span class="badge-nexus badge-nexus-inactive">Libre</span>
+                {% endif %}
+            </div>
+            <p class="text-secondary small mb-0">{{ jugador.full_name|default:"Nombre no registrado" }} &bull; {{ jugador.country|default:"Internacional" }}</p>
+        </div>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'players:player-update' jugador.pk %}" class="btn-nexus-outline">
+            <i class="bi bi-pencil"></i> Editar
+        </a>
+        <a href="{% url 'players:player-list' %}" class="btn-nexus-subtle">
+            <i class="bi bi-arrow-left"></i> Volver
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Información General -->
+    <div class="col-12 col-md-4">
+        <div class="nexus-card mb-4">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Ficha Técnica</h3>
+            </div>
+            <div class="nexus-card-body">
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Equipo</span>
+                    <span class="text-light small fw-bold">
+                        {% if jugador.current_team %}
+                            <a href="{% url 'organizations:team-detail' jugador.current_team.pk %}">{{ jugador.current_team.name }}</a>
+                        {% else %}
+                            Agente Libre
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Juego Principal</span>
+                    <span class="text-light small">{{ jugador.current_team.game.name|default:"Esports" }}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Rol Competitivo</span>
+                    <span class="badge bg-dark border border-secondary text-accent">{{ jugador.current_role.name|default:"—" }}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Fecha de Incorporación</span>
+                    <span class="text-light small">{{ active_assignment.joined_at|date:"d/m/Y"|default:"—" }}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2">
+                    <span class="text-secondary small">Contacto</span>
+                    <span class="text-light small">{{ jugador.email|default:jugador.phone|default:"No especificado" }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Historial de Equipos</h3>
+            </div>
+            <div class="nexus-card-body">
+                {% for a in assignments %}
+                    <div class="d-flex justify-content-between py-2 {% if not forloop.last %}border-bottom border-secondary{% endif %}">
+                        <div>
+                            <a href="{% url 'organizations:team-detail' a.team.pk %}" class="text-light small fw-medium">{{ a.team.name }}</a>
+                            {% if a.competitive_role %}<span class="text-muted small">· {{ a.competitive_role.name }}</span>{% endif %}
+                        </div>
+                        <span class="text-secondary small">
+                            {{ a.joined_at|date:"d/m/Y" }}{% if a.left_at %} — {{ a.left_at|date:"d/m/Y" }}{% else %} · Actual{% endif %}
+                        </span>
+                    </div>
+                {% empty %}
+                    <p class="text-secondary small mb-0">Sin asignaciones registradas.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="col-12 col-md-8">
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Últimas Estadísticas de Partidos</h3>
+            </div>
+            <div class="nexus-card-body p-0">
+                {% if match_stats %}
+                    <div class="table-responsive">
+                        <table class="table table-nexus">
+                            <thead>
+                                <tr>
+                                    <th>Partido</th>
+                                    <th>Métrica</th>
+                                    <th class="text-end">Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for s in match_stats %}
+                                    <tr>
+                                        <td class="text-secondary small">
+                                            {{ s.match.home_team.name }} vs {{ s.match.opponent }}
+                                            <span class="text-muted">· {{ s.match.scheduled_at|date:"d/m/Y" }}</span>
+                                        </td>
+                                        <td class="text-light small">{{ s.definition.name }}</td>
+                                        <td class="text-end fw-bold text-accent">{{ s.value }}{{ s.definition.unit }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="p-4 text-center text-secondary small">No hay estadísticas registradas para este jugador.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

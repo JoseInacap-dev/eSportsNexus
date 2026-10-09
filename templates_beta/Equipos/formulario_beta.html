@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if form.instance.pk %}Editar {{ form.instance.nombre }}{% else %}Nuevo Equipo{% endif %} — NEXUS Esports{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">
+            {% if form.instance.pk %}Editar Equipo: {{ form.instance.nombre }}{% else %}Crear Nuevo Equipo{% endif %}
+        </h2>
+        <p class="text-secondary small mb-0">Configura la información general, juego y asignación del staff técnico.</p>
+    </div>
+    <a href="{% url 'equipos:lista' %}" class="btn-nexus-subtle">
+        <i class="bi bi-arrow-left"></i>
+        <span>Volver a lista</span>
+    </a>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Información del Equipo</h3>
+            </div>
+            <div class="nexus-card-body p-4">
+                <form method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger bg-danger bg-opacity-10 border-danger text-danger small mb-3">
+                            {% for error in form.non_field_errors %}
+                                <div>{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <!-- Nombre y Tag -->
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-8">
+                            <label for="{{ form.nombre.id_for_label }}" class="form-label-nexus">Nombre del Equipo *</label>
+                            {{ form.nombre }}
+                            {% if form.nombre.errors %}
+                                <div class="text-danger small mt-1">{{ form.nombre.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <label for="{{ form.tag.id_for_label }}" class="form-label-nexus">Tag / Clantag</label>
+                            {{ form.tag }}
+                            {% if form.tag.errors %}
+                                <div class="text-danger small mt-1">{{ form.tag.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Juego y Organización -->
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label for="{{ form.juego.id_for_label }}" class="form-label-nexus">Juego Competitivo *</label>
+                            {{ form.juego }}
+                            {% if form.juego.errors %}
+                                <div class="text-danger small mt-1">{{ form.juego.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="{{ form.organizacion.id_for_label }}" class="form-label-nexus">Organización</label>
+                            {{ form.organizacion }}
+                            {% if form.organizacion.errors %}
+                                <div class="text-danger small mt-1">{{ form.organizacion.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Entrenador y Estado -->
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label for="{{ form.entrenador.id_for_label }}" class="form-label-nexus">Entrenador Responsable</label>
+                            {{ form.entrenador }}
+                            {% if form.entrenador.errors %}
+                                <div class="text-danger small mt-1">{{ form.entrenador.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="{{ form.estado.id_for_label }}" class="form-label-nexus">Estado Operativo</label>
+                            {{ form.estado }}
+                            {% if form.estado.errors %}
+                                <div class="text-danger small mt-1">{{ form.estado.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Logo e Imagen -->
+                    <div class="mb-3">
+                        <label for="{{ form.logo.id_for_label }}" class="form-label-nexus">Logotipo o Insignia</label>
+                        {{ form.logo }}
+                        {% if form.logo.errors %}
+                            <div class="text-danger small mt-1">{{ form.logo.errors.0 }}</div>
+                        {% endif %}
+                        <div class="text-muted" style="font-size: 0.75rem;">Formatos recomendados: PNG o SVG transparente.</div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="mb-4">
+                        <label for="{{ form.descripcion.id_for_label }}" class="form-label-nexus">Descripción y Objetivos</label>
+                        {{ form.descripcion }}
+                        {% if form.descripcion.errors %}
+                            <div class="text-danger small mt-1">{{ form.descripcion.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Acciones -->
+                    <div class="d-flex justify-content-end gap-2 border-top border-secondary pt-3">
+                        <a href="{% url 'equipos:lista' %}" class="btn-nexus-outline">Cancelar</a>
+                        <button type="submit" class="btn-nexus-primary">
+                            <i class="bi bi-check-lg"></i>
+                            <span>{% if form.instance.pk %}Actualizar Equipo{% else %}Guardar Equipo{% endif %}</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

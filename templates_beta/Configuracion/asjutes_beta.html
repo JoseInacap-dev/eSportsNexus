@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}Configuración del Sistema — NEXUS Esports{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">Ajustes & Configuración</h2>
+        <p class="text-secondary small mb-0">Parámetros generales de la organización, notificaciones y preferencias de sistema.</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Menú de pestañas vertical -->
+    <div class="col-12 col-md-3">
+        <div class="nexus-card">
+            <div class="nexus-card-body p-2">
+                <div class="nav flex-column nav-pills" id="settings-tabs" role="tablist">
+                    <button class="nav-link nexus-nav-link active text-start" data-bs-toggle="pill" data-bs-target="#tab-general" type="button" role="tab">
+                        <i class="bi bi-building me-2"></i> Organización
+                    </button>
+                    <button class="nav-link nexus-nav-link text-start" data-bs-toggle="pill" data-bs-target="#tab-notificaciones" type="button" role="tab">
+                        <i class="bi bi-bell me-2"></i> Notificaciones
+                    </button>
+                    <button class="nav-link nexus-nav-link text-start" data-bs-toggle="pill" data-bs-target="#tab-seguridad" type="button" role="tab">
+                        <i class="bi bi-shield-lock me-2"></i> Seguridad & API
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido de las pestañas -->
+    <div class="col-12 col-md-9">
+        <div class="tab-content" id="settings-tabContent">
+            <!-- Pestaña 1: Organización -->
+            <div class="tab-pane fade show active" id="tab-general" role="tabpanel">
+                <div class="nexus-card">
+                    <div class="nexus-card-header">
+                        <h3 class="nexus-card-title">Perfil de la Organización</h3>
+                    </div>
+                    <div class="nexus-card-body p-4">
+                        <form method="post" action="{% url 'configuracion:ajustes' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="seccion" value="organizacion">
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-nexus">Nombre de la Organización</label>
+                                    <input type="text" name="nombre_org" value="{{ configuracion.nombre_org|default:'NEXUS Esports Club' }}" class="form-control form-control-nexus">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-nexus">Zona Horaria Oficial</label>
+                                    <select name="zona_horaria" class="form-select form-select-nexus">
+                                        <option value="Europe/Madrid" selected>Europe/Madrid (CET)</option>
+                                        <option value="UTC">UTC Universal</option>
+                                        <option value="America/Mexico_City">America/Mexico_City (CST)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label-nexus">Correo Institucional de Notificaciones</label>
+                                <input type="email" name="email_contacto" value="{{ configuracion.email_contacto|default:'staff@nexus.gg' }}" class="form-control form-control-nexus">
+                            </div>
+
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn-nexus-primary">
+                                    <i class="bi bi-save"></i> Guardar Cambios
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pestaña 2: Notificaciones -->
+            <div class="tab-pane fade" id="tab-notificaciones" role="tabpanel">
+                <div class="nexus-card">
+                    <div class="nexus-card-header">
+                        <h3 class="nexus-card-title">Canales de Alertas</h3>
+                    </div>
+                    <div class="nexus-card-body p-4">
+                        <form method="post" action="{% url 'configuracion:ajustes' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="seccion" value="notificaciones">
+
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="notifPartidos" name="notif_partidos" checked>
+                                <label class="form-check-label text-light small fw-medium" for="notifPartidos">
+                                    Avisos de partidos 1 hora antes del encuentro
+                                </label>
+                            </div>
+
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="notifScrims" name="notif_scrims" checked>
+                                <label class="form-check-label text-light small fw-medium" for="notifScrims">
+                                    Confirmaciones de scrims por Discord Webhook
+                                </label>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label-nexus">Webhook de Discord (Opcional)</label>
+                                <input type="url" name="discord_webhook" value="{{ configuracion.discord_webhook|default:'' }}" class="form-control form-control-nexus" placeholder="https://discord.com/api/webhooks/...">
+                            </div>
+
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn-nexus-primary">Guardar Preferencias</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pestaña 3: Seguridad -->
+            <div class="tab-pane fade" id="tab-seguridad" role="tabpanel">
+                <div class="nexus-card">
+                    <div class="nexus-card-header">
+                        <h3 class="nexus-card-title">Seguridad y Mantenimiento</h3>
+                    </div>
+                    <div class="nexus-card-body p-4">
+                        <div class="p-3 bg-dark rounded border border-secondary mb-3">
+                            <span class="d-block text-light fw-bold small">Modo de Mantenimiento</span>
+                            <span class="text-secondary small">Restringe el acceso temporalmente solo a administradores.</span>
+                        </div>
+                        <span class="badge bg-dark border border-secondary text-secondary small">Versión DTL: 1.0 &bull; Django 5.x</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

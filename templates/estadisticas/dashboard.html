@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}Estadísticas — NEXUS Esports{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">Centro de Estadísticas</h2>
+        <p class="text-secondary small mb-0">Análisis de rendimiento, evolución mensual y ranking competitivo.</p>
+    </div>
+    <form method="get" class="d-flex gap-2">
+        <select name="equipo" class="form-select form-select-nexus" onchange="this.form.submit()">
+            <option value="">Todos los equipos</option>
+            {% for eq in equipos %}
+                <option value="{{ eq.pk }}" {% if request.GET.equipo == eq.pk|stringformat:"s" %}selected{% endif %}>{{ eq.name }}</option>
+            {% endfor %}
+        </select>
+    </form>
+</div>
+
+<!-- KPIs -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-xl-3">
+        <div class="nexus-card h-100">
+            <div class="nexus-card-body p-3">
+                <span class="text-secondary small d-block mb-1">Partidos Totales</span>
+                <div class="h3 fw-bold text-light mb-0">{{ kpis.total_partidos }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-xl-3">
+        <div class="nexus-card h-100">
+            <div class="nexus-card-body p-3">
+                <span class="text-secondary small d-block mb-1">Winrate Promedio</span>
+                <div class="h3 fw-bold text-accent mb-0">{{ kpis.winrate_promedio }}%</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-xl-3">
+        <div class="nexus-card h-100">
+            <div class="nexus-card-body p-3">
+                <span class="text-secondary small d-block mb-1">Entrenamientos</span>
+                <div class="h3 fw-bold text-light mb-0">{{ kpis.total_entrenamientos }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-xl-3">
+        <div class="nexus-card h-100">
+            <div class="nexus-card-body p-3">
+                <span class="text-secondary small d-block mb-1">Jugadores Activos</span>
+                <div class="h3 fw-bold text-light mb-0">{{ kpis.jugadores_activos }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Gráfico de evolución -->
+    <div class="col-12 col-lg-7">
+        <div class="nexus-card h-100">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Evolución de Resultados</h3>
+                <span class="badge bg-dark border border-secondary text-secondary small">Últimos 6 meses</span>
+            </div>
+            <div class="nexus-card-body">
+                <canvas id="grafico-evolucion" height="120"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ranking de equipos -->
+    <div class="col-12 col-lg-5">
+        <div class="nexus-card h-100">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Ranking de Equipos</h3>
+            </div>
+            <div class="nexus-card-body p-0">
+                {% if ranking_equipos %}
+                    <div class="table-responsive">
+                        <table class="table table-nexus mb-0">
+                            <thead><tr><th>#</th><th>Equipo</th><th>V-D</th><th class="text-end">Winrate</th></tr></thead>
+                            <tbody>
+                                {% for item in ranking_equipos %}
+                                    <tr>
+                                        <td class="text-secondary">{{ forloop.counter }}</td>
+                                        <td>
+                                            <div class="fw-semibold text-light">{{ item.nombre }}</div>
+                                            <div class="text-muted" style="font-size: 0.7rem;">{{ item.juego }}</div>
+                                        </td>
+                                        <td class="text-secondary small">{{ item.victorias }}-{{ item.derrotas }}</td>
+                                        <td class="text-end fw-bold text-accent">{{ item.winrate }}%</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="p-4 text-center text-secondary small">Sin datos de equipos para mostrar.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ chart_meses|json_script:"chart-meses" }}
+{{ chart_victorias|json_script:"chart-victorias" }}
+{{ chart_derrotas|json_script:"chart-derrotas" }}
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+    (function () {
+        const canvas = document.getElementById('grafico-evolucion');
+        if (!canvas || typeof Chart === 'undefined') return;
+        const labels = JSON.parse(document.getElementById('chart-meses').textContent);
+        const victorias = JSON.parse(document.getElementById('chart-victorias').textContent);
+        const derrotas = JSON.parse(document.getElementById('chart-derrotas').textContent);
+        new Chart(canvas, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: 'Victorias', data: victorias, backgroundColor: '#6366F1', borderRadius: 4 },
+                    { label: 'Derrotas', data: derrotas, backgroundColor: '#EF4444', borderRadius: 4 }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { labels: { color: '#94A3B8' } } },
+                scales: {
+                    x: { ticks: { color: '#94A3B8' }, grid: { color: 'rgba(148,163,184,0.1)' } },
+                    y: { beginAtZero: true, ticks: { color: '#94A3B8', precision: 0 }, grid: { color: 'rgba(148,163,184,0.1)' } }
+                }
+            }
+        });
+    })();
+</script>
+{% endblock %}

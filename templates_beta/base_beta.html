@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS Esports — Preview de base.html</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        :root {
+          --nexus-bg-main: #0B0D12;
+          --nexus-bg-surface: #121620;
+          --nexus-bg-card: #171B26;
+          --nexus-bg-card-hover: #1E2333;
+          --nexus-border: #282D3A;
+          --nexus-border-focus: #3D4559;
+          --nexus-accent: #A3FF12;
+          --nexus-accent-hover: #8EE600;
+          --nexus-accent-subtle: rgba(163, 255, 18, 0.12);
+          --nexus-accent-glow: rgba(163, 255, 18, 0.25);
+          --nexus-text-primary: #F4F6FA;
+          --nexus-text-secondary: #9299AA;
+          --nexus-text-muted: #5E6578;
+          --nexus-success: #10B981;
+          --nexus-warning: #F59E0B;
+          --nexus-danger: #EF4444;
+          --nexus-info: #06B6D4;
+          --nexus-sidebar-width: 260px;
+          --nexus-header-height: 70px;
+          --nexus-radius: 10px;
+          --nexus-radius-sm: 6px;
+        }
+
+        body {
+          background-color: var(--nexus-bg-main);
+          color: var(--nexus-text-primary);
+          font-family: 'Inter', system-ui, sans-serif;
+          min-height: 100vh;
+          margin: 0;
+        }
+
+        #wrapper { display: flex; width: 100%; min-height: 100vh; }
+        
+        #sidebar {
+          width: var(--nexus-sidebar-width);
+          background-color: var(--nexus-bg-surface);
+          border-right: 1px solid var(--nexus-border);
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: 0; bottom: 0; left: 0;
+          z-index: 1040;
+        }
+
+        .sidebar-brand {
+          height: var(--nexus-header-height);
+          padding: 0 1.5rem;
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid var(--nexus-border);
+        }
+
+        .brand-logo-badge {
+          width: 38px; height: 38px;
+          border-radius: 8px;
+          background: linear-gradient(135deg, #A3FF12 0%, #171B26 120%);
+          display: flex; align-items: center; justify-content: center;
+          color: #0B0D12; font-weight: 900; font-size: 1.25rem;
+          box-shadow: 0 0 15px var(--nexus-accent-glow);
+          margin-right: 12px;
+        }
+
+        .brand-title { font-size: 1.15rem; font-weight: 800; color: var(--nexus-text-primary); margin: 0; line-height: 1.2; }
+        .brand-subtitle { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--nexus-accent); letter-spacing: 1.5px; margin: 0; }
+
+        .sidebar-nav { padding: 1.25rem 0.85rem; flex-grow: 1; overflow-y: auto; }
+        .nav-section-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--nexus-text-muted); padding: 0.75rem 0.75rem 0.35rem; }
+
+        .nexus-nav-link {
+          display: flex; align-items: center; gap: 12px;
+          padding: 0.7rem 0.85rem; color: var(--nexus-text-secondary);
+          border-radius: var(--nexus-radius-sm); font-size: 0.925rem; font-weight: 500;
+          text-decoration: none; transition: all 0.2s; margin-bottom: 4px;
+        }
+        .nexus-nav-link:hover { color: var(--nexus-text-primary); background-color: var(--nexus-bg-card); }
+        .nexus-nav-link.active {
+          color: var(--nexus-text-primary); background-color: var(--nexus-accent-subtle);
+          border-left: 3px solid var(--nexus-accent); font-weight: 600;
+        }
+        .nexus-nav-link.active i { color: var(--nexus-accent); }
+
+        .sidebar-footer { padding: 1rem; border-top: 1px solid var(--nexus-border); }
+
+        #main-container {
+          margin-left: var(--nexus-sidebar-width);
+          width: calc(100% - var(--nexus-sidebar-width));
+          min-height: 100vh;
+          display: flex; flex-direction: column;
+        }
+
+        #top-header {
+          height: var(--nexus-header-height);
+          background-color: var(--nexus-bg-surface);
+          border-bottom: 1px solid var(--nexus-border);
+          padding: 0 1.75rem;
+          display: flex; align-items: center; justify-content: space-between;
+          position: sticky; top: 0; z-index: 1030;
+        }
+
+        .header-search { max-width: 360px; width: 100%; position: relative; }
+        .header-search .form-control {
+          background-color: var(--nexus-bg-card);
+          border: 1px solid var(--nexus-border);
+          color: var(--nexus-text-primary);
+          border-radius: var(--nexus-radius);
+          padding-left: 2.5rem;
+          font-size: 0.875rem;
+        }
+        .header-search .form-control:focus {
+          border-color: var(--nexus-accent);
+          box-shadow: 0 0 0 2px var(--nexus-accent-glow);
+          background-color: var(--nexus-bg-card);
+          color: var(--nexus-text-primary);
+        }
+        .header-search-icon { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--nexus-text-muted); }
+
+        .icon-btn {
+          width: 40px; height: 40px; border-radius: var(--nexus-radius-sm);
+          background: var(--nexus-bg-card); border: 1px solid var(--nexus-border);
+          color: var(--nexus-text-secondary); display: flex; align-items: center; justify-content: center;
+          position: relative;
+        }
+        .icon-btn .badge-dot {
+          position: absolute; top: 8px; right: 8px; width: 8px; height: 8px;
+          border-radius: 50%; background-color: var(--nexus-accent); box-shadow: 0 0 6px var(--nexus-accent);
+        }
+
+        .profile-pill {
+          display: flex; align-items: center; gap: 10px;
+          padding: 4px 10px 4px 6px; background: var(--nexus-bg-card);
+          border: 1px solid var(--nexus-border); border-radius: 30px;
+        }
+        .profile-avatar {
+          width: 32px; height: 32px; border-radius: 50%;
+          background: #2a3246; border: 1.5px solid var(--nexus-accent);
+          display: flex; align-items: center; justify-content: center;
+          font-weight: 700; font-size: 0.8rem; color: var(--nexus-accent);
+        }
+
+        .nexus-alert {
+          background-color: var(--nexus-bg-card);
+          border: 1px solid var(--nexus-border);
+          border-left: 4px solid var(--nexus-success);
+          border-radius: var(--nexus-radius);
+          padding: 0.9rem 1.25rem;
+          margin-bottom: 1.5rem;
+          display: flex; align-items: center; gap: 12px;
+        }
+
+        .page-content-wrapper { padding: 1.75rem; flex-grow: 1; }
+        .main-footer { padding: 1.25rem 1.75rem; border-top: 1px solid var(--nexus-border); color: var(--nexus-text-muted); font-size: 0.825rem; }
+
+        .nexus-card {
+          background-color: var(--nexus-bg-card);
+          border: 1px solid var(--nexus-border);
+          border-radius: var(--nexus-radius);
+          padding: 1.5rem;
+        }
+        .btn-nexus-primary {
+          background-color: var(--nexus-accent);
+          color: #0B0D12;
+          font-weight: 700;
+          border: none;
+          border-radius: var(--nexus-radius-sm);
+          padding: 0.55rem 1.15rem;
+          display: inline-flex; align-items: center; gap: 8px;
+          text-decoration: none;
+        }
+        .btn-nexus-primary:hover { background-color: var(--nexus-accent-hover); color: #0B0D12; box-shadow: 0 0 15px var(--nexus-accent-glow); }
+        .code-pill {
+          background: #0E121B;
+          border: 1px solid var(--nexus-border);
+          color: var(--nexus-accent);
+          padding: 2px 8px;
+          border-radius: 4px;
+          font-family: monospace;
+          font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- SIDEBAR -->
+        <aside id="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo-badge">N</div>
+                <div>
+                    <h1 class="brand-title">NEXUS</h1>
+                    <p class="brand-subtitle">Esports Manager</p>
+                </div>
+            </div>
+
+            <div class="sidebar-nav">
+                <div class="nav-section-title">Principal</div>
+                <a href="#" class="nexus-nav-link active">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <div class="nav-section-title">Gestión Competitiva</div>
+                <a href="#" class="nexus-nav-link">
+                    <i class="bi bi-shield-shaded"></i>
+                    <span>Equipos</span>
+                </a>
+                <a href="#" class="nexus-nav-link">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Jugadores</span>
+                </a>
+                <a href="#" class="nexus-nav-link">
+                    <i class="bi bi-controller"></i>
+                    <span>Partidos</span>
+                </a>
+                <a href="#" class="nexus-nav-link">
+                    <i class="bi bi-stopwatch-fill"></i>
+                    <span>Entrenamientos</span>
+                </a>
+
+                <div class="nav-section-title">Análisis & Sistema</div>
+                <a href="#" class="nexus-nav-link">
+                    <i class="bi bi-bar-chart-line-fill"></i>
+                    <span>Estadísticas</span>
+                </a>
+                <a href="#" class="nexus-nav-link">
+                    <i class="bi bi-gear-fill"></i>
+                    <span>Configuración</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                        <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+                        <span class="text-white-50 small fw-medium">Servidor Online</span>
+                    </div>
+                    <span class="badge bg-dark border border-secondary text-secondary small">v1.0 DTL</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTAINER -->
+        <div id="main-container">
+            <header id="top-header">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-dark d-lg-none border-secondary text-light p-2" aria-label="Menu">
+                        <i class="bi bi-list fs-5"></i>
+                    </button>
+                    <div class="header-search">
+                        <i class="bi bi-search header-search-icon"></i>
+                        <input type="text" class="form-control" placeholder="Buscar equipos, jugadores, partidos...">
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <div class="icon-btn">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge-dot"></span>
+                    </div>
+                    <div class="profile-pill">
+                        <div class="profile-avatar">NX</div>
+                        <div class="d-none d-sm-block text-start pe-1">
+                            <div class="text-light fw-bold small lh-1">Staff NEXUS</div>
+                            <span class="text-secondary" style="font-size: 0.7rem;">Head Coach</span>
+                        </div>
+                        <i class="bi bi-chevron-down text-secondary small"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Alerta Flash Simulada de Django -->
+            <div class="px-4 pt-3">
+                <div class="nexus-alert">
+                    <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                    <div class="flex-grow-1">
+                        <strong>Django Messages:</strong> La plantilla base <span class="code-pill">base.html</span> y los estilos <span class="code-pill">static/css/styles.css</span> han sido compilados con éxito.
+                    </div>
+                    <span class="badge bg-secondary text-light small">{% messages %}</span>
+                </div>
+            </div>
+
+            <!-- Page Content Placeholder -->
+            <main class="page-content-wrapper">
+                <div class="nexus-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <span class="badge bg-dark border border-secondary text-warning mb-2">Bloque Django Padre</span>
+                            <h2 class="h4 text-light fw-bold m-0">Área de Contenido Dinámico: <span class="text-warning">{% block content %}</span></h2>
+                        </div>
+                        <span class="code-pill">{% extends 'base.html' %}</span>
+                    </div>
+                    <p class="text-secondary mb-4">
+                        Este espacio representa la zona donde cada plantilla hija (como <code class="text-light">home.html</code>, <code class="text-light">equipos/lista.html</code>, etc.) inyectará sus componentes, métricas y vistas sin duplicar el sidebar ni el header.
+                    </p>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="p-3 rounded border border-secondary" style="background: #121620;">
+                                <div class="text-secondary small fw-semibold text-uppercase">Bloques DTL Configurados</div>
+                                <div class="text-light fw-bold mt-1">{% block title %}, {% block content %}, {% block extra_css %}, {% block extra_js %}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 rounded border border-secondary" style="background: #121620;">
+                                <div class="text-secondary small fw-semibold text-uppercase">Frameworks Frontend</div>
+                                <div class="text-light fw-bold mt-1">Bootstrap 5.3.3 + CSS3 Propio (Zero React/Tailwind)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 rounded border border-secondary" style="background: #121620;">
+                                <div class="text-secondary small fw-semibold text-uppercase">Compatibilidad Django</div>
+                                <div class="text-light fw-bold mt-1">{% csrf_token %}, {% static %}, {% url %} y messages</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="main-footer">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+                    <div>
+                        &copy; 2025 <strong class="text-light">NEXUS Esports</strong>. Plataforma de Gestión Competitiva.
+                    </div>
+                    <div>
+                        <span class="text-secondary">Diseñado para Django & Bootstrap 5</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

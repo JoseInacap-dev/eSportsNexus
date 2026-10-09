@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block title %}Partidos — NEXUS Esports{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">Calendario de Partidos</h2>
+        <p class="text-secondary small mb-0">Registro de enfrentamientos oficiales, torneos y scrims.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'matches:match-create' %}" class="btn-nexus-primary">
+            <i class="bi bi-calendar-plus"></i>
+            <span>Añadir Partido</span>
+        </a>
+    </div>
+</div>
+
+<!-- Filtros -->
+<div class="nexus-card mb-4">
+    <div class="nexus-card-body p-3">
+        <form method="get" action="{% url 'matches:match-list' %}" class="row g-2 align-items-center">
+            <div class="col-6 col-md-4">
+                <select name="equipo" class="form-select form-select-nexus">
+                    <option value="">Todos los equipos</option>
+                    {% for eq in equipos_disponibles %}
+                        <option value="{{ eq.pk }}" {% if request.GET.equipo == eq.pk|stringformat:"s" %}selected{% endif %}>{{ eq.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-6 col-md-3">
+                <select name="tipo" class="form-select form-select-nexus">
+                    <option value="">Cualquier tipo</option>
+                    {% for value, label in kinds %}
+                        <option value="{{ value }}" {% if request.GET.tipo == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-6 col-md-3">
+                <select name="estado" class="form-select form-select-nexus">
+                    <option value="">Cualquier estado</option>
+                    {% for value, label in statuses %}
+                        <option value="{{ value }}" {% if request.GET.estado == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-6 col-md-2 d-flex gap-2">
+                <button type="submit" class="btn btn-nexus-outline w-100 justify-content-center">Filtrar</button>
+                {% if request.GET.equipo or request.GET.tipo or request.GET.estado %}
+                    <a href="{% url 'matches:match-list' %}" class="btn btn-nexus-subtle" title="Limpiar"><i class="bi bi-x-lg"></i></a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Tabla de Partidos -->
+<div class="nexus-card">
+    <div class="nexus-card-body p-0">
+        {% if partidos %}
+            <div class="table-responsive">
+                <table class="table table-nexus">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Enfrentamiento</th>
+                            <th>Competición</th>
+                            <th>Tipo</th>
+                            <th>Resultado</th>
+                            <th>Estado</th>
+                            <th class="text-end">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for partido in partidos %}
+                            <tr>
+                                <td class="text-secondary small">{{ partido.scheduled_at|date:"d M Y" }}<br><span class="text-muted">{{ partido.scheduled_at|date:"H:i" }}</span></td>
+                                <td>
+                                    <span class="fw-bold text-light">{{ partido.home_team.name }}</span>
+                                    <span class="text-secondary small mx-1">vs</span>
+                                    <span class="fw-medium text-light">{{ partido.opponent }}</span>
+                                </td>
+                                <td class="text-secondary small">{{ partido.tournament_name|default:partido.game.name }}</td>
+                                <td><span class="badge bg-dark border border-secondary text-secondary">{{ partido.get_kind_display }}</span></td>
+                                <td>
+                                    {% if partido.is_finished %}
+                                        <span class="fw-bold {% if partido.winner == partido.home_team %}text-success{% else %}text-danger{% endif %}">
+                                            {{ partido.home_score }} - {{ partido.away_score }}
+                                        </span>
+                                        {% if partido.best_of > 1 %}<span class="text-muted small">(Bo{{ partido.best_of }})</span>{% endif %}
+                                    {% else %}
+                                        <span class="text-muted small">—</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <span class="badge-nexus {% if partido.status == 'finished' %}badge-nexus-active{% elif partido.status == 'scheduled' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
+                                        {{ partido.get_status_display }}
+                                    </span>
+                                </td>
+                                <td class="text-end">
+                                    <div class="d-flex justify-content-end gap-1">
+                                        <a href="{% url 'matches:match-detail' partido.pk %}" class="btn btn-sm btn-nexus-subtle" title="Ver detalle"><i class="bi bi-eye"></i></a>
+                                        <a href="{% url 'matches:match-update' partido.pk %}" class="btn btn-sm btn-nexus-subtle" title="Editar"><i class="bi bi-pencil"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% if is_paginated %}
+                <div class="p-3 border-top border-secondary">
+                    <ul class="pagination pagination-sm justify-content-center mb-0">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+                        {% endif %}
+                        <li class="page-item disabled"><span class="page-link bg-dark border-secondary text-secondary">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span></li>
+                        {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.next_page_number }}">Siguiente</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="text-center py-5">
+                <i class="bi bi-calendar-x fs-1 text-secondary mb-2 d-block"></i>
+                <h5 class="text-light fw-bold">No hay partidos registrados</h5>
+                <p class="text-secondary small mb-3">No existen enfrentamientos que coincidan con los filtros aplicados.</p>
+                <a href="{% url 'matches:match-create' %}" class="btn-nexus-primary"><i class="bi bi-calendar-plus"></i> Añadir Partido</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

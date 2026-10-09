@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Configuración — NEXUS Esports{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h2 class="h4 text-light fw-bold mb-1">Configuración</h2>
+    <p class="text-secondary small mb-0">Ajustes generales de la plataforma y preferencias de la organización.</p>
+</div>
+
+<div class="row g-4">
+    <!-- Menú lateral de secciones -->
+    <div class="col-12 col-lg-3">
+        <div class="nexus-card">
+            <div class="nexus-card-body p-2">
+                <div class="nav flex-column nexus-settings-nav">
+                    <a class="nav-link active" href="#organizacion" data-bs-toggle="tab"><i class="bi bi-building me-2"></i>Organización</a>
+                    <a class="nav-link" href="#notificaciones" data-bs-toggle="tab"><i class="bi bi-bell me-2"></i>Notificaciones</a>
+                    <a class="nav-link" href="#seguridad" data-bs-toggle="tab"><i class="bi bi-shield-lock me-2"></i>Seguridad</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paneles -->
+    <div class="col-12 col-lg-9">
+        <div class="tab-content">
+            <!-- Organización -->
+            <div class="tab-pane fade show active" id="organizacion">
+                <div class="nexus-card">
+                    <div class="nexus-card-header">
+                        <h3 class="nexus-card-title">Datos de la Organización</h3>
+                    </div>
+                    <div class="nexus-card-body p-4">
+                        <form method="post" action="{% url 'core:ajustes' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="seccion" value="organizacion">
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-nexus">Nombre de la organización</label>
+                                    <input type="text" name="nombre_org" value="{{ configuracion.nombre_org }}" class="form-control form-control-nexus" placeholder="NEXUS Esports">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-nexus">Email de contacto</label>
+                                    <input type="email" name="email_contacto" value="{{ configuracion.email_contacto }}" class="form-control form-control-nexus" placeholder="contacto@nexus.gg">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-nexus">Zona horaria</label>
+                                    <select name="zona_horaria" class="form-select form-select-nexus">
+                                        <option value="">Selecciona una zona</option>
+                                        <option value="UTC" {% if configuracion.zona_horaria == 'UTC' %}selected{% endif %}>UTC</option>
+                                        <option value="Europe/Madrid" {% if configuracion.zona_horaria == 'Europe/Madrid' %}selected{% endif %}>Europe/Madrid</option>
+                                        <option value="America/Bogota" {% if configuracion.zona_horaria == 'America/Bogota' %}selected{% endif %}>America/Bogota</option>
+                                        <option value="America/Mexico_City" {% if configuracion.zona_horaria == 'America/Mexico_City' %}selected{% endif %}>America/Mexico_City</option>
+                                        <option value="America/Argentina/Buenos_Aires" {% if configuracion.zona_horaria == 'America/Argentina/Buenos_Aires' %}selected{% endif %}>America/Argentina/Buenos_Aires</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label-nexus">Webhook de Discord</label>
+                                    <input type="url" name="discord_webhook" value="{{ configuracion.discord_webhook }}" class="form-control form-control-nexus" placeholder="https://discord.com/api/webhooks/...">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end border-top border-secondary pt-3 mt-4">
+                                <button type="submit" class="btn-nexus-primary"><i class="bi bi-check-lg me-1"></i>Guardar cambios</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notificaciones -->
+            <div class="tab-pane fade" id="notificaciones">
+                <div class="nexus-card">
+                    <div class="nexus-card-header"><h3 class="nexus-card-title">Notificaciones</h3></div>
+                    <div class="nexus-card-body p-4">
+                        <div class="form-check form-switch d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                            <label class="text-light small mb-0">Avisos de próximos partidos</label>
+                            <input class="form-check-input" type="checkbox" checked>
+                        </div>
+                        <div class="form-check form-switch d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                            <label class="text-light small mb-0">Recordatorios de entrenamiento</label>
+                            <input class="form-check-input" type="checkbox" checked>
+                        </div>
+                        <div class="form-check form-switch d-flex justify-content-between align-items-center py-2">
+                            <label class="text-light small mb-0">Resumen semanal por email</label>
+                            <input class="form-check-input" type="checkbox">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seguridad -->
+            <div class="tab-pane fade" id="seguridad">
+                <div class="nexus-card">
+                    <div class="nexus-card-header"><h3 class="nexus-card-title">Seguridad de la cuenta</h3></div>
+                    <div class="nexus-card-body p-4">
+                        <p class="text-secondary small">Usuario: <span class="text-light fw-medium">{{ user.username }}</span></p>
+                        <a href="/admin/password_change/" class="btn-nexus-outline"><i class="bi bi-key me-1"></i>Cambiar contraseña</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}Jugadores — NEXUS Esports{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">Directorio de Jugadores</h2>
+        <p class="text-secondary small mb-0">Gestión de atletas, contratos, roles de juego y asignación a escuadras.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'jugadores:crear' %}" class="btn-nexus-primary">
+            <i class="bi bi-person-plus-fill"></i>
+            <span>Registrar Jugador</span>
+        </a>
+    </div>
+</div>
+
+<!-- Filtros y Búsqueda -->
+<div class="nexus-card mb-4">
+    <div class="nexus-card-body p-3">
+        <form method="get" action="{% url 'jugadores:lista' %}" class="row g-2 align-items-center">
+            <div class="col-12 col-md-4">
+                <div class="input-group">
+                    <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-search"></i></span>
+                    <input type="text" name="q" value="{{ request.GET.q|default:'' }}" class="form-control form-control-nexus" placeholder="Nickname o nombre real...">
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <select name="equipo" class="form-select form-select-nexus">
+                    <option value="">Todos los equipos</option>
+                    {% for eq in equipos_disponibles %}
+                        <option value="{{ eq.id }}" {% if request.GET.equipo == eq.id|stringformat:"s" %}selected{% endif %}>{{ eq.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-6 col-md-3">
+                <select name="estado" class="form-select form-select-nexus">
+                    <option value="">Cualquier estado</option>
+                    <option value="activo" {% if request.GET.estado == 'activo' %}selected{% endif %}>Activo (Titular)</option>
+                    <option value="suplente" {% if request.GET.estado == 'suplente' %}selected{% endif %}>Suplente</option>
+                    <option value="inactivo" {% if request.GET.estado == 'inactivo' %}selected{% endif %}>Inactivo / Libre</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-2 d-flex gap-2">
+                <button type="submit" class="btn btn-nexus-outline w-100 justify-content-center">Filtrar</button>
+                {% if request.GET.q or request.GET.equipo or request.GET.estado %}
+                    <a href="{% url 'jugadores:lista' %}" class="btn btn-nexus-subtle" title="Limpiar"><i class="bi bi-x-lg"></i></a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Tabla de Jugadores -->
+<div class="nexus-card">
+    <div class="nexus-card-body p-0">
+        {% if jugadores %}
+            <div class="table-responsive">
+                <table class="table table-nexus">
+                    <thead>
+                        <tr>
+                            <th>Jugador / Nickname</th>
+                            <th>Equipo Actual</th>
+                            <th>Rol Competitivo</th>
+                            <th>Nacionalidad</th>
+                            <th>Estado</th>
+                            <th>Fecha Ingreso</th>
+                            <th class="text-end">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for jugador in jugadores %}
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="profile-avatar" style="width: 36px; height: 36px;">
+                                            <span>{{ jugador.nickname|slice:":2"|upper }}</span>
+                                        </div>
+                                        <div>
+                                            <a href="{% url 'jugadores:detalle' jugador.id %}" class="fw-bold text-light text-decoration-none">
+                                                {{ jugador.nickname }}
+                                            </a>
+                                            <div class="text-muted" style="font-size: 0.75rem;">{{ jugador.nombre_completo|default:"Nombre no especificado" }}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {% if jugador.equipo %}
+                                        <a href="{% url 'equipos:detalle' jugador.equipo.id %}" class="badge bg-dark border border-secondary text-light text-decoration-none">
+                                            {{ jugador.equipo.nombre }}
+                                        </a>
+                                    {% else %}
+                                        <span class="text-muted small">Agente Libre</span>
+                                    {% endif %}
+                                </td>
+                                <td><span class="text-secondary small">{{ jugador.rol|default:"Starter" }}</span></td>
+                                <td><span class="text-secondary small">{{ jugador.nacionalidad|default:"—" }}</span></td>
+                                <td>
+                                    <span class="badge-nexus {% if jugador.estado == 'activo' %}badge-nexus-active{% elif jugador.estado == 'suplente' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
+                                        {{ jugador.get_estado_display|default:jugador.estado|title }}
+                                    </span>
+                                </td>
+                                <td><span class="text-secondary small">{{ jugador.fecha_incorporacion|date:"d/m/Y"|default:"—" }}</span></td>
+                                <td class="text-end">
+                                    <div class="d-flex justify-content-end gap-1">
+                                        <a href="{% url 'jugadores:detalle' jugador.id %}" class="btn btn-sm btn-nexus-subtle" title="Ver Perfil">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="{% url 'jugadores:editar' jugador.id %}" class="btn btn-sm btn-nexus-subtle" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginación -->
+            {% if is_paginated %}
+                <div class="p-3 border-top border-secondary">
+                    <ul class="pagination pagination-sm justify-content-center mb-0">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+                        {% endif %}
+                        <li class="page-item disabled"><span class="page-link bg-dark border-secondary text-secondary">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span></li>
+                        {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.next_page_number }}">Siguiente</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endif %}
+
+        {% else %}
+            <div class="text-center py-5">
+                <i class="bi bi-person-x fs-1 text-secondary mb-2 d-block"></i>
+                <h5 class="text-light fw-bold">No hay jugadores registrados</h5>
+                <p class="text-secondary small mb-3">No existen jugadores que coincidan con la búsqueda o la base de datos está vacía.</p>
+                <a href="{% url 'jugadores:crear' %}" class="btn-nexus-primary">
+                    <i class="bi bi-person-plus"></i> Registrar Jugador
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

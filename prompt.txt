@@ -1,0 +1,312 @@
+PROMPT — Desarrollo de una plataforma fullstack de gestión de equipos esports con Django
+1. Rol y objetivo del proyecto
+
+Actúa como un desarrollador fullstack senior especializado en Python, Django, bases de datos relacionales, desarrollo de API REST y diseño de aplicaciones web.
+
+Tu objetivo es desarrollar una plataforma web fullstack para la gestión integral de equipos competitivos de esports, utilizando Django como framework principal del backend y Bootstrap, HTML5 y CSS3 para la interfaz visual.
+
+El proyecto debe desarrollarse de manera ordenada, modular y profesional, siguiendo buenas prácticas de ingeniería de software.
+
+IMPORTANTE: el desarrollo debe comenzar exclusivamente con el diseño de los modelos de Django y la estructura de la base de datos. No desarrolles todavía las páginas HTML, las vistas visuales ni el diseño frontend. Primero debemos definir, revisar y aprobar la estructura de datos antes de avanzar a las siguientes etapas.
+
+2. Tecnologías obligatorias
+
+Utiliza las siguientes tecnologías:
+
+Backend: Python con Django.
+Base de datos: SQLite durante el desarrollo inicial, procurando que el diseño permita migrar posteriormente a PostgreSQL.
+Frontend: HTML5, CSS3 y Bootstrap 5.
+Motor de plantillas: Django Templates.
+API: endpoints desarrollados con Django. Utiliza Django REST Framework si resulta conveniente y justificado para implementar una API REST.
+Control de versiones: estructura compatible con Git.
+Entorno: entorno virtual de Python y archivo requirements.txt.
+
+No utilices React, Angular, Vue ni otros frameworks frontend. La interfaz debe renderizarse utilizando las plantillas de Django.
+
+3. Descripción funcional de la plataforma
+
+La aplicación permitirá administrar equipos competitivos de esports, tomando como referencia organizaciones que participan en juegos competitivos como Valorant, League of Legends, Counter-Strike y otros títulos.
+
+La plataforma debe contemplar, como mínimo, los siguientes módulos funcionales:
+
+A. Gestión de organizaciones y equipos
+Registrar y administrar organizaciones esports.
+Crear múltiples equipos asociados a una organización.
+Registrar el nombre, descripción, juego competitivo y estado del equipo.
+Asignar entrenadores y responsables.
+Consultar las plantillas actuales e históricas de cada equipo.
+B. Gestión de jugadores
+Registrar jugadores con un perfil individual.
+Guardar nombre, nickname, información de contacto y fecha de incorporación.
+Asociar jugadores a uno o varios equipos a lo largo del tiempo.
+Registrar el rol competitivo del jugador dentro de cada juego.
+Mantener un historial de incorporaciones, salidas y cambios de equipo.
+Controlar que los jugadores no tengan asignaciones incompatibles según las reglas que se definan.
+C. Gestión de entrenadores y personal
+Registrar entrenadores, analistas y otros integrantes del staff.
+Asociar miembros del staff a los equipos correspondientes.
+Definir los roles y responsabilidades de cada integrante.
+Conservar un historial de asignaciones cuando sea necesario.
+D. Gestión de partidos y entrenamientos
+Registrar partidos oficiales, torneos y scrims.
+Guardar fecha, rival, mapa cuando corresponda, marcador y resultado.
+Relacionar cada partido con el equipo que lo disputó.
+Permitir registrar observaciones y notas tácticas.
+Diferenciar partidos pendientes, finalizados y cancelados.
+Registrar sesiones de entrenamiento y su planificación.
+E. Estadísticas y rendimiento
+Registrar estadísticas individuales y colectivas.
+Mantener resultados históricos de los equipos.
+Permitir consultar estadísticas por jugador, equipo, juego y periodo.
+Diseñar los modelos de forma que puedan ampliarse sin duplicar innecesariamente la información.
+
+Las estadísticas específicas de cada juego deben diseñarse con cuidado, evitando asumir que todos los títulos utilizan las mismas métricas.
+
+F. Usuarios y permisos
+Preparar la estructura para autenticar usuarios.
+Contemplar perfiles diferenciados para administradores, entrenadores y jugadores.
+Permitir que los permisos se apliquen de acuerdo con las responsabilidades de cada usuario.
+Evitar que un usuario pueda modificar información de equipos a los que no tiene acceso autorizado.
+
+En esta primera etapa solo se debe diseñar la estructura de datos necesaria para soportar estas funcionalidades. La implementación de autenticación, permisos e interfaces se abordará posteriormente.
+
+4. Primera etapa obligatoria: diseño de los modelos y la base de datos
+
+Comienza únicamente con el diseño de los modelos de Django.
+
+Antes de escribir código, analiza los requisitos funcionales y determina las entidades necesarias, sus atributos, sus relaciones y las restricciones de integridad.
+
+4.1. Análisis del modelo de datos
+
+Identifica las entidades principales y explica brevemente la responsabilidad de cada una.
+
+Evalúa, como mínimo, la necesidad de contar con modelos para:
+
+Organización.
+Equipo.
+Juego competitivo.
+Jugador.
+Perfil de usuario o relación con el usuario de Django.
+Integrante del staff.
+Asignación histórica de jugadores a equipos.
+Asignación de entrenadores y staff.
+Partido.
+Participación de un equipo en un partido, si corresponde al diseño elegido.
+Sesión de entrenamiento.
+Estadísticas de jugadores.
+Estadísticas de equipos o partidos, cuando corresponda.
+
+No crees modelos redundantes únicamente para aumentar la cantidad de tablas. Si dos entidades pueden representarse correctamente mediante una relación o un modelo intermedio, justifica la decisión.
+
+4.2. Relaciones entre modelos
+
+Define correctamente las relaciones mediante ForeignKey, OneToOneField y ManyToManyField, según corresponda.
+
+Considera especialmente:
+
+Una organización puede administrar varios equipos.
+Un equipo pertenece a una organización.
+Un equipo compite en un juego determinado.
+Los jugadores pueden cambiar de equipo con el tiempo.
+Los equipos pueden tener múltiples entrenadores y miembros del staff.
+Los partidos deben relacionarse con los equipos participantes.
+Las estadísticas deben vincularse a la entidad y al periodo o partido que les corresponda.
+Los usuarios de Django deben relacionarse con los perfiles y permisos de la plataforma sin duplicar innecesariamente los datos de autenticación.
+
+Cuando una relación necesite almacenar información adicional, como fecha de incorporación, fecha de salida, rol competitivo o estado de la asignación, utiliza un modelo intermedio explícito.
+
+4.3. Requisitos técnicos de los modelos
+
+Todos los modelos deben cumplir las siguientes condiciones:
+
+Utilizar nombres claros y consistentes.
+Definir claves primarias correctamente.
+Establecer claves foráneas y reglas de eliminación justificadas.
+Incorporar restricciones de integridad mediante UniqueConstraint, CheckConstraint u otras herramientas de Django cuando corresponda.
+Definir __str__() en cada modelo.
+Establecer related_name descriptivos en las relaciones cuando aporten claridad.
+Incorporar campos de fecha de creación y actualización cuando sean útiles.
+Utilizar campos con tipos de datos apropiados.
+Definir valores predeterminados y opciones de estado de manera coherente.
+Evitar almacenar información derivable que pueda generar inconsistencias.
+Considerar índices en campos utilizados frecuentemente para búsquedas y filtros.
+Prevenir registros duplicados cuando exista una regla de unicidad real.
+
+Ten en cuenta que una restricción de base de datos no siempre puede expresar reglas que dependen de varias filas o de relaciones complejas. Identifica esas reglas y explica si requieren validación adicional en la capa de aplicación.
+
+4.4. Normalización y calidad del diseño
+
+Diseña una base de datos relacional normalizada, evitando duplicación innecesaria de información.
+
+Explica las decisiones importantes relacionadas con:
+
+Normalización.
+Integridad referencial.
+Cardinalidad.
+Relaciones muchos a muchos.
+Historial de asignaciones.
+Separación entre usuarios, jugadores y personal.
+Adaptación a distintos videojuegos competitivos.
+Posible migración futura desde SQLite a PostgreSQL.
+
+No sacrifiques la integridad histórica por simplificar las relaciones.
+
+5. Orden de trabajo obligatorio
+
+Sigue estrictamente esta secuencia:
+
+Paso 1. Analizar los requisitos funcionales y detectar posibles ambigüedades.
+
+Paso 2. Presentar la propuesta de entidades y explicar sus relaciones.
+
+Paso 3. Mostrar un diagrama entidad-relación en formato Mermaid o equivalente.
+
+Paso 4. Presentar la estructura inicial de aplicaciones Django y explicar qué responsabilidad tendrá cada una.
+
+Paso 5. Escribir el código completo de models.py para cada aplicación que contenga modelos, indicando claramente la ruta de cada archivo.
+
+Paso 6. Explicar cómo configurar la base de datos y registrar las aplicaciones en INSTALLED_APPS.
+
+Paso 7. Indicar los comandos necesarios para generar y aplicar migraciones:
+
+python manage.py makemigrations
+python manage.py migrate
+
+Paso 8. Proponer pruebas iniciales para verificar las relaciones, restricciones y creación de registros. Puedes utilizar pruebas automatizadas de Django, pero no avances todavía a la implementación de las páginas web.
+
+Paso 9. Revisar el diseño completo y señalar cualquier problema de integridad, redundancia o escalabilidad que deba corregirse antes de continuar.
+
+Condición de cierre de esta etapa
+
+Una vez entregados los modelos, el diagrama, las migraciones y las pruebas iniciales, detén el desarrollo.
+
+No generes todavía los archivos views.py, urls.py, serializers.py, templates, base.html, formularios, componentes visuales ni endpoints funcionales.
+
+Puedes explicar qué se desarrollará en la siguiente etapa, pero debes esperar mi aprobación explícita antes de continuar.
+
+6. Requisitos obligatorios para las siguientes etapas
+
+Los siguientes requisitos deben respetarse durante todo el desarrollo posterior, aunque no deben implementarse durante la primera etapa.
+
+6.1. Enrutamiento personalizado para páginas visuales y API
+
+Enrutamiento: Configurar el uso de rutas personalizadas tanto para el acceso a las vistas visuales (HTML) como para los distintos endpoints de la API.
+
+La arquitectura debe separar claramente las rutas correspondientes a las páginas renderizadas por Django de aquellas destinadas a la API.
+
+Por ejemplo, se podrá utilizar una estructura semejante a la siguiente cuando llegue el momento de implementarla:
+
+/ — página principal.
+/equipos/ — listado de equipos.
+/equipos/<id>/ — detalle de un equipo.
+/jugadores/ — listado de jugadores.
+/partidos/ — listado de partidos.
+/api/equipos/ — endpoints para consultar y administrar equipos.
+/api/jugadores/ — endpoints para consultar y administrar jugadores.
+/api/partidos/ — endpoints para consultar y administrar partidos.
+
+Estas rutas son ejemplos orientativos y pueden ampliarse o modificarse de acuerdo con el diseño final.
+
+Los requisitos de enrutamiento son:
+
+Utilizar urls.py a nivel de proyecto y de aplicación.
+Utilizar include() para distribuir las rutas por módulos.
+Utilizar nombres de rutas mediante name para facilitar su mantenimiento.
+Aplicar namespaces cuando corresponda.
+Evitar rutas duplicadas o ambiguas.
+Mantener separados los endpoints de la API y las vistas que renderizan HTML.
+Utilizar métodos HTTP y códigos de estado adecuados en la API.
+Implementar permisos y validaciones en las operaciones que modifiquen información.
+Documentar los endpoints y sus parámetros cuando se implemente la API.
+
+No es obligatorio utilizar exactamente las rutas de ejemplo, pero sí cumplir el requisito de enrutamiento personalizado y organizado.
+
+6.2. Herencia obligatoria de plantillas de Django
+
+Es obligatorio utilizar el motor de plantillas de Django aplicando herencia (un template padre base.html y sus respectivos templates hijos).
+
+Este requisito no es opcional y debe cumplirse en todas las páginas HTML que formen parte de la aplicación.
+
+La estructura posterior deberá contemplar una plantilla principal:
+
+templates/base.html
+
+Esta plantilla contendrá los elementos comunes de la aplicación, como:
+
+Estructura HTML5.
+Declaración de idioma.
+Metadatos.
+Importación de Bootstrap 5.
+Hoja de estilos CSS propia.
+Barra de navegación.
+Estructura general del sitio.
+Mensajes de Django.
+Bloques de contenido extensibles.
+Scripts comunes cuando corresponda.
+
+Las plantillas hijas deberán utilizar la etiqueta {% extends 'base.html' %} y sobrescribir los bloques definidos por la plantilla padre mediante {% block %} y {% endblock %}.
+
+Entre las futuras plantillas hijas podrán incluirse:
+
+home.html
+equipos/lista.html
+equipos/detalle.html
+jugadores/lista.html
+jugadores/detalle.html
+partidos/lista.html
+partidos/detalle.html
+entrenamientos/lista.html
+registration/login.html
+
+Esta lista es orientativa y deberá ajustarse a la arquitectura definitiva.
+
+No copies repetidamente toda la estructura HTML en cada archivo. Los elementos compartidos deben permanecer en base.html, mientras que cada plantilla hija debe encargarse únicamente del contenido específico de su página.
+
+El uso de plantillas parciales mediante {% include %} está permitido para componentes reutilizables, pero no sustituye la herencia obligatoria.
+
+7. Organización del proyecto
+
+Diseña una estructura modular de Django, evitando concentrar toda la lógica en una única aplicación.
+
+Evalúa una organización similar a esta:
+
+config/: configuración principal del proyecto.
+accounts/: usuarios, perfiles y permisos específicos.
+organizations/: organizaciones y equipos.
+players/: jugadores y asignaciones.
+matches/: partidos, resultados y estadísticas.
+training/: sesiones de entrenamiento y planificación.
+templates/: plantillas HTML.
+static/: CSS, JavaScript y recursos estáticos.
+
+La estructura definitiva debe justificarse según las responsabilidades de cada módulo. No es necesario crear una aplicación independiente para cada entidad si no aporta una separación funcional real.
+
+8. Criterios de calidad
+
+Durante todo el proyecto:
+
+Explica las decisiones técnicas importantes.
+Entrega código completo, consistente y ejecutable.
+Indica siempre la ruta del archivo al que corresponde cada fragmento.
+No omitas importaciones necesarias.
+No inventes campos o relaciones incompatibles entre modelos.
+Mantén coherencia entre modelos, formularios, vistas, URLs y API.
+Sigue las convenciones de Django y Python.
+Aplica validaciones tanto en el servidor como en los formularios cuando corresponda.
+No expongas información sensible.
+Utiliza protección CSRF en los formularios que la requieran.
+Implementa permisos de acceso antes de permitir modificaciones.
+Evita duplicar lógica de negocio.
+Prioriza código mantenible y fácil de probar.
+
+Si detectas una decisión de diseño importante que no está especificada, presenta una recomendación fundamentada y señala cualquier supuesto que estés adoptando.
+
+No avances de etapa automáticamente ni generes funcionalidades que todavía no he solicitado.
+
+9. Instrucción inicial
+
+Comienza ahora con el Paso 1: análisis de requisitos y diseño conceptual de la base de datos.
+
+Presenta las entidades propuestas, sus responsabilidades y las relaciones entre ellas. Después, desarrolla los pasos necesarios para entregar los modelos Django y preparar la base de datos.
+
+Recuerda: en esta primera respuesta, el objetivo es diseñar y construir la capa de datos. No desarrolles todavía la interfaz web ni la API funcional.

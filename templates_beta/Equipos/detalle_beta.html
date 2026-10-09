@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ equipo.nombre }} — NEXUS Esports{% endblock %}
+
+{% block content %}
+<!-- Cabecera del Equipo -->
+<div class="nexus-card mb-4">
+    <div class="nexus-card-body p-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rounded-3 p-3 bg-dark border border-secondary text-center" style="width: 72px; height: 72px;">
+                    {% if equipo.logo %}
+                        <img src="{{ equipo.logo.url }}" alt="{{ equipo.nombre }}" class="img-fluid" style="max-height: 48px;">
+                    {% else %}
+                        <i class="bi bi-shield-shaded text-accent fs-1"></i>
+                    {% endif %}
+                </div>
+                <div>
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                        <h2 class="h3 text-light fw-bold mb-0">{{ equipo.nombre }}</h2>
+                        <span class="badge-nexus {% if equipo.estado == 'activo' %}badge-nexus-active{% else %}badge-nexus-inactive{% endif %}">
+                            {{ equipo.get_estado_display|default:equipo.estado|title }}
+                        </span>
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center gap-3 text-secondary small">
+                        <span><i class="bi bi-controller me-1 text-accent"></i>{{ equipo.juego|default:"Esports General" }}</span>
+                        <span><i class="bi bi-building me-1"></i>{{ equipo.organizacion|default:"NEXUS Club" }}</span>
+                        <span><i class="bi bi-person-badge me-1"></i>Coach: {{ equipo.entrenador|default:"Sin asignar" }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2">
+                <a href="{% url 'equipos:editar' equipo.id %}" class="btn-nexus-outline">
+                    <i class="bi bi-pencil"></i>
+                    <span>Editar Equipo</span>
+                </a>
+                <a href="{% url 'equipos:lista' %}" class="btn-nexus-subtle">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Volver</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Columna Izquierda: Roster y Staff -->
+    <div class="col-12 col-lg-8">
+        <div class="nexus-card mb-4">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title"><i class="bi bi-people-fill me-2 text-accent"></i>Plantilla de Jugadores</h3>
+                <span class="badge bg-dark border border-secondary text-secondary small">{{ jugadores|length }} Registrados</span>
+            </div>
+            <div class="nexus-card-body p-0">
+                {% if jugadores %}
+                    <div class="table-responsive">
+                        <table class="table table-nexus">
+                            <thead>
+                                <tr>
+                                    <th>Jugador</th>
+                                    <th>Rol</th>
+                                    <th>Nacionalidad</th>
+                                    <th>Estado</th>
+                                    <th class="text-end">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for jugador in jugadores %}
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="rounded-circle bg-dark border border-secondary text-center text-accent fw-bold" style="width: 32px; height: 32px; line-height: 30px; font-size: 0.8rem;">
+                                                    {{ jugador.nickname|slice:":2"|upper }}
+                                                </div>
+                                                <div>
+                                                    <div class="fw-semibold text-light">{{ jugador.nickname }}</div>
+                                                    <div class="text-muted" style="font-size: 0.75rem;">{{ jugador.nombre_completo|default:"" }}</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-dark border border-secondary text-secondary">{{ jugador.rol|default:"Starter" }}</span></td>
+                                        <td><span class="text-secondary small">{{ jugador.nacionalidad|default:"—" }}</span></td>
+                                        <td>
+                                            <span class="badge-nexus {% if jugador.estado == 'activo' %}badge-nexus-active{% else %}badge-nexus-inactive{% endif %}">
+                                                {{ jugador.estado|title }}
+                                            </span>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="{% url 'jugadores:detalle' jugador.id %}" class="btn btn-sm btn-nexus-subtle" title="Ver ficha">
+                                                <i class="bi bi-box-arrow-up-right"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="p-4 text-center text-secondary small">
+                        <i class="bi bi-people fs-2 d-block mb-2"></i>
+                        No hay jugadores asignados a este equipo actualmente.
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Partidos Recientes y Próximos -->
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title"><i class="bi bi-controller me-2 text-accent"></i>Historial de Partidos</h3>
+            </div>
+            <div class="nexus-card-body p-0">
+                {% if partidos %}
+                    <div class="table-responsive">
+                        <table class="table table-nexus">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Rival</th>
+                                    <th>Competición</th>
+                                    <th>Resultado</th>
+                                    <th class="text-end">Detalle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for partido in partidos %}
+                                    <tr>
+                                        <td class="text-secondary small">{{ partido.fecha|date:"d M Y, H:i" }}</td>
+                                        <td class="fw-semibold text-light">vs {{ partido.rival }}</td>
+                                        <td><span class="text-secondary small">{{ partido.torneo|default:"Scrim" }}</span></td>
+                                        <td>
+                                            {% if partido.marcador_local is not None %}
+                                                <span class="fw-bold {% if partido.ganador == equipo %}text-success{% else %}text-danger{% endif %}">
+                                                    {{ partido.marcador_local }} - {{ partido.marcador_rival }}
+                                                </span>
+                                            {% else %}
+                                                <span class="badge bg-dark border border-secondary text-warning">Programado</span>
+                                            {% endif %}
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="{% url 'partidos:detalle' partido.id %}" class="btn btn-sm btn-nexus-subtle"><i class="bi bi-chevron-right"></i></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="p-4 text-center text-secondary small">Sin partidos registrados para este equipo.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Columna Derecha: Métricas y Resumen -->
+    <div class="col-12 col-lg-4">
+        <div class="nexus-card mb-4">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Rendimiento</h3>
+            </div>
+            <div class="nexus-card-body">
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between small mb-1">
+                        <span class="text-secondary">Tasa de Victorias</span>
+                        <span class="text-accent fw-bold">{{ estadisticas.winrate|default:"0" }}%</span>
+                    </div>
+                    <div class="progress bg-dark" style="height: 6px;">
+                        <div class="progress-bar" style="width: {{ estadisticas.winrate|default:0 }}%; background-color: var(--nexus-accent);"></div>
+                    </div>
+                </div>
+
+                <div class="row g-2 text-center pt-2">
+                    <div class="col-6">
+                        <div class="p-2 bg-dark rounded border border-secondary">
+                            <span class="d-block text-secondary small">VICTORIAS</span>
+                            <span class="h5 fw-bold text-success mb-0">{{ estadisticas.victorias|default:0 }}</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-2 bg-dark rounded border border-secondary">
+                            <span class="d-block text-secondary small">DERROTAS</span>
+                            <span class="h5 fw-bold text-danger mb-0">{{ estadisticas.derrotas|default:0 }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Descripción & Reglas</h3>
+            </div>
+            <div class="nexus-card-body">
+                <p class="text-secondary small mb-3">{{ equipo.descripcion|default:"No se ha definido descripción para el equipo." }}</p>
+                <div class="border-top border-secondary pt-3">
+                    <span class="d-block text-secondary small mb-1">Creado:</span>
+                    <span class="text-light small fw-medium">{{ equipo.fecha_creacion|date:"d/m/Y"|default:"Reciente" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

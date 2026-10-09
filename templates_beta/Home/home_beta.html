@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard General — NEXUS Esports{% endblock %}
+
+{% block content %}
+<!-- Título y Saludo de Bienvenida -->
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">Centro de Operaciones</h2>
+        <p class="text-secondary small mb-0">Resumen en tiempo real del estado competitivo y actividades de la organización.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'partidos:crear' %}" class="btn-nexus-outline">
+            <i class="bi bi-controller"></i> Programar Partido
+        </a>
+        <a href="{% url 'equipos:crear' %}" class="btn-nexus-primary">
+            <i class="bi bi-plus-lg"></i> Nuevo Roster
+        </a>
+    </div>
+</div>
+
+<!-- Tarjetas KPI Principales -->
+<div class="row g-3 mb-4">
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="nexus-card p-3">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="text-secondary small fw-bold">EQUIPOS ACTIVOS</span>
+                <span class="badge bg-dark border border-secondary text-accent p-2 rounded"><i class="bi bi-shield-shaded"></i></span>
+            </div>
+            <div class="h3 text-light fw-bold mb-1">{{ total_equipos|default:0 }}</div>
+            <div class="text-muted" style="font-size: 0.75rem;">En 4 disciplinas competitivas</div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="nexus-card p-3">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="text-secondary small fw-bold">JUGADORES FICHADOS</span>
+                <span class="badge bg-dark border border-secondary text-info p-2 rounded"><i class="bi bi-people-fill"></i></span>
+            </div>
+            <div class="h3 text-light fw-bold mb-1">{{ total_jugadores|default:0 }}</div>
+            <div class="text-muted" style="font-size: 0.75rem;">Atletas con contrato vigente</div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="nexus-card p-3">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="text-secondary small fw-bold">PARTIDOS DEL MES</span>
+                <span class="badge bg-dark border border-secondary text-warning p-2 rounded"><i class="bi bi-calendar-check"></i></span>
+            </div>
+            <div class="h3 text-light fw-bold mb-1">{{ partidos_mes|default:0 }}</div>
+            <div class="text-muted" style="font-size: 0.75rem;">Oficiales y entrenamientos</div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="nexus-card p-3">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="text-secondary small fw-bold">TASA DE VICTORIAS</span>
+                <span class="badge bg-dark border border-secondary text-success p-2 rounded"><i class="bi bi-trophy"></i></span>
+            </div>
+            <div class="h3 text-accent fw-bold mb-1">{{ winrate_global|default:0 }}%</div>
+            <div class="text-success small" style="font-size: 0.75rem;"><i class="bi bi-arrow-up-right"></i> +4.5% vs mes anterior</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Próximos Encuentros y Scrims -->
+    <div class="col-12 col-lg-7">
+        <div class="nexus-card mb-4">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title"><i class="bi bi-calendar-event me-2 text-accent"></i>Próximos Partidos & Scrims</h3>
+                <a href="{% url 'partidos:lista' %}" class="small text-accent text-decoration-none">Ver calendario</a>
+            </div>
+            <div class="nexus-card-body p-0">
+                {% if proximos_partidos %}
+                    <div class="table-responsive">
+                        <table class="table table-nexus">
+                            <thead>
+                                <tr>
+                                    <th>Horario</th>
+                                    <th>Equipo</th>
+                                    <th>Rival</th>
+                                    <th>Tipo</th>
+                                    <th class="text-end">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for partido in proximos_partidos %}
+                                    <tr>
+                                        <td>
+                                            <div class="text-light fw-medium">{{ partido.fecha|date:"d M" }}</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;">{{ partido.fecha|date:"H:i" }} CET</div>
+                                        </td>
+                                        <td class="fw-bold text-light">{{ partido.equipo.nombre }}</td>
+                                        <td class="text-secondary">vs {{ partido.rival }}</td>
+                                        <td><span class="badge bg-dark border border-secondary text-secondary">{{ partido.get_tipo_display|default:partido.tipo|title }}</span></td>
+                                        <td class="text-end">
+                                            <a href="{% url 'partidos:detalle' partido.id %}" class="btn btn-sm btn-nexus-subtle"><i class="bi bi-chevron-right"></i></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="p-4 text-center text-secondary small">No hay partidos programados para los próximos días.</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Resultados Recientes -->
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title"><i class="bi bi-trophy-fill me-2 text-accent"></i>Resultados Recientes</h3>
+            </div>
+            <div class="nexus-card-body p-0">
+                {% if resultados_recientes %}
+                    <div class="table-responsive">
+                        <table class="table table-nexus">
+                            <thead>
+                                <tr>
+                                    <th>Encuentro</th>
+                                    <th>Resultado</th>
+                                    <th>Marcador</th>
+                                    <th class="text-end">Detalle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in resultados_recientes %}
+                                    <tr>
+                                        <td>
+                                            <div class="text-light fw-semibold">{{ item.equipo.nombre }} <span class="text-muted">vs</span> {{ item.rival }}</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;">{{ item.fecha|date:"d M Y" }}</div>
+                                        </td>
+                                        <td>
+                                            {% if item.marcador_local > item.marcador_rival %}
+                                                <span class="badge-nexus badge-nexus-active">Victoria</span>
+                                            {% else %}
+                                                <span class="badge-nexus badge-nexus-danger">Derrota</span>
+                                            {% endif %}
+                                        </td>
+                                        <td class="fw-bold text-light">{{ item.marcador_local }} - {{ item.marcador_rival }}</td>
+                                        <td class="text-end">
+                                            <a href="{% url 'partidos:detalle' item.id %}" class="btn btn-sm btn-nexus-subtle"><i class="bi bi-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="p-4 text-center text-secondary small">No hay resultados registrados en este período.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Actividad Reciente y Estado del Sistema -->
+    <div class="col-12 col-lg-5">
+        <div class="nexus-card mb-4">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title"><i class="bi bi-clock-history me-2 text-accent"></i>Actividad de la Organización</h3>
+            </div>
+            <div class="nexus-card-body">
+                {% if actividades %}
+                    <div class="timeline">
+                        {% for act in actividades %}
+                            <div class="d-flex gap-3 pb-3 {% if not forloop.last %}border-bottom border-secondary mb-3{% endif %}">
+                                <div class="rounded-circle bg-dark border border-secondary d-flex align-items-center justify-content-center text-accent" style="width: 36px; height: 36px; min-width: 36px;">
+                                    <i class="bi bi-lightning-charge-fill"></i>
+                                </div>
+                                <div>
+                                    <div class="text-light small fw-medium">{{ act.descripcion }}</div>
+                                    <span class="text-muted" style="font-size: 0.75rem;">{{ act.fecha|timesince }} atrás &bull; {{ act.usuario|default:"Staff" }}</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-secondary small mb-0">Sin actividad reciente registrada.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Acceso Rápido a Entrenamientos -->
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title"><i class="bi bi-stopwatch me-2 text-accent"></i>Próximas Sesiones de Scrims</h3>
+            </div>
+            <div class="nexus-card-body">
+                <p class="text-secondary small mb-3">Revisa las sesiones tácticas y revisión de VODs coordinadas para esta semana.</p>
+                <a href="{% url 'entrenamientos:lista' %}" class="btn-nexus-outline w-100 justify-content-center">
+                    <i class="bi bi-arrow-right"></i> Ver Entrenamientos
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

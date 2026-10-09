@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %}Entrenamientos — NEXUS Esports{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">Planificación de Entrenamientos</h2>
+        <p class="text-secondary small mb-0">Organiza las sesiones de práctica, objetivos y carga de trabajo.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'training:session-create' %}" class="btn-nexus-primary">
+            <i class="bi bi-plus-lg"></i>
+            <span>Nueva Sesión</span>
+        </a>
+    </div>
+</div>
+
+<!-- Filtros -->
+<div class="nexus-card mb-4">
+    <div class="nexus-card-body p-3">
+        <form method="get" action="{% url 'training:session-list' %}" class="row g-2 align-items-center">
+            <div class="col-12 col-md-5">
+                <select name="equipo" class="form-select form-select-nexus">
+                    <option value="">Todos los equipos</option>
+                    {% for eq in equipos_disponibles %}
+                        <option value="{{ eq.pk }}" {% if request.GET.equipo == eq.pk|stringformat:"s" %}selected{% endif %}>{{ eq.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-6 col-md-4">
+                <select name="estado" class="form-select form-select-nexus">
+                    <option value="">Cualquier estado</option>
+                    {% for value, label in statuses %}
+                        <option value="{{ value }}" {% if request.GET.estado == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-6 col-md-3 d-flex gap-2">
+                <button type="submit" class="btn btn-nexus-outline w-100 justify-content-center">Filtrar</button>
+                {% if request.GET.equipo or request.GET.estado %}
+                    <a href="{% url 'training:session-list' %}" class="btn btn-nexus-subtle" title="Limpiar"><i class="bi bi-x-lg"></i></a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Grid de Sesiones -->
+{% if entrenamientos %}
+    <div class="row g-3">
+        {% for sesion in entrenamientos %}
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="nexus-card h-100 d-flex flex-column">
+                    <div class="nexus-card-header">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="rounded-3 p-2 bg-dark border border-secondary text-center d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
+                                <i class="bi bi-stopwatch text-accent fs-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 text-light fw-bold mb-0">{{ sesion.title }}</h3>
+                                <span class="text-secondary small">{{ sesion.team.name }} · {{ sesion.team.game.name }}</span>
+                            </div>
+                        </div>
+                        <span class="badge-nexus {% if sesion.status == 'completed' %}badge-nexus-active{% elif sesion.status == 'planned' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
+                            {{ sesion.get_status_display }}
+                        </span>
+                    </div>
+                    <div class="nexus-card-body flex-grow-1">
+                        <div class="d-flex flex-column gap-2 text-secondary small mb-3">
+                            <span><i class="bi bi-calendar3 me-2 text-accent"></i>{{ sesion.scheduled_at|date:"d M Y, H:i" }}</span>
+                            <span><i class="bi bi-clock-history me-2 text-accent"></i>{{ sesion.duration_minutes|default:"—" }} minutos</span>
+                            <span><i class="bi bi-geo-alt me-2 text-accent"></i>{{ sesion.location|default:"Sin ubicación" }}</span>
+                            <span><i class="bi bi-person-badge me-2 text-accent"></i>Coach: {{ sesion.coach|default:"No asignado" }}</span>
+                        </div>
+                        {% if sesion.objectives %}
+                            <p class="text-secondary small text-truncate-2 mb-0">{{ sesion.objectives }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="p-3 border-top border-secondary bg-dark bg-opacity-25 d-flex justify-content-end">
+                        <a href="{% url 'training:session-update' sesion.pk %}" class="btn btn-nexus-subtle btn-sm">
+                            <i class="bi bi-pencil me-1"></i>Editar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+        <nav class="mt-4" aria-label="Navegación de entrenamientos">
+            <ul class="pagination pagination-sm justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+                {% endif %}
+                <li class="page-item disabled"><span class="page-link bg-dark border-secondary text-secondary">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span></li>
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.next_page_number }}">Siguiente</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+{% else %}
+    <div class="nexus-card text-center py-5">
+        <div class="nexus-card-body">
+            <i class="bi bi-calendar2-x fs-1 text-secondary mb-2 d-block"></i>
+            <h4 class="text-light fw-bold">No hay sesiones de entrenamiento</h4>
+            <p class="text-secondary small mb-3">No existen sesiones planificadas que coincidan con los filtros aplicados.</p>
+            <a href="{% url 'training:session-create' %}" class="btn-nexus-primary"><i class="bi bi-plus-lg"></i> Nueva Sesión</a>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

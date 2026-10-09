@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ jugador.nickname }} — Perfil de Jugador{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <div class="d-flex align-items-center gap-3">
+        <div class="profile-avatar" style="width: 60px; height: 60px; font-size: 1.25rem;">
+            <span>{{ jugador.nickname|slice:":2"|upper }}</span>
+        </div>
+        <div>
+            <div class="d-flex align-items-center gap-2">
+                <h2 class="h3 text-light fw-bold mb-0">{{ jugador.nickname }}</h2>
+                <span class="badge-nexus {% if jugador.estado == 'activo' %}badge-nexus-active{% else %}badge-nexus-inactive{% endif %}">
+                    {{ jugador.get_estado_display|default:jugador.estado|title }}
+                </span>
+            </div>
+            <p class="text-secondary small mb-0">{{ jugador.nombre_completo|default:"Nombre no registrado" }} &bull; {{ jugador.nacionalidad|default:"Internacional" }}</p>
+        </div>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'jugadores:editar' jugador.id %}" class="btn-nexus-outline">
+            <i class="bi bi-pencil"></i> Editar
+        </a>
+        <a href="{% url 'jugadores:lista' %}" class="btn-nexus-subtle">
+            <i class="bi bi-arrow-left"></i> Volver
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Información General y Equipo -->
+    <div class="col-12 col-md-4">
+        <div class="nexus-card mb-4">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Ficha Técnica</h3>
+            </div>
+            <div class="nexus-card-body">
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Equipo</span>
+                    <span class="text-light small fw-bold">
+                        {% if jugador.equipo %}
+                            <a href="{% url 'equipos:detalle' jugador.equipo.id %}">{{ jugador.equipo.nombre }}</a>
+                        {% else %}
+                            Agente Libre
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Juego Principal</span>
+                    <span class="text-light small">{{ jugador.juego|default:jugador.equipo.juego|default:"Esports" }}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Rol Competitivo</span>
+                    <span class="badge bg-dark border border-secondary text-accent">{{ jugador.rol|default:"Titular" }}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Fecha de Incorporación</span>
+                    <span class="text-light small">{{ jugador.fecha_incorporacion|date:"d/m/Y"|default:"—" }}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2">
+                    <span class="text-secondary small">Redes / Contacto</span>
+                    <span class="text-light small">{{ jugador.contacto|default:"No especificado" }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estadísticas individuales si existen en el contexto -->
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Métricas de Temporada</h3>
+            </div>
+            <div class="nexus-card-body text-center">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="p-2 bg-dark rounded border border-secondary">
+                            <span class="d-block text-secondary small">PARTIDOS</span>
+                            <span class="h5 fw-bold text-light mb-0">{{ estadisticas.partidos_jugados|default:0 }}</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-2 bg-dark rounded border border-secondary">
+                            <span class="d-block text-secondary small">KDA PROMEDIO</span>
+                            <span class="h5 fw-bold text-accent mb-0">{{ estadisticas.kda|default:"—" }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Historial y Actividad -->
+    <div class="col-12 col-md-8">
+        <div class="nexus-card mb-4">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Partidos Recientes del Jugador</h3>
+            </div>
+            <div class="nexus-card-body p-0">
+                {% if partidos_recientes %}
+                    <div class="table-responsive">
+                        <table class="table table-nexus">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Rival</th>
+                                    <th>Resultado</th>
+                                    <th>Rendimiento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in partidos_recientes %}
+                                    <tr>
+                                        <td class="text-secondary small">{{ item.partido.fecha|date:"d/m/Y" }}</td>
+                                        <td class="text-light fw-medium">{{ item.partido.rival }}</td>
+                                        <td>
+                                            {% if item.partido.ganador == jugador.equipo %}
+                                                <span class="badge-nexus badge-nexus-active">Victoria</span>
+                                            {% else %}
+                                                <span class="badge-nexus badge-nexus-danger">Derrota</span>
+                                            {% endif %}
+                                        </td>
+                                        <td class="text-secondary small">{{ item.estadistica_individual|default:"Jugado" }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="p-4 text-center text-secondary small">No hay historial de partidos registrados recientemente para este jugador.</div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Biografía & Notas Técnicas</h3>
+            </div>
+            <div class="nexus-card-body">
+                <p class="text-secondary small mb-0">{{ jugador.biografia|default:"No se han registrado notas técnicas o biografía para este perfil." }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

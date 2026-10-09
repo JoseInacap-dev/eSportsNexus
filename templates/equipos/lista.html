@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %}Equipos — NEXUS Esports{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">Directorio de Equipos</h2>
+        <p class="text-secondary small mb-0">Gestión de rosters competitivos, juegos y entrenadores de la organización.</p>
+    </div>
+    <div class="d-flex gap-2">
+        {% if can_manage %}
+            <a href="{% url 'organizations:team-create' %}" class="btn-nexus-primary">
+                <i class="bi bi-plus-lg"></i>
+                <span>Nuevo Equipo</span>
+            </a>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Filtros y Búsqueda -->
+<div class="nexus-card mb-4">
+    <div class="nexus-card-body p-3">
+        <form method="get" action="{% url 'organizations:team-list' %}" class="row g-2 align-items-center">
+            <div class="col-12 col-md-5">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="text" name="q" value="{{ request.GET.q|default:'' }}" class="form-control form-control-nexus" placeholder="Buscar por nombre...">
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <select name="juego" class="form-select form-select-nexus">
+                    <option value="">Todos los juegos</option>
+                    {% for juego_opt in juegos_disponibles %}
+                        <option value="{{ juego_opt.pk }}" {% if request.GET.juego == juego_opt.pk|stringformat:"s" %}selected{% endif %}>{{ juego_opt.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-6 col-md-2">
+                <select name="estado" class="form-select form-select-nexus">
+                    <option value="">Todos los estados</option>
+                    <option value="active" {% if request.GET.estado == 'active' %}selected{% endif %}>Activo</option>
+                    <option value="paused" {% if request.GET.estado == 'paused' %}selected{% endif %}>En pausa</option>
+                    <option value="inactive" {% if request.GET.estado == 'inactive' %}selected{% endif %}>Inactivo</option>
+                    <option value="disbanded" {% if request.GET.estado == 'disbanded' %}selected{% endif %}>Disuelto</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-2 d-flex gap-2">
+                <button type="submit" class="btn btn-nexus-outline w-100 justify-content-center">Filtrar</button>
+                {% if request.GET.q or request.GET.juego or request.GET.estado %}
+                    <a href="{% url 'organizations:team-list' %}" class="btn btn-nexus-subtle" title="Limpiar filtros"><i class="bi bi-x-lg"></i></a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Grid de Equipos -->
+{% if equipos %}
+    <div class="row g-3">
+        {% for equipo in equipos %}
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="nexus-card h-100 d-flex flex-column">
+                    <div class="nexus-card-header">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="rounded-3 p-2 bg-dark border border-secondary text-center d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
+                                <i class="bi bi-shield-shaded text-accent fs-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 text-light fw-bold mb-0">{{ equipo.name }}</h3>
+                                <span class="badge bg-dark border border-secondary text-secondary" style="font-size: 0.7rem;">{{ equipo.game.name }}</span>
+                            </div>
+                        </div>
+                        <span class="badge-nexus {% if equipo.status == 'active' %}badge-nexus-active{% elif equipo.status == 'inactive' %}badge-nexus-inactive{% elif equipo.status == 'disbanded' %}badge-nexus-danger{% else %}badge-nexus-warning{% endif %}">
+                            {{ equipo.get_status_display }}
+                        </span>
+                    </div>
+
+                    <div class="nexus-card-body flex-grow-1">
+                        <p class="text-secondary small mb-3 text-truncate-2">{{ equipo.description|default:"Sin descripción registrada para este equipo." }}</p>
+
+                        <div class="row g-2 text-center py-2 border-top border-bottom border-secondary mb-3">
+                            <div class="col-4">
+                                <span class="d-block text-secondary" style="font-size: 0.7rem;">JUGADORES</span>
+                                <span class="fw-bold text-light">{{ equipo.players_count }}</span>
+                            </div>
+                            <div class="col-4 border-start border-end border-secondary">
+                                <span class="d-block text-secondary" style="font-size: 0.7rem;">ORG</span>
+                                <span class="fw-bold text-light" style="font-size: 0.8rem;">{{ equipo.organization.abbreviation|default:equipo.organization.name }}</span>
+                            </div>
+                            <div class="col-4">
+                                <span class="d-block text-secondary" style="font-size: 0.7rem;">WINRATE</span>
+                                <span class="fw-bold text-accent">{{ equipo.winrate }}%</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between text-secondary small">
+                            <span><i class="bi bi-person-badge me-1"></i>Coach:</span>
+                            <span class="text-light fw-medium">{{ equipo.head_coach|default:"No asignado" }}</span>
+                        </div>
+                    </div>
+
+                    <div class="p-3 border-top border-secondary bg-dark bg-opacity-25 d-flex justify-content-between align-items-center">
+                        <a href="{% url 'organizations:team-detail' equipo.pk %}" class="btn btn-nexus-subtle btn-sm">
+                            <i class="bi bi-eye me-1"></i>Ver Roster
+                        </a>
+                        {% if can_manage %}
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-dark border-secondary text-secondary" data-bs-toggle="dropdown">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark-custom">
+                                    <li><a class="dropdown-item" href="{% url 'organizations:team-update' equipo.pk %}"><i class="bi bi-pencil me-2"></i>Editar equipo</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item text-danger" href="{% url 'organizations:team-delete' equipo.pk %}"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Paginación Django -->
+    {% if is_paginated %}
+        <nav class="mt-4" aria-label="Navegación de equipos">
+            <ul class="pagination pagination-sm justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+                {% endif %}
+                <li class="page-item disabled"><span class="page-link bg-dark border-secondary text-secondary">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span></li>
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.next_page_number }}">Siguiente</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+
+{% else %}
+    <!-- Estado Vacío -->
+    <div class="nexus-card text-center py-5">
+        <div class="nexus-card-body">
+            <div class="rounded-circle bg-dark border border-secondary d-inline-flex p-3 mb-3 text-secondary">
+                <i class="bi bi-shield-x fs-1"></i>
+            </div>
+            <h4 class="text-light fw-bold">No se encontraron equipos</h4>
+            <p class="text-secondary small mb-3">No hay equipos registrados o ninguno coincide con los criterios de búsqueda aplicados.</p>
+            {% if can_manage %}
+                <a href="{% url 'organizations:team-create' %}" class="btn-nexus-primary">
+                    <i class="bi bi-plus-lg"></i>
+                    <span>Crear Primer Equipo</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+{% endblock %}
