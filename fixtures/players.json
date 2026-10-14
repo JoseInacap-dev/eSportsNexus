@@ -1,0 +1,1520 @@
+[
+  {
+    "model": "players.player",
+    "pk": 1,
+    "fields": {
+      "user": null,
+      "first_name": "Tyson",
+      "last_name": "Ngo",
+      "nickname": "TenZ",
+      "email": "tenz@sentinels.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Canadá",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 1,
+    "fields": {
+      "player": 1,
+      "team": 1,
+      "competitive_role": 1,
+      "jersey_number": 10,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 2,
+    "fields": {
+      "user": null,
+      "first_name": "Zachary",
+      "last_name": "Patrone",
+      "nickname": "zekken",
+      "email": "zekken@sentinels.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Estados Unidos",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 2,
+    "fields": {
+      "player": 2,
+      "team": 1,
+      "competitive_role": 2,
+      "jersey_number": 7,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 3,
+    "fields": {
+      "user": null,
+      "first_name": "Gustavo",
+      "last_name": "Rossi",
+      "nickname": "Sacy",
+      "email": "sacy@sentinels.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Brasil",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 3,
+    "fields": {
+      "player": 3,
+      "team": 1,
+      "competitive_role": 2,
+      "jersey_number": 14,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 4,
+    "fields": {
+      "user": null,
+      "first_name": "Jordan",
+      "last_name": "Montemurro",
+      "nickname": "Zellsis",
+      "email": "zellsis@sentinels.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Estados Unidos",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 4,
+    "fields": {
+      "player": 4,
+      "team": 1,
+      "competitive_role": 3,
+      "jersey_number": 1,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 5,
+    "fields": {
+      "user": null,
+      "first_name": "John",
+      "last_name": "Ouanes",
+      "nickname": "johnqt",
+      "email": "johnqt@sentinels.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Marruecos",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 5,
+    "fields": {
+      "player": 5,
+      "team": 1,
+      "competitive_role": 4,
+      "jersey_number": 4,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 6,
+    "fields": {
+      "user": null,
+      "first_name": "Jake",
+      "last_name": "Howlett",
+      "nickname": "Boaster",
+      "email": "boaster@fnatic.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Reino Unido",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 6,
+    "fields": {
+      "player": 6,
+      "team": 2,
+      "competitive_role": 3,
+      "jersey_number": 1,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 7,
+    "fields": {
+      "user": null,
+      "first_name": "Nikita",
+      "last_name": "Sirmitev",
+      "nickname": "Derke",
+      "email": "derke@fnatic.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Finlandia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 7,
+    "fields": {
+      "player": 7,
+      "team": 2,
+      "competitive_role": 1,
+      "jersey_number": 14,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 8,
+    "fields": {
+      "user": null,
+      "first_name": "Emir",
+      "last_name": "Beder",
+      "nickname": "Alfajer",
+      "email": "alfajer@fnatic.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Turquía",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 8,
+    "fields": {
+      "player": 8,
+      "team": 2,
+      "competitive_role": 4,
+      "jersey_number": 7,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 9,
+    "fields": {
+      "user": null,
+      "first_name": "Timofey",
+      "last_name": "Khromov",
+      "nickname": "Chronicle",
+      "email": "chronicle@fnatic.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Rusia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 9,
+    "fields": {
+      "player": 9,
+      "team": 2,
+      "competitive_role": 2,
+      "jersey_number": 22,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 10,
+    "fields": {
+      "user": null,
+      "first_name": "Leo",
+      "last_name": "Jannesson",
+      "nickname": "Leo",
+      "email": "leo@fnatic.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Suecia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 10,
+    "fields": {
+      "player": 10,
+      "team": 2,
+      "competitive_role": 2,
+      "jersey_number": 10,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 11,
+    "fields": {
+      "user": null,
+      "first_name": "Lee",
+      "last_name": "Sang-hyeok",
+      "nickname": "Faker",
+      "email": "faker@t1.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Corea del Sur",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 11,
+    "fields": {
+      "player": 11,
+      "team": 3,
+      "competitive_role": 7,
+      "jersey_number": 1,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 12,
+    "fields": {
+      "user": null,
+      "first_name": "Choi",
+      "last_name": "Woo-je",
+      "nickname": "Zeus",
+      "email": "zeus@t1.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Corea del Sur",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 12,
+    "fields": {
+      "player": 12,
+      "team": 3,
+      "competitive_role": 5,
+      "jersey_number": 3,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 13,
+    "fields": {
+      "user": null,
+      "first_name": "Mun",
+      "last_name": "Hyeon-jun",
+      "nickname": "Oner",
+      "email": "oner@t1.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Corea del Sur",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 13,
+    "fields": {
+      "player": 13,
+      "team": 3,
+      "competitive_role": 6,
+      "jersey_number": 9,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 14,
+    "fields": {
+      "user": null,
+      "first_name": "Lee",
+      "last_name": "Min-hyeong",
+      "nickname": "Gumayusi",
+      "email": "gumayusi@t1.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Corea del Sur",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 14,
+    "fields": {
+      "player": 14,
+      "team": 3,
+      "competitive_role": 8,
+      "jersey_number": 23,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 15,
+    "fields": {
+      "user": null,
+      "first_name": "Ryu",
+      "last_name": "Min-seok",
+      "nickname": "Keria",
+      "email": "keria@t1.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Corea del Sur",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 15,
+    "fields": {
+      "player": 15,
+      "team": 3,
+      "competitive_role": 9,
+      "jersey_number": 5,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 16,
+    "fields": {
+      "user": null,
+      "first_name": "Rasmus",
+      "last_name": "Winther",
+      "nickname": "Caps",
+      "email": "caps@g2esports.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Dinamarca",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 16,
+    "fields": {
+      "player": 16,
+      "team": 4,
+      "competitive_role": 7,
+      "jersey_number": 7,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 17,
+    "fields": {
+      "user": null,
+      "first_name": "Sergen",
+      "last_name": "Çelik",
+      "nickname": "BrokenBlade",
+      "email": "bb@g2esports.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Alemania",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 17,
+    "fields": {
+      "player": 17,
+      "team": 4,
+      "competitive_role": 5,
+      "jersey_number": 3,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 18,
+    "fields": {
+      "user": null,
+      "first_name": "Martin",
+      "last_name": "Sundelin",
+      "nickname": "Yike",
+      "email": "yike@g2esports.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Suecia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 18,
+    "fields": {
+      "player": 18,
+      "team": 4,
+      "competitive_role": 6,
+      "jersey_number": 9,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 19,
+    "fields": {
+      "user": null,
+      "first_name": "Steven",
+      "last_name": "Liv",
+      "nickname": "Hans Sama",
+      "email": "hanssama@g2esports.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Francia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 19,
+    "fields": {
+      "player": 19,
+      "team": 4,
+      "competitive_role": 8,
+      "jersey_number": 23,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 20,
+    "fields": {
+      "user": null,
+      "first_name": "Mihael",
+      "last_name": "Mehle",
+      "nickname": "Mikyx",
+      "email": "mikyx@g2esports.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Eslovenia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 20,
+    "fields": {
+      "player": 20,
+      "team": 4,
+      "competitive_role": 9,
+      "jersey_number": 5,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 21,
+    "fields": {
+      "user": null,
+      "first_name": "Aleksi",
+      "last_name": "Virolainen",
+      "nickname": "Aleksib",
+      "email": "aleksib@navi.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Finlandia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 21,
+    "fields": {
+      "player": 21,
+      "team": 5,
+      "competitive_role": 12,
+      "jersey_number": 4,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 22,
+    "fields": {
+      "user": null,
+      "first_name": "Valerij",
+      "last_name": "Vakhovsjkyj",
+      "nickname": "b1t",
+      "email": "b1t@navi.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Ucrania",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 22,
+    "fields": {
+      "player": 22,
+      "team": 5,
+      "competitive_role": 10,
+      "jersey_number": 11,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 23,
+    "fields": {
+      "user": null,
+      "first_name": "Ihor",
+      "last_name": "Zhdanov",
+      "nickname": "w0nderful",
+      "email": "w0nderful@navi.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Ucrania",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 23,
+    "fields": {
+      "player": 23,
+      "team": 5,
+      "competitive_role": 11,
+      "jersey_number": 8,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 24,
+    "fields": {
+      "user": null,
+      "first_name": "Mihai",
+      "last_name": "Ivan",
+      "nickname": "iM",
+      "email": "im@navi.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Rumania",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 24,
+    "fields": {
+      "player": 24,
+      "team": 5,
+      "competitive_role": 13,
+      "jersey_number": 17,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 25,
+    "fields": {
+      "user": null,
+      "first_name": "Justinas",
+      "last_name": "Lekavicius",
+      "nickname": "jL",
+      "email": "jl@navi.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Lituania",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 25,
+    "fields": {
+      "player": 25,
+      "team": 5,
+      "competitive_role": 14,
+      "jersey_number": 6,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 26,
+    "fields": {
+      "user": null,
+      "first_name": "Finn",
+      "last_name": "Andersen",
+      "nickname": "karrigan",
+      "email": "karrigan@fazeclan.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Dinamarca",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 26,
+    "fields": {
+      "player": 26,
+      "team": 6,
+      "competitive_role": 12,
+      "jersey_number": 4,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 27,
+    "fields": {
+      "user": null,
+      "first_name": "Robin",
+      "last_name": "Kool",
+      "nickname": "ropz",
+      "email": "ropz@fazeclan.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Estonia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 27,
+    "fields": {
+      "player": 27,
+      "team": 6,
+      "competitive_role": 13,
+      "jersey_number": 17,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 28,
+    "fields": {
+      "user": null,
+      "first_name": "Helvijs",
+      "last_name": "Saukants",
+      "nickname": "broky",
+      "email": "broky@fazeclan.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Letonia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 28,
+    "fields": {
+      "player": 28,
+      "team": 6,
+      "competitive_role": 11,
+      "jersey_number": 8,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 29,
+    "fields": {
+      "user": null,
+      "first_name": "Håvard",
+      "last_name": "Nygaard",
+      "nickname": "rain",
+      "email": "rain@fazeclan.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Noruega",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 29,
+    "fields": {
+      "player": 29,
+      "team": 6,
+      "competitive_role": 10,
+      "jersey_number": 11,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 30,
+    "fields": {
+      "user": null,
+      "first_name": "David",
+      "last_name": "Čerňanský",
+      "nickname": "frozen",
+      "email": "frozen@fazeclan.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Eslovaquia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 30,
+    "fields": {
+      "player": 30,
+      "team": 6,
+      "competitive_role": 14,
+      "jersey_number": 6,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 31,
+    "fields": {
+      "user": null,
+      "first_name": "Illya",
+      "last_name": "Mulyarchuk",
+      "nickname": "Yatoro",
+      "email": "yatoro@teamspirit.ru",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Ucrania",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 31,
+    "fields": {
+      "player": 31,
+      "team": 7,
+      "competitive_role": 15,
+      "jersey_number": 1,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 32,
+    "fields": {
+      "user": null,
+      "first_name": "Denis",
+      "last_name": "Sigitov",
+      "nickname": "Larl",
+      "email": "larl@teamspirit.ru",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Rusia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 32,
+    "fields": {
+      "player": 32,
+      "team": 7,
+      "competitive_role": 16,
+      "jersey_number": 2,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 33,
+    "fields": {
+      "user": null,
+      "first_name": "Magomed",
+      "last_name": "Khalilov",
+      "nickname": "Collapse",
+      "email": "collapse@teamspirit.ru",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Rusia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 33,
+    "fields": {
+      "player": 33,
+      "team": 7,
+      "competitive_role": 17,
+      "jersey_number": 3,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 34,
+    "fields": {
+      "user": null,
+      "first_name": "Miroslaw",
+      "last_name": "Kolpakov",
+      "nickname": "Mira",
+      "email": "mira@teamspirit.ru",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Ucrania",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 34,
+    "fields": {
+      "player": 34,
+      "team": 7,
+      "competitive_role": 18,
+      "jersey_number": 4,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 35,
+    "fields": {
+      "user": null,
+      "first_name": "Yaroslav",
+      "last_name": "Naidenov",
+      "nickname": "Miposhka",
+      "email": "miposhka@teamspirit.ru",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Rusia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 35,
+    "fields": {
+      "player": 35,
+      "team": 7,
+      "competitive_role": 19,
+      "jersey_number": 5,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 36,
+    "fields": {
+      "user": null,
+      "first_name": "Enzo",
+      "last_name": "Gianoli",
+      "nickname": "Timado",
+      "email": "timado@og.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Perú",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 36,
+    "fields": {
+      "player": 36,
+      "team": 8,
+      "competitive_role": 15,
+      "jersey_number": 1,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 37,
+    "fields": {
+      "user": null,
+      "first_name": "Bozhidar",
+      "last_name": "Bogdanov",
+      "nickname": "bzm",
+      "email": "bzm@og.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Bulgaria",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 37,
+    "fields": {
+      "player": 37,
+      "team": 8,
+      "competitive_role": 16,
+      "jersey_number": 2,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 38,
+    "fields": {
+      "user": null,
+      "first_name": "Adrián",
+      "last_name": "Céspedes Dobles",
+      "nickname": "Wisper",
+      "email": "wisper@og.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Bolivia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 38,
+    "fields": {
+      "player": 38,
+      "team": 8,
+      "competitive_role": 17,
+      "jersey_number": 3,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 39,
+    "fields": {
+      "user": null,
+      "first_name": "Matthew",
+      "last_name": "Walker",
+      "nickname": "Ari",
+      "email": "ari@og.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Reino Unido",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 39,
+    "fields": {
+      "player": 39,
+      "team": 8,
+      "competitive_role": 18,
+      "jersey_number": 4,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 40,
+    "fields": {
+      "user": null,
+      "first_name": "Sébastien",
+      "last_name": "Debs",
+      "nickname": "Ceb",
+      "email": "ceb@og.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Francia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 40,
+    "fields": {
+      "player": 40,
+      "team": 8,
+      "competitive_role": 19,
+      "jersey_number": 5,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 41,
+    "fields": {
+      "user": null,
+      "first_name": "Alexis",
+      "last_name": "Bernier",
+      "nickname": "zen",
+      "email": "zen@vitality.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Francia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 41,
+    "fields": {
+      "player": 41,
+      "team": 9,
+      "competitive_role": 20,
+      "jersey_number": 1,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 42,
+    "fields": {
+      "user": null,
+      "first_name": "Yanis",
+      "last_name": "Champenois",
+      "nickname": "Alpha54",
+      "email": "alpha54@vitality.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Francia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 42,
+    "fields": {
+      "player": 42,
+      "team": 9,
+      "competitive_role": 21,
+      "jersey_number": 2,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 43,
+    "fields": {
+      "user": null,
+      "first_name": "Andrea",
+      "last_name": "Radovanović",
+      "nickname": "Radosin",
+      "email": "radosin@vitality.gg",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Francia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 43,
+    "fields": {
+      "player": 43,
+      "team": 9,
+      "competitive_role": 22,
+      "jersey_number": 3,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 44,
+    "fields": {
+      "user": null,
+      "first_name": "Axel",
+      "last_name": "Touret",
+      "nickname": "vatira",
+      "email": "vatira@karminecorp.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Francia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 44,
+    "fields": {
+      "player": 44,
+      "team": 10,
+      "competitive_role": 20,
+      "jersey_number": 1,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": true,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 45,
+    "fields": {
+      "user": null,
+      "first_name": "Tristan",
+      "last_name": "Soyez",
+      "nickname": "Atow.",
+      "email": "atow@karminecorp.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Bélgica",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 45,
+    "fields": {
+      "player": 45,
+      "team": 10,
+      "competitive_role": 21,
+      "jersey_number": 2,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.player",
+    "pk": 46,
+    "fields": {
+      "user": null,
+      "first_name": "Finlay",
+      "last_name": "Ferguson",
+      "nickname": "rise.",
+      "email": "rise@karminecorp.com",
+      "phone": "",
+      "birth_date": "2002-05-20",
+      "country": "Reino Unido",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "players.playerteamassignment",
+    "pk": 46,
+    "fields": {
+      "player": 46,
+      "team": 10,
+      "competitive_role": 22,
+      "jersey_number": 3,
+      "joined_at": "2025-01-10",
+      "left_at": null,
+      "status": "active",
+      "is_captain": false,
+      "notes": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  }
+]

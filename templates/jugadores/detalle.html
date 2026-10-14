@@ -42,7 +42,13 @@
                     <span class="text-secondary small">Equipo</span>
                     <span class="text-light small fw-bold">
                         {% if jugador.current_team %}
-                            <a href="{% url 'organizations:team-detail' jugador.current_team.pk %}">{{ jugador.current_team.name }}</a>
+                            <a href="{% url 'organizations:team-detail' jugador.current_team.pk %}" class="d-inline-flex align-items-center text-decoration-none" title="{{ jugador.current_team.name }}">
+                                {% if jugador.current_team.logo %}
+                                    <img src="{{ jugador.current_team.logo.url }}" alt="{{ jugador.current_team.name }}" style="width: 34px; height: 34px; border-radius: 6px; object-fit: contain;">
+                                {% else %}
+                                    {{ jugador.current_team.name }}
+                                {% endif %}
+                            </a>
                         {% else %}
                             Agente Libre
                         {% endif %}
@@ -75,7 +81,12 @@
                 {% for a in assignments %}
                     <div class="d-flex justify-content-between py-2 {% if not forloop.last %}border-bottom border-secondary{% endif %}">
                         <div>
-                            <a href="{% url 'organizations:team-detail' a.team.pk %}" class="text-light small fw-medium">{{ a.team.name }}</a>
+                            <a href="{% url 'organizations:team-detail' a.team.pk %}" class="text-light small fw-medium d-inline-flex align-items-center gap-2 text-decoration-none">
+                                {% if a.team.logo %}
+                                    <img src="{{ a.team.logo.url }}" alt="{{ a.team.name }}" style="width: 20px; height: 20px; border-radius: 4px; object-fit: contain;">
+                                {% endif %}
+                                {{ a.team.name }}
+                            </a>
                             {% if a.competitive_role %}<span class="text-muted small">· {{ a.competitive_role.name }}</span>{% endif %}
                         </div>
                         <span class="text-secondary small">

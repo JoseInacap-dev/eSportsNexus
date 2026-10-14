@@ -1,0 +1,446 @@
+[
+  {
+    "model": "matches.statdefinition",
+    "pk": 1,
+    "fields": {
+      "game": 1,
+      "scope": "player",
+      "code": "kills",
+      "name": "Kills",
+      "unit": "bajas",
+      "aggregation": "sum",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 2,
+    "fields": {
+      "game": 1,
+      "scope": "player",
+      "code": "acs",
+      "name": "Combat Score",
+      "unit": "pts",
+      "aggregation": "sum",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 3,
+    "fields": {
+      "game": 2,
+      "scope": "player",
+      "code": "kda",
+      "name": "KDA Ratio",
+      "unit": "ratio",
+      "aggregation": "sum",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 4,
+    "fields": {
+      "game": 2,
+      "scope": "player",
+      "code": "cs_per_min",
+      "name": "CS por Minuto",
+      "unit": "cs/m",
+      "aggregation": "avg",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 5,
+    "fields": {
+      "game": 3,
+      "scope": "player",
+      "code": "adr",
+      "name": "Daño Promedio por Ronda",
+      "unit": "adr",
+      "aggregation": "avg",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 6,
+    "fields": {
+      "game": 3,
+      "scope": "player",
+      "code": "rating",
+      "name": "Rating 2.0",
+      "unit": "rating",
+      "aggregation": "avg",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 7,
+    "fields": {
+      "game": 4,
+      "scope": "player",
+      "code": "gpm",
+      "name": "Oro por Minuto",
+      "unit": "gpm",
+      "aggregation": "avg",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 8,
+    "fields": {
+      "game": 4,
+      "scope": "player",
+      "code": "xpm",
+      "name": "Experiencia por Minuto",
+      "unit": "xpm",
+      "aggregation": "avg",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 9,
+    "fields": {
+      "game": 5,
+      "scope": "player",
+      "code": "goals",
+      "name": "Goles",
+      "unit": "goles",
+      "aggregation": "sum",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.statdefinition",
+    "pk": 10,
+    "fields": {
+      "game": 5,
+      "scope": "player",
+      "code": "saves",
+      "name": "Paradas",
+      "unit": "paradas",
+      "aggregation": "sum",
+      "higher_is_better": true,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 1,
+    "fields": {
+      "game": 1,
+      "home_team": 1,
+      "away_team": 2,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "finished",
+      "scheduled_at": "2026-10-07T20:00:00Z",
+      "tournament_name": "VCT Masters Madrid - Gran Final",
+      "best_of": 3,
+      "home_score": 2,
+      "away_score": 1,
+      "notes": "Serie titánica decidida en tiempo extra en Lotus.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 2,
+    "fields": {
+      "game": 2,
+      "home_team": 3,
+      "away_team": 4,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "finished",
+      "scheduled_at": "2026-10-08T18:00:00Z",
+      "tournament_name": "Worlds Championship - Semifinal",
+      "best_of": 3,
+      "home_score": 2,
+      "away_score": 1,
+      "notes": "Clásico intercontinental con jugadas maestras de Faker y Caps.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 3,
+    "fields": {
+      "game": 3,
+      "home_team": 5,
+      "away_team": 6,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "finished",
+      "scheduled_at": "2026-10-09T19:30:00Z",
+      "tournament_name": "PGL Major Copenhagen - Gran Final",
+      "best_of": 3,
+      "home_score": 2,
+      "away_score": 1,
+      "notes": "NAVI asegura el primer Major de CS2 con defensa perfecta en Inferno.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 4,
+    "fields": {
+      "game": 4,
+      "home_team": 7,
+      "away_team": 8,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "finished",
+      "scheduled_at": "2026-10-10T17:00:00Z",
+      "tournament_name": "The International - Cuartos de Llave Superior",
+      "best_of": 3,
+      "home_score": 2,
+      "away_score": 0,
+      "notes": "Team Spirit dominó con impecable control de mapa de Yatoro y Collapse.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 5,
+    "fields": {
+      "game": 5,
+      "home_team": 9,
+      "away_team": 10,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "finished",
+      "scheduled_at": "2026-10-11T21:00:00Z",
+      "tournament_name": "RLCS World Championship - Gran Final",
+      "best_of": 7,
+      "home_score": 4,
+      "away_score": 3,
+      "notes": "Final infartante en overtime resuelta con un flip reset de zen.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 6,
+    "fields": {
+      "game": 1,
+      "home_team": 2,
+      "away_team": 1,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "scheduled",
+      "scheduled_at": "2026-10-18T20:00:00Z",
+      "tournament_name": "VCT Champions 2026 - Fase de Grupos",
+      "best_of": 3,
+      "home_score": null,
+      "away_score": null,
+      "notes": "Revancha internacional entre Fnatic y Sentinels.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 7,
+    "fields": {
+      "game": 2,
+      "home_team": 4,
+      "away_team": 3,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "scheduled",
+      "scheduled_at": "2026-10-19T18:00:00Z",
+      "tournament_name": "Mid-Season Invitational 2026",
+      "best_of": 5,
+      "home_score": null,
+      "away_score": null,
+      "notes": "G2 busca la revancha ante el vigente campeón mundial T1.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 8,
+    "fields": {
+      "game": 3,
+      "home_team": 6,
+      "away_team": 5,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "scheduled",
+      "scheduled_at": "2026-10-20T19:30:00Z",
+      "tournament_name": "IEM Cologne 2026 - Playoffs",
+      "best_of": 3,
+      "home_score": null,
+      "away_score": null,
+      "notes": "FaZe Clan busca destronar a NAVI en la catedral de CS.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 9,
+    "fields": {
+      "game": 4,
+      "home_team": 8,
+      "away_team": 7,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "scheduled",
+      "scheduled_at": "2026-10-21T17:00:00Z",
+      "tournament_name": "Riyadh Masters 2026",
+      "best_of": 3,
+      "home_score": null,
+      "away_score": null,
+      "notes": "Choque de bicampeones mundiales en fase eliminatoria.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.match",
+    "pk": 10,
+    "fields": {
+      "game": 5,
+      "home_team": 10,
+      "away_team": 9,
+      "away_name": "",
+      "kind": "tournament",
+      "status": "scheduled",
+      "scheduled_at": "2026-10-22T21:00:00Z",
+      "tournament_name": "RLCS Spring Major 2026",
+      "best_of": 7,
+      "home_score": null,
+      "away_score": null,
+      "notes": "Duelo por la hegemonía europea de Rocket League.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.matchmap",
+    "pk": 1,
+    "fields": {
+      "match": 1,
+      "order": 1,
+      "map_name": "Lotus",
+      "home_score": 13,
+      "away_score": 11,
+      "outcome": "home",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.matchmap",
+    "pk": 2,
+    "fields": {
+      "match": 1,
+      "order": 2,
+      "map_name": "Bind",
+      "home_score": 8,
+      "away_score": 13,
+      "outcome": "away",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.matchmap",
+    "pk": 3,
+    "fields": {
+      "match": 1,
+      "order": 3,
+      "map_name": "Split",
+      "home_score": 14,
+      "away_score": 12,
+      "outcome": "home",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.matchmap",
+    "pk": 4,
+    "fields": {
+      "match": 3,
+      "order": 1,
+      "map_name": "Ancient",
+      "home_score": 13,
+      "away_score": 9,
+      "outcome": "home",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.matchmap",
+    "pk": 5,
+    "fields": {
+      "match": 3,
+      "order": 2,
+      "map_name": "Mirage",
+      "home_score": 11,
+      "away_score": 13,
+      "outcome": "away",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "matches.matchmap",
+    "pk": 6,
+    "fields": {
+      "match": 3,
+      "order": 3,
+      "map_name": "Inferno",
+      "home_score": 13,
+      "away_score": 6,
+      "outcome": "home",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  }
+]

@@ -61,7 +61,7 @@
                     <thead>
                         <tr>
                             <th>Jugador / Nickname</th>
-                            <th>Equipo Actual</th>
+                            <th>Equipo</th>
                             <th>Rol Competitivo</th>
                             <th>País</th>
                             <th>Estado</th>
@@ -86,8 +86,12 @@
                                 </td>
                                 <td>
                                     {% if jugador.current_team %}
-                                        <a href="{% url 'organizations:team-detail' jugador.current_team.pk %}" class="badge bg-dark border border-secondary text-light text-decoration-none">
-                                            {{ jugador.current_team.name }}
+                                        <a href="{% url 'organizations:team-detail' jugador.current_team.pk %}" class="text-decoration-none d-inline-flex align-items-center" title="{{ jugador.current_team.name }}">
+                                            {% if jugador.current_team.logo %}
+                                                <img src="{{ jugador.current_team.logo.url }}" alt="{{ jugador.current_team.name }}" style="width: 34px; height: 34px; border-radius: 6px; object-fit: contain;">
+                                            {% else %}
+                                                <span class="badge bg-dark border border-secondary text-light">{{ jugador.current_team.name }}</span>
+                                            {% endif %}
                                         </a>
                                     {% else %}
                                         <span class="text-muted small">Agente Libre</span>

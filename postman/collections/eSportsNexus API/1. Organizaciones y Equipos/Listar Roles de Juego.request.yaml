@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/game-roles/"
+method: GET
+order: 5000

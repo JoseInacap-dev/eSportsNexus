@@ -45,6 +45,7 @@ class TeamSerializer(serializers.ModelSerializer):
             "game_name",
             "name",
             "slug",
+            "logo",
             "description",
             "status",
             "founded_date",

@@ -1,0 +1,282 @@
+[
+  {
+    "model": "staff.staffmember",
+    "pk": 1,
+    "fields": {
+      "user": null,
+      "first_name": "Adam",
+      "last_name": "Kaplan",
+      "email": "kaplan@sentinels.gg",
+      "phone": "",
+      "country": "Estados Unidos",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 1,
+    "fields": {
+      "staff": 1,
+      "team": 1,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2023-01-15",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 2,
+    "fields": {
+      "user": null,
+      "first_name": "Chris",
+      "last_name": "Sexton",
+      "email": "elmapuddy@fnatic.com",
+      "phone": "",
+      "country": "Australia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 2,
+    "fields": {
+      "staff": 2,
+      "team": 2,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2023-11-01",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 3,
+    "fields": {
+      "user": null,
+      "first_name": "Kim",
+      "last_name": "Jeong-gyun",
+      "email": "kkoma@t1.gg",
+      "phone": "",
+      "country": "Corea del Sur",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 3,
+    "fields": {
+      "staff": 3,
+      "team": 3,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2023-11-21",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 4,
+    "fields": {
+      "user": null,
+      "first_name": "Dylan",
+      "last_name": "Falco",
+      "email": "dylanfalco@g2esports.com",
+      "phone": "",
+      "country": "Canadá",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 4,
+    "fields": {
+      "staff": 4,
+      "team": 4,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2021-12-02",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 5,
+    "fields": {
+      "user": null,
+      "first_name": "Andrey",
+      "last_name": "Gorodenskiy",
+      "email": "b1ad3@navi.gg",
+      "phone": "",
+      "country": "Ucrania",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 5,
+    "fields": {
+      "staff": 5,
+      "team": 5,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2019-09-20",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 6,
+    "fields": {
+      "user": null,
+      "first_name": "Filip",
+      "last_name": "Kubski",
+      "email": "neo@fazeclan.com",
+      "phone": "",
+      "country": "Polonia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 6,
+    "fields": {
+      "staff": 6,
+      "team": 6,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2023-07-28",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 7,
+    "fields": {
+      "user": null,
+      "first_name": "Airat",
+      "last_name": "Gaziev",
+      "email": "silent@teamspirit.ru",
+      "phone": "",
+      "country": "Rusia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 7,
+    "fields": {
+      "staff": 7,
+      "team": 7,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2020-12-19",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 8,
+    "fields": {
+      "user": null,
+      "first_name": "Mikhail",
+      "last_name": "Agatov",
+      "email": "misha@og.gg",
+      "phone": "",
+      "country": "Rusia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 8,
+    "fields": {
+      "staff": 8,
+      "team": 8,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2023-03-09",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 9,
+    "fields": {
+      "user": null,
+      "first_name": "Victor",
+      "last_name": "Mossealgue",
+      "email": "fairypeak@vitality.gg",
+      "phone": "",
+      "country": "Francia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 9,
+    "fields": {
+      "staff": 9,
+      "team": 9,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2023-01-10",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.staffmember",
+    "pk": 10,
+    "fields": {
+      "user": null,
+      "first_name": "Victor",
+      "last_name": "Francal",
+      "email": "ferra@karminecorp.com",
+      "phone": "",
+      "country": "Francia",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "staff.teamstaffassignment",
+    "pk": 10,
+    "fields": {
+      "staff": 10,
+      "team": 10,
+      "role": "head_coach",
+      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
+      "started_at": "2023-10-15",
+      "ended_at": null,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  }
+]

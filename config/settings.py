@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Terceros
     'rest_framework',
+    'rest_framework.authtoken',
     # Aplicaciones de negocio (ordenadas por dependencias)
     'core',
     'accounts',
@@ -136,6 +137,14 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+# Media files (imágenes subidas por usuarios/equipos)
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# Fixtures
+FIXTURE_DIRS = [BASE_DIR / 'fixtures']
+FIXTURES_DIRS = FIXTURE_DIRS
+
 # Autenticación
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'core:home'
@@ -144,8 +153,10 @@ LOGOUT_REDIRECT_URL = 'core:home'
 # Django REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'core.authentication.QueryParamAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',

@@ -26,7 +26,11 @@ class OrganizationAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ("name", "organization", "game", "status")
+    list_display = ("name", "organization", "game", "status", "has_logo")
     list_filter = ("status", "game", "organization")
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name",)
+
+    @admin.display(boolean=True, description="Tiene Logo")
+    def has_logo(self, obj):
+        return bool(obj.logo)

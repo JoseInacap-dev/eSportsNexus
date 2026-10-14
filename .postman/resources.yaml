@@ -1,0 +1,15 @@
+# Use this workspace to collaborate
+workspace:
+  id: f35b9919-d645-48aa-86db-454688e2ce09
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/eSportsNexus API: a9317b9b-9c3a-4be2-9842-d6159c4701e1
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

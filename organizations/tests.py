@@ -1,5 +1,6 @@
 from django.db import IntegrityError, transaction
 from django.test import TestCase
+from django.urls import reverse
 
 from organizations.models import Game, GameRole, Organization, Team
 
@@ -44,3 +45,43 @@ class TeamTests(TestCase):
                     name="Nova Blue",
                     slug="nova-blue-2",
                 )
+
+    def test_team_creation_with_image(self):
+        from io import BytesIO
+        from PIL import Image
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        from django.contrib.auth import get_user_model
+        from accounts.models import OrganizationMembership
+
+        User = get_user_model()
+        user = User.objects.create_superuser(
+            username="admin_test", email="admin_test@example.com", password="pass"
+        )
+        self.client.force_login(user)
+
+        # Crear imagen en memoria
+        img = Image.new("RGB", (100, 100), color="blue")
+        buffer = BytesIO()
+        img.save(buffer, format="PNG")
+        uploaded = SimpleUploadedFile(
+            "team_logo.png", buffer.getvalue(), content_type="image/png"
+        )
+
+        response = self.client.post(
+            reverse("organizations:team-create"),
+            {
+                "organization": self.org.pk,
+                "game": self.game.pk,
+                "name": "Nova Red Prime",
+                "slug": "nova-red-prime",
+                "logo": uploaded,
+                "status": "active",
+                "description": "Equipo con imagen",
+            },
+        )
+        self.assertEqual(response.status_code, 302)
+        team = Team.objects.get(slug="nova-red-prime")
+        self.assertTrue(bool(team.logo))
+        self.assertEqual(team.image, team.logo)
+        if team.logo:
+            team.logo.delete(save=False)

@@ -1,0 +1,657 @@
+[
+  {
+    "model": "organizations.game",
+    "pk": 1,
+    "fields": {
+      "name": "Valorant",
+      "slug": "valorant",
+      "short_name": "VAL",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 2,
+    "fields": {
+      "name": "League of Legends",
+      "slug": "league-of-legends",
+      "short_name": "LoL",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 3,
+    "fields": {
+      "name": "Counter-Strike 2",
+      "slug": "counter-strike-2",
+      "short_name": "CS2",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 4,
+    "fields": {
+      "name": "Dota 2",
+      "slug": "dota-2",
+      "short_name": "DOTA2",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 5,
+    "fields": {
+      "name": "Rocket League",
+      "slug": "rocket-league",
+      "short_name": "RL",
+      "default_team_size": 3,
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 1,
+    "fields": {
+      "game": 1,
+      "name": "Duelista",
+      "abbreviation": "DUEL",
+      "description": "Especialista en bajas tempranas y apertura de zonas.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 2,
+    "fields": {
+      "game": 1,
+      "name": "Iniciador",
+      "abbreviation": "INIT",
+      "description": "Facilita la entrada al sitio mediante información y utilidad.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 3,
+    "fields": {
+      "game": 1,
+      "name": "Controlador",
+      "abbreviation": "CTRL",
+      "description": "Bloquea líneas de visión mediante humos defensivos y ofensivos.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 4,
+    "fields": {
+      "game": 1,
+      "name": "Centinela",
+      "abbreviation": "SENT",
+      "description": "Experto en anclaje y defensa de sitios con trampas.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 5,
+    "fields": {
+      "game": 2,
+      "name": "Top Laner",
+      "abbreviation": "TOP",
+      "description": "Línea superior, tanque o luchador en solo lane.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 6,
+    "fields": {
+      "game": 2,
+      "name": "Jungler",
+      "abbreviation": "JNG",
+      "description": "Control de objetivos neutrales y gankeos tempranos.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 7,
+    "fields": {
+      "game": 2,
+      "name": "Mid Laner",
+      "abbreviation": "MID",
+      "description": "Línea central con gran impacto en daño mágico o físico.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 8,
+    "fields": {
+      "game": 2,
+      "name": "ADC",
+      "abbreviation": "ADC",
+      "description": "Tirador principal de daño sostenido a distancia.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 9,
+    "fields": {
+      "game": 2,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "Protección, control de masas y visión estratégica.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 10,
+    "fields": {
+      "game": 3,
+      "name": "Entry Fragger",
+      "abbreviation": "ENTRY",
+      "description": "Primera línea de choque en rondas ofensivas.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 11,
+    "fields": {
+      "game": 3,
+      "name": "AWPer",
+      "abbreviation": "AWP",
+      "description": "Tirador de precisión con rifle de francotirador.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 12,
+    "fields": {
+      "game": 3,
+      "name": "In-Game Leader",
+      "abbreviation": "IGL",
+      "description": "Capitán táctico y estratega de rondas.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 13,
+    "fields": {
+      "game": 3,
+      "name": "Lurker",
+      "abbreviation": "LURK",
+      "description": "Especialista en control silencioso de mapa.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 14,
+    "fields": {
+      "game": 3,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "Gestión de utilidades, flashbangs y humos de apoyo.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 15,
+    "fields": {
+      "game": 4,
+      "name": "Carry",
+      "abbreviation": "POS1",
+      "description": "Posición 1: Farm prioritario y daño principal de escalado en late game.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 16,
+    "fields": {
+      "game": 4,
+      "name": "Mid Laner",
+      "abbreviation": "POS2",
+      "description": "Posición 2: Creador de tempo, control del carril central y rotaciones tempranas.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 17,
+    "fields": {
+      "game": 4,
+      "name": "Offlaner",
+      "abbreviation": "POS3",
+      "description": "Posición 3: Iniciador de combates por equipos y absorción de presión.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 18,
+    "fields": {
+      "game": 4,
+      "name": "Soft Support",
+      "abbreviation": "POS4",
+      "description": "Posición 4: Rotador agresivo con utilidad y presencia global.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 19,
+    "fields": {
+      "game": 4,
+      "name": "Hard Support",
+      "abbreviation": "POS5",
+      "description": "Posición 5: Visión táctica mediante wards, protección y sacrificio por el equipo.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 20,
+    "fields": {
+      "game": 5,
+      "name": "Striker",
+      "abbreviation": "STK",
+      "description": "Delantero especialista en remates aéreos, definición de goles y presión alta.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 21,
+    "fields": {
+      "game": 5,
+      "name": "Midfielder / Rotator",
+      "abbreviation": "MID",
+      "description": "Rotador central, generación de pases, transiciones rápidas y control de boost.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 22,
+    "fields": {
+      "game": 5,
+      "name": "Goalkeeper / Anchor",
+      "abbreviation": "GK",
+      "description": "Ancla defensiva, paradas clave y despejes de seguridad en portería.",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 1,
+    "fields": {
+      "name": "NEXUS Esports",
+      "slug": "nexus-esports",
+      "abbreviation": "NXS",
+      "country": "Chile",
+      "website": "",
+      "description": "Organización competitiva líder en la escena regional de esports.",
+      "founded_date": "2023-01-15",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 2,
+    "fields": {
+      "name": "Sentinels",
+      "slug": "sentinels",
+      "abbreviation": "SEN",
+      "country": "Estados Unidos",
+      "website": "",
+      "description": "Organización de esports norteamericana, campeona de Masters Madrid y referente mundial de Valorant.",
+      "founded_date": "2018-06-01",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 3,
+    "fields": {
+      "name": "Fnatic",
+      "slug": "fnatic",
+      "abbreviation": "FNC",
+      "country": "Reino Unido",
+      "website": "",
+      "description": "Club histórico británico con presencia estelar en Valorant y League of Legends.",
+      "founded_date": "2004-07-23",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 4,
+    "fields": {
+      "name": "T1",
+      "slug": "t1",
+      "abbreviation": "T1",
+      "country": "Corea del Sur",
+      "website": "",
+      "description": "La organización más laureada en la historia de League of Legends, 5 veces campeona del mundo.",
+      "founded_date": "2012-12-13",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 5,
+    "fields": {
+      "name": "G2 Esports",
+      "slug": "g2-esports",
+      "abbreviation": "G2",
+      "country": "Alemania",
+      "website": "",
+      "description": "Organización europea de élite reconocida por su dominio regional en LEC y Majors de CS.",
+      "founded_date": "2014-02-24",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 6,
+    "fields": {
+      "name": "Natus Vincere",
+      "slug": "natus-vincere",
+      "abbreviation": "NAVI",
+      "country": "Ucrania",
+      "website": "",
+      "description": "Club icónico fundado en 2009, campeones del PGL Major Copenhagen 2024 de CS2.",
+      "founded_date": "2009-12-17",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 7,
+    "fields": {
+      "name": "FaZe Clan",
+      "slug": "faze-clan",
+      "abbreviation": "FAZE",
+      "country": "Estados Unidos",
+      "website": "",
+      "description": "Titán norteamericano del gaming competitivo y finalistas de los Majors más prestigiosos de CS2.",
+      "founded_date": "2016-01-20",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 8,
+    "fields": {
+      "name": "Team Spirit",
+      "slug": "team-spirit",
+      "abbreviation": "TS",
+      "country": "Serbia",
+      "website": "",
+      "description": "Organización bicampeona mundial de The International de Dota 2 (TI10 y TI12).",
+      "founded_date": "2015-12-06",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 9,
+    "fields": {
+      "name": "OG",
+      "slug": "og",
+      "abbreviation": "OG",
+      "country": "Dinamarca",
+      "website": "",
+      "description": "Primer equipo en coronarse bicampeón consecutivo de The International de Dota 2.",
+      "founded_date": "2015-10-31",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 10,
+    "fields": {
+      "name": "Team Vitality",
+      "slug": "team-vitality",
+      "abbreviation": "VIT",
+      "country": "Francia",
+      "website": "",
+      "description": "El club francés más importante, campeones mundiales de RLCS World Championship en Rocket League.",
+      "founded_date": "2013-08-05",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 11,
+    "fields": {
+      "name": "Karmine Corp",
+      "slug": "karmine-corp",
+      "abbreviation": "KC",
+      "country": "Francia",
+      "website": "",
+      "description": "Club europeo sensación de masas, campeones de RLCS Major y fuerza dominante en Rocket League.",
+      "founded_date": "2020-03-30",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 1,
+    "fields": {
+      "organization": 2,
+      "game": 1,
+      "name": "Sentinels",
+      "slug": "sentinels-valorant",
+      "description": "Roster estrella norteamericano campeón del VCT Masters Madrid.",
+      "status": "active",
+      "founded_date": "2020-04-28",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 2,
+    "fields": {
+      "organization": 3,
+      "game": 1,
+      "name": "Fnatic",
+      "slug": "fnatic-valorant",
+      "description": "Escuadra europea bicampeona de VCT LOCK//IN y VCT Masters Tokyo.",
+      "status": "active",
+      "founded_date": "2021-02-03",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 3,
+    "fields": {
+      "organization": 4,
+      "game": 2,
+      "name": "T1",
+      "slug": "t1-lol",
+      "description": "Legendario equipo surcoreano pentacampeón mundial de Worlds.",
+      "status": "active",
+      "founded_date": "2012-12-13",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 4,
+    "fields": {
+      "organization": 5,
+      "game": 2,
+      "name": "G2 Esports",
+      "slug": "g2-lol",
+      "description": "Máximo monarca europeo de la LEC y finalista mundial.",
+      "status": "active",
+      "founded_date": "2014-02-24",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 5,
+    "fields": {
+      "organization": 6,
+      "game": 3,
+      "name": "Natus Vincere",
+      "slug": "navi-cs2",
+      "description": "Escuadra de élite campeona del PGL Major Copenhagen 2024.",
+      "status": "active",
+      "founded_date": "2009-12-17",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 6,
+    "fields": {
+      "organization": 7,
+      "game": 3,
+      "name": "FaZe Clan",
+      "slug": "faze-cs2",
+      "description": "Alineación internacional ganadora de Intel Grand Slam y finalista de Majors.",
+      "status": "active",
+      "founded_date": "2016-01-20",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 7,
+    "fields": {
+      "organization": 8,
+      "game": 4,
+      "name": "Team Spirit",
+      "slug": "team-spirit-dota2",
+      "description": "Bicampeones de The International (TI10 y TI12) y Riyadh Masters.",
+      "status": "active",
+      "founded_date": "2015-12-06",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 8,
+    "fields": {
+      "organization": 9,
+      "game": 4,
+      "name": "OG",
+      "slug": "og-dota2",
+      "description": "Pioneros del bicampeonato consecutivo de The International.",
+      "status": "active",
+      "founded_date": "2015-10-31",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 9,
+    "fields": {
+      "organization": 10,
+      "game": 5,
+      "name": "Team Vitality",
+      "slug": "vitality-rl",
+      "description": "Campeones mundiales del RLCS World Championship liderados por zen.",
+      "status": "active",
+      "founded_date": "2018-02-12",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 10,
+    "fields": {
+      "organization": 11,
+      "game": 5,
+      "name": "Karmine Corp",
+      "slug": "karmine-corp-rl",
+      "description": "Campeones del RLCS Major con la mayor hinchada del mundo (Blue Wall).",
+      "status": "active",
+      "founded_date": "2021-07-26",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  }
+]

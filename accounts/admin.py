@@ -4,6 +4,13 @@ from django.contrib.auth.admin import UserAdmin
 from accounts.models import OrganizationMembership, User
 
 
+class OrganizationMembershipInline(admin.TabularInline):
+    model = OrganizationMembership
+    extra = 0
+    verbose_name = "Membresía de organización"
+    verbose_name_plural = "Membresías de organización"
+
+
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
     list_display = ("username", "email", "display_name", "is_staff", "is_active")
@@ -14,6 +21,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = UserAdmin.add_fieldsets + (
         ("Perfil", {"fields": ("email", "display_name", "phone")}),
     )
+    inlines = [OrganizationMembershipInline]
 
 
 @admin.register(OrganizationMembership)

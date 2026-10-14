@@ -213,6 +213,39 @@ class ApiTests(BaseFixture):
         detail = self.api.get(f"/api/teams/{self.other_team.pk}/")
         self.assertEqual(detail.status_code, 404)
 
+    def test_api_manager_can_update_team_patch(self):
+        self.api.force_authenticate(user=self.manager)
+        response = self.api.patch(
+            f"/api/teams/{self.team.pk}/",
+            {"name": "Nova Blue Prime"},
+            format="json",
+        )
+        self.assertEqual(response.status_code, 200)
+        self.team.refresh_from_db()
+        self.assertEqual(self.team.name, "Nova Blue Prime")
+
+    def test_api_manager_can_update_team_put(self):
+        self.api.force_authenticate(user=self.manager)
+        response = self.api.put(
+            f"/api/teams/{self.team.pk}/",
+            {
+                "organization": self.org.pk,
+                "game": self.game.pk,
+                "name": "Nova Blue Total",
+                "slug": "nova-blue",
+            },
+            format="json",
+        )
+        self.assertEqual(response.status_code, 200)
+        self.team.refresh_from_db()
+        self.assertEqual(self.team.name, "Nova Blue Total")
+
+    def test_api_manager_can_delete_team(self):
+        self.api.force_authenticate(user=self.manager)
+        response = self.api.delete(f"/api/teams/{self.team.pk}/")
+        self.assertEqual(response.status_code, 204)
+        self.assertFalse(Team.objects.filter(pk=self.team.pk).exists())
+
 
 class DetailTemplatesTests(BaseFixture):
     def setUp(self):
