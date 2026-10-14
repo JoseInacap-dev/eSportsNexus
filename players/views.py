@@ -9,7 +9,6 @@ from organizations.models import Team
 from players.forms import PlayerForm
 from players.models import Player
 
-
 class PlayerListView(LoginRequiredMixin, ListView):
     model = Player
     template_name = "jugadores/lista.html"
