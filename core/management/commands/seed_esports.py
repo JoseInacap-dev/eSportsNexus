@@ -656,7 +656,6 @@ class Command(BaseCommand):
                     player=player,
                     team=team,
                     competitive_role=roles[role_name],
-                    jersey_number=jersey,
                     joined_at="2025-01-15",
                     status=PlayerTeamAssignment.Status.ACTIVE,
                     is_captain=captain,

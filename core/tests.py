@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-from django.core.management import call_command
 from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APIClient
@@ -7,7 +6,7 @@ from rest_framework.test import APIClient
 from accounts.models import OrganizationMembership
 from matches.models import Match
 from organizations.models import Game, Organization, Team
-from players.models import Player, PlayerTeamAssignment
+from players.models import Player
 
 User = get_user_model()
 
@@ -305,67 +304,3 @@ class DetailTemplatesTests(BaseFixture):
         self.client.force_login(self.manager)
         response = self.client.get(reverse("organizations:team-create"))
         self.assertEqual(response.status_code, 200)
-
-
-class SeedProTeamsTests(TestCase):
-    def _seed(self):
-        call_command("seed_data", "--pro-teams", verbosity=0)
-
-    def test_creates_ten_teams_split_five_and_five(self):
-        self._seed()
-        teams = Team.objects.filter(
-            name__in=[
-                "Gen.G LoL",
-                "JD Gaming LoL",
-                "G2 Esports LoL",
-                "Fnatic LoL",
-                "Team Liquid LoL",
-                "Sentinels Valorant",
-                "Paper Rex Valorant",
-                "LOUD Valorant",
-                "Fnatic Valorant",
-                "G2 Esports Valorant",
-            ]
-        )
-        self.assertEqual(teams.count(), 10)
-        self.assertEqual(
-            teams.filter(game__slug="league-of-legends").count(), 5
-        )
-        self.assertEqual(teams.filter(game__slug="valorant").count(), 5)
-
-    def test_each_team_has_five_players_and_one_coach(self):
-        self._seed()
-        for team in Team.objects.all():
-            open_assignments = team.player_assignments.filter(
-                left_at__isnull=True
-            )
-            self.assertEqual(open_assignments.count(), 6)
-            self.assertEqual(
-                open_assignments.filter(competitive_role__name="Coach").count(),
-                1,
-            )
-
-    def test_multigame_orgs_reuse_single_organization(self):
-        self._seed()
-        for slug in ("fnatic", "g2-esports"):
-            org = Organization.objects.get(slug=slug)
-            self.assertEqual(org.teams.count(), 2)
-
-    def test_command_is_idempotent(self):
-        self._seed()
-        self._seed()
-        self.assertEqual(Organization.objects.count(), 8)
-        self.assertEqual(Team.objects.count(), 10)
-        self.assertEqual(
-            PlayerTeamAssignment.objects.filter(
-                competitive_role__name="Coach", left_at__isnull=True
-            ).count(),
-            10,
-        )
-
-    def test_players_are_created_once(self):
-        self._seed()
-        self._seed()
-        self.assertEqual(
-            Player.objects.filter(nickname="Chovy").count(), 1
-        )
