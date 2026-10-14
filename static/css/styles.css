@@ -591,6 +591,33 @@ a:hover {
   border: 1px solid rgba(163, 255, 18, 0.35);
 }
 
+.badge-nexus-live {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  display: inline-block;
+  animation: live-pulse 1.2s infinite;
+}
+
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
+}
+
 /* Alertas de Django Messages */
 .nexus-alert {
   background-color: var(--nexus-bg-card);

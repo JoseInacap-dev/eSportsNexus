@@ -25,7 +25,9 @@ class UserModelTests(TestCase):
 
 class OrganizationMembershipTests(TestCase):
     def setUp(self):
-        self.org = Organization.objects.create(name="Nova Esports", slug="nova")
+        self.org = Organization.objects.create(
+            name="Nova Esports", slug="nova", abbreviation="NOVA"
+        )
         self.user = User.objects.create_user(
             username="u1", email="u1@example.com", password="x"
         )

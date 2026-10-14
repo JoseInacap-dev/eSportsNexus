@@ -25,6 +25,8 @@ class OrganizationSerializer(serializers.ModelSerializer):
             "name",
             "slug",
             "abbreviation",
+            "logo",
+            "logo_url",
             "country",
             "website",
             "is_active",
@@ -34,6 +36,9 @@ class OrganizationSerializer(serializers.ModelSerializer):
 class TeamSerializer(serializers.ModelSerializer):
     organization_name = serializers.CharField(source="organization.name", read_only=True)
     game_name = serializers.CharField(source="game.name", read_only=True)
+    abbreviation = serializers.CharField(
+        source="organization.abbreviation", read_only=True
+    )
 
     class Meta:
         model = Team
@@ -44,7 +49,7 @@ class TeamSerializer(serializers.ModelSerializer):
             "game",
             "game_name",
             "name",
-            "slug",
+            "abbreviation",
             "description",
             "status",
             "founded_date",

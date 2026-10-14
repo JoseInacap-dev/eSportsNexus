@@ -88,7 +88,7 @@
                                 {% for partido in proximos_partidos %}
                                     <tr>
                                         <td>
-                                            <div class="text-light fw-medium">{{ partido.scheduled_at|date:"d M" }}</div>
+                                            <div class="text-light fw-medium">{{ partido.scheduled_at|date:"d/m" }}</div>
                                             <div class="text-muted" style="font-size: 0.75rem;">{{ partido.scheduled_at|date:"H:i" }}</div>
                                         </td>
                                         <td class="fw-bold text-light">{{ partido.home_team.name }}</td>
@@ -130,7 +130,7 @@
                                     <tr>
                                         <td>
                                             <div class="text-light fw-semibold">{{ item.home_team.name }} <span class="text-muted">vs</span> {{ item.opponent }}</div>
-                                            <div class="text-muted" style="font-size: 0.75rem;">{{ item.scheduled_at|date:"d M Y" }}</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;">{{ item.scheduled_at|date:"d/m/Y" }}</div>
                                         </td>
                                         <td>
                                             {% if item.winner == item.home_team %}

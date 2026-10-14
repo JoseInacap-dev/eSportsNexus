@@ -9,10 +9,12 @@ from training.models import TrainingAttendance, TrainingSession
 
 class TrainingTests(TestCase):
     def setUp(self):
-        org = Organization.objects.create(name="Nova", slug="nova")
+        org = Organization.objects.create(
+            name="Nova", slug="nova", abbreviation="NOVA"
+        )
         game = Game.objects.create(name="Valorant", slug="valorant")
         self.team = Team.objects.create(
-            organization=org, game=game, name="Nova Blue", slug="nova-blue"
+            organization=org, game=game, name="Nova Blue"
         )
         self.session = TrainingSession.objects.create(
             team=self.team, title="Scrim bloque", scheduled_at=timezone.now()

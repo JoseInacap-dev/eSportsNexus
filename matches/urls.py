@@ -9,4 +9,5 @@ urlpatterns = [
     path("partidos/nuevo/", views.MatchCreateView.as_view(), name="match-create"),
     path("partidos/<int:pk>/", views.MatchDetailView.as_view(), name="match-detail"),
     path("partidos/<int:pk>/editar/", views.MatchUpdateView.as_view(), name="match-update"),
+    path("partidos/<int:pk>/marcador/", views.MatchScoreView.as_view(), name="match-score-update"),
 ]

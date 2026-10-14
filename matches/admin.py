@@ -29,13 +29,12 @@ class MatchAdmin(admin.ModelAdmin):
     list_display = (
         "home_team",
         "away_team",
-        "away_name",
         "kind",
         "status",
         "scheduled_at",
     )
     list_filter = ("kind", "status", "game")
-    search_fields = ("home_team__name", "away_team__name", "away_name")
+    search_fields = ("home_team__name", "away_team__name")
     inlines = [MatchMapInline, PlayerMatchStatInline, TeamMatchStatInline]
 
 

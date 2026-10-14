@@ -72,7 +72,7 @@
                     <tbody>
                         {% for partido in partidos %}
                             <tr>
-                                <td class="text-secondary small">{{ partido.scheduled_at|date:"d M Y" }}<br><span class="text-muted">{{ partido.scheduled_at|date:"H:i" }}</span></td>
+                                <td class="text-secondary small">{{ partido.scheduled_at|date:"d/m/Y" }}<br><span class="text-muted">{{ partido.scheduled_at|date:"H:i" }}</span></td>
                                 <td>
                                     <span class="fw-bold text-light">{{ partido.home_team.name }}</span>
                                     <span class="text-secondary small mx-1">vs</span>
@@ -81,18 +81,19 @@
                                 <td class="text-secondary small">{{ partido.tournament_name|default:partido.game.name }}</td>
                                 <td><span class="badge bg-dark border border-secondary text-secondary">{{ partido.get_kind_display }}</span></td>
                                 <td>
-                                    {% if partido.is_finished %}
-                                        <span class="fw-bold {% if partido.winner == partido.home_team %}text-success{% else %}text-danger{% endif %}">
+                                    {% if partido.has_score %}
+                                        <span class="fw-bold {% if partido.is_finished and partido.winner == partido.home_team %}text-success{% elif partido.is_finished and partido.winner == partido.away_team %}text-danger{% else %}text-light{% endif %}">
                                             {{ partido.home_score }} - {{ partido.away_score }}
                                         </span>
-                                        {% if partido.best_of > 1 %}<span class="text-muted small">(Bo{{ partido.best_of }})</span>{% endif %}
+                                        {% if partido.is_live %}<span class="badge-nexus badge-nexus-live ms-1" style="font-size: 0.6rem;"><span class="live-dot"></span> EN VIVO</span>
+                                        {% elif partido.best_of > 1 %}<span class="text-muted small">(Bo{{ partido.best_of }})</span>{% endif %}
                                     {% else %}
                                         <span class="text-muted small">—</span>
                                     {% endif %}
                                 </td>
                                 <td>
-                                    <span class="badge-nexus {% if partido.status == 'finished' %}badge-nexus-active{% elif partido.status == 'scheduled' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
-                                        {{ partido.get_status_display }}
+                                    <span class="badge-nexus {% if partido.is_live %}badge-nexus-live{% elif partido.status == 'finished' %}badge-nexus-active{% elif partido.status == 'scheduled' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
+                                        {% if partido.is_live %}<span class="live-dot"></span>{% endif %}{{ partido.get_status_display }}
                                     </span>
                                 </td>
                                 <td class="text-end">

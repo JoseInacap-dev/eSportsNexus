@@ -20,7 +20,7 @@
 <div class="nexus-card mb-4">
     <div class="nexus-card-body p-3">
         <form method="get" action="{% url 'players:player-list' %}" class="row g-2 align-items-center">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-3">
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-search"></i></span>
                     <input type="text" name="q" value="{{ request.GET.q|default:'' }}" class="form-control form-control-nexus" placeholder="Nickname o nombre real...">
@@ -34,7 +34,15 @@
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-6 col-md-3">
+            <div class="col-6 col-md-2">
+                <select name="tipo" class="form-select form-select-nexus">
+                    <option value="">Cualquier tipo</option>
+                    {% for value, label in tipos_disponibles %}
+                        <option value="{{ value }}" {% if request.GET.tipo == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-6 col-md-2">
                 <select name="estado" class="form-select form-select-nexus">
                     <option value="">Cualquier estado</option>
                     <option value="active" {% if request.GET.estado == 'active' %}selected{% endif %}>Activo (Titular)</option>
@@ -44,7 +52,7 @@
             </div>
             <div class="col-12 col-md-2 d-flex gap-2">
                 <button type="submit" class="btn btn-nexus-outline w-100 justify-content-center">Filtrar</button>
-                {% if request.GET.q or request.GET.equipo or request.GET.estado %}
+                {% if request.GET.q or request.GET.equipo or request.GET.estado or request.GET.tipo %}
                     <a href="{% url 'players:player-list' %}" class="btn btn-nexus-subtle" title="Limpiar"><i class="bi bi-x-lg"></i></a>
                 {% endif %}
             </div>
@@ -61,6 +69,7 @@
                     <thead>
                         <tr>
                             <th>Jugador / Nickname</th>
+                            <th>Tipo</th>
                             <th>Equipo Actual</th>
                             <th>Rol Competitivo</th>
                             <th>País</th>
@@ -84,6 +93,7 @@
                                         </div>
                                     </div>
                                 </td>
+                                <td><span class="badge bg-dark border border-secondary text-light">{{ jugador.get_player_type_display }}</span></td>
                                 <td>
                                     {% if jugador.current_team %}
                                         <a href="{% url 'organizations:team-detail' jugador.current_team.pk %}" class="badge bg-dark border border-secondary text-light text-decoration-none">

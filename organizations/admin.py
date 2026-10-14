@@ -26,7 +26,6 @@ class OrganizationAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ("name", "organization", "game", "status")
+    list_display = ("name", "abbreviation", "organization", "game", "status")
     list_filter = ("status", "game", "organization")
-    prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name",)

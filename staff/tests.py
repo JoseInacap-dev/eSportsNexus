@@ -10,10 +10,12 @@ from staff.models import StaffMember, TeamStaffAssignment
 
 class TeamStaffAssignmentTests(TestCase):
     def setUp(self):
-        self.org = Organization.objects.create(name="Nova", slug="nova")
+        self.org = Organization.objects.create(
+            name="Nova", slug="nova", abbreviation="NOVA"
+        )
         self.game = Game.objects.create(name="Valorant", slug="valorant")
         self.team = Team.objects.create(
-            organization=self.org, game=self.game, name="Nova Blue", slug="nova-blue"
+            organization=self.org, game=self.game, name="Nova Blue"
         )
         self.staff = StaffMember.objects.create(first_name="Marta", last_name="Ruiz")
 

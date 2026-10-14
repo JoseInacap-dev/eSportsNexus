@@ -4,8 +4,8 @@
 <div class="d-flex align-items-center justify-content-between mb-4">
     <div class="d-flex align-items-center gap-2">
         <span class="badge bg-dark border border-secondary text-secondary">{{ match.get_kind_display }}</span>
-        <span class="badge-nexus {% if match.status == 'finished' %}badge-nexus-active{% elif match.status == 'scheduled' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
-            {{ match.get_status_display }}
+        <span id="match-status-badge" class="badge-nexus {% if match.is_live %}badge-nexus-live{% elif match.status == 'finished' %}badge-nexus-active{% elif match.status == 'scheduled' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
+            {% if match.is_live %}<span class="live-dot"></span>{% endif %}<span id="match-status-text">{{ match.get_status_display }}</span>
         </span>
     </div>
     <div class="d-flex gap-2">
@@ -19,27 +19,27 @@
     <div class="nexus-card-body p-4">
         <div class="row align-items-center text-center g-3">
             <div class="col-4">
-                <div class="rounded-3 p-3 bg-dark border border-secondary d-inline-flex mb-2" style="width: 64px; height: 64px; align-items:center; justify-content:center;">
-                    <i class="bi bi-shield-shaded text-accent fs-2"></i>
-                </div>
-                <h4 class="h6 text-light fw-bold mb-0">{{ match.home_team.name }}</h4>
-                <span class="text-secondary small">{{ match.home_team.organization.name }}</span>
+                {% include "_org_logo.html" with org=match.home_team.organization size=64 %}
+                <h4 class="h6 text-light fw-bold mb-0 mt-2">{{ match.home_team.name }}</h4>
+                <span class="d-inline-flex align-items-center gap-1 text-secondary small">{{ match.home_team.organization.name }}</span>
             </div>
             <div class="col-4">
-                {% if match.is_finished %}
-                    <div class="display-5 fw-bold text-light">{{ match.home_score }} <span class="text-secondary fs-3">-</span> {{ match.away_score }}</div>
+                <div id="score-display" class="{% if not match.has_score %}d-none{% endif %}">
+                    <div class="display-5 fw-bold text-light"><span id="score-home">{{ match.home_score|default:0 }}</span> <span class="text-secondary fs-3">-</span> <span id="score-away">{{ match.away_score|default:0 }}</span></div>
                     <span class="text-secondary small">Al mejor de {{ match.best_of }}</span>
-                {% else %}
+                </div>
+                <div id="score-scheduled" class="{% if match.has_score %}d-none{% endif %}">
                     <div class="display-6 fw-bold text-secondary">VS</div>
-                    <span class="text-secondary small">{{ match.scheduled_at|date:"d M Y, H:i" }}</span>
-                {% endif %}
+                    <span class="text-secondary small">{{ match.scheduled_at|date:"d/m/Y, H:i" }}</span>
+                </div>
+                <div id="live-indicator" class="mt-2 {% if not match.is_live %}d-none{% endif %}">
+                    <span class="badge-nexus badge-nexus-live"><span class="live-dot"></span> EN VIVO</span>
+                </div>
             </div>
             <div class="col-4">
-                <div class="rounded-3 p-3 bg-dark border border-secondary d-inline-flex mb-2" style="width: 64px; height: 64px; align-items:center; justify-content:center;">
-                    <i class="bi bi-shield text-secondary fs-2"></i>
-                </div>
-                <h4 class="h6 text-light fw-bold mb-0">{{ match.opponent }}</h4>
-                <span class="text-secondary small">{% if match.away_team %}{{ match.away_team.organization.name }}{% else %}Rival externo{% endif %}</span>
+                {% include "_org_logo.html" with org=match.away_team.organization size=64 %}
+                <h4 class="h6 text-light fw-bold mb-0 mt-2">{{ match.away_team.name }}</h4>
+                <span class="d-inline-flex align-items-center gap-1 text-secondary small">{{ match.away_team.organization.name }}</span>
             </div>
         </div>
         <div class="d-flex flex-wrap justify-content-center gap-4 text-secondary small border-top border-secondary mt-4 pt-3">
@@ -47,6 +47,48 @@
             <span><i class="bi bi-calendar3 me-1"></i>{{ match.scheduled_at|date:"d/m/Y H:i" }}</span>
             <span><i class="bi bi-trophy me-1"></i>{{ match.tournament_name|default:"Sin torneo" }}</span>
         </div>
+
+        {% if can_manage %}
+            <div class="border-top border-secondary mt-4 pt-4" id="live-score-widget"
+                 data-score-url="{% url 'matches:match-score-update' match.pk %}">
+                {% csrf_token %}
+                <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                    <i class="bi bi-broadcast text-accent"></i>
+                    <span class="text-light fw-semibold small">Actualización del marcador</span>
+                </div>
+                <div class="d-flex flex-wrap justify-content-center align-items-end gap-3">
+                    <div class="text-center">
+                        <div class="text-secondary small mb-1">{{ match.home_team.name }}</div>
+                        <div class="d-flex align-items-center gap-1">
+                            <button type="button" class="btn btn-sm btn-nexus-subtle" data-score-target="home_score" data-delta="-1"><i class="bi bi-dash-lg"></i></button>
+                            <span id="widget-home-score" class="fs-4 fw-bold text-light text-center" style="min-width: 2.5rem;">{{ match.home_score|default:0 }}</span>
+                            <button type="button" class="btn btn-sm btn-nexus-subtle" data-score-target="home_score" data-delta="1"><i class="bi bi-plus-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <label class="form-label-nexus small" for="widget-status">Estado</label>
+                        <select id="widget-status" class="form-select form-select-nexus">
+                            {% for value, label in statuses %}
+                                <option value="{{ value }}" {% if value == match.status %}selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-secondary small mb-1">{{ match.away_team.name }}</div>
+                        <div class="d-flex align-items-center gap-1">
+                            <button type="button" class="btn btn-sm btn-nexus-subtle" data-score-target="away_score" data-delta="-1"><i class="bi bi-dash-lg"></i></button>
+                            <span id="widget-away-score" class="fs-4 fw-bold text-light text-center" style="min-width: 2.5rem;">{{ match.away_score|default:0 }}</span>
+                            <button type="button" class="btn btn-sm btn-nexus-subtle" data-score-target="away_score" data-delta="1"><i class="bi bi-plus-lg"></i></button>
+                        </div>
+                    </div>
+                    <button type="button" id="widget-save" class="btn-nexus-primary">
+                        <i class="bi bi-send-check"></i>
+                        <span>Actualizar</span>
+                    </button>
+                </div>
+                <div id="widget-feedback" class="text-center small mt-3" role="status"></div>
+            </div>
+        {% endif %}
     </div>
 </div>
 
@@ -131,4 +173,150 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    (function () {
+        const display = document.getElementById('score-display');
+        const scheduled = document.getElementById('score-scheduled');
+        const liveIndicator = document.getElementById('live-indicator');
+        const statusBadge = document.getElementById('match-status-badge');
+        const statusText = document.getElementById('match-status-text');
+        const scoreHome = document.getElementById('score-home');
+        const scoreAway = document.getElementById('score-away');
+
+        const widget = document.getElementById('live-score-widget');
+        const scoreUrl = widget ? widget.dataset.scoreUrl : null;
+        const csrfToken = widget
+            ? widget.querySelector('input[name="csrfmiddlewaretoken"]').value
+            : null;
+
+        let state = {
+            home_score: {{ match.home_score|default_if_none:"null" }},
+            away_score: {{ match.away_score|default_if_none:"null" }},
+            status: "{{ match.status }}"
+        };
+
+        function statusBadgeClass(status) {
+            if (status === 'live') return 'badge-nexus badge-nexus-live';
+            if (status === 'finished') return 'badge-nexus badge-nexus-active';
+            if (status === 'scheduled') return 'badge-nexus badge-nexus-warning';
+            return 'badge-nexus badge-nexus-inactive';
+        }
+
+        function render(data) {
+            state = {
+                home_score: data.home_score,
+                away_score: data.away_score,
+                status: data.status
+            };
+            const hasScore = data.home_score !== null && data.away_score !== null;
+            if (hasScore) {
+                scoreHome.textContent = data.home_score;
+                scoreAway.textContent = data.away_score;
+                display.classList.remove('d-none');
+                scheduled.classList.add('d-none');
+            } else {
+                display.classList.add('d-none');
+                scheduled.classList.remove('d-none');
+            }
+            liveIndicator.classList.toggle('d-none', !data.is_live);
+            statusBadge.className = statusBadgeClass(data.status);
+            statusText.textContent = data.status_display;
+            if (data.is_live) {
+                if (!statusBadge.querySelector('.live-dot')) {
+                    const dot = document.createElement('span');
+                    dot.className = 'live-dot';
+                    statusBadge.prepend(dot);
+                }
+            } else {
+                const dot = statusBadge.querySelector('.live-dot');
+                if (dot) dot.remove();
+            }
+        }
+
+        async function refresh() {
+            if (!scoreUrl) return;
+            try {
+                const response = await fetch(scoreUrl, {
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+                if (!response.ok) return;
+                render(await response.json());
+            } catch (error) {
+                /* Silencioso: el auto-refresco no debe molestar al usuario. */
+            }
+        }
+
+        if (widget && scoreUrl) {
+            const widgetHome = document.getElementById('widget-home-score');
+            const widgetAway = document.getElementById('widget-away-score');
+            const statusSelect = document.getElementById('widget-status');
+            const saveButton = document.getElementById('widget-save');
+            const feedback = document.getElementById('widget-feedback');
+
+            let draft = {
+                home_score: state.home_score === null ? 0 : state.home_score,
+                away_score: state.away_score === null ? 0 : state.away_score
+            };
+
+            function paintDraft() {
+                widgetHome.textContent = draft.home_score;
+                widgetAway.textContent = draft.away_score;
+            }
+
+            widget.querySelectorAll('[data-score-target]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const target = button.dataset.scoreTarget;
+                    const delta = parseInt(button.dataset.delta, 10);
+                    draft[target] = Math.max(0, draft[target] + delta);
+                    paintDraft();
+                });
+            });
+
+            saveButton.addEventListener('click', async function () {
+                saveButton.disabled = true;
+                feedback.textContent = '';
+                feedback.className = 'text-center small mt-3';
+                try {
+                    const response = await fetch(scoreUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrfToken,
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        body: JSON.stringify({
+                            home_score: draft.home_score,
+                            away_score: draft.away_score,
+                            status: statusSelect.value
+                        })
+                    });
+                    const data = await response.json();
+                    if (!response.ok) {
+                        feedback.textContent = data.error || 'No se pudo actualizar el marcador.';
+                        feedback.classList.add('text-danger');
+                        return;
+                    }
+                    render(data);
+                    draft.home_score = data.home_score === null ? 0 : data.home_score;
+                    draft.away_score = data.away_score === null ? 0 : data.away_score;
+                    paintDraft();
+                    feedback.textContent = 'Marcador actualizado.';
+                    feedback.classList.add('text-success');
+                } catch (error) {
+                    feedback.textContent = 'Error de conexión al actualizar.';
+                    feedback.classList.add('text-danger');
+                } finally {
+                    saveButton.disabled = false;
+                }
+            });
+        }
+
+        if (scoreUrl) {
+            setInterval(refresh, 10000);
+        }
+    })();
+</script>
 {% endblock %}

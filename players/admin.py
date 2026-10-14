@@ -5,7 +5,8 @@ from players.models import Player, PlayerTeamAssignment
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ("nickname", "full_name", "country", "user")
+    list_display = ("nickname", "full_name", "player_type", "country", "user")
+    list_filter = ("player_type",)
     search_fields = ("nickname", "first_name", "last_name")
 
 

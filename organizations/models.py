@@ -1,6 +1,29 @@
+from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
+
+# Nombre del rol competitivo que identifica a un entrenador (coach) dentro de
+# la plantilla de un equipo.
+COACH_ROLE_NAME = "Coach"
+
+
+def validate_png_image(image):
+    """Garantiza que el archivo subido sea una imagen en formato PNG."""
+    from PIL import Image
+
+    try:
+        image.seek(0)
+        img = Image.open(image)
+        image_format = img.format
+        img.verify()
+    except Exception:
+        raise ValidationError(_("El archivo no es una imagen válida."))
+    finally:
+        image.seek(0)
+    if image_format != "PNG":
+        raise ValidationError(_("Solo se permiten imágenes en formato PNG."))
 
 
 class Game(models.Model):
@@ -70,7 +93,15 @@ class Organization(models.Model):
 
     name = models.CharField(_("nombre"), max_length=150, unique=True)
     slug = models.SlugField(_("slug"), max_length=150, unique=True)
-    abbreviation = models.CharField(_("abreviatura"), max_length=20, blank=True)
+    abbreviation = models.CharField(_("abreviatura"), max_length=20, unique=True)
+    logo = models.ImageField(
+        _("logo"),
+        upload_to="organizations/logos/",
+        blank=True,
+        null=True,
+        validators=[validate_png_image],
+    )
+    logo_url = models.URLField(_("logo (URL)"), blank=True)
     country = models.CharField(_("país"), max_length=60, blank=True)
     website = models.URLField(_("sitio web"), blank=True)
     description = models.TextField(_("descripción"), blank=True)
@@ -86,6 +117,13 @@ class Organization(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def logo_display(self):
+        """URL del logo: archivo subido si existe, si no el enlace externo."""
+        if self.logo:
+            return self.logo.url
+        return self.logo_url
 
 
 class Team(models.Model):
@@ -110,7 +148,6 @@ class Team(models.Model):
         verbose_name=_("juego"),
     )
     name = models.CharField(_("nombre"), max_length=150)
-    slug = models.SlugField(_("slug"), max_length=150)
     description = models.TextField(_("descripción"), blank=True)
     status = models.CharField(
         _("estado"), max_length=16, choices=Status.choices, default=Status.ACTIVE
@@ -125,9 +162,6 @@ class Team(models.Model):
         ordering = ["organization", "game", "name"]
         constraints = [
             models.UniqueConstraint(
-                fields=["organization", "slug"], name="unique_team_slug_per_org"
-            ),
-            models.UniqueConstraint(
                 fields=["organization", "game", "name"],
                 name="unique_team_name_per_org_game",
             ),
@@ -138,6 +172,11 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def abbreviation(self):
+        """Abreviatura heredada de la organización propietaria."""
+        return self.organization.abbreviation
 
     @property
     def head_coach(self):
@@ -152,9 +191,26 @@ class Team(models.Model):
         return assignment.staff.full_name if assignment else None
 
     @property
+    def coach_assignments(self):
+        """Asignaciones abiertas del equipo cuyo rol competitivo es coach."""
+        cached = getattr(self, "_coach_assignments", None)
+        if cached is not None:
+            return cached
+        return list(
+            self.player_assignments.filter(
+                left_at__isnull=True,
+                competitive_role__name=COACH_ROLE_NAME,
+            ).select_related("player", "competitive_role")
+        )
+
+    @property
     def players_count(self):
-        """Jugadores con asignación abierta en el equipo."""
-        return self.player_assignments.filter(left_at__isnull=True).count()
+        """Jugadores con asignación abierta en el equipo (sin contar coaches)."""
+        return (
+            self.player_assignments.filter(left_at__isnull=True)
+            .exclude(competitive_role__name=COACH_ROLE_NAME)
+            .count()
+        )
 
     @property
     def winrate(self):

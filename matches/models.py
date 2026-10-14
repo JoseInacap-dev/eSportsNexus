@@ -60,9 +60,9 @@ class StatDefinition(models.Model):
 class Match(models.Model):
     """Partido, torneo o scrim disputado (o a disputar) por un equipo.
 
-    ``home_team`` es siempre un equipo de la plataforma. El rival puede ser
-    otro equipo registrado (``away_team``) o un oponente externo identificado
-    por texto (``away_name``).
+    Ambos participantes (``home_team`` y ``away_team``) deben ser equipos
+    registrados en la plataforma. El resultado se gestiona aparte, ya que un
+    partido puede comenzar sin marcador y actualizarse en vivo.
     """
 
     class Kind(models.TextChoices):
@@ -73,6 +73,7 @@ class Match(models.Model):
 
     class Status(models.TextChoices):
         SCHEDULED = "scheduled", _("Programado")
+        LIVE = "live", _("En vivo")
         FINISHED = "finished", _("Finalizado")
         CANCELLED = "cancelled", _("Cancelado")
         POSTPONED = "postponed", _("Aplazado")
@@ -92,13 +93,8 @@ class Match(models.Model):
     away_team = models.ForeignKey(
         "organizations.Team",
         on_delete=models.PROTECT,
-        null=True,
-        blank=True,
         related_name="away_matches",
         verbose_name=_("equipo visitante"),
-    )
-    away_name = models.CharField(
-        _("rival externo"), max_length=150, blank=True
     )
     kind = models.CharField(
         _("tipo"), max_length=16, choices=Kind.choices, default=Kind.OFFICIAL
@@ -123,10 +119,6 @@ class Match(models.Model):
             models.CheckConstraint(
                 condition=~Q(home_team=F("away_team")),
                 name="match_teams_must_differ",
-            ),
-            models.CheckConstraint(
-                condition=Q(away_team__isnull=False) | ~Q(away_name=""),
-                name="match_requires_opponent",
             ),
             models.CheckConstraint(
                 condition=(
@@ -157,13 +149,12 @@ class Match(models.Model):
             raise ValidationError(errors)
 
     def __str__(self):
-        opponent = self.away_team or self.away_name or "?"
-        return f"{self.home_team} vs {opponent} ({self.scheduled_at:%Y-%m-%d})"
+        return f"{self.home_team} vs {self.away_team} ({self.scheduled_at:%Y-%m-%d})"
 
     @property
     def opponent(self):
-        """Nombre del rival, ya sea un equipo registrado o un nombre externo."""
-        return self.away_team.name if self.away_team else (self.away_name or "—")
+        """Nombre del equipo rival (siempre un equipo registrado)."""
+        return self.away_team.name if self.away_team_id else "—"
 
     @property
     def is_finished(self):
@@ -171,7 +162,12 @@ class Match(models.Model):
 
     @property
     def is_live(self):
-        return self.status == "live"
+        return self.status == self.Status.LIVE
+
+    @property
+    def has_score(self):
+        """True si el partido ya tiene marcador (en vivo o finalizado)."""
+        return self.home_score is not None and self.away_score is not None
 
     @property
     def winner(self):

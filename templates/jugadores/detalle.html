@@ -21,6 +21,15 @@
         </div>
     </div>
     <div class="d-flex gap-2">
+        {% if can_manage and active_assignment %}
+            <a href="{% url 'players:assignment-finish' active_assignment.pk %}" class="btn-nexus-outline">
+                <i class="bi bi-person-dash"></i> Dar de baja
+            </a>
+        {% elif can_manage %}
+            <a href="{% url 'players:player-assignment-create' jugador.pk %}" class="btn-nexus-primary">
+                <i class="bi bi-person-plus"></i> Asignar a Equipo
+            </a>
+        {% endif %}
         <a href="{% url 'players:player-update' jugador.pk %}" class="btn-nexus-outline">
             <i class="bi bi-pencil"></i> Editar
         </a>
@@ -38,6 +47,10 @@
                 <h3 class="nexus-card-title">Ficha Técnica</h3>
             </div>
             <div class="nexus-card-body">
+                <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
+                    <span class="text-secondary small">Tipo</span>
+                    <span class="badge bg-dark border border-secondary text-accent">{{ jugador.get_player_type_display }}</span>
+                </div>
                 <div class="d-flex justify-content-between py-2 border-bottom border-secondary">
                     <span class="text-secondary small">Equipo</span>
                     <span class="text-light small fw-bold">

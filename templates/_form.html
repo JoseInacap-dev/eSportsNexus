@@ -1,5 +1,5 @@
 {% load form_extras %}
-<form method="post" {% block form_attrs %}novalidate{% endblock %}>
+<form method="post" enctype="multipart/form-data" {% block form_attrs %}novalidate{% endblock %}>
     {% csrf_token %}
     {% if form.non_field_errors %}
         <div class="nexus-alert nexus-alert-danger mb-3">

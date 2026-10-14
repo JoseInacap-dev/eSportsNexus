@@ -1,0 +1,7 @@
+{% if org.logo_display %}
+    <img src="{{ org.logo_display }}" alt="{{ org.name|default:'' }}" style="width: {{ size|default:44 }}px; height: {{ size|default:44 }}px; object-fit: cover; border-radius: 8px; border: 1px solid var(--nexus-border, rgba(255,255,255,0.15)); background: var(--nexus-card, #111);">
+{% else %}
+    <div class="rounded-3 bg-dark border border-secondary d-flex align-items-center justify-content-center" style="width: {{ size|default:44 }}px; height: {{ size|default:44 }}px;">
+        <i class="bi bi-building text-accent {{ icon_class|default:'' }}"></i>
+    </div>
+{% endif %}

@@ -61,9 +61,7 @@
                 <div class="nexus-card h-100 d-flex flex-column">
                     <div class="nexus-card-header">
                         <div class="d-flex align-items-center gap-3">
-                            <div class="rounded-3 p-2 bg-dark border border-secondary text-center d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
-                                <i class="bi bi-shield-shaded text-accent fs-5"></i>
-                            </div>
+                            {% include "_org_logo.html" with org=equipo.organization size=44 %}
                             <div>
                                 <h3 class="h6 text-light fw-bold mb-0">{{ equipo.name }}</h3>
                                 <span class="badge bg-dark border border-secondary text-secondary" style="font-size: 0.7rem;">{{ equipo.game.name }}</span>
@@ -84,7 +82,10 @@
                             </div>
                             <div class="col-4 border-start border-end border-secondary">
                                 <span class="d-block text-secondary" style="font-size: 0.7rem;">ORG</span>
-                                <span class="fw-bold text-light" style="font-size: 0.8rem;">{{ equipo.organization.abbreviation|default:equipo.organization.name }}</span>
+                                <span class="d-inline-flex align-items-center justify-content-center gap-1">
+                                    {% include "_org_logo.html" with org=equipo.organization size=18 %}
+                                    <span class="fw-bold text-light" style="font-size: 0.8rem;">{{ equipo.organization.abbreviation|default:equipo.organization.name }}</span>
+                                </span>
                             </div>
                             <div class="col-4">
                                 <span class="d-block text-secondary" style="font-size: 0.7rem;">WINRATE</span>
@@ -92,10 +93,21 @@
                             </div>
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-between text-secondary small">
-                            <span><i class="bi bi-person-badge me-1"></i>Coach:</span>
-                            <span class="text-light fw-medium">{{ equipo.head_coach|default:"No asignado" }}</span>
-                        </div>
+                        {% if equipo.coach_assignments %}
+                            <div class="d-flex align-items-center justify-content-between p-2 rounded" style="background-color: var(--nexus-accent-subtle); border-left: 3px solid var(--nexus-accent);">
+                                <span class="text-accent small fw-semibold">
+                                    <i class="bi bi-person-badge-fill me-1"></i>Coach
+                                </span>
+                                <span class="text-light fw-semibold small">
+                                    {% for a in equipo.coach_assignments %}{{ a.player.nickname }}{% if not forloop.last %}, {% endif %}{% endfor %}
+                                </span>
+                            </div>
+                        {% else %}
+                            <div class="d-flex align-items-center justify-content-between text-secondary small">
+                                <span><i class="bi bi-person-badge me-1"></i>Coach:</span>
+                                <span class="text-light fw-medium">{{ equipo.head_coach|default:"No asignado" }}</span>
+                            </div>
+                        {% endif %}
                     </div>
 
                     <div class="p-3 border-top border-secondary bg-dark bg-opacity-25 d-flex justify-content-between align-items-center">

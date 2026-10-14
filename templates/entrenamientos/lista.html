@@ -66,7 +66,7 @@
                     </div>
                     <div class="nexus-card-body flex-grow-1">
                         <div class="d-flex flex-column gap-2 text-secondary small mb-3">
-                            <span><i class="bi bi-calendar3 me-2 text-accent"></i>{{ sesion.scheduled_at|date:"d M Y, H:i" }}</span>
+                            <span><i class="bi bi-calendar3 me-2 text-accent"></i>{{ sesion.scheduled_at|date:"d/m/Y, H:i" }}</span>
                             <span><i class="bi bi-clock-history me-2 text-accent"></i>{{ sesion.duration_minutes|default:"—" }} minutos</span>
                             <span><i class="bi bi-geo-alt me-2 text-accent"></i>{{ sesion.location|default:"Sin ubicación" }}</span>
                             <span><i class="bi bi-person-badge me-2 text-accent"></i>Coach: {{ sesion.coach|default:"No asignado" }}</span>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load form_extras %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-5">
+        <div class="nexus-card border-warning">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title text-warning"><i class="bi bi-person-dash me-2"></i>Dar de baja</h3>
+            </div>
+            <div class="nexus-card-body p-4">
+                <p class="text-light mb-1">
+                    ¿Dar de baja a <strong class="text-accent">{{ asignacion.player.nickname }}</strong>
+                    de <strong class="text-light">{{ asignacion.team.name }}</strong>?
+                </p>
+                <p class="text-secondary small mb-4">La asignación se cerrará indicando la fecha de baja.</p>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label class="form-label-nexus" for="{{ form.left_at.id_for_label }}">{{ form.left_at.label }}</label>
+                        {{ form.left_at|add_class:"form-control form-control-nexus" }}
+                        {% for error in form.left_at.errors %}
+                            <div class="text-danger small mt-1">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                        <a class="btn-nexus-outline" href="{% url 'organizations:team-detail' asignacion.team.pk %}">Cancelar</a>
+                        <button type="submit" class="btn btn-warning">
+                            <i class="bi bi-person-dash me-1"></i>Dar de baja
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

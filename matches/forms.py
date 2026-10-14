@@ -12,14 +12,11 @@ class MatchForm(forms.ModelForm):
             "game",
             "home_team",
             "away_team",
-            "away_name",
             "kind",
             "status",
             "scheduled_at",
             "tournament_name",
             "best_of",
-            "home_score",
-            "away_score",
             "notes",
         ]
         widgets = {

@@ -28,7 +28,6 @@ class MatchViewSet(viewsets.ModelViewSet):
     search_fields = [
         "home_team__name",
         "away_team__name",
-        "away_name",
         "tournament_name",
     ]
     ordering_fields = ["scheduled_at", "status"]

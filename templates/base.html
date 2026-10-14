@@ -34,7 +34,11 @@
             </a>
 
             <div class="nav-section-title">Gestión Competitiva</div>
-            <a href="{% url 'organizations:team-list' %}" class="nexus-nav-link {% if ns == 'organizations' %}active{% endif %}">
+            <a href="{% url 'organizations:organization-list' %}" class="nexus-nav-link {% if ns == 'organizations' and 'organization-' in un %}active{% endif %}">
+                <i class="bi bi-building"></i>
+                <span>Organizaciones</span>
+            </a>
+            <a href="{% url 'organizations:team-list' %}" class="nexus-nav-link {% if ns == 'organizations' and 'team-' in un %}active{% endif %}">
                 <i class="bi bi-shield-shaded"></i>
                 <span>Equipos</span>
             </a>

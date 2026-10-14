@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">Directorio de Organizaciones</h2>
+        <p class="text-secondary small mb-0">Gestión de las organizaciones de esports y sus equipos competitivos.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{% url 'organizations:organization-create' %}" class="btn-nexus-primary">
+            <i class="bi bi-plus-lg"></i>
+            <span>Nueva Organización</span>
+        </a>
+    </div>
+</div>
+
+<!-- Filtros y Búsqueda -->
+<div class="nexus-card mb-4">
+    <div class="nexus-card-body p-3">
+        <form method="get" action="{% url 'organizations:organization-list' %}" class="row g-2 align-items-center">
+            <div class="col-12 col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="text" name="q" value="{{ request.GET.q|default:'' }}" class="form-control form-control-nexus" placeholder="Buscar por nombre, abreviatura o país...">
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <select name="estado" class="form-select form-select-nexus">
+                    <option value="">Todos los estados</option>
+                    <option value="activas" {% if request.GET.estado == 'activas' %}selected{% endif %}>Activas</option>
+                    <option value="inactivas" {% if request.GET.estado == 'inactivas' %}selected{% endif %}>Inactivas</option>
+                </select>
+            </div>
+            <div class="col-6 col-md-3 d-flex gap-2">
+                <button type="submit" class="btn btn-nexus-outline w-100 justify-content-center">Filtrar</button>
+                {% if request.GET.q or request.GET.estado %}
+                    <a href="{% url 'organizations:organization-list' %}" class="btn btn-nexus-subtle" title="Limpiar filtros"><i class="bi bi-x-lg"></i></a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Grid de Organizaciones -->
+{% if organizaciones %}
+    <div class="row g-3">
+        {% for organizacion in organizaciones %}
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="nexus-card h-100 d-flex flex-column">
+                    <div class="nexus-card-header">
+                        <div class="d-flex align-items-center gap-3">
+                            {% include "_org_logo.html" with org=organizacion size=44 icon_class="fs-5" %}
+                            <div>
+                                <h3 class="h6 text-light fw-bold mb-0">{{ organizacion.name }}</h3>
+                                <span class="badge bg-dark border border-secondary text-secondary" style="font-size: 0.7rem;">
+                                    {{ organizacion.abbreviation|default:"Sin abreviatura" }}
+                                </span>
+                            </div>
+                        </div>
+                        <span class="badge-nexus {% if organizacion.is_active %}badge-nexus-active{% else %}badge-nexus-inactive{% endif %}">
+                            {% if organizacion.is_active %}Activa{% else %}Inactiva{% endif %}
+                        </span>
+                    </div>
+
+                    <div class="nexus-card-body flex-grow-1">
+                        <p class="text-secondary small mb-3 text-truncate-2">{{ organizacion.description|default:"Sin descripción registrada para esta organización." }}</p>
+
+                        <div class="row g-2 text-center py-2 border-top border-bottom border-secondary mb-3">
+                            <div class="col-6 border-end border-secondary">
+                                <span class="d-block text-secondary" style="font-size: 0.7rem;">EQUIPOS</span>
+                                <span class="fw-bold text-light">{{ organizacion.teams_count }}</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="d-block text-secondary" style="font-size: 0.7rem;">PAÍS</span>
+                                <span class="fw-bold text-light" style="font-size: 0.8rem;">{{ organizacion.country|default:"—" }}</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between text-secondary small">
+                            <span><i class="bi bi-calendar-event me-1"></i>Fundada:</span>
+                            <span class="text-light fw-medium">{{ organizacion.founded_date|date:"d/m/Y"|default:"—" }}</span>
+                        </div>
+                    </div>
+
+                    <div class="p-3 border-top border-secondary bg-dark bg-opacity-25 d-flex justify-content-between align-items-center">
+                        <a href="{% url 'organizations:organization-detail' organizacion.pk %}" class="btn btn-nexus-subtle btn-sm">
+                            <i class="bi bi-eye me-1"></i>Ver Detalle
+                        </a>
+                        {% if can_manage %}
+                            <a href="{% url 'organizations:organization-update' organizacion.pk %}" class="btn btn-sm btn-dark border-secondary text-secondary" title="Editar organización">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include "_paginacion.html" %}
+
+{% else %}
+    <!-- Estado Vacío -->
+    <div class="nexus-card text-center py-5">
+        <div class="nexus-card-body">
+            <div class="rounded-circle bg-dark border border-secondary d-inline-flex p-3 mb-3 text-secondary">
+                <i class="bi bi-building fs-1"></i>
+            </div>
+            <h4 class="text-light fw-bold">No se encontraron organizaciones</h4>
+            <p class="text-secondary small mb-3">No hay organizaciones registradas o ninguna coincide con los criterios de búsqueda aplicados.</p>
+            <a href="{% url 'organizations:organization-create' %}" class="btn-nexus-primary">
+                <i class="bi bi-plus-lg"></i>
+                <span>Crear Primera Organización</span>
+            </a>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

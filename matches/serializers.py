@@ -42,7 +42,6 @@ class MatchSerializer(serializers.ModelSerializer):
             "home_team_name",
             "away_team",
             "away_team_name",
-            "away_name",
             "opponent",
             "kind",
             "status",
@@ -54,10 +53,10 @@ class MatchSerializer(serializers.ModelSerializer):
             "notes",
             "created_at",
         ]
-        read_only_fields = ["id", "created_at"]
+        read_only_fields = ["id", "created_at", "home_score", "away_score"]
 
     def get_opponent(self, obj):
-        return obj.away_team.name if obj.away_team_id else obj.away_name
+        return obj.away_team.name if obj.away_team_id else None
 
 
 class MatchMapSerializer(serializers.ModelSerializer):
