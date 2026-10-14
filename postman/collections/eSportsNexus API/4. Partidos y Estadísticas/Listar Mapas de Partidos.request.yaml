@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/match-maps/"
+method: GET
+order: 2000

@@ -64,7 +64,11 @@ class AuthFlowTests(TestCase):
             },
         )
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(User.objects.filter(username="jugador1").exists())
+        user = User.objects.filter(username="jugador1").first()
+        self.assertIsNotNone(user)
+        self.assertFalse(user.is_staff)
+        self.assertFalse(user.is_superuser)
+        self.assertEqual(user.organization_memberships.count(), 0)
 
     def test_login_and_logout(self):
         User.objects.create_user(

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/memberships/"
+method: GET
+order: 2000

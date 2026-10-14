@@ -29,13 +29,22 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-### 4. Crear un superusuario (acceso al panel y a todas las funciones)
+### 4. Cargar datos iniciales (Fixtures)
 
+Para poblar la base de datos con los datos de prueba y usuarios iniciales en el orden correcto de dependencias:
+
+```powershell
+python manage.py loaddata organizations.json users.json players.json staff.json matches.json training.json
+```
+
+> **Credenciales incluidas:**
+> - Superusuario / Admin: `admin` / `Nexus2026`
+> - Coach: `coach_marcelo` / `Nexus2026`
+
+*(Opcional) También puedes crear un superusuario adicional con:*
 ```powershell
 python manage.py createsuperuser
 ```
-
-> Nota: en tu base de datos local ya existe la cuenta de prueba `admin` / `Nexus2026` (solo en `db.sqlite3`, que NO se sube a Git).
 
 ### 5. Arrancar el servidor
 
@@ -43,7 +52,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-Abre http://127.0.0.1:8000/ e inicia sesión. También puedes entrar a http://127.0.0.1:8000/admin/ (panel de Django).
+Abre http://127.0.0.1:8000/ e inicia sesión. También puedes entrar a http://127.0.0.1:8000/admin/ (panel de Administración de Django).
 
 ## Verificación rápida
 

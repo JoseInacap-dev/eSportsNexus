@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/stat-definitions/"
+method: GET
+order: 3000

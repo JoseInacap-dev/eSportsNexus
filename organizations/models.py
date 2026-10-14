@@ -148,6 +148,14 @@ class Team(models.Model):
         verbose_name=_("juego"),
     )
     name = models.CharField(_("nombre"), max_length=150)
+    slug = models.SlugField(_("slug"), max_length=150, blank=True, null=True)
+    logo = models.ImageField(
+        _("logo o imagen"),
+        upload_to="teams/logos/",
+        blank=True,
+        null=True,
+        help_text=_("Escudo, logo o imagen representativa del equipo."),
+    )
     description = models.TextField(_("descripción"), blank=True)
     status = models.CharField(
         _("estado"), max_length=16, choices=Status.choices, default=Status.ACTIVE
@@ -177,6 +185,11 @@ class Team(models.Model):
     def abbreviation(self):
         """Abreviatura heredada de la organización propietaria."""
         return self.organization.abbreviation
+
+    @property
+    def image(self):
+        """Alias para conveniencia."""
+        return self.logo
 
     @property
     def head_coach(self):

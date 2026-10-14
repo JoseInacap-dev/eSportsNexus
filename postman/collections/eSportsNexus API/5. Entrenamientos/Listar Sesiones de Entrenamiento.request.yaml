@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/training-sessions/"
+method: GET
+order: 1000

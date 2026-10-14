@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/teams/"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+        "organization": 1,
+        "game": 1,
+        "name": "Sentinels Red",
+        "slug": "sentinels-red"
+    }
+order: 4000

@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.exceptions import PermissionDenied
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated
 
 from core.permissions import IsOrganizationManager, user_can_manage_organization
 from organizations.models import Game, GameRole, Organization, Team
@@ -15,7 +15,7 @@ from organizations.serializers import (
 class GameViewSet(viewsets.ModelViewSet):
     queryset = Game.objects.order_by("name")
     serializer_class = GameSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     search_fields = ["name", "short_name"]
     ordering_fields = ["name"]
 

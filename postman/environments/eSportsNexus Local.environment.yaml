@@ -1,0 +1,10 @@
+name: eSportsNexus Local
+values:
+  - key: baseUrl
+    value: 'http://127.0.0.1:8000/api'
+  - key: username
+    value: admin
+  - key: password
+    value: Nexus2026
+  - key: token
+    value: 4e8bf0a8797e3308bff86deb4b3577f7e02dcbae

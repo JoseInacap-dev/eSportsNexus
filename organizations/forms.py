@@ -56,12 +56,15 @@ class TeamForm(forms.ModelForm):
             "organization",
             "game",
             "name",
+            "slug",
+            "logo",
             "description",
             "status",
             "founded_date",
         ]
         widgets = {
             "description": forms.Textarea(attrs={"rows": 3}),
+            "logo": forms.FileInput(attrs={"accept": "image/*"}),
         }
 
     def __init__(self, *args, user=None, **kwargs):

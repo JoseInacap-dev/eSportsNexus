@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/players/"
+method: GET
+order: 1000

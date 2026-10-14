@@ -24,7 +24,6 @@ from players.forms import (
 )
 from players.models import Player, PlayerTeamAssignment
 
-
 class PlayerListView(LoginRequiredMixin, ListView):
     model = Player
     template_name = "jugadores/lista.html"

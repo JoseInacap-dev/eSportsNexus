@@ -1,0 +1,126 @@
+[
+  {
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$9HWlQEPUIjk9RF3YXPUweL$mSVvT0PXyeQKZoGLosiUm9uutRTYrHtUBxFqivE5Q+Y=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "Chris",
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-01-01T00:00:00Z",
+      "email": "christiancontre74@gmail.com",
+      "display_name": "chris",
+      "phone": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$iWzEoFarVS9clc4dZUlHsI$SWZz4tWQtH3JLDz/hVpho4byqMd2yP48Q2z0bumN8VY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "testuser",
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-01T00:00:00Z",
+      "email": "testuser@nexusesports.com",
+      "display_name": "Usuario de Prueba",
+      "phone": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$iWzEoFarVS9clc4dZUlHsI$SWZz4tWQtH3JLDz/hVpho4byqMd2yP48Q2z0bumN8VY=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-01-01T00:00:00Z",
+      "email": "admin@nexusesports.com",
+      "display_name": "Administrador General",
+      "phone": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$1500000$dWpFAE7RblJPYFI0FQJqDq$Tozp5+xVND2KLySCs5LHPi4sRuDfHR/2A1RGRKpGF+Q=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "coach_marcelo",
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-01T00:00:00Z",
+      "email": "marcelo@nexusesports.com",
+      "display_name": "Marcelo 'Cortex' Díaz",
+      "phone": "",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.organizationmembership",
+    "pk": 1,
+    "fields": {
+      "user": 3,
+      "organization": 1,
+      "role": "owner",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "accounts.organizationmembership",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "organization": 1,
+      "role": "owner",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "accounts.organizationmembership",
+    "pk": 3,
+    "fields": {
+      "user": 4,
+      "organization": 1,
+      "role": "coach",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  }
+]
