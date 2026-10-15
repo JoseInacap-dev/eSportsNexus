@@ -38,7 +38,7 @@ python manage.py loaddata organizations.json users.json players.json staff.json 
 ```
 
 > **Credenciales incluidas:**
-> - Superusuario / Admin: `admin` / `Nexus2026`
+> - Superusuario / Admin: `admin` / `KuoLUWFJGL1VYDYh`
 
 *(Opcional) También puedes crear un superusuario adicional con:*
 ```powershell

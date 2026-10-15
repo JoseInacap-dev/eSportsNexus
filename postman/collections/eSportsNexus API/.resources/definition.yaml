@@ -3,7 +3,7 @@ description: |-
   Colección completa de la API REST de eSportsNexus.
 
   Soporta autenticación mediante:
-  1. Basic Auth (Usuario: admin, Contraseña: Nexus2026)
+  1. Basic Auth (Usuario: admin, Contraseña: KuoLUWFJGL1VYDYh)
   2. Token Auth (Endpoint /api/auth-token/)
 auth:
   - id: 25f9b799-9cbf-4b72-b5be-f1d95bf2f922
