@@ -71,8 +71,8 @@ python manage.py makemigrations # detecta cambios pendientes en modelos
 ## Estructura del proyecto
 
 ```
-proyecto backend/
-├── config/            # settings, urls raíz, wsgi/asgi
+eSportsNexus/
+├── config/              # settings, urls raíz, wsgi/asgi
 ├── core/              # dashboard, ajustes, permisos, mixins
 ├── accounts/          # usuario personalizado y autenticación
 ├── organizations/     # organizaciones, juegos, roles y equipos
@@ -81,7 +81,6 @@ proyecto backend/
 ├── matches/           # partidos, torneos, mapas y estadísticas (jugador/equipo)
 ├── training/          # sesiones de entrenamiento y asistencia
 ├── templates/         # plantillas HTML (tema NEXUS)
-├── templates_beta/    # maquetas originales de diseño (referencia)
 ├── static/            # estilos NEXUS (styles.css)
 └── manage.py
 ```
@@ -120,4 +119,4 @@ O usa **GitHub Desktop**: `File → Add local repository` y selecciona la carpet
 
 - `DEBUG = True` por defecto y `SECRET_KEY` con valor local: NO desplegar tal cual en producción. Configura `DJANGO_SECRET_KEY` como variable de entorno, `DEBUG = False` y `ALLOWED_HOSTS` antes de publicar.
 - Los modelos están en inglés; las plantillas utilizan contexto renombrado (`equipos`, `jugadores`, `partidos`, `entrenamientos`, `equipo`, `jugador`).
-- Diseño dark "NEXUS" en `static/css/styles.css`; las maquetas originales viven en `templates_beta/`.
+- Diseño dark "NEXUS" en `static/css/styles.css`.
