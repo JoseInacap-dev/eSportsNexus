@@ -1,1520 +1,6224 @@
 [
-  {
-    "model": "players.player",
-    "pk": 1,
-    "fields": {
-      "user": null,
-      "first_name": "Tyson",
-      "last_name": "Ngo",
-      "nickname": "TenZ",
-      "email": "tenz@sentinels.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Canadá",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 1,
-    "fields": {
-      "player": 1,
-      "team": 1,
-      "competitive_role": 1,
-      "jersey_number": 10,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 2,
-    "fields": {
-      "user": null,
-      "first_name": "Zachary",
-      "last_name": "Patrone",
-      "nickname": "zekken",
-      "email": "zekken@sentinels.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Estados Unidos",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 2,
-    "fields": {
-      "player": 2,
-      "team": 1,
-      "competitive_role": 2,
-      "jersey_number": 7,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 3,
-    "fields": {
-      "user": null,
-      "first_name": "Gustavo",
-      "last_name": "Rossi",
-      "nickname": "Sacy",
-      "email": "sacy@sentinels.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Brasil",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 3,
-    "fields": {
-      "player": 3,
-      "team": 1,
-      "competitive_role": 2,
-      "jersey_number": 14,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 4,
-    "fields": {
-      "user": null,
-      "first_name": "Jordan",
-      "last_name": "Montemurro",
-      "nickname": "Zellsis",
-      "email": "zellsis@sentinels.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Estados Unidos",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 4,
-    "fields": {
-      "player": 4,
-      "team": 1,
-      "competitive_role": 3,
-      "jersey_number": 1,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 5,
-    "fields": {
-      "user": null,
-      "first_name": "John",
-      "last_name": "Ouanes",
-      "nickname": "johnqt",
-      "email": "johnqt@sentinels.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Marruecos",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 5,
-    "fields": {
-      "player": 5,
-      "team": 1,
-      "competitive_role": 4,
-      "jersey_number": 4,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 6,
-    "fields": {
-      "user": null,
-      "first_name": "Jake",
-      "last_name": "Howlett",
-      "nickname": "Boaster",
-      "email": "boaster@fnatic.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Reino Unido",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 6,
-    "fields": {
-      "player": 6,
-      "team": 2,
-      "competitive_role": 3,
-      "jersey_number": 1,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 7,
-    "fields": {
-      "user": null,
-      "first_name": "Nikita",
-      "last_name": "Sirmitev",
-      "nickname": "Derke",
-      "email": "derke@fnatic.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Finlandia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 7,
-    "fields": {
-      "player": 7,
-      "team": 2,
-      "competitive_role": 1,
-      "jersey_number": 14,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 8,
-    "fields": {
-      "user": null,
-      "first_name": "Emir",
-      "last_name": "Beder",
-      "nickname": "Alfajer",
-      "email": "alfajer@fnatic.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Turquía",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 8,
-    "fields": {
-      "player": 8,
-      "team": 2,
-      "competitive_role": 4,
-      "jersey_number": 7,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 9,
-    "fields": {
-      "user": null,
-      "first_name": "Timofey",
-      "last_name": "Khromov",
-      "nickname": "Chronicle",
-      "email": "chronicle@fnatic.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Rusia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 9,
-    "fields": {
-      "player": 9,
-      "team": 2,
-      "competitive_role": 2,
-      "jersey_number": 22,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 10,
-    "fields": {
-      "user": null,
-      "first_name": "Leo",
-      "last_name": "Jannesson",
-      "nickname": "Leo",
-      "email": "leo@fnatic.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Suecia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 10,
-    "fields": {
-      "player": 10,
-      "team": 2,
-      "competitive_role": 2,
-      "jersey_number": 10,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 11,
-    "fields": {
-      "user": null,
-      "first_name": "Lee",
-      "last_name": "Sang-hyeok",
-      "nickname": "Faker",
-      "email": "faker@t1.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Corea del Sur",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 11,
-    "fields": {
-      "player": 11,
-      "team": 3,
-      "competitive_role": 7,
-      "jersey_number": 1,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 12,
-    "fields": {
-      "user": null,
-      "first_name": "Choi",
-      "last_name": "Woo-je",
-      "nickname": "Zeus",
-      "email": "zeus@t1.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Corea del Sur",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 12,
-    "fields": {
-      "player": 12,
-      "team": 3,
-      "competitive_role": 5,
-      "jersey_number": 3,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 13,
-    "fields": {
-      "user": null,
-      "first_name": "Mun",
-      "last_name": "Hyeon-jun",
-      "nickname": "Oner",
-      "email": "oner@t1.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Corea del Sur",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 13,
-    "fields": {
-      "player": 13,
-      "team": 3,
-      "competitive_role": 6,
-      "jersey_number": 9,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 14,
-    "fields": {
-      "user": null,
-      "first_name": "Lee",
-      "last_name": "Min-hyeong",
-      "nickname": "Gumayusi",
-      "email": "gumayusi@t1.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Corea del Sur",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 14,
-    "fields": {
-      "player": 14,
-      "team": 3,
-      "competitive_role": 8,
-      "jersey_number": 23,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 15,
-    "fields": {
-      "user": null,
-      "first_name": "Ryu",
-      "last_name": "Min-seok",
-      "nickname": "Keria",
-      "email": "keria@t1.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Corea del Sur",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 15,
-    "fields": {
-      "player": 15,
-      "team": 3,
-      "competitive_role": 9,
-      "jersey_number": 5,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 16,
-    "fields": {
-      "user": null,
-      "first_name": "Rasmus",
-      "last_name": "Winther",
-      "nickname": "Caps",
-      "email": "caps@g2esports.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Dinamarca",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 16,
-    "fields": {
-      "player": 16,
-      "team": 4,
-      "competitive_role": 7,
-      "jersey_number": 7,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 17,
-    "fields": {
-      "user": null,
-      "first_name": "Sergen",
-      "last_name": "Çelik",
-      "nickname": "BrokenBlade",
-      "email": "bb@g2esports.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Alemania",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 17,
-    "fields": {
-      "player": 17,
-      "team": 4,
-      "competitive_role": 5,
-      "jersey_number": 3,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 18,
-    "fields": {
-      "user": null,
-      "first_name": "Martin",
-      "last_name": "Sundelin",
-      "nickname": "Yike",
-      "email": "yike@g2esports.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Suecia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 18,
-    "fields": {
-      "player": 18,
-      "team": 4,
-      "competitive_role": 6,
-      "jersey_number": 9,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 19,
-    "fields": {
-      "user": null,
-      "first_name": "Steven",
-      "last_name": "Liv",
-      "nickname": "Hans Sama",
-      "email": "hanssama@g2esports.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Francia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 19,
-    "fields": {
-      "player": 19,
-      "team": 4,
-      "competitive_role": 8,
-      "jersey_number": 23,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 20,
-    "fields": {
-      "user": null,
-      "first_name": "Mihael",
-      "last_name": "Mehle",
-      "nickname": "Mikyx",
-      "email": "mikyx@g2esports.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Eslovenia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 20,
-    "fields": {
-      "player": 20,
-      "team": 4,
-      "competitive_role": 9,
-      "jersey_number": 5,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 21,
-    "fields": {
-      "user": null,
-      "first_name": "Aleksi",
-      "last_name": "Virolainen",
-      "nickname": "Aleksib",
-      "email": "aleksib@navi.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Finlandia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 21,
-    "fields": {
-      "player": 21,
-      "team": 5,
-      "competitive_role": 12,
-      "jersey_number": 4,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 22,
-    "fields": {
-      "user": null,
-      "first_name": "Valerij",
-      "last_name": "Vakhovsjkyj",
-      "nickname": "b1t",
-      "email": "b1t@navi.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Ucrania",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 22,
-    "fields": {
-      "player": 22,
-      "team": 5,
-      "competitive_role": 10,
-      "jersey_number": 11,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 23,
-    "fields": {
-      "user": null,
-      "first_name": "Ihor",
-      "last_name": "Zhdanov",
-      "nickname": "w0nderful",
-      "email": "w0nderful@navi.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Ucrania",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 23,
-    "fields": {
-      "player": 23,
-      "team": 5,
-      "competitive_role": 11,
-      "jersey_number": 8,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 24,
-    "fields": {
-      "user": null,
-      "first_name": "Mihai",
-      "last_name": "Ivan",
-      "nickname": "iM",
-      "email": "im@navi.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Rumania",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 24,
-    "fields": {
-      "player": 24,
-      "team": 5,
-      "competitive_role": 13,
-      "jersey_number": 17,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 25,
-    "fields": {
-      "user": null,
-      "first_name": "Justinas",
-      "last_name": "Lekavicius",
-      "nickname": "jL",
-      "email": "jl@navi.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Lituania",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 25,
-    "fields": {
-      "player": 25,
-      "team": 5,
-      "competitive_role": 14,
-      "jersey_number": 6,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 26,
-    "fields": {
-      "user": null,
-      "first_name": "Finn",
-      "last_name": "Andersen",
-      "nickname": "karrigan",
-      "email": "karrigan@fazeclan.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Dinamarca",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 26,
-    "fields": {
-      "player": 26,
-      "team": 6,
-      "competitive_role": 12,
-      "jersey_number": 4,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 27,
-    "fields": {
-      "user": null,
-      "first_name": "Robin",
-      "last_name": "Kool",
-      "nickname": "ropz",
-      "email": "ropz@fazeclan.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Estonia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 27,
-    "fields": {
-      "player": 27,
-      "team": 6,
-      "competitive_role": 13,
-      "jersey_number": 17,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 28,
-    "fields": {
-      "user": null,
-      "first_name": "Helvijs",
-      "last_name": "Saukants",
-      "nickname": "broky",
-      "email": "broky@fazeclan.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Letonia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 28,
-    "fields": {
-      "player": 28,
-      "team": 6,
-      "competitive_role": 11,
-      "jersey_number": 8,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 29,
-    "fields": {
-      "user": null,
-      "first_name": "Håvard",
-      "last_name": "Nygaard",
-      "nickname": "rain",
-      "email": "rain@fazeclan.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Noruega",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 29,
-    "fields": {
-      "player": 29,
-      "team": 6,
-      "competitive_role": 10,
-      "jersey_number": 11,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 30,
-    "fields": {
-      "user": null,
-      "first_name": "David",
-      "last_name": "Čerňanský",
-      "nickname": "frozen",
-      "email": "frozen@fazeclan.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Eslovaquia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 30,
-    "fields": {
-      "player": 30,
-      "team": 6,
-      "competitive_role": 14,
-      "jersey_number": 6,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 31,
-    "fields": {
-      "user": null,
-      "first_name": "Illya",
-      "last_name": "Mulyarchuk",
-      "nickname": "Yatoro",
-      "email": "yatoro@teamspirit.ru",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Ucrania",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 31,
-    "fields": {
-      "player": 31,
-      "team": 7,
-      "competitive_role": 15,
-      "jersey_number": 1,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 32,
-    "fields": {
-      "user": null,
-      "first_name": "Denis",
-      "last_name": "Sigitov",
-      "nickname": "Larl",
-      "email": "larl@teamspirit.ru",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Rusia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 32,
-    "fields": {
-      "player": 32,
-      "team": 7,
-      "competitive_role": 16,
-      "jersey_number": 2,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 33,
-    "fields": {
-      "user": null,
-      "first_name": "Magomed",
-      "last_name": "Khalilov",
-      "nickname": "Collapse",
-      "email": "collapse@teamspirit.ru",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Rusia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 33,
-    "fields": {
-      "player": 33,
-      "team": 7,
-      "competitive_role": 17,
-      "jersey_number": 3,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 34,
-    "fields": {
-      "user": null,
-      "first_name": "Miroslaw",
-      "last_name": "Kolpakov",
-      "nickname": "Mira",
-      "email": "mira@teamspirit.ru",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Ucrania",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 34,
-    "fields": {
-      "player": 34,
-      "team": 7,
-      "competitive_role": 18,
-      "jersey_number": 4,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 35,
-    "fields": {
-      "user": null,
-      "first_name": "Yaroslav",
-      "last_name": "Naidenov",
-      "nickname": "Miposhka",
-      "email": "miposhka@teamspirit.ru",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Rusia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 35,
-    "fields": {
-      "player": 35,
-      "team": 7,
-      "competitive_role": 19,
-      "jersey_number": 5,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 36,
-    "fields": {
-      "user": null,
-      "first_name": "Enzo",
-      "last_name": "Gianoli",
-      "nickname": "Timado",
-      "email": "timado@og.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Perú",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 36,
-    "fields": {
-      "player": 36,
-      "team": 8,
-      "competitive_role": 15,
-      "jersey_number": 1,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 37,
-    "fields": {
-      "user": null,
-      "first_name": "Bozhidar",
-      "last_name": "Bogdanov",
-      "nickname": "bzm",
-      "email": "bzm@og.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Bulgaria",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 37,
-    "fields": {
-      "player": 37,
-      "team": 8,
-      "competitive_role": 16,
-      "jersey_number": 2,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 38,
-    "fields": {
-      "user": null,
-      "first_name": "Adrián",
-      "last_name": "Céspedes Dobles",
-      "nickname": "Wisper",
-      "email": "wisper@og.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Bolivia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 38,
-    "fields": {
-      "player": 38,
-      "team": 8,
-      "competitive_role": 17,
-      "jersey_number": 3,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 39,
-    "fields": {
-      "user": null,
-      "first_name": "Matthew",
-      "last_name": "Walker",
-      "nickname": "Ari",
-      "email": "ari@og.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Reino Unido",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 39,
-    "fields": {
-      "player": 39,
-      "team": 8,
-      "competitive_role": 18,
-      "jersey_number": 4,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 40,
-    "fields": {
-      "user": null,
-      "first_name": "Sébastien",
-      "last_name": "Debs",
-      "nickname": "Ceb",
-      "email": "ceb@og.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Francia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 40,
-    "fields": {
-      "player": 40,
-      "team": 8,
-      "competitive_role": 19,
-      "jersey_number": 5,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 41,
-    "fields": {
-      "user": null,
-      "first_name": "Alexis",
-      "last_name": "Bernier",
-      "nickname": "zen",
-      "email": "zen@vitality.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Francia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 41,
-    "fields": {
-      "player": 41,
-      "team": 9,
-      "competitive_role": 20,
-      "jersey_number": 1,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 42,
-    "fields": {
-      "user": null,
-      "first_name": "Yanis",
-      "last_name": "Champenois",
-      "nickname": "Alpha54",
-      "email": "alpha54@vitality.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Francia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 42,
-    "fields": {
-      "player": 42,
-      "team": 9,
-      "competitive_role": 21,
-      "jersey_number": 2,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 43,
-    "fields": {
-      "user": null,
-      "first_name": "Andrea",
-      "last_name": "Radovanović",
-      "nickname": "Radosin",
-      "email": "radosin@vitality.gg",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Francia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 43,
-    "fields": {
-      "player": 43,
-      "team": 9,
-      "competitive_role": 22,
-      "jersey_number": 3,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 44,
-    "fields": {
-      "user": null,
-      "first_name": "Axel",
-      "last_name": "Touret",
-      "nickname": "vatira",
-      "email": "vatira@karminecorp.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Francia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 44,
-    "fields": {
-      "player": 44,
-      "team": 10,
-      "competitive_role": 20,
-      "jersey_number": 1,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": true,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 45,
-    "fields": {
-      "user": null,
-      "first_name": "Tristan",
-      "last_name": "Soyez",
-      "nickname": "Atow.",
-      "email": "atow@karminecorp.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Bélgica",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 45,
-    "fields": {
-      "player": 45,
-      "team": 10,
-      "competitive_role": 21,
-      "jersey_number": 2,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.player",
-    "pk": 46,
-    "fields": {
-      "user": null,
-      "first_name": "Finlay",
-      "last_name": "Ferguson",
-      "nickname": "rise.",
-      "email": "rise@karminecorp.com",
-      "phone": "",
-      "birth_date": "2002-05-20",
-      "country": "Reino Unido",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "players.playerteamassignment",
-    "pk": 46,
-    "fields": {
-      "player": 46,
-      "team": 10,
-      "competitive_role": 22,
-      "jersey_number": 3,
-      "joined_at": "2025-01-10",
-      "left_at": null,
-      "status": "active",
-      "is_captain": false,
-      "notes": "",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
+{
+  "model": "players.player",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "player_type": "player",
+    "first_name": "Jose Miguel",
+    "last_name": "Alcayaga",
+    "nickname": "zNake",
+    "email": "zznakke@gmail.com",
+    "phone": "+56 9 3387 5584",
+    "birth_date": "2004-10-09",
+    "country": "Chile",
+    "created_at": "2026-10-13T17:05:41.105Z",
+    "updated_at": "2026-10-13T17:05:41.105Z"
   }
+},
+{
+  "model": "players.player",
+  "pk": 3,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Martin",
+    "last_name": "Lopez",
+    "nickname": "Maartem",
+    "email": "martin2004lopez1@gmail.com",
+    "phone": "+56 9 1234 1234",
+    "birth_date": "2004-11-13",
+    "country": "Chile",
+    "created_at": "2026-10-14T16:17:21.560Z",
+    "updated_at": "2026-10-14T16:17:21.560Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 4,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Lee",
+    "last_name": "Sang-Hyeok",
+    "nickname": "Faker",
+    "email": "",
+    "phone": "",
+    "birth_date": "1996-04-07",
+    "country": "Corea",
+    "created_at": "2026-10-14T17:10:40.372Z",
+    "updated_at": "2026-10-14T17:34:27.257Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 6,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Matias",
+    "last_name": "Lopez",
+    "nickname": "PROKS",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "",
+    "created_at": "2026-10-14T17:39:15.138Z",
+    "updated_at": "2026-10-14T17:42:03.584Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 7,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Jeong-gyun",
+    "nickname": "kkOma",
+    "email": "",
+    "phone": "",
+    "birth_date": "1985-12-23",
+    "country": "Corea",
+    "created_at": "2026-10-14T17:48:27.840Z",
+    "updated_at": "2026-10-14T17:48:33.709Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 8,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Gi-in",
+    "nickname": "Kiin",
+    "email": "kiin@gen-g.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.426Z",
+    "updated_at": "2026-10-14T17:55:27.426Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 9,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Geon-bu",
+    "nickname": "Canyon",
+    "email": "canyon@gen-g.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.434Z",
+    "updated_at": "2026-10-14T17:55:27.434Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 10,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jeong",
+    "last_name": "Ji-hun",
+    "nickname": "Chovy",
+    "email": "chovy@gen-g.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.441Z",
+    "updated_at": "2026-10-14T17:55:27.441Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 11,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Su-hwan",
+    "nickname": "Peyz",
+    "email": "peyz@gen-g.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.450Z",
+    "updated_at": "2026-10-14T17:55:27.450Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 12,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Son",
+    "last_name": "Si-woo",
+    "nickname": "Lehends",
+    "email": "lehends@gen-g.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.464Z",
+    "updated_at": "2026-10-14T17:55:27.464Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 13,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Jeong-soo",
+    "nickname": "Kim",
+    "email": "kim@gen-g.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.490Z",
+    "updated_at": "2026-10-14T17:55:27.490Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 14,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Bai",
+    "last_name": "Jia-Hao",
+    "nickname": "369",
+    "email": "369@jd-gaming.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "China",
+    "created_at": "2026-10-14T17:55:27.519Z",
+    "updated_at": "2026-10-14T17:55:27.519Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 15,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Seo",
+    "last_name": "Jin-hyeok",
+    "nickname": "Kanavi",
+    "email": "kanavi@jd-gaming.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.540Z",
+    "updated_at": "2026-10-14T17:55:27.540Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 16,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhuo",
+    "last_name": "Ding",
+    "nickname": "Knight",
+    "email": "knight@jd-gaming.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "China",
+    "created_at": "2026-10-14T17:55:27.561Z",
+    "updated_at": "2026-10-14T17:55:27.561Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 17,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Park",
+    "last_name": "Jae-hyuk",
+    "nickname": "Ruler",
+    "email": "ruler@jd-gaming.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.583Z",
+    "updated_at": "2026-10-14T17:55:27.583Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 18,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Lou",
+    "last_name": "Yun-Feng",
+    "nickname": "Missing",
+    "email": "missing@jd-gaming.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "China",
+    "created_at": "2026-10-14T17:55:27.611Z",
+    "updated_at": "2026-10-14T17:55:27.611Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 19,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Yoon",
+    "last_name": "Sung-young",
+    "nickname": "Homme",
+    "email": "homme@jd-gaming.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.630Z",
+    "updated_at": "2026-10-14T17:55:27.630Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 20,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Sergen",
+    "last_name": "Çelik",
+    "nickname": "Broken Blade",
+    "email": "brokenblade@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Turquía",
+    "created_at": "2026-10-14T17:55:27.660Z",
+    "updated_at": "2026-10-14T17:55:27.660Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 21,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Martin",
+    "last_name": "Sundelin",
+    "nickname": "Yike",
+    "email": "yike@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Suecia",
+    "created_at": "2026-10-14T17:55:27.680Z",
+    "updated_at": "2026-10-14T17:55:27.680Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 22,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Rasmus",
+    "last_name": "Winther",
+    "nickname": "Caps",
+    "email": "caps@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Dinamarca",
+    "created_at": "2026-10-14T17:55:27.701Z",
+    "updated_at": "2026-10-14T17:55:27.701Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 23,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Steven",
+    "last_name": "Liv",
+    "nickname": "Hans Sama",
+    "email": "hanssama@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Francia",
+    "created_at": "2026-10-14T17:55:27.720Z",
+    "updated_at": "2026-10-14T17:55:27.720Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 24,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Mihael",
+    "last_name": "Mehle",
+    "nickname": "Mikyx",
+    "email": "mikyx@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Eslovenia",
+    "created_at": "2026-10-14T17:55:27.745Z",
+    "updated_at": "2026-10-14T17:55:27.745Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 25,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Dylan",
+    "last_name": "Falco",
+    "nickname": "Dylan",
+    "email": "dylan@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:27.766Z",
+    "updated_at": "2026-10-14T17:55:27.766Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 26,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Óscar",
+    "last_name": "Muñoz",
+    "nickname": "Oscarinin",
+    "email": "oscarinin@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "España",
+    "created_at": "2026-10-14T17:55:27.798Z",
+    "updated_at": "2026-10-14T17:55:27.798Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 27,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Iván",
+    "last_name": "Martín",
+    "nickname": "Razork",
+    "email": "razork@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "España",
+    "created_at": "2026-10-14T17:55:27.821Z",
+    "updated_at": "2026-10-14T17:55:27.821Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 28,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Marek",
+    "last_name": "Brázda",
+    "nickname": "Humanoid",
+    "email": "humanoid@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Chequia",
+    "created_at": "2026-10-14T17:55:27.840Z",
+    "updated_at": "2026-10-14T17:55:27.840Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 29,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Oh",
+    "last_name": "Hyeon-taek",
+    "nickname": "Noah",
+    "email": "noah@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.867Z",
+    "updated_at": "2026-10-14T17:55:27.867Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 30,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Yoon",
+    "last_name": "Se-jun",
+    "nickname": "Jun",
+    "email": "jun@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.887Z",
+    "updated_at": "2026-10-14T17:55:27.887Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 31,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Aleš",
+    "last_name": "Kněžínek",
+    "nickname": "Nightshare",
+    "email": "nightshare@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Chequia",
+    "created_at": "2026-10-14T17:55:27.909Z",
+    "updated_at": "2026-10-14T17:55:27.909Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 32,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jung",
+    "last_name": "Eon-young",
+    "nickname": "Impact",
+    "email": "impact@team-liquid.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.941Z",
+    "updated_at": "2026-10-14T17:55:27.941Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 33,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Eom",
+    "last_name": "Sung-hyeon",
+    "nickname": "UmTi",
+    "email": "umti@team-liquid.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:27.963Z",
+    "updated_at": "2026-10-14T17:55:27.963Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 34,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Eain",
+    "last_name": "Stearns",
+    "nickname": "APA",
+    "email": "apa@team-liquid.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:27.984Z",
+    "updated_at": "2026-10-14T17:55:27.984Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 35,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Sean",
+    "last_name": "Sung",
+    "nickname": "Yeon",
+    "email": "yeon@team-liquid.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:28.012Z",
+    "updated_at": "2026-10-14T17:55:28.012Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 36,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jo",
+    "last_name": "Yong-in",
+    "nickname": "CoreJJ",
+    "email": "corejj@team-liquid.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:28.034Z",
+    "updated_at": "2026-10-14T17:55:28.034Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 37,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jang",
+    "last_name": "Dae-woong",
+    "nickname": "Spawn",
+    "email": "spawn@team-liquid.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-14T17:55:28.057Z",
+    "updated_at": "2026-10-14T17:55:28.057Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 38,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Tyson",
+    "last_name": "Ngo",
+    "nickname": "TenZ",
+    "email": "tenz@sentinels.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Canadá",
+    "created_at": "2026-10-14T17:55:28.090Z",
+    "updated_at": "2026-10-14T17:55:28.090Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 39,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zachary",
+    "last_name": "Patrone",
+    "nickname": "zekken",
+    "email": "zekken@sentinels.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:28.112Z",
+    "updated_at": "2026-10-14T17:55:28.112Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 40,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Gustavo",
+    "last_name": "Rossi",
+    "nickname": "Sacy",
+    "email": "sacy@sentinels.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Brasil",
+    "created_at": "2026-10-14T17:55:28.140Z",
+    "updated_at": "2026-10-14T17:55:28.140Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 41,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Bryan",
+    "last_name": "Luna",
+    "nickname": "pANcada",
+    "email": "pancada@sentinels.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Brasil",
+    "created_at": "2026-10-14T17:55:28.162Z",
+    "updated_at": "2026-10-14T17:55:28.162Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 42,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Mouhamed",
+    "last_name": "Ouarid",
+    "nickname": "johnqt",
+    "email": "johnqt@sentinels.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Marruecos",
+    "created_at": "2026-10-14T17:55:28.186Z",
+    "updated_at": "2026-10-14T17:55:28.186Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 43,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Adam",
+    "last_name": "Kaplan",
+    "nickname": "Kaplan",
+    "email": "kaplan@sentinels.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:28.210Z",
+    "updated_at": "2026-10-14T17:55:28.210Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 44,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jason",
+    "last_name": "Susanto",
+    "nickname": "f0rsakeN",
+    "email": "f0rsaken@paper-rex.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Indonesia",
+    "created_at": "2026-10-14T17:55:28.245Z",
+    "updated_at": "2026-10-14T17:55:28.245Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 45,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Wang",
+    "last_name": "Jing Jie",
+    "nickname": "Jinggg",
+    "email": "jinggg@paper-rex.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Singapur",
+    "created_at": "2026-10-14T17:55:28.267Z",
+    "updated_at": "2026-10-14T17:55:28.267Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 46,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Khalish",
+    "last_name": "Rusyaidee",
+    "nickname": "d4v41",
+    "email": "d4v41@paper-rex.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Malasia",
+    "created_at": "2026-10-14T17:55:28.290Z",
+    "updated_at": "2026-10-14T17:55:28.290Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 47,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ilya",
+    "last_name": "Petrov",
+    "nickname": "something",
+    "email": "something@paper-rex.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Rusia",
+    "created_at": "2026-10-14T17:55:28.313Z",
+    "updated_at": "2026-10-14T17:55:28.313Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 48,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Aaron",
+    "last_name": "Leonhart",
+    "nickname": "mindfreak",
+    "email": "mindfreak@paper-rex.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Indonesia",
+    "created_at": "2026-10-14T17:55:28.333Z",
+    "updated_at": "2026-10-14T17:55:28.333Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 49,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Alexandre",
+    "last_name": "Sallé",
+    "nickname": "alecks",
+    "email": "alecks@paper-rex.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Francia",
+    "created_at": "2026-10-14T17:55:28.353Z",
+    "updated_at": "2026-10-14T17:55:28.353Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 50,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Erick",
+    "last_name": "Santos",
+    "nickname": "aspas",
+    "email": "aspas@loud.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Brasil",
+    "created_at": "2026-10-14T17:55:28.385Z",
+    "updated_at": "2026-10-14T17:55:28.385Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 51,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Matias",
+    "last_name": "Delipetro",
+    "nickname": "saadhak",
+    "email": "saadhak@loud.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Argentina",
+    "created_at": "2026-10-14T17:55:28.410Z",
+    "updated_at": "2026-10-14T17:55:28.410Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 52,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Felipe",
+    "last_name": "Basso",
+    "nickname": "less",
+    "email": "less@loud.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Brasil",
+    "created_at": "2026-10-14T17:55:28.439Z",
+    "updated_at": "2026-10-14T17:55:28.439Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 53,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Arthur",
+    "last_name": "Andrade",
+    "nickname": "tuyz",
+    "email": "tuyz@loud.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Brasil",
+    "created_at": "2026-10-14T17:55:28.464Z",
+    "updated_at": "2026-10-14T17:55:28.464Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 54,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Gabriel",
+    "last_name": "Cavalcanti",
+    "nickname": "cauanzin",
+    "email": "cauanzin@loud.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Brasil",
+    "created_at": "2026-10-14T17:55:28.488Z",
+    "updated_at": "2026-10-14T17:55:28.488Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 55,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Rodrigo",
+    "last_name": "Rocha",
+    "nickname": "bzkA",
+    "email": "bzka@loud.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Brasil",
+    "created_at": "2026-10-14T17:55:28.504Z",
+    "updated_at": "2026-10-14T17:55:28.504Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 56,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jake",
+    "last_name": "Howlett",
+    "nickname": "Boaster",
+    "email": "boaster@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Reino Unido",
+    "created_at": "2026-10-14T17:55:28.532Z",
+    "updated_at": "2026-10-14T17:55:28.532Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 57,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Nikita",
+    "last_name": "Sirmitev",
+    "nickname": "Derke",
+    "email": "derke@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Finlandia",
+    "created_at": "2026-10-14T17:55:28.557Z",
+    "updated_at": "2026-10-14T17:55:28.557Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 58,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Emir",
+    "last_name": "Beder",
+    "nickname": "Alfajer",
+    "email": "alfajer@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Turquía",
+    "created_at": "2026-10-14T17:55:28.581Z",
+    "updated_at": "2026-10-14T17:55:28.581Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 59,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Timofey",
+    "last_name": "Khromov",
+    "nickname": "Chronicle",
+    "email": "chronicle@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Rusia",
+    "created_at": "2026-10-14T17:55:28.603Z",
+    "updated_at": "2026-10-14T17:55:28.603Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 60,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Leo",
+    "last_name": "Jannesson",
+    "nickname": "Leo",
+    "email": "leo@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Suecia",
+    "created_at": "2026-10-14T17:55:28.626Z",
+    "updated_at": "2026-10-14T17:55:28.626Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 61,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jacob",
+    "last_name": "Harris",
+    "nickname": "mini",
+    "email": "mini@fnatic.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Reino Unido",
+    "created_at": "2026-10-14T17:55:28.650Z",
+    "updated_at": "2026-10-14T17:55:28.650Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 62,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jacob",
+    "last_name": "Batio",
+    "nickname": "valyn",
+    "email": "valyn@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:28.688Z",
+    "updated_at": "2026-10-14T17:55:28.688Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 63,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Trent",
+    "last_name": "Cairns",
+    "nickname": "trent",
+    "email": "trent@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:28.712Z",
+    "updated_at": "2026-10-14T17:55:28.712Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 64,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jonah",
+    "last_name": "Pulice",
+    "nickname": "JonahP",
+    "email": "jonahp@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:28.736Z",
+    "updated_at": "2026-10-14T17:55:28.736Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 65,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Nathan",
+    "last_name": "Orf",
+    "nickname": "leaf",
+    "email": "leaf@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:28.759Z",
+    "updated_at": "2026-10-14T17:55:28.759Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 66,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jacob",
+    "last_name": "Lange",
+    "nickname": "icy",
+    "email": "icy@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-14T17:55:28.784Z",
+    "updated_at": "2026-10-14T17:55:28.784Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 67,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Daniel",
+    "last_name": "Sores",
+    "nickname": "d00mbr0s",
+    "email": "d00mbr0s@g2-esports.gg",
+    "phone": "",
+    "birth_date": "2000-01-01",
+    "country": "Israel",
+    "created_at": "2026-10-14T17:55:28.814Z",
+    "updated_at": "2026-10-14T17:55:28.814Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 68,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Choi",
+    "last_name": "Hyeon-jun",
+    "nickname": "Doran",
+    "email": "",
+    "phone": "",
+    "birth_date": "2000-07-22",
+    "country": "Corea",
+    "created_at": "2026-10-14T18:02:08.941Z",
+    "updated_at": "2026-10-14T18:02:08.941Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 69,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Mun",
+    "last_name": "Hyeon-jun",
+    "nickname": "Oner",
+    "email": "",
+    "phone": "",
+    "birth_date": "2002-12-24",
+    "country": "Corea",
+    "created_at": "2026-10-14T18:02:59.154Z",
+    "updated_at": "2026-10-14T18:02:59.154Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 70,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ryu",
+    "last_name": "Min-seok",
+    "nickname": "Keria",
+    "email": "",
+    "phone": "",
+    "birth_date": "2004-10-14",
+    "country": "Corea",
+    "created_at": "2026-10-14T18:04:02.639Z",
+    "updated_at": "2026-10-14T18:04:02.639Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 71,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ricardas",
+    "last_name": "Lukasevicius",
+    "nickname": "Boo",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Lituania",
+    "created_at": "2026-10-15T01:12:03.667Z",
+    "updated_at": "2026-10-15T01:12:03.667Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 72,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Dominykas",
+    "last_name": "Lukasevicius",
+    "nickname": "MiniBoo",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Lituania",
+    "created_at": "2026-10-15T01:12:03.691Z",
+    "updated_at": "2026-10-15T01:12:03.691Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 73,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Mert",
+    "last_name": "Alkan",
+    "nickname": "Wo0t",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Turquía",
+    "created_at": "2026-10-15T01:12:03.711Z",
+    "updated_at": "2026-10-15T01:12:03.711Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 74,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Maksym",
+    "last_name": "Rieznik",
+    "nickname": "RieNs",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Ucrania",
+    "created_at": "2026-10-15T01:12:03.736Z",
+    "updated_at": "2026-10-15T01:12:03.736Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 75,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Patryk",
+    "last_name": "Fabrowski",
+    "nickname": "paTiTek",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Polonia",
+    "created_at": "2026-10-15T01:12:03.758Z",
+    "updated_at": "2026-10-15T01:12:03.758Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 76,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Nicolás",
+    "last_name": "González",
+    "nickname": "neptuNo",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "España",
+    "created_at": "2026-10-15T01:12:03.787Z",
+    "updated_at": "2026-10-15T01:12:03.787Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 77,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ayaz",
+    "last_name": "Akhmetzyanov",
+    "nickname": "nAts",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Rusia",
+    "created_at": "2026-10-15T01:12:03.896Z",
+    "updated_at": "2026-10-15T01:12:03.896Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 78,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Elias",
+    "last_name": "Olkkonen",
+    "nickname": "Jamppi",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Finlandia",
+    "created_at": "2026-10-15T01:12:03.921Z",
+    "updated_at": "2026-10-15T01:12:03.921Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 79,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Timur",
+    "last_name": "Kadyrov",
+    "nickname": "kamo",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Rusia",
+    "created_at": "2026-10-15T01:12:03.943Z",
+    "updated_at": "2026-10-15T01:12:03.943Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 80,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "James",
+    "last_name": "Orfila",
+    "nickname": "Mistic",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Reino Unido",
+    "created_at": "2026-10-15T01:12:03.976Z",
+    "updated_at": "2026-10-15T01:12:03.976Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 81,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Keiko",
+    "last_name": "Martínez",
+    "nickname": "Keiko",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:03.998Z",
+    "updated_at": "2026-10-15T01:12:03.998Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 82,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Connor",
+    "last_name": "Blomfield",
+    "nickname": "Sliggy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Reino Unido",
+    "created_at": "2026-10-15T01:12:04.023Z",
+    "updated_at": "2026-10-15T01:12:04.023Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 83,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Gu-taek",
+    "nickname": "stax",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.123Z",
+    "updated_at": "2026-10-15T01:12:04.123Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 84,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Goo",
+    "last_name": "Sang-min",
+    "nickname": "Rb",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.148Z",
+    "updated_at": "2026-10-15T01:12:04.148Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 85,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Yeon-tae",
+    "nickname": "Zest",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.170Z",
+    "updated_at": "2026-10-15T01:12:04.170Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 86,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Yoo",
+    "last_name": "Byung-chul",
+    "nickname": "BuZz",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.194Z",
+    "updated_at": "2026-10-15T01:12:04.194Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 87,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Myeong-gwan",
+    "nickname": "MaKo",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.217Z",
+    "updated_at": "2026-10-15T01:12:04.217Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 88,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Kim",
+    "last_name": "Seong-jun",
+    "nickname": "Termi",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.243Z",
+    "updated_at": "2026-10-15T01:12:04.243Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 89,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Na-ra",
+    "nickname": "t3xture",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.335Z",
+    "updated_at": "2026-10-15T01:12:04.335Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 90,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ahn",
+    "last_name": "Byeong-hyeon",
+    "nickname": "Meteor",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.359Z",
+    "updated_at": "2026-10-15T01:12:04.359Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 91,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Jong-min",
+    "nickname": "Lakia",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.386Z",
+    "updated_at": "2026-10-15T01:12:04.386Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 92,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Lee",
+    "last_name": "Won-tae",
+    "nickname": "Karon",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.411Z",
+    "updated_at": "2026-10-15T01:12:04.411Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 93,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Byeon",
+    "last_name": "Sang-beom",
+    "nickname": "Munchkin",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.437Z",
+    "updated_at": "2026-10-15T01:12:04.437Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 94,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Hwang",
+    "last_name": "Sung-min",
+    "nickname": "hsk",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.461Z",
+    "updated_at": "2026-10-15T01:12:04.461Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 95,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kevin",
+    "last_name": "Susanto",
+    "nickname": "xccurate",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Indonesia",
+    "created_at": "2026-10-15T01:12:04.557Z",
+    "updated_at": "2026-10-15T01:12:04.557Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 96,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ko",
+    "last_name": "Young-sub",
+    "nickname": "Sylvan",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.582Z",
+    "updated_at": "2026-10-15T01:12:04.582Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 97,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Park",
+    "last_name": "Min-jae",
+    "nickname": "izu",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.605Z",
+    "updated_at": "2026-10-15T01:12:04.605Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 98,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Choi",
+    "last_name": "Woo-jin",
+    "nickname": "iNTRO",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.631Z",
+    "updated_at": "2026-10-15T01:12:04.631Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 99,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Lee",
+    "last_name": "Jae-hyeok",
+    "nickname": "Carpe",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.651Z",
+    "updated_at": "2026-10-15T01:12:04.651Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 100,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Cha",
+    "last_name": "Ji-hoon",
+    "nickname": "indigo",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.678Z",
+    "updated_at": "2026-10-15T01:12:04.678Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 101,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Wang",
+    "last_name": "Senxu",
+    "nickname": "CHICHOO",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.772Z",
+    "updated_at": "2026-10-15T01:12:04.772Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 102,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhang",
+    "last_name": "Bocheng",
+    "nickname": "Smoggy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.793Z",
+    "updated_at": "2026-10-15T01:12:04.793Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 103,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Cheng",
+    "last_name": "Wan",
+    "nickname": "nobody",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.816Z",
+    "updated_at": "2026-10-15T01:12:04.816Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 104,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhang",
+    "last_name": "Haodong",
+    "nickname": "Haodong",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.840Z",
+    "updated_at": "2026-10-15T01:12:04.840Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 105,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Liu",
+    "last_name": "Kang",
+    "nickname": "KangKang",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.864Z",
+    "updated_at": "2026-10-15T01:12:04.864Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 106,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Lai",
+    "last_name": "Xue-bin",
+    "nickname": "AfteR",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.892Z",
+    "updated_at": "2026-10-15T01:12:04.892Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 107,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhuo",
+    "last_name": "Wen",
+    "nickname": "yosemite",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.968Z",
+    "updated_at": "2026-10-15T01:12:04.968Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 108,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhang",
+    "last_name": "Bailing",
+    "nickname": "BerLIN",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.990Z",
+    "updated_at": "2026-10-15T01:12:04.990Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 109,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kun",
+    "last_name": "Yang",
+    "nickname": "Autumn",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.005Z",
+    "updated_at": "2026-10-15T01:12:05.005Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 110,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhang",
+    "last_name": "Zihao",
+    "nickname": "ZiHao",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.019Z",
+    "updated_at": "2026-10-15T01:12:05.019Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 111,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "An",
+    "last_name": "Kang",
+    "nickname": "AnG",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.034Z",
+    "updated_at": "2026-10-15T01:12:05.034Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 112,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Wang",
+    "last_name": "Nan",
+    "nickname": "NaThanD",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.049Z",
+    "updated_at": "2026-10-15T01:12:05.049Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 113,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhang",
+    "last_name": "Wei",
+    "nickname": "whzy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.115Z",
+    "updated_at": "2026-10-15T01:12:05.115Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 114,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Li",
+    "last_name": "Jing",
+    "nickname": "Jing",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.131Z",
+    "updated_at": "2026-10-15T01:12:05.131Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 115,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Feng",
+    "last_name": "Jun",
+    "nickname": "FengF",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.146Z",
+    "updated_at": "2026-10-15T01:12:05.146Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 116,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhao",
+    "last_name": "Hao",
+    "nickname": "ZH1",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.161Z",
+    "updated_at": "2026-10-15T01:12:05.161Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 117,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jiu",
+    "last_name": "Jiu",
+    "nickname": "Jiujiu",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.181Z",
+    "updated_at": "2026-10-15T01:12:05.181Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 118,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Cheng",
+    "last_name": "Bai",
+    "nickname": "bail",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.195Z",
+    "updated_at": "2026-10-15T01:12:05.195Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 119,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Sam",
+    "last_name": "Oh",
+    "nickname": "s0m",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.258Z",
+    "updated_at": "2026-10-15T01:12:05.258Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 120,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ethan",
+    "last_name": "Arnold",
+    "nickname": "Ethan",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.274Z",
+    "updated_at": "2026-10-15T01:12:05.274Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 121,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Austin",
+    "last_name": "Roberts",
+    "nickname": "Crashies",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.295Z",
+    "updated_at": "2026-10-15T01:12:05.295Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 122,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Victor",
+    "last_name": "Wong",
+    "nickname": "Victor",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.309Z",
+    "updated_at": "2026-10-15T01:12:05.309Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 123,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Pujan",
+    "last_name": "Mehta",
+    "nickname": "FNS",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.325Z",
+    "updated_at": "2026-10-15T01:12:05.325Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 124,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Chet",
+    "last_name": "Singh",
+    "nickname": "Chet",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.341Z",
+    "updated_at": "2026-10-15T01:12:05.341Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 125,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Angelo",
+    "last_name": "Mori",
+    "nickname": "keznit",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Chile",
+    "created_at": "2026-10-15T01:12:05.410Z",
+    "updated_at": "2026-10-15T01:12:05.410Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 126,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Nicolás",
+    "last_name": "González",
+    "nickname": "NagZ",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Chile",
+    "created_at": "2026-10-15T01:12:05.427Z",
+    "updated_at": "2026-10-15T01:12:05.427Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 127,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ignacio",
+    "last_name": "Rojas",
+    "nickname": "Mazino",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Chile",
+    "created_at": "2026-10-15T01:12:05.442Z",
+    "updated_at": "2026-10-15T01:12:05.442Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 128,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Matías",
+    "last_name": "Rojas",
+    "nickname": "Melser",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Chile",
+    "created_at": "2026-10-15T01:12:05.457Z",
+    "updated_at": "2026-10-15T01:12:05.457Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 129,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Benjamín",
+    "last_name": "Poblete",
+    "nickname": "kiNzo",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Chile",
+    "created_at": "2026-10-15T01:12:05.477Z",
+    "updated_at": "2026-10-15T01:12:05.477Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 130,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Onur",
+    "last_name": "Kabadayı",
+    "nickname": "Onur",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Turquía",
+    "created_at": "2026-10-15T01:12:05.492Z",
+    "updated_at": "2026-10-15T01:12:05.492Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 131,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Chen",
+    "last_name": "Ze-Bin",
+    "nickname": "Bin",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.563Z",
+    "updated_at": "2026-10-15T01:12:05.563Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 132,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Peng",
+    "last_name": "Li-xun",
+    "nickname": "Xun",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.578Z",
+    "updated_at": "2026-10-15T01:12:05.578Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 133,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zeng",
+    "last_name": "Qi",
+    "nickname": "Yagao",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.594Z",
+    "updated_at": "2026-10-15T01:12:05.594Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 134,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zhao",
+    "last_name": "Jia-hao",
+    "nickname": "Elk",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.609Z",
+    "updated_at": "2026-10-15T01:12:05.609Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 135,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Luo",
+    "last_name": "Wen-jun",
+    "nickname": "ON",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.625Z",
+    "updated_at": "2026-10-15T01:12:05.625Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 136,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Yang",
+    "last_name": "Dae-in",
+    "nickname": "Daeny",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:05.640Z",
+    "updated_at": "2026-10-15T01:12:05.640Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 137,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Huang",
+    "last_name": "Ren-xing",
+    "nickname": "Wayward",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.706Z",
+    "updated_at": "2026-10-15T01:12:05.706Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 138,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Gao",
+    "last_name": "Tian-liang",
+    "nickname": "Tian",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.720Z",
+    "updated_at": "2026-10-15T01:12:05.720Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 139,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Lin",
+    "last_name": "Jian",
+    "nickname": "Creme",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.734Z",
+    "updated_at": "2026-10-15T01:12:05.734Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 140,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Yu",
+    "last_name": "Wen-bo",
+    "nickname": "JackeyLove",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.750Z",
+    "updated_at": "2026-10-15T01:12:05.750Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 141,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Tian",
+    "last_name": "Ye",
+    "nickname": "Meiko",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.764Z",
+    "updated_at": "2026-10-15T01:12:05.764Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 142,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Chen",
+    "last_name": "Maokai",
+    "nickname": "Maokai",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.778Z",
+    "updated_at": "2026-10-15T01:12:05.778Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 143,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kang",
+    "last_name": "Seung-lok",
+    "nickname": "TheShy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:05.839Z",
+    "updated_at": "2026-10-15T01:12:05.839Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 144,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Wang",
+    "last_name": "Wei",
+    "nickname": "Weiwei",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.854Z",
+    "updated_at": "2026-10-15T01:12:05.854Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 145,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Li",
+    "last_name": "Yuan-Hao",
+    "nickname": "Xiaohu",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.869Z",
+    "updated_at": "2026-10-15T01:12:05.869Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 146,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Wang",
+    "last_name": "Guang-yu",
+    "nickname": "Light",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.885Z",
+    "updated_at": "2026-10-15T01:12:05.885Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 147,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Liu",
+    "last_name": "Qing-song",
+    "nickname": "Crisp",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.901Z",
+    "updated_at": "2026-10-15T01:12:05.901Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 148,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Zhu",
+    "last_name": "Kenzhu",
+    "nickname": "Kenzhu",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.915Z",
+    "updated_at": "2026-10-15T01:12:05.915Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 149,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Krzysztof",
+    "last_name": "Wojciechowski",
+    "nickname": "Chasy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Polonia",
+    "created_at": "2026-10-15T01:12:05.976Z",
+    "updated_at": "2026-10-15T01:12:05.976Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 150,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Javier",
+    "last_name": "Prades",
+    "nickname": "Elyoya",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "España",
+    "created_at": "2026-10-15T01:12:05.997Z",
+    "updated_at": "2026-10-15T01:12:05.997Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 151,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Bartosz",
+    "last_name": "Prenc",
+    "nickname": "Fresskowy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Polonia",
+    "created_at": "2026-10-15T01:12:06.013Z",
+    "updated_at": "2026-10-15T01:12:06.013Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 152,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "David",
+    "last_name": "Martínez",
+    "nickname": "Supa",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "España",
+    "created_at": "2026-10-15T01:12:06.028Z",
+    "updated_at": "2026-10-15T01:12:06.028Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 153,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Álvaro",
+    "last_name": "Fernández",
+    "nickname": "Alvaro",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "España",
+    "created_at": "2026-10-15T01:12:06.042Z",
+    "updated_at": "2026-10-15T01:12:06.042Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 154,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Peter",
+    "last_name": "Dun",
+    "nickname": "Peter Dun",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Reino Unido",
+    "created_at": "2026-10-15T01:12:06.058Z",
+    "updated_at": "2026-10-15T01:12:06.058Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 155,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kyung",
+    "last_name": "Gyu-tae",
+    "nickname": "Photon",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.127Z",
+    "updated_at": "2026-10-15T01:12:06.127Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 156,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Linas",
+    "last_name": "Nauncikas",
+    "nickname": "Lyncas",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Lituania",
+    "created_at": "2026-10-15T01:12:06.143Z",
+    "updated_at": "2026-10-15T01:12:06.143Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 157,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Vincent",
+    "last_name": "Berthier",
+    "nickname": "Vetheo",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Francia",
+    "created_at": "2026-10-15T01:12:06.159Z",
+    "updated_at": "2026-10-15T01:12:06.159Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 158,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Patrik",
+    "last_name": "Danecek",
+    "nickname": "Carzzy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "República Checa",
+    "created_at": "2026-10-15T01:12:06.181Z",
+    "updated_at": "2026-10-15T01:12:06.181Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 159,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Zdravets",
+    "last_name": "Galabov",
+    "nickname": "Hylissang",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Bulgaria",
+    "created_at": "2026-10-15T01:12:06.195Z",
+    "updated_at": "2026-10-15T01:12:06.195Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 160,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Carter",
+    "last_name": "Nash",
+    "nickname": "Carter",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:06.211Z",
+    "updated_at": "2026-10-15T01:12:06.211Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 161,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Jakub",
+    "last_name": "Woźniak",
+    "nickname": "Irrelevant",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Polonia",
+    "created_at": "2026-10-15T01:12:06.276Z",
+    "updated_at": "2026-10-15T01:12:06.276Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 162,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Ismael",
+    "last_name": "Boualem",
+    "nickname": "ISMA",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Suecia",
+    "created_at": "2026-10-15T01:12:06.290Z",
+    "updated_at": "2026-10-15T01:12:06.290Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 163,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Yasin",
+    "last_name": "Dinçer",
+    "nickname": "Nisqy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Bélgica",
+    "created_at": "2026-10-15T01:12:06.305Z",
+    "updated_at": "2026-10-15T01:12:06.305Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 164,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Rahel",
+    "last_name": "Ghumrawi",
+    "nickname": "Rahel",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Alemania",
+    "created_at": "2026-10-15T01:12:06.320Z",
+    "updated_at": "2026-10-15T01:12:06.320Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 165,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Norman",
+    "last_name": "Luong",
+    "nickname": "Luon",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Alemania",
+    "created_at": "2026-10-15T01:12:06.335Z",
+    "updated_at": "2026-10-15T01:12:06.335Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 166,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Gevorg",
+    "last_name": "Arzumanyan",
+    "nickname": "Gevous",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Alemania",
+    "created_at": "2026-10-15T01:12:06.349Z",
+    "updated_at": "2026-10-15T01:12:06.349Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 167,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Lee",
+    "last_name": "Seung-min",
+    "nickname": "PerfecT",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.415Z",
+    "updated_at": "2026-10-15T01:12:06.415Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 168,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Moon",
+    "last_name": "Woo-chan",
+    "nickname": "Cuzz",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.431Z",
+    "updated_at": "2026-10-15T01:12:06.432Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 169,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Gwak",
+    "last_name": "Bo-seong",
+    "nickname": "Bdd",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.447Z",
+    "updated_at": "2026-10-15T01:12:06.447Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 170,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Hyuk-kyu",
+    "nickname": "Deft",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.463Z",
+    "updated_at": "2026-10-15T01:12:06.463Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 171,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Ji-hoon",
+    "nickname": "Way",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.483Z",
+    "updated_at": "2026-10-15T01:12:06.483Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 172,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Kang",
+    "last_name": "Do-hoon",
+    "nickname": "Hirai",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.499Z",
+    "updated_at": "2026-10-15T01:12:06.499Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 173,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Choi",
+    "last_name": "Woo-je",
+    "nickname": "Zeus",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.568Z",
+    "updated_at": "2026-10-15T01:12:06.568Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 174,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Han",
+    "last_name": "Wang-ho",
+    "nickname": "Peanut",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.598Z",
+    "updated_at": "2026-10-15T01:12:06.598Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 175,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Geon-woo",
+    "nickname": "Zeka",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.613Z",
+    "updated_at": "2026-10-15T01:12:06.613Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 176,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Park",
+    "last_name": "Do-hyeon",
+    "nickname": "Viper",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.629Z",
+    "updated_at": "2026-10-15T01:12:06.629Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 177,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Yoo",
+    "last_name": "Hwan-joong",
+    "nickname": "Delight",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.643Z",
+    "updated_at": "2026-10-15T01:12:06.643Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 178,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Choi",
+    "last_name": "In-kyu",
+    "nickname": "DanDy",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.659Z",
+    "updated_at": "2026-10-15T01:12:06.659Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 179,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Hwang",
+    "last_name": "Seong-hoon",
+    "nickname": "Kingen",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.735Z",
+    "updated_at": "2026-10-15T01:12:06.735Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 180,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Choi",
+    "last_name": "Yong-hyeok",
+    "nickname": "Lucid",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.751Z",
+    "updated_at": "2026-10-15T01:12:06.751Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 181,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Heo",
+    "last_name": "Su",
+    "nickname": "ShowMaker",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.767Z",
+    "updated_at": "2026-10-15T01:12:06.767Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 182,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Ha-ram",
+    "nickname": "Aiming",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.783Z",
+    "updated_at": "2026-10-15T01:12:06.783Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 183,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Hyeong-gyu",
+    "nickname": "Kellin",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.801Z",
+    "updated_at": "2026-10-15T01:12:06.801Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 184,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Kim",
+    "last_name": "Dae-ho",
+    "nickname": "Acorn",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.821Z",
+    "updated_at": "2026-10-15T01:12:06.821Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 185,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Park",
+    "last_name": "Seung-gyu",
+    "nickname": "Thanatos",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:06.892Z",
+    "updated_at": "2026-10-15T01:12:06.892Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 186,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Robert",
+    "last_name": "Huang",
+    "nickname": "Blaber",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Canadá",
+    "created_at": "2026-10-15T01:12:06.914Z",
+    "updated_at": "2026-10-15T01:12:06.914Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 187,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Joseph",
+    "last_name": "Pyun",
+    "nickname": "Jojopyun",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Canadá",
+    "created_at": "2026-10-15T01:12:06.930Z",
+    "updated_at": "2026-10-15T01:12:06.930Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 188,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Kim",
+    "last_name": "Min-cheol",
+    "nickname": "Berserker",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.946Z",
+    "updated_at": "2026-10-15T01:12:06.946Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 189,
+  "fields": {
+    "user": null,
+    "player_type": "player",
+    "first_name": "Philippe",
+    "last_name": "Laflamme",
+    "nickname": "Vulcan",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Canadá",
+    "created_at": "2026-10-15T01:12:06.963Z",
+    "updated_at": "2026-10-15T01:12:06.963Z"
+  }
+},
+{
+  "model": "players.player",
+  "pk": 190,
+  "fields": {
+    "user": null,
+    "player_type": "coach",
+    "first_name": "Bok",
+    "last_name": "Han-gyu",
+    "nickname": "Reapered",
+    "email": "",
+    "phone": "",
+    "birth_date": null,
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.979Z",
+    "updated_at": "2026-10-15T01:12:06.979Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 2,
+  "fields": {
+    "player": 4,
+    "team": 1,
+    "competitive_role": 8,
+    "joined_at": "2026-10-14",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:34:47.392Z",
+    "updated_at": "2026-10-14T17:34:47.392Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 3,
+  "fields": {
+    "player": 3,
+    "team": 3,
+    "competitive_role": 3,
+    "joined_at": "2026-10-14",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:37:16.288Z",
+    "updated_at": "2026-10-14T17:37:16.288Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 4,
+  "fields": {
+    "player": 2,
+    "team": 3,
+    "competitive_role": 2,
+    "joined_at": "2026-10-14",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:37:30.051Z",
+    "updated_at": "2026-10-14T17:37:30.051Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 5,
+  "fields": {
+    "player": 6,
+    "team": 3,
+    "competitive_role": null,
+    "joined_at": "2026-10-14",
+    "left_at": "2026-10-14",
+    "status": "left",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:39:48.431Z",
+    "updated_at": "2026-10-14T17:40:26.531Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 6,
+  "fields": {
+    "player": 6,
+    "team": 3,
+    "competitive_role": 70,
+    "joined_at": "2026-10-14",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:42:23.837Z",
+    "updated_at": "2026-10-14T17:42:23.837Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 7,
+  "fields": {
+    "player": 7,
+    "team": 1,
+    "competitive_role": 71,
+    "joined_at": "2026-10-14",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:48:49.580Z",
+    "updated_at": "2026-10-14T17:48:49.580Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 8,
+  "fields": {
+    "player": 8,
+    "team": 4,
+    "competitive_role": 6,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.430Z",
+    "updated_at": "2026-10-14T17:55:27.430Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 9,
+  "fields": {
+    "player": 9,
+    "team": 4,
+    "competitive_role": 7,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.438Z",
+    "updated_at": "2026-10-14T17:55:27.438Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 10,
+  "fields": {
+    "player": 10,
+    "team": 4,
+    "competitive_role": 8,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.445Z",
+    "updated_at": "2026-10-14T17:55:27.445Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 11,
+  "fields": {
+    "player": 11,
+    "team": 4,
+    "competitive_role": 9,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.454Z",
+    "updated_at": "2026-10-14T17:55:27.454Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 12,
+  "fields": {
+    "player": 12,
+    "team": 4,
+    "competitive_role": 10,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.480Z",
+    "updated_at": "2026-10-14T17:55:27.480Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 13,
+  "fields": {
+    "player": 13,
+    "team": 4,
+    "competitive_role": 71,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.500Z",
+    "updated_at": "2026-10-14T17:55:27.500Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 14,
+  "fields": {
+    "player": 14,
+    "team": 5,
+    "competitive_role": 6,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.531Z",
+    "updated_at": "2026-10-14T17:55:27.531Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 15,
+  "fields": {
+    "player": 15,
+    "team": 5,
+    "competitive_role": 7,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.551Z",
+    "updated_at": "2026-10-14T17:55:27.551Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 16,
+  "fields": {
+    "player": 16,
+    "team": 5,
+    "competitive_role": 8,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.572Z",
+    "updated_at": "2026-10-14T17:55:27.572Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 17,
+  "fields": {
+    "player": 17,
+    "team": 5,
+    "competitive_role": 9,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.594Z",
+    "updated_at": "2026-10-14T17:55:27.594Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 18,
+  "fields": {
+    "player": 18,
+    "team": 5,
+    "competitive_role": 10,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.621Z",
+    "updated_at": "2026-10-14T17:55:27.621Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 19,
+  "fields": {
+    "player": 19,
+    "team": 5,
+    "competitive_role": 71,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.641Z",
+    "updated_at": "2026-10-14T17:55:27.641Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 20,
+  "fields": {
+    "player": 20,
+    "team": 6,
+    "competitive_role": 6,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.671Z",
+    "updated_at": "2026-10-14T17:55:27.671Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 21,
+  "fields": {
+    "player": 21,
+    "team": 6,
+    "competitive_role": 7,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.691Z",
+    "updated_at": "2026-10-14T17:55:27.691Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 22,
+  "fields": {
+    "player": 22,
+    "team": 6,
+    "competitive_role": 8,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.711Z",
+    "updated_at": "2026-10-14T17:55:27.711Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 23,
+  "fields": {
+    "player": 23,
+    "team": 6,
+    "competitive_role": 9,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.731Z",
+    "updated_at": "2026-10-14T17:55:27.731Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 24,
+  "fields": {
+    "player": 24,
+    "team": 6,
+    "competitive_role": 10,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.756Z",
+    "updated_at": "2026-10-14T17:55:27.756Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 25,
+  "fields": {
+    "player": 25,
+    "team": 6,
+    "competitive_role": 71,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.778Z",
+    "updated_at": "2026-10-14T17:55:27.778Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 26,
+  "fields": {
+    "player": 26,
+    "team": 7,
+    "competitive_role": 6,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.810Z",
+    "updated_at": "2026-10-14T17:55:27.810Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 27,
+  "fields": {
+    "player": 27,
+    "team": 7,
+    "competitive_role": 7,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.831Z",
+    "updated_at": "2026-10-14T17:55:27.831Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 28,
+  "fields": {
+    "player": 28,
+    "team": 7,
+    "competitive_role": 8,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.851Z",
+    "updated_at": "2026-10-14T17:55:27.851Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 29,
+  "fields": {
+    "player": 29,
+    "team": 7,
+    "competitive_role": 9,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.877Z",
+    "updated_at": "2026-10-14T17:55:27.877Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 30,
+  "fields": {
+    "player": 30,
+    "team": 7,
+    "competitive_role": 10,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.899Z",
+    "updated_at": "2026-10-14T17:55:27.899Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 31,
+  "fields": {
+    "player": 31,
+    "team": 7,
+    "competitive_role": 71,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.919Z",
+    "updated_at": "2026-10-14T17:55:27.919Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 32,
+  "fields": {
+    "player": 32,
+    "team": 8,
+    "competitive_role": 6,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.951Z",
+    "updated_at": "2026-10-14T17:55:27.951Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 33,
+  "fields": {
+    "player": 33,
+    "team": 8,
+    "competitive_role": 7,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:27.974Z",
+    "updated_at": "2026-10-14T17:55:27.974Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 34,
+  "fields": {
+    "player": 34,
+    "team": 8,
+    "competitive_role": 8,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.000Z",
+    "updated_at": "2026-10-14T17:55:28.000Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 35,
+  "fields": {
+    "player": 35,
+    "team": 8,
+    "competitive_role": 9,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.023Z",
+    "updated_at": "2026-10-14T17:55:28.023Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 36,
+  "fields": {
+    "player": 36,
+    "team": 8,
+    "competitive_role": 10,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.045Z",
+    "updated_at": "2026-10-14T17:55:28.045Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 37,
+  "fields": {
+    "player": 37,
+    "team": 8,
+    "competitive_role": 71,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.068Z",
+    "updated_at": "2026-10-14T17:55:28.068Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 38,
+  "fields": {
+    "player": 38,
+    "team": 9,
+    "competitive_role": 2,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.101Z",
+    "updated_at": "2026-10-14T17:55:28.101Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 39,
+  "fields": {
+    "player": 39,
+    "team": 9,
+    "competitive_role": 2,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.130Z",
+    "updated_at": "2026-10-14T17:55:28.130Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 40,
+  "fields": {
+    "player": 40,
+    "team": 9,
+    "competitive_role": 3,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.152Z",
+    "updated_at": "2026-10-14T17:55:28.152Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 41,
+  "fields": {
+    "player": 41,
+    "team": 9,
+    "competitive_role": 4,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.175Z",
+    "updated_at": "2026-10-14T17:55:28.175Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 42,
+  "fields": {
+    "player": 42,
+    "team": 9,
+    "competitive_role": 5,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.198Z",
+    "updated_at": "2026-10-14T17:55:28.198Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 43,
+  "fields": {
+    "player": 43,
+    "team": 9,
+    "competitive_role": 70,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.222Z",
+    "updated_at": "2026-10-14T17:55:28.222Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 44,
+  "fields": {
+    "player": 44,
+    "team": 10,
+    "competitive_role": 4,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.256Z",
+    "updated_at": "2026-10-14T17:55:28.256Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 45,
+  "fields": {
+    "player": 45,
+    "team": 10,
+    "competitive_role": 2,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.279Z",
+    "updated_at": "2026-10-14T17:55:28.279Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 46,
+  "fields": {
+    "player": 46,
+    "team": 10,
+    "competitive_role": 3,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.302Z",
+    "updated_at": "2026-10-14T17:55:28.302Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 47,
+  "fields": {
+    "player": 47,
+    "team": 10,
+    "competitive_role": 2,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.324Z",
+    "updated_at": "2026-10-14T17:55:28.324Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 48,
+  "fields": {
+    "player": 48,
+    "team": 10,
+    "competitive_role": 5,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.344Z",
+    "updated_at": "2026-10-14T17:55:28.344Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 49,
+  "fields": {
+    "player": 49,
+    "team": 10,
+    "competitive_role": 70,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.364Z",
+    "updated_at": "2026-10-14T17:55:28.364Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 50,
+  "fields": {
+    "player": 50,
+    "team": 11,
+    "competitive_role": 2,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.398Z",
+    "updated_at": "2026-10-14T17:55:28.398Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 51,
+  "fields": {
+    "player": 51,
+    "team": 11,
+    "competitive_role": 3,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.427Z",
+    "updated_at": "2026-10-14T17:55:28.427Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 52,
+  "fields": {
+    "player": 52,
+    "team": 11,
+    "competitive_role": 5,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.452Z",
+    "updated_at": "2026-10-14T17:55:28.452Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 53,
+  "fields": {
+    "player": 53,
+    "team": 11,
+    "competitive_role": 4,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.477Z",
+    "updated_at": "2026-10-14T17:55:28.477Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 54,
+  "fields": {
+    "player": 54,
+    "team": 11,
+    "competitive_role": 69,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.496Z",
+    "updated_at": "2026-10-14T17:55:28.496Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 55,
+  "fields": {
+    "player": 55,
+    "team": 11,
+    "competitive_role": 70,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.513Z",
+    "updated_at": "2026-10-14T17:55:28.513Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 56,
+  "fields": {
+    "player": 56,
+    "team": 12,
+    "competitive_role": 4,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.540Z",
+    "updated_at": "2026-10-14T17:55:28.540Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 57,
+  "fields": {
+    "player": 57,
+    "team": 12,
+    "competitive_role": 2,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.569Z",
+    "updated_at": "2026-10-14T17:55:28.569Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 58,
+  "fields": {
+    "player": 58,
+    "team": 12,
+    "competitive_role": 5,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.593Z",
+    "updated_at": "2026-10-14T17:55:28.593Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 59,
+  "fields": {
+    "player": 59,
+    "team": 12,
+    "competitive_role": 69,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.614Z",
+    "updated_at": "2026-10-14T17:55:28.614Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 60,
+  "fields": {
+    "player": 60,
+    "team": 12,
+    "competitive_role": 3,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.640Z",
+    "updated_at": "2026-10-14T17:55:28.640Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 61,
+  "fields": {
+    "player": 61,
+    "team": 12,
+    "competitive_role": 70,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.661Z",
+    "updated_at": "2026-10-14T17:55:28.661Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 62,
+  "fields": {
+    "player": 62,
+    "team": 13,
+    "competitive_role": 4,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.699Z",
+    "updated_at": "2026-10-14T17:55:28.699Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 63,
+  "fields": {
+    "player": 63,
+    "team": 13,
+    "competitive_role": 3,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.724Z",
+    "updated_at": "2026-10-14T17:55:28.724Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 64,
+  "fields": {
+    "player": 64,
+    "team": 13,
+    "competitive_role": 2,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.748Z",
+    "updated_at": "2026-10-14T17:55:28.748Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 65,
+  "fields": {
+    "player": 65,
+    "team": 13,
+    "competitive_role": 69,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.772Z",
+    "updated_at": "2026-10-14T17:55:28.772Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 66,
+  "fields": {
+    "player": 66,
+    "team": 13,
+    "competitive_role": 5,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.797Z",
+    "updated_at": "2026-10-14T17:55:28.797Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 67,
+  "fields": {
+    "player": 67,
+    "team": 13,
+    "competitive_role": 70,
+    "joined_at": "2025-01-10",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T17:55:28.824Z",
+    "updated_at": "2026-10-14T17:55:28.824Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 68,
+  "fields": {
+    "player": 68,
+    "team": 1,
+    "competitive_role": 6,
+    "joined_at": "2026-10-14",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T18:04:17.784Z",
+    "updated_at": "2026-10-14T18:04:17.784Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 69,
+  "fields": {
+    "player": 70,
+    "team": 1,
+    "competitive_role": 10,
+    "joined_at": "2026-10-14",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T18:04:25.821Z",
+    "updated_at": "2026-10-14T18:04:25.821Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 70,
+  "fields": {
+    "player": 69,
+    "team": 1,
+    "competitive_role": 7,
+    "joined_at": "2026-10-14",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-14T18:04:30.708Z",
+    "updated_at": "2026-10-14T18:04:30.708Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 71,
+  "fields": {
+    "player": 71,
+    "team": 14,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.678Z",
+    "updated_at": "2026-10-15T01:12:03.678Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 72,
+  "fields": {
+    "player": 72,
+    "team": 14,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.701Z",
+    "updated_at": "2026-10-15T01:12:03.701Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 73,
+  "fields": {
+    "player": 73,
+    "team": 14,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.723Z",
+    "updated_at": "2026-10-15T01:12:03.723Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 74,
+  "fields": {
+    "player": 74,
+    "team": 14,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.748Z",
+    "updated_at": "2026-10-15T01:12:03.748Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 75,
+  "fields": {
+    "player": 75,
+    "team": 14,
+    "competitive_role": 69,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.776Z",
+    "updated_at": "2026-10-15T01:12:03.776Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 76,
+  "fields": {
+    "player": 76,
+    "team": 14,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.799Z",
+    "updated_at": "2026-10-15T01:12:03.799Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 77,
+  "fields": {
+    "player": 77,
+    "team": 15,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.907Z",
+    "updated_at": "2026-10-15T01:12:03.907Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 78,
+  "fields": {
+    "player": 78,
+    "team": 15,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.931Z",
+    "updated_at": "2026-10-15T01:12:03.931Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 79,
+  "fields": {
+    "player": 79,
+    "team": 15,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.956Z",
+    "updated_at": "2026-10-15T01:12:03.956Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 80,
+  "fields": {
+    "player": 80,
+    "team": 15,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:03.987Z",
+    "updated_at": "2026-10-15T01:12:03.987Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 81,
+  "fields": {
+    "player": 81,
+    "team": 15,
+    "competitive_role": 69,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.010Z",
+    "updated_at": "2026-10-15T01:12:04.010Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 82,
+  "fields": {
+    "player": 82,
+    "team": 15,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.035Z",
+    "updated_at": "2026-10-15T01:12:04.035Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 83,
+  "fields": {
+    "player": 83,
+    "team": 16,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.135Z",
+    "updated_at": "2026-10-15T01:12:04.135Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 84,
+  "fields": {
+    "player": 84,
+    "team": 16,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.159Z",
+    "updated_at": "2026-10-15T01:12:04.159Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 85,
+  "fields": {
+    "player": 85,
+    "team": 16,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.183Z",
+    "updated_at": "2026-10-15T01:12:04.183Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 86,
+  "fields": {
+    "player": 86,
+    "team": 16,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.206Z",
+    "updated_at": "2026-10-15T01:12:04.206Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 87,
+  "fields": {
+    "player": 87,
+    "team": 16,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.227Z",
+    "updated_at": "2026-10-15T01:12:04.227Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 88,
+  "fields": {
+    "player": 88,
+    "team": 16,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.255Z",
+    "updated_at": "2026-10-15T01:12:04.255Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 89,
+  "fields": {
+    "player": 89,
+    "team": 17,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.346Z",
+    "updated_at": "2026-10-15T01:12:04.346Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 90,
+  "fields": {
+    "player": 90,
+    "team": 17,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.375Z",
+    "updated_at": "2026-10-15T01:12:04.375Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 91,
+  "fields": {
+    "player": 91,
+    "team": 17,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.398Z",
+    "updated_at": "2026-10-15T01:12:04.398Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 92,
+  "fields": {
+    "player": 92,
+    "team": 17,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.423Z",
+    "updated_at": "2026-10-15T01:12:04.423Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 93,
+  "fields": {
+    "player": 93,
+    "team": 17,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.448Z",
+    "updated_at": "2026-10-15T01:12:04.448Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 94,
+  "fields": {
+    "player": 94,
+    "team": 17,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.472Z",
+    "updated_at": "2026-10-15T01:12:04.472Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 95,
+  "fields": {
+    "player": 95,
+    "team": 18,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.569Z",
+    "updated_at": "2026-10-15T01:12:04.569Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 96,
+  "fields": {
+    "player": 96,
+    "team": 18,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.594Z",
+    "updated_at": "2026-10-15T01:12:04.594Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 97,
+  "fields": {
+    "player": 97,
+    "team": 18,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.615Z",
+    "updated_at": "2026-10-15T01:12:04.615Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 98,
+  "fields": {
+    "player": 98,
+    "team": 18,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.641Z",
+    "updated_at": "2026-10-15T01:12:04.641Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 99,
+  "fields": {
+    "player": 99,
+    "team": 18,
+    "competitive_role": 69,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.664Z",
+    "updated_at": "2026-10-15T01:12:04.664Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 100,
+  "fields": {
+    "player": 100,
+    "team": 18,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.689Z",
+    "updated_at": "2026-10-15T01:12:04.689Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 101,
+  "fields": {
+    "player": 101,
+    "team": 19,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.782Z",
+    "updated_at": "2026-10-15T01:12:04.782Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 102,
+  "fields": {
+    "player": 102,
+    "team": 19,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.805Z",
+    "updated_at": "2026-10-15T01:12:04.805Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 103,
+  "fields": {
+    "player": 103,
+    "team": 19,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.827Z",
+    "updated_at": "2026-10-15T01:12:04.827Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 104,
+  "fields": {
+    "player": 104,
+    "team": 19,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.852Z",
+    "updated_at": "2026-10-15T01:12:04.852Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 105,
+  "fields": {
+    "player": 105,
+    "team": 19,
+    "competitive_role": 69,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.875Z",
+    "updated_at": "2026-10-15T01:12:04.875Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 106,
+  "fields": {
+    "player": 106,
+    "team": 19,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.904Z",
+    "updated_at": "2026-10-15T01:12:04.904Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 107,
+  "fields": {
+    "player": 107,
+    "team": 20,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.976Z",
+    "updated_at": "2026-10-15T01:12:04.976Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 108,
+  "fields": {
+    "player": 108,
+    "team": 20,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:04.998Z",
+    "updated_at": "2026-10-15T01:12:04.998Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 109,
+  "fields": {
+    "player": 109,
+    "team": 20,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.012Z",
+    "updated_at": "2026-10-15T01:12:05.012Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 110,
+  "fields": {
+    "player": 110,
+    "team": 20,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.027Z",
+    "updated_at": "2026-10-15T01:12:05.027Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 111,
+  "fields": {
+    "player": 111,
+    "team": 20,
+    "competitive_role": 69,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.042Z",
+    "updated_at": "2026-10-15T01:12:05.042Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 112,
+  "fields": {
+    "player": 112,
+    "team": 20,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.058Z",
+    "updated_at": "2026-10-15T01:12:05.058Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 113,
+  "fields": {
+    "player": 113,
+    "team": 21,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.122Z",
+    "updated_at": "2026-10-15T01:12:05.122Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 114,
+  "fields": {
+    "player": 114,
+    "team": 21,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.138Z",
+    "updated_at": "2026-10-15T01:12:05.138Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 115,
+  "fields": {
+    "player": 115,
+    "team": 21,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.153Z",
+    "updated_at": "2026-10-15T01:12:05.153Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 116,
+  "fields": {
+    "player": 116,
+    "team": 21,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.168Z",
+    "updated_at": "2026-10-15T01:12:05.168Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 117,
+  "fields": {
+    "player": 117,
+    "team": 21,
+    "competitive_role": 69,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.188Z",
+    "updated_at": "2026-10-15T01:12:05.188Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 118,
+  "fields": {
+    "player": 118,
+    "team": 21,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.202Z",
+    "updated_at": "2026-10-15T01:12:05.202Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 119,
+  "fields": {
+    "player": 119,
+    "team": 22,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.266Z",
+    "updated_at": "2026-10-15T01:12:05.266Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 120,
+  "fields": {
+    "player": 120,
+    "team": 22,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.287Z",
+    "updated_at": "2026-10-15T01:12:05.287Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 121,
+  "fields": {
+    "player": 121,
+    "team": 22,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.302Z",
+    "updated_at": "2026-10-15T01:12:05.302Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 122,
+  "fields": {
+    "player": 122,
+    "team": 22,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.318Z",
+    "updated_at": "2026-10-15T01:12:05.318Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 123,
+  "fields": {
+    "player": 123,
+    "team": 22,
+    "competitive_role": 69,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.333Z",
+    "updated_at": "2026-10-15T01:12:05.333Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 124,
+  "fields": {
+    "player": 124,
+    "team": 22,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.348Z",
+    "updated_at": "2026-10-15T01:12:05.348Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 125,
+  "fields": {
+    "player": 125,
+    "team": 23,
+    "competitive_role": 2,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.418Z",
+    "updated_at": "2026-10-15T01:12:05.418Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 126,
+  "fields": {
+    "player": 126,
+    "team": 23,
+    "competitive_role": 3,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.434Z",
+    "updated_at": "2026-10-15T01:12:05.434Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 127,
+  "fields": {
+    "player": 127,
+    "team": 23,
+    "competitive_role": 4,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.449Z",
+    "updated_at": "2026-10-15T01:12:05.449Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 128,
+  "fields": {
+    "player": 128,
+    "team": 23,
+    "competitive_role": 5,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.469Z",
+    "updated_at": "2026-10-15T01:12:05.469Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 129,
+  "fields": {
+    "player": 129,
+    "team": 23,
+    "competitive_role": 69,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.485Z",
+    "updated_at": "2026-10-15T01:12:05.485Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 130,
+  "fields": {
+    "player": 130,
+    "team": 23,
+    "competitive_role": 70,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.500Z",
+    "updated_at": "2026-10-15T01:12:05.500Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 131,
+  "fields": {
+    "player": 131,
+    "team": 24,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.570Z",
+    "updated_at": "2026-10-15T01:12:05.570Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 132,
+  "fields": {
+    "player": 132,
+    "team": 24,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.585Z",
+    "updated_at": "2026-10-15T01:12:05.585Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 133,
+  "fields": {
+    "player": 133,
+    "team": 24,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.601Z",
+    "updated_at": "2026-10-15T01:12:05.601Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 134,
+  "fields": {
+    "player": 134,
+    "team": 24,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.617Z",
+    "updated_at": "2026-10-15T01:12:05.617Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 135,
+  "fields": {
+    "player": 135,
+    "team": 24,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.633Z",
+    "updated_at": "2026-10-15T01:12:05.633Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 136,
+  "fields": {
+    "player": 136,
+    "team": 24,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.648Z",
+    "updated_at": "2026-10-15T01:12:05.648Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 137,
+  "fields": {
+    "player": 137,
+    "team": 25,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.713Z",
+    "updated_at": "2026-10-15T01:12:05.713Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 138,
+  "fields": {
+    "player": 138,
+    "team": 25,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.727Z",
+    "updated_at": "2026-10-15T01:12:05.727Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 139,
+  "fields": {
+    "player": 139,
+    "team": 25,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.742Z",
+    "updated_at": "2026-10-15T01:12:05.742Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 140,
+  "fields": {
+    "player": 140,
+    "team": 25,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.757Z",
+    "updated_at": "2026-10-15T01:12:05.757Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 141,
+  "fields": {
+    "player": 141,
+    "team": 25,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.771Z",
+    "updated_at": "2026-10-15T01:12:05.771Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 142,
+  "fields": {
+    "player": 142,
+    "team": 25,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.785Z",
+    "updated_at": "2026-10-15T01:12:05.785Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 143,
+  "fields": {
+    "player": 143,
+    "team": 26,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.846Z",
+    "updated_at": "2026-10-15T01:12:05.846Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 144,
+  "fields": {
+    "player": 144,
+    "team": 26,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.861Z",
+    "updated_at": "2026-10-15T01:12:05.861Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 145,
+  "fields": {
+    "player": 145,
+    "team": 26,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.878Z",
+    "updated_at": "2026-10-15T01:12:05.878Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 146,
+  "fields": {
+    "player": 146,
+    "team": 26,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.892Z",
+    "updated_at": "2026-10-15T01:12:05.892Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 147,
+  "fields": {
+    "player": 147,
+    "team": 26,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.908Z",
+    "updated_at": "2026-10-15T01:12:05.908Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 148,
+  "fields": {
+    "player": 148,
+    "team": 26,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.922Z",
+    "updated_at": "2026-10-15T01:12:05.922Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 149,
+  "fields": {
+    "player": 149,
+    "team": 27,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:05.985Z",
+    "updated_at": "2026-10-15T01:12:05.985Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 150,
+  "fields": {
+    "player": 150,
+    "team": 27,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.005Z",
+    "updated_at": "2026-10-15T01:12:06.005Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 151,
+  "fields": {
+    "player": 151,
+    "team": 27,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.020Z",
+    "updated_at": "2026-10-15T01:12:06.020Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 152,
+  "fields": {
+    "player": 152,
+    "team": 27,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.035Z",
+    "updated_at": "2026-10-15T01:12:06.035Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 153,
+  "fields": {
+    "player": 153,
+    "team": 27,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.050Z",
+    "updated_at": "2026-10-15T01:12:06.050Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 154,
+  "fields": {
+    "player": 154,
+    "team": 27,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.065Z",
+    "updated_at": "2026-10-15T01:12:06.065Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 155,
+  "fields": {
+    "player": 155,
+    "team": 28,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.135Z",
+    "updated_at": "2026-10-15T01:12:06.135Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 156,
+  "fields": {
+    "player": 156,
+    "team": 28,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.150Z",
+    "updated_at": "2026-10-15T01:12:06.150Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 157,
+  "fields": {
+    "player": 157,
+    "team": 28,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.168Z",
+    "updated_at": "2026-10-15T01:12:06.168Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 158,
+  "fields": {
+    "player": 158,
+    "team": 28,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.188Z",
+    "updated_at": "2026-10-15T01:12:06.188Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 159,
+  "fields": {
+    "player": 159,
+    "team": 28,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.202Z",
+    "updated_at": "2026-10-15T01:12:06.202Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 160,
+  "fields": {
+    "player": 160,
+    "team": 28,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.218Z",
+    "updated_at": "2026-10-15T01:12:06.218Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 161,
+  "fields": {
+    "player": 161,
+    "team": 29,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.283Z",
+    "updated_at": "2026-10-15T01:12:06.283Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 162,
+  "fields": {
+    "player": 162,
+    "team": 29,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.297Z",
+    "updated_at": "2026-10-15T01:12:06.297Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 163,
+  "fields": {
+    "player": 163,
+    "team": 29,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.312Z",
+    "updated_at": "2026-10-15T01:12:06.312Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 164,
+  "fields": {
+    "player": 164,
+    "team": 29,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.326Z",
+    "updated_at": "2026-10-15T01:12:06.326Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 165,
+  "fields": {
+    "player": 165,
+    "team": 29,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.342Z",
+    "updated_at": "2026-10-15T01:12:06.342Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 166,
+  "fields": {
+    "player": 166,
+    "team": 29,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.356Z",
+    "updated_at": "2026-10-15T01:12:06.356Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 167,
+  "fields": {
+    "player": 167,
+    "team": 30,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.422Z",
+    "updated_at": "2026-10-15T01:12:06.422Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 168,
+  "fields": {
+    "player": 168,
+    "team": 30,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.440Z",
+    "updated_at": "2026-10-15T01:12:06.440Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 169,
+  "fields": {
+    "player": 169,
+    "team": 30,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.456Z",
+    "updated_at": "2026-10-15T01:12:06.456Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 170,
+  "fields": {
+    "player": 170,
+    "team": 30,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.470Z",
+    "updated_at": "2026-10-15T01:12:06.470Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 171,
+  "fields": {
+    "player": 171,
+    "team": 30,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.490Z",
+    "updated_at": "2026-10-15T01:12:06.490Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 172,
+  "fields": {
+    "player": 172,
+    "team": 30,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.506Z",
+    "updated_at": "2026-10-15T01:12:06.506Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 173,
+  "fields": {
+    "player": 173,
+    "team": 31,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.585Z",
+    "updated_at": "2026-10-15T01:12:06.585Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 174,
+  "fields": {
+    "player": 174,
+    "team": 31,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.605Z",
+    "updated_at": "2026-10-15T01:12:06.605Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 175,
+  "fields": {
+    "player": 175,
+    "team": 31,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.620Z",
+    "updated_at": "2026-10-15T01:12:06.620Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 176,
+  "fields": {
+    "player": 176,
+    "team": 31,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.636Z",
+    "updated_at": "2026-10-15T01:12:06.636Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 177,
+  "fields": {
+    "player": 177,
+    "team": 31,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.651Z",
+    "updated_at": "2026-10-15T01:12:06.651Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 178,
+  "fields": {
+    "player": 178,
+    "team": 31,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.668Z",
+    "updated_at": "2026-10-15T01:12:06.668Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 179,
+  "fields": {
+    "player": 179,
+    "team": 32,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.742Z",
+    "updated_at": "2026-10-15T01:12:06.742Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 180,
+  "fields": {
+    "player": 180,
+    "team": 32,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.759Z",
+    "updated_at": "2026-10-15T01:12:06.759Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 181,
+  "fields": {
+    "player": 181,
+    "team": 32,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.775Z",
+    "updated_at": "2026-10-15T01:12:06.775Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 182,
+  "fields": {
+    "player": 182,
+    "team": 32,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.792Z",
+    "updated_at": "2026-10-15T01:12:06.792Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 183,
+  "fields": {
+    "player": 183,
+    "team": 32,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.814Z",
+    "updated_at": "2026-10-15T01:12:06.814Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 184,
+  "fields": {
+    "player": 184,
+    "team": 32,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.829Z",
+    "updated_at": "2026-10-15T01:12:06.829Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 185,
+  "fields": {
+    "player": 185,
+    "team": 33,
+    "competitive_role": 6,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.900Z",
+    "updated_at": "2026-10-15T01:12:06.900Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 186,
+  "fields": {
+    "player": 186,
+    "team": 33,
+    "competitive_role": 7,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": true,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.922Z",
+    "updated_at": "2026-10-15T01:12:06.922Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 187,
+  "fields": {
+    "player": 187,
+    "team": 33,
+    "competitive_role": 8,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.937Z",
+    "updated_at": "2026-10-15T01:12:06.937Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 188,
+  "fields": {
+    "player": 188,
+    "team": 33,
+    "competitive_role": 9,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.955Z",
+    "updated_at": "2026-10-15T01:12:06.955Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 189,
+  "fields": {
+    "player": 189,
+    "team": 33,
+    "competitive_role": 10,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.970Z",
+    "updated_at": "2026-10-15T01:12:06.970Z"
+  }
+},
+{
+  "model": "players.playerteamassignment",
+  "pk": 190,
+  "fields": {
+    "player": 190,
+    "team": 33,
+    "competitive_role": 71,
+    "joined_at": "2025-01-15",
+    "left_at": null,
+    "status": "active",
+    "is_captain": false,
+    "notes": "",
+    "created_at": "2026-10-15T01:12:06.987Z",
+    "updated_at": "2026-10-15T01:12:06.987Z"
+  }
+}
 ]

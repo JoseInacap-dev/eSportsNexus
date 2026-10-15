@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load form_extras %}
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <div>
+        <h2 class="h4 text-light fw-bold mb-1">{{ form_title }}</h2>
+        <p class="text-secondary small mb-0">Configura el formato, los participantes y la imagen del torneo.</p>
+    </div>
+    <a href="{% url 'matches:tournament-list' %}" class="btn-nexus-subtle">
+        <i class="bi bi-arrow-left"></i>
+        <span>Volver a torneos</span>
+    </a>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+        <div class="nexus-card">
+            <div class="nexus-card-header">
+                <h3 class="nexus-card-title">Datos del Torneo</h3>
+            </div>
+            <div class="nexus-card-body p-4">
+                <form method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="nexus-alert nexus-alert-danger mb-3">
+                            <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+                            <div>{% for error in form.non_field_errors %}<div>{{ error }}</div>{% endfor %}</div>
+                        </div>
+                    {% endif %}
+                    <div class="row g-3">
+                        {% for field in form %}
+                            {% if field.name == "participants" %}
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <label class="form-label-nexus mb-0" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        <span class="badge bg-dark border border-secondary text-accent" id="participants-counter">0 / 0</span>
+                                    </div>
+                                    <div class="team-checkbox-wrapper mt-2" data-participants-wrapper>
+                                        {{ field }}
+                                    </div>
+                                    <div class="form-text">{{ field.help_text }}</div>
+                                    <div class="text-warning small mt-1 d-none" id="participants-mismatch">
+                                        <i class="bi bi-exclamation-triangle"></i> La cantidad seleccionada no coincide con la especificada.
+                                    </div>
+                                    {% for error in field.errors %}
+                                        <div class="text-danger small mt-1">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <div class="col-12 col-md-6" {% if field.name == "groups_count" %}data-groups-field{% endif %}>
+                                    <label class="form-label-nexus" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                    {% if field.field.widget.input_type == "checkbox" %}
+                                        <div class="form-check form-switch">{{ field|add_class:"form-check-input" }}</div>
+                                    {% elif field.field.widget.input_type == "select" %}
+                                        {{ field|add_class:"form-select form-select-nexus" }}
+                                    {% else %}
+                                        {{ field|add_class:"form-control form-control-nexus" }}
+                                    {% endif %}
+                                    {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+                                    {% for error in field.errors %}
+                                        <div class="text-danger small mt-1">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="d-flex justify-content-end gap-2 border-top border-secondary pt-3 mt-4">
+                        <a href="{% url 'matches:tournament-list' %}" class="btn-nexus-outline">Cancelar</a>
+                        <button type="submit" class="btn-nexus-primary">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Guardar</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const gameSelect = document.getElementById("id_game");
+    const countInput = document.getElementById("id_participants_count");
+    const counter = document.getElementById("participants-counter");
+    const mismatch = document.getElementById("participants-mismatch");
+    const grid = document.querySelector("[data-team-grid]");
+    const groupsFields = document.querySelectorAll("[data-groups-field]");
+    const formatSelect = document.getElementById("id_format");
+
+    if (!grid) return;
+    const items = Array.from(grid.querySelectorAll(".team-checkbox-item"));
+    const inputs = items.map((item) => item.querySelector("input[type=checkbox]"));
+    const boxes = inputs.filter(Boolean);
+
+    function currentGame() {
+        return gameSelect ? gameSelect.value : "";
+    }
+
+    function filterByGame() {
+        const game = currentGame();
+        items.forEach((item, index) => {
+            const input = inputs[index];
+            if (!input) return;
+            const teamGame = input.dataset.game || "";
+            const visible = !game || teamGame === game;
+            item.classList.toggle("d-none", !visible);
+            input.disabled = !visible;
+        });
+    }
+
+    function updateCounter() {
+        const selected = boxes.filter((box) => box.checked && !box.disabled).length;
+        const expected = countInput ? parseInt(countInput.value || "0", 10) : 0;
+        if (counter) counter.textContent = selected + " / " + (isNaN(expected) ? 0 : expected);
+        const different = expected > 0 && selected !== expected;
+        if (mismatch) mismatch.classList.toggle("d-none", !different);
+        if (counter) counter.classList.toggle("border-warning", different);
+    }
+
+    function toggleGroups() {
+        const isGroups = formatSelect && formatSelect.value === "groups_playoffs";
+        groupsFields.forEach((field) => field.classList.toggle("d-none", !isGroups));
+    }
+
+    boxes.forEach((box) => box.addEventListener("change", updateCounter));
+    if (gameSelect) gameSelect.addEventListener("change", function () { filterByGame(); updateCounter(); });
+    if (countInput) countInput.addEventListener("input", updateCounter);
+    if (formatSelect) formatSelect.addEventListener("change", toggleGroups);
+
+    filterByGame();
+    toggleGroups();
+    updateCounter();
+})();
+</script>
+{% endblock %}

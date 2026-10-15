@@ -1,0 +1,57 @@
+[
+{
+  "model": "matches.tournamentparticipant",
+  "pk": 1,
+  "fields": {
+    "tournament": 5,
+    "team": 9,
+    "seed": null,
+    "group_name": "",
+    "created_at": "2026-10-15T00:33:21.941Z"
+  }
+},
+{
+  "model": "matches.tournamentparticipant",
+  "pk": 2,
+  "fields": {
+    "tournament": 5,
+    "team": 12,
+    "seed": 1,
+    "group_name": "",
+    "created_at": "2026-10-15T00:53:20.820Z"
+  }
+},
+{
+  "model": "matches.tournamentparticipant",
+  "pk": 3,
+  "fields": {
+    "tournament": 5,
+    "team": 13,
+    "seed": 2,
+    "group_name": "",
+    "created_at": "2026-10-15T00:53:20.825Z"
+  }
+},
+{
+  "model": "matches.tournamentparticipant",
+  "pk": 4,
+  "fields": {
+    "tournament": 5,
+    "team": 11,
+    "seed": 3,
+    "group_name": "",
+    "created_at": "2026-10-15T00:53:20.831Z"
+  }
+},
+{
+  "model": "matches.tournamentparticipant",
+  "pk": 5,
+  "fields": {
+    "tournament": 5,
+    "team": 10,
+    "seed": 4,
+    "group_name": "",
+    "created_at": "2026-10-15T00:53:20.837Z"
+  }
+}
+]

@@ -1,115 +1,259 @@
 [
   {
     "model": "organizations.game",
-    "pk": 1,
+    "pk": 2,
     "fields": {
       "name": "Valorant",
       "slug": "valorant",
       "short_name": "VAL",
       "default_team_size": 5,
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T16:33:19.642Z",
+      "updated_at": "2026-10-14T16:33:19.642Z"
     }
   },
   {
     "model": "organizations.game",
-    "pk": 2,
+    "pk": 3,
     "fields": {
       "name": "League of Legends",
       "slug": "league-of-legends",
       "short_name": "LoL",
       "default_team_size": 5,
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T16:33:19.653Z",
+      "updated_at": "2026-10-14T16:33:19.653Z"
     }
   },
   {
     "model": "organizations.game",
-    "pk": 3,
+    "pk": 4,
     "fields": {
       "name": "Counter-Strike 2",
       "slug": "counter-strike-2",
       "short_name": "CS2",
       "default_team_size": 5,
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T16:33:19.661Z",
+      "updated_at": "2026-10-14T16:33:19.661Z"
     }
   },
   {
     "model": "organizations.game",
-    "pk": 4,
+    "pk": 5,
     "fields": {
       "name": "Dota 2",
       "slug": "dota-2",
       "short_name": "DOTA2",
       "default_team_size": 5,
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T16:33:19.670Z",
+      "updated_at": "2026-10-14T16:33:19.670Z"
     }
   },
   {
     "model": "organizations.game",
-    "pk": 5,
+    "pk": 6,
+    "fields": {
+      "name": "Overwatch",
+      "slug": "overwatch",
+      "short_name": "OW",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.678Z",
+      "updated_at": "2026-10-14T16:33:19.678Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 7,
     "fields": {
       "name": "Rocket League",
       "slug": "rocket-league",
       "short_name": "RL",
       "default_team_size": 3,
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T16:33:19.686Z",
+      "updated_at": "2026-10-14T16:33:19.686Z"
     }
   },
   {
-    "model": "organizations.gamerole",
-    "pk": 1,
+    "model": "organizations.game",
+    "pk": 8,
     "fields": {
-      "game": 1,
-      "name": "Duelista",
-      "abbreviation": "DUEL",
-      "description": "Especialista en bajas tempranas y apertura de zonas.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "name": "Rainbow Six Siege",
+      "slug": "rainbow-six-siege",
+      "short_name": "R6",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.694Z",
+      "updated_at": "2026-10-14T16:33:19.694Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 9,
+    "fields": {
+      "name": "Fortnite",
+      "slug": "fortnite",
+      "short_name": "FN",
+      "default_team_size": 4,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.702Z",
+      "updated_at": "2026-10-14T16:33:19.702Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 10,
+    "fields": {
+      "name": "Apex Legends",
+      "slug": "apex-legends",
+      "short_name": "APEX",
+      "default_team_size": 3,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.710Z",
+      "updated_at": "2026-10-14T16:33:19.710Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 11,
+    "fields": {
+      "name": "Call of Duty",
+      "slug": "call-of-duty",
+      "short_name": "COD",
+      "default_team_size": 4,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.718Z",
+      "updated_at": "2026-10-14T16:33:19.718Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 12,
+    "fields": {
+      "name": "PUBG",
+      "slug": "pubg",
+      "short_name": "PUBG",
+      "default_team_size": 4,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.727Z",
+      "updated_at": "2026-10-14T16:33:19.727Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 13,
+    "fields": {
+      "name": "PUBG Mobile",
+      "slug": "pubg-mobile",
+      "short_name": "PUBGM",
+      "default_team_size": 4,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.736Z",
+      "updated_at": "2026-10-14T16:33:19.736Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 14,
+    "fields": {
+      "name": "Wild Rift",
+      "slug": "wild-rift",
+      "short_name": "WR",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.744Z",
+      "updated_at": "2026-10-14T16:33:19.744Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 15,
+    "fields": {
+      "name": "Valorant Mobile",
+      "slug": "valorant-mobile",
+      "short_name": "VALM",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.752Z",
+      "updated_at": "2026-10-14T16:33:19.752Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 16,
+    "fields": {
+      "name": "EA Sports FC",
+      "slug": "ea-sports-fc",
+      "short_name": "FC",
+      "default_team_size": 1,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.765Z",
+      "updated_at": "2026-10-14T16:33:19.765Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 17,
+    "fields": {
+      "name": "StarCraft 2",
+      "slug": "starcraft-2",
+      "short_name": "SC2",
+      "default_team_size": 1,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.774Z",
+      "updated_at": "2026-10-14T16:33:19.774Z"
+    }
+  },
+  {
+    "model": "organizations.game",
+    "pk": 18,
+    "fields": {
+      "name": "Mobile Legends",
+      "slug": "mobile-legends",
+      "short_name": "MLBB",
+      "default_team_size": 5,
+      "is_active": true,
+      "created_at": "2026-10-14T16:33:19.782Z",
+      "updated_at": "2026-10-14T16:33:19.782Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 2,
     "fields": {
-      "game": 1,
-      "name": "Iniciador",
-      "abbreviation": "INIT",
-      "description": "Facilita la entrada al sitio mediante información y utilidad.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 2,
+      "name": "Duelist",
+      "abbreviation": "DUEL",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.832Z",
+      "updated_at": "2026-10-14T17:31:59.832Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 3,
     "fields": {
-      "game": 1,
-      "name": "Controlador",
-      "abbreviation": "CTRL",
-      "description": "Bloquea líneas de visión mediante humos defensivos y ofensivos.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 2,
+      "name": "Initiator",
+      "abbreviation": "INIT",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.842Z",
+      "updated_at": "2026-10-14T17:31:59.842Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 4,
     "fields": {
-      "game": 1,
-      "name": "Centinela",
-      "abbreviation": "SENT",
-      "description": "Experto en anclaje y defensa de sitios con trampas.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 2,
+      "name": "Controller",
+      "abbreviation": "CTRL",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.852Z",
+      "updated_at": "2026-10-14T17:31:59.852Z"
     }
   },
   {
@@ -117,59 +261,59 @@
     "pk": 5,
     "fields": {
       "game": 2,
-      "name": "Top Laner",
-      "abbreviation": "TOP",
-      "description": "Línea superior, tanque o luchador en solo lane.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "name": "Sentinel",
+      "abbreviation": "SENT",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.870Z",
+      "updated_at": "2026-10-14T17:31:59.870Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 6,
     "fields": {
-      "game": 2,
-      "name": "Jungler",
-      "abbreviation": "JNG",
-      "description": "Control de objetivos neutrales y gankeos tempranos.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 3,
+      "name": "Top Laner",
+      "abbreviation": "TOP",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.879Z",
+      "updated_at": "2026-10-14T17:31:59.879Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 7,
     "fields": {
-      "game": 2,
-      "name": "Mid Laner",
-      "abbreviation": "MID",
-      "description": "Línea central con gran impacto en daño mágico o físico.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 3,
+      "name": "Jungler",
+      "abbreviation": "JNG",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.890Z",
+      "updated_at": "2026-10-14T17:31:59.890Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 8,
     "fields": {
-      "game": 2,
-      "name": "ADC",
-      "abbreviation": "ADC",
-      "description": "Tirador principal de daño sostenido a distancia.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 3,
+      "name": "Mid Laner",
+      "abbreviation": "MID",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.899Z",
+      "updated_at": "2026-10-14T17:31:59.899Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 9,
     "fields": {
-      "game": 2,
-      "name": "Support",
-      "abbreviation": "SUPP",
-      "description": "Protección, control de masas y visión estratégica.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 3,
+      "name": "ADC",
+      "abbreviation": "ADC",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.910Z",
+      "updated_at": "2026-10-14T17:31:59.910Z"
     }
   },
   {
@@ -177,59 +321,59 @@
     "pk": 10,
     "fields": {
       "game": 3,
-      "name": "Entry Fragger",
-      "abbreviation": "ENTRY",
-      "description": "Primera línea de choque en rondas ofensivas.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.921Z",
+      "updated_at": "2026-10-14T17:31:59.921Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 11,
     "fields": {
-      "game": 3,
-      "name": "AWPer",
-      "abbreviation": "AWP",
-      "description": "Tirador de precisión con rifle de francotirador.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 4,
+      "name": "Entry Fragger",
+      "abbreviation": "ENTRY",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.932Z",
+      "updated_at": "2026-10-14T17:31:59.932Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 12,
     "fields": {
-      "game": 3,
-      "name": "In-Game Leader",
-      "abbreviation": "IGL",
-      "description": "Capitán táctico y estratega de rondas.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 4,
+      "name": "AWPer",
+      "abbreviation": "AWP",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.941Z",
+      "updated_at": "2026-10-14T17:31:59.941Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 13,
     "fields": {
-      "game": 3,
-      "name": "Lurker",
-      "abbreviation": "LURK",
-      "description": "Especialista en control silencioso de mapa.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 4,
+      "name": "In-Game Leader",
+      "abbreviation": "IGL",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.950Z",
+      "updated_at": "2026-10-14T17:31:59.950Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 14,
     "fields": {
-      "game": 3,
-      "name": "Support",
-      "abbreviation": "SUPP",
-      "description": "Gestión de utilidades, flashbangs y humos de apoyo.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 4,
+      "name": "Lurker",
+      "abbreviation": "LURK",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.964Z",
+      "updated_at": "2026-10-14T17:31:59.964Z"
     }
   },
   {
@@ -237,59 +381,59 @@
     "pk": 15,
     "fields": {
       "game": 4,
-      "name": "Carry",
-      "abbreviation": "POS1",
-      "description": "Posición 1: Farm prioritario y daño principal de escalado en late game.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.974Z",
+      "updated_at": "2026-10-14T17:31:59.974Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 16,
     "fields": {
-      "game": 4,
-      "name": "Mid Laner",
-      "abbreviation": "POS2",
-      "description": "Posición 2: Creador de tempo, control del carril central y rotaciones tempranas.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 5,
+      "name": "Carry",
+      "abbreviation": "CAR",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.983Z",
+      "updated_at": "2026-10-14T17:31:59.984Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 17,
     "fields": {
-      "game": 4,
-      "name": "Offlaner",
-      "abbreviation": "POS3",
-      "description": "Posición 3: Iniciador de combates por equipos y absorción de presión.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 5,
+      "name": "Mid",
+      "abbreviation": "MID",
+      "description": "",
+      "created_at": "2026-10-14T17:31:59.993Z",
+      "updated_at": "2026-10-14T17:31:59.993Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 18,
     "fields": {
-      "game": 4,
-      "name": "Soft Support",
-      "abbreviation": "POS4",
-      "description": "Posición 4: Rotador agresivo con utilidad y presencia global.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 5,
+      "name": "Offlane",
+      "abbreviation": "OFF",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.002Z",
+      "updated_at": "2026-10-14T17:32:00.002Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 19,
     "fields": {
-      "game": 4,
-      "name": "Hard Support",
-      "abbreviation": "POS5",
-      "description": "Posición 5: Visión táctica mediante wards, protección y sacrificio por el equipo.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 5,
+      "name": "Soft Support",
+      "abbreviation": "S4",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.011Z",
+      "updated_at": "2026-10-14T17:32:00.011Z"
     }
   },
   {
@@ -297,361 +441,1759 @@
     "pk": 20,
     "fields": {
       "game": 5,
-      "name": "Striker",
-      "abbreviation": "STK",
-      "description": "Delantero especialista en remates aéreos, definición de goles y presión alta.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "name": "Hard Support",
+      "abbreviation": "S5",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.021Z",
+      "updated_at": "2026-10-14T17:32:00.021Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 21,
     "fields": {
-      "game": 5,
-      "name": "Midfielder / Rotator",
-      "abbreviation": "MID",
-      "description": "Rotador central, generación de pases, transiciones rápidas y control de boost.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "game": 6,
+      "name": "Tank",
+      "abbreviation": "TANK",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.030Z",
+      "updated_at": "2026-10-14T17:32:00.030Z"
     }
   },
   {
     "model": "organizations.gamerole",
     "pk": 22,
     "fields": {
+      "game": 6,
+      "name": "Damage",
+      "abbreviation": "DPS",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.039Z",
+      "updated_at": "2026-10-14T17:32:00.039Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 23,
+    "fields": {
+      "game": 6,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.048Z",
+      "updated_at": "2026-10-14T17:32:00.048Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 24,
+    "fields": {
+      "game": 7,
+      "name": "Attacker",
+      "abbreviation": "ATK",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.059Z",
+      "updated_at": "2026-10-14T17:32:00.059Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 25,
+    "fields": {
+      "game": 7,
+      "name": "Midfielder",
+      "abbreviation": "MID",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.068Z",
+      "updated_at": "2026-10-14T17:32:00.068Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 26,
+    "fields": {
+      "game": 7,
+      "name": "Defender",
+      "abbreviation": "DEF",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.079Z",
+      "updated_at": "2026-10-14T17:32:00.079Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 27,
+    "fields": {
+      "game": 8,
+      "name": "Entry Fragger",
+      "abbreviation": "ENTRY",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.094Z",
+      "updated_at": "2026-10-14T17:32:00.094Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 28,
+    "fields": {
+      "game": 8,
+      "name": "Hard Breacher",
+      "abbreviation": "BREACH",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.103Z",
+      "updated_at": "2026-10-14T17:32:00.103Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 29,
+    "fields": {
+      "game": 8,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.112Z",
+      "updated_at": "2026-10-14T17:32:00.112Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 30,
+    "fields": {
+      "game": 8,
+      "name": "Flex",
+      "abbreviation": "FLEX",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.123Z",
+      "updated_at": "2026-10-14T17:32:00.123Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 31,
+    "fields": {
+      "game": 8,
+      "name": "Roamer",
+      "abbreviation": "ROAM",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.132Z",
+      "updated_at": "2026-10-14T17:32:00.132Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 32,
+    "fields": {
+      "game": 8,
+      "name": "Anchor",
+      "abbreviation": "ANCH",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.141Z",
+      "updated_at": "2026-10-14T17:32:00.141Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 33,
+    "fields": {
+      "game": 9,
+      "name": "Fragger",
+      "abbreviation": "FRAG",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.152Z",
+      "updated_at": "2026-10-14T17:32:00.152Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 34,
+    "fields": {
+      "game": 9,
+      "name": "IGL",
+      "abbreviation": "IGL",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.162Z",
+      "updated_at": "2026-10-14T17:32:00.162Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 35,
+    "fields": {
+      "game": 9,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.171Z",
+      "updated_at": "2026-10-14T17:32:00.171Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 36,
+    "fields": {
+      "game": 9,
+      "name": "Builder",
+      "abbreviation": "BLD",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.181Z",
+      "updated_at": "2026-10-14T17:32:00.181Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 37,
+    "fields": {
+      "game": 10,
+      "name": "Assault",
+      "abbreviation": "ASSAULT",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.190Z",
+      "updated_at": "2026-10-14T17:32:00.190Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 38,
+    "fields": {
+      "game": 10,
+      "name": "Skirmisher",
+      "abbreviation": "SKIRM",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.199Z",
+      "updated_at": "2026-10-14T17:32:00.199Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 39,
+    "fields": {
+      "game": 10,
+      "name": "Recon",
+      "abbreviation": "RECON",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.208Z",
+      "updated_at": "2026-10-14T17:32:00.208Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 40,
+    "fields": {
+      "game": 10,
+      "name": "Controller",
+      "abbreviation": "CTRL",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.217Z",
+      "updated_at": "2026-10-14T17:32:00.217Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 41,
+    "fields": {
+      "game": 10,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.232Z",
+      "updated_at": "2026-10-14T17:32:00.232Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 42,
+    "fields": {
+      "game": 11,
+      "name": "Slayer",
+      "abbreviation": "SLY",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.243Z",
+      "updated_at": "2026-10-14T17:32:00.243Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 43,
+    "fields": {
+      "game": 11,
+      "name": "Objective",
+      "abbreviation": "OBJ",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.252Z",
+      "updated_at": "2026-10-14T17:32:00.252Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 44,
+    "fields": {
+      "game": 11,
+      "name": "Flex",
+      "abbreviation": "FLEX",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.261Z",
+      "updated_at": "2026-10-14T17:32:00.261Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 45,
+    "fields": {
+      "game": 11,
+      "name": "Sniper",
+      "abbreviation": "SNP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.270Z",
+      "updated_at": "2026-10-14T17:32:00.270Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 46,
+    "fields": {
+      "game": 12,
+      "name": "IGL",
+      "abbreviation": "IGL",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.279Z",
+      "updated_at": "2026-10-14T17:32:00.279Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 47,
+    "fields": {
+      "game": 12,
+      "name": "Fragger",
+      "abbreviation": "FRAG",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.290Z",
+      "updated_at": "2026-10-14T17:32:00.290Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 48,
+    "fields": {
+      "game": 12,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.301Z",
+      "updated_at": "2026-10-14T17:32:00.301Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 49,
+    "fields": {
+      "game": 12,
+      "name": "Scout",
+      "abbreviation": "SCT",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.312Z",
+      "updated_at": "2026-10-14T17:32:00.312Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 50,
+    "fields": {
+      "game": 13,
+      "name": "IGL",
+      "abbreviation": "IGL",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.321Z",
+      "updated_at": "2026-10-14T17:32:00.321Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 51,
+    "fields": {
+      "game": 13,
+      "name": "Fragger",
+      "abbreviation": "FRAG",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.330Z",
+      "updated_at": "2026-10-14T17:32:00.330Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 52,
+    "fields": {
+      "game": 13,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.340Z",
+      "updated_at": "2026-10-14T17:32:00.340Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 53,
+    "fields": {
+      "game": 13,
+      "name": "Sniper",
+      "abbreviation": "SNP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.356Z",
+      "updated_at": "2026-10-14T17:32:00.356Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 54,
+    "fields": {
+      "game": 14,
+      "name": "Baron Laner",
+      "abbreviation": "BARON",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.365Z",
+      "updated_at": "2026-10-14T17:32:00.365Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 55,
+    "fields": {
+      "game": 14,
+      "name": "Jungler",
+      "abbreviation": "JNG",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.375Z",
+      "updated_at": "2026-10-14T17:32:00.375Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 56,
+    "fields": {
+      "game": 14,
+      "name": "Mid Laner",
+      "abbreviation": "MID",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.387Z",
+      "updated_at": "2026-10-14T17:32:00.387Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 57,
+    "fields": {
+      "game": 14,
+      "name": "Dragon Laner",
+      "abbreviation": "DRAGON",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.397Z",
+      "updated_at": "2026-10-14T17:32:00.397Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 58,
+    "fields": {
+      "game": 14,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.408Z",
+      "updated_at": "2026-10-14T17:32:00.408Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 59,
+    "fields": {
+      "game": 15,
+      "name": "Duelist",
+      "abbreviation": "DUEL",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.418Z",
+      "updated_at": "2026-10-14T17:32:00.418Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 60,
+    "fields": {
+      "game": 15,
+      "name": "Initiator",
+      "abbreviation": "INIT",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.428Z",
+      "updated_at": "2026-10-14T17:32:00.428Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 61,
+    "fields": {
+      "game": 15,
+      "name": "Controller",
+      "abbreviation": "CTRL",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.437Z",
+      "updated_at": "2026-10-14T17:32:00.437Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 62,
+    "fields": {
+      "game": 15,
+      "name": "Sentinel",
+      "abbreviation": "SENT",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.447Z",
+      "updated_at": "2026-10-14T17:32:00.447Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 63,
+    "fields": {
+      "game": 18,
+      "name": "Tank",
+      "abbreviation": "TANK",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.457Z",
+      "updated_at": "2026-10-14T17:32:00.457Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 64,
+    "fields": {
+      "game": 18,
+      "name": "Fighter",
+      "abbreviation": "FIGHTER",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.469Z",
+      "updated_at": "2026-10-14T17:32:00.469Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 65,
+    "fields": {
+      "game": 18,
+      "name": "Assassin",
+      "abbreviation": "ASSASSIN",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.483Z",
+      "updated_at": "2026-10-14T17:32:00.483Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 66,
+    "fields": {
+      "game": 18,
+      "name": "Mage",
+      "abbreviation": "MAGE",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.493Z",
+      "updated_at": "2026-10-14T17:32:00.493Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 67,
+    "fields": {
+      "game": 18,
+      "name": "Marksman",
+      "abbreviation": "MM",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.504Z",
+      "updated_at": "2026-10-14T17:32:00.504Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 68,
+    "fields": {
+      "game": 18,
+      "name": "Support",
+      "abbreviation": "SUPP",
+      "description": "",
+      "created_at": "2026-10-14T17:32:00.514Z",
+      "updated_at": "2026-10-14T17:32:00.514Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 69,
+    "fields": {
+      "game": 2,
+      "name": "Flex",
+      "abbreviation": "FLEX",
+      "description": "",
+      "created_at": "2026-10-14T17:36:47.718Z",
+      "updated_at": "2026-10-14T17:36:47.718Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 70,
+    "fields": {
+      "game": 2,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.423Z",
+      "updated_at": "2026-10-14T17:40:29.423Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 71,
+    "fields": {
+      "game": 3,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.433Z",
+      "updated_at": "2026-10-14T17:40:29.433Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 72,
+    "fields": {
+      "game": 4,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.442Z",
+      "updated_at": "2026-10-14T17:40:29.442Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 73,
+    "fields": {
       "game": 5,
-      "name": "Goalkeeper / Anchor",
-      "abbreviation": "GK",
-      "description": "Ancla defensiva, paradas clave y despejes de seguridad en portería.",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.450Z",
+      "updated_at": "2026-10-14T17:40:29.451Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 74,
+    "fields": {
+      "game": 6,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.458Z",
+      "updated_at": "2026-10-14T17:40:29.458Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 75,
+    "fields": {
+      "game": 7,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.466Z",
+      "updated_at": "2026-10-14T17:40:29.466Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 76,
+    "fields": {
+      "game": 8,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.476Z",
+      "updated_at": "2026-10-14T17:40:29.476Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 77,
+    "fields": {
+      "game": 9,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.489Z",
+      "updated_at": "2026-10-14T17:40:29.489Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 78,
+    "fields": {
+      "game": 10,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.498Z",
+      "updated_at": "2026-10-14T17:40:29.498Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 79,
+    "fields": {
+      "game": 11,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.506Z",
+      "updated_at": "2026-10-14T17:40:29.506Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 80,
+    "fields": {
+      "game": 12,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.516Z",
+      "updated_at": "2026-10-14T17:40:29.516Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 81,
+    "fields": {
+      "game": 13,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.524Z",
+      "updated_at": "2026-10-14T17:40:29.524Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 82,
+    "fields": {
+      "game": 14,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.533Z",
+      "updated_at": "2026-10-14T17:40:29.533Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 83,
+    "fields": {
+      "game": 15,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.541Z",
+      "updated_at": "2026-10-14T17:40:29.541Z"
+    }
+  },
+  {
+    "model": "organizations.gamerole",
+    "pk": 84,
+    "fields": {
+      "game": 18,
+      "name": "Coach",
+      "abbreviation": "COACH",
+      "description": "",
+      "created_at": "2026-10-14T17:40:29.556Z",
+      "updated_at": "2026-10-14T17:40:29.556Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 1,
     "fields": {
-      "name": "NEXUS Esports",
-      "slug": "nexus-esports",
-      "abbreviation": "NXS",
-      "country": "Chile",
-      "website": "",
-      "description": "Organización competitiva líder en la escena regional de esports.",
-      "founded_date": "2023-01-15",
+      "name": "T1",
+      "slug": "t1",
+      "abbreviation": "T1",
+      "logo": "organizations/logos/image_2026-10-14_140936755.png",
+      "logo_url": "",
+      "country": "Corea",
+      "website": "https://www.t1.gg",
+      "description": "",
+      "founded_date": "2002-10-01",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "organizations.organization",
-    "pk": 2,
-    "fields": {
-      "name": "Sentinels",
-      "slug": "sentinels",
-      "abbreviation": "SEN",
-      "country": "Estados Unidos",
-      "website": "",
-      "description": "Organización de esports norteamericana, campeona de Masters Madrid y referente mundial de Valorant.",
-      "founded_date": "2018-06-01",
-      "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:01:10.089Z",
+      "updated_at": "2026-10-14T17:09:54.251Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 3,
     "fields": {
-      "name": "Fnatic",
-      "slug": "fnatic",
-      "abbreviation": "FNC",
-      "country": "Reino Unido",
+      "name": "Low Battery FIve",
+      "slug": "low-battery-five",
+      "abbreviation": "LBF",
+      "logo": "organizations/logos/image_2026-10-14_143552311.png",
+      "logo_url": "",
+      "country": "Chile",
       "website": "",
-      "description": "Club histórico británico con presencia estelar en Valorant y League of Legends.",
-      "founded_date": "2004-07-23",
+      "description": "",
+      "founded_date": null,
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:35:56.255Z",
+      "updated_at": "2026-10-14T17:35:56.255Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 4,
     "fields": {
-      "name": "T1",
-      "slug": "t1",
-      "abbreviation": "T1",
+      "name": "Gen.G Esports",
+      "slug": "gen-g",
+      "abbreviation": "GEN",
+      "logo": "organizations/logos/image_2026-10-14_145713785.png",
+      "logo_url": "",
       "country": "Corea del Sur",
-      "website": "",
-      "description": "La organización más laureada en la historia de League of Legends, 5 veces campeona del mundo.",
-      "founded_date": "2012-12-13",
+      "website": "https://geng.gg",
+      "description": "Organización coreana con una de las plantillas más dominantes de la LCK.",
+      "founded_date": "2017-05-01",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:55:27.365Z",
+      "updated_at": "2026-10-14T17:57:14.404Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 5,
     "fields": {
-      "name": "G2 Esports",
-      "slug": "g2-esports",
-      "abbreviation": "G2",
-      "country": "Alemania",
-      "website": "",
-      "description": "Organización europea de élite reconocida por su dominio regional en LEC y Majors de CS.",
-      "founded_date": "2014-02-24",
+      "name": "JD Gaming",
+      "slug": "jd-gaming",
+      "abbreviation": "JDG",
+      "logo": "organizations/logos/image_2026-10-14_145731044.png",
+      "logo_url": "",
+      "country": "China",
+      "website": "https://www.jdgaming.com",
+      "description": "Potencia de la LPL respaldada por JD.com y campeona de la LPL 2023.",
+      "founded_date": "2017-03-01",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:55:27.368Z",
+      "updated_at": "2026-10-14T17:57:31.678Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 6,
     "fields": {
-      "name": "Natus Vincere",
-      "slug": "natus-vincere",
-      "abbreviation": "NAVI",
-      "country": "Ucrania",
-      "website": "",
-      "description": "Club icónico fundado en 2009, campeones del PGL Major Copenhagen 2024 de CS2.",
-      "founded_date": "2009-12-17",
+      "name": "G2 Esports",
+      "slug": "g2-esports",
+      "abbreviation": "G2",
+      "logo": "organizations/logos/image_2026-10-14_145655479.png",
+      "logo_url": "",
+      "country": "Alemania",
+      "website": "https://g2esports.com",
+      "description": "Club europeo multijuego con presencia en LoL, Valorant y más títulos.",
+      "founded_date": "2014-02-24",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:55:27.372Z",
+      "updated_at": "2026-10-14T17:56:56.144Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 7,
     "fields": {
-      "name": "FaZe Clan",
-      "slug": "faze-clan",
-      "abbreviation": "FAZE",
-      "country": "Estados Unidos",
-      "website": "",
-      "description": "Titán norteamericano del gaming competitivo y finalistas de los Majors más prestigiosos de CS2.",
-      "founded_date": "2016-01-20",
+      "name": "Fnatic",
+      "slug": "fnatic",
+      "abbreviation": "FNC",
+      "logo": "organizations/logos/image_2026-10-14_145628277.png",
+      "logo_url": "",
+      "country": "Reino Unido",
+      "website": "https://fnatic.com",
+      "description": "Una de las organizaciones más históricas de Europa y del mundo.",
+      "founded_date": "2004-07-23",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:55:27.376Z",
+      "updated_at": "2026-10-14T17:56:29.055Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 8,
     "fields": {
-      "name": "Team Spirit",
-      "slug": "team-spirit",
-      "abbreviation": "TS",
-      "country": "Serbia",
-      "website": "",
-      "description": "Organización bicampeona mundial de The International de Dota 2 (TI10 y TI12).",
-      "founded_date": "2015-12-06",
+      "name": "Team Liquid",
+      "slug": "team-liquid",
+      "abbreviation": "TL",
+      "logo": "organizations/logos/image_2026-10-14_145854348.png",
+      "logo_url": "",
+      "country": "Países Bajos",
+      "website": "https://teamliquid.com",
+      "description": "Organización neerlandesa con equipos en las principales ligas de esports.",
+      "founded_date": "2000-01-01",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:55:27.379Z",
+      "updated_at": "2026-10-14T17:58:54.922Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 9,
     "fields": {
-      "name": "OG",
-      "slug": "og",
-      "abbreviation": "OG",
-      "country": "Dinamarca",
-      "website": "",
-      "description": "Primer equipo en coronarse bicampeón consecutivo de The International de Dota 2.",
-      "founded_date": "2015-10-31",
+      "name": "Sentinels",
+      "slug": "sentinels",
+      "abbreviation": "SEN",
+      "logo": "organizations/logos/image_2026-10-14_145812850.png",
+      "logo_url": "",
+      "country": "Estados Unidos",
+      "website": "https://sentinels.gg",
+      "description": "Ícono de Norteamérica en Valorant, campeón de Masters Reykjavík 2021.",
+      "founded_date": "2018-03-01",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:55:27.383Z",
+      "updated_at": "2026-10-14T17:58:13.710Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 10,
     "fields": {
-      "name": "Team Vitality",
-      "slug": "team-vitality",
-      "abbreviation": "VIT",
-      "country": "Francia",
-      "website": "",
-      "description": "El club francés más importante, campeones mundiales de RLCS World Championship en Rocket League.",
-      "founded_date": "2013-08-05",
+      "name": "Paper Rex",
+      "slug": "paper-rex",
+      "abbreviation": "PRX",
+      "logo": "organizations/logos/image_2026-10-14_145835990.png",
+      "logo_url": "",
+      "country": "Singapur",
+      "website": "https://paperrex.gg",
+      "description": "Organización del Pacífico reconocida por su estilo de juego agresivo.",
+      "founded_date": "2020-03-01",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-14T17:55:27.386Z",
+      "updated_at": "2026-10-14T17:58:36.648Z"
     }
   },
   {
     "model": "organizations.organization",
     "pk": 11,
     "fields": {
-      "name": "Karmine Corp",
-      "slug": "karmine-corp",
-      "abbreviation": "KC",
+      "name": "LOUD",
+      "slug": "loud",
+      "abbreviation": "LOUD",
+      "logo": "organizations/logos/image_2026-10-14_145750587.png",
+      "logo_url": "",
+      "country": "Brasil",
+      "website": "https://loud.gg",
+      "description": "El club de esports más grande de Brasil y campeón de Champions 2022.",
+      "founded_date": "2019-06-01",
+      "is_active": true,
+      "created_at": "2026-10-14T17:55:27.390Z",
+      "updated_at": "2026-10-14T17:57:51.929Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 12,
+    "fields": {
+      "name": "Team Heretics",
+      "slug": "team-heretics",
+      "abbreviation": "TH",
+      "logo": "organizations/logos/team-heretics.png",
+      "logo_url": "",
+      "country": "España",
+      "website": "",
+      "description": "Organización española de gran crecimiento con equipos en varios títulos.",
+      "founded_date": "2016-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.483Z",
+      "updated_at": "2026-10-15T01:12:03.483Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 13,
+    "fields": {
+      "name": "DRX",
+      "slug": "drx",
+      "abbreviation": "DRX",
+      "logo": "organizations/logos/drx.png",
+      "logo_url": "",
+      "country": "Corea del Sur",
+      "website": "",
+      "description": "Organización surcoreana con escuadras de élite en Valorant y LoL.",
+      "founded_date": "2019-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.493Z",
+      "updated_at": "2026-10-15T01:12:03.493Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 14,
+    "fields": {
+      "name": "EDward Gaming",
+      "slug": "edward-gaming",
+      "abbreviation": "EDG",
+      "logo": "organizations/logos/edward-gaming.png",
+      "logo_url": "",
+      "country": "China",
+      "website": "",
+      "description": "Organización china multiplataforma, dominante en Valorant.",
+      "founded_date": "2013-09-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.502Z",
+      "updated_at": "2026-10-15T01:12:03.502Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 15,
+    "fields": {
+      "name": "FunPlus Phoenix",
+      "slug": "funplus-phoenix",
+      "abbreviation": "FPX",
+      "logo": "organizations/logos/funplus-phoenix.png",
+      "logo_url": "",
+      "country": "China",
+      "website": "",
+      "description": "Organización china campeona del mundo de League of Legends.",
+      "founded_date": "2017-12-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.511Z",
+      "updated_at": "2026-10-15T01:12:03.511Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 16,
+    "fields": {
+      "name": "Bilibili Gaming",
+      "slug": "bilibili-gaming",
+      "abbreviation": "BLG",
+      "logo": "organizations/logos/bilibili-gaming.png",
+      "logo_url": "",
+      "country": "China",
+      "website": "",
+      "description": "Organización china con equipos de primer nivel.",
+      "founded_date": "2017-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.522Z",
+      "updated_at": "2026-10-15T01:12:03.522Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 17,
+    "fields": {
+      "name": "NRG",
+      "slug": "nrg",
+      "abbreviation": "NRG",
+      "logo": "organizations/logos/nrg.png",
+      "logo_url": "",
+      "country": "Estados Unidos",
+      "website": "",
+      "description": "Organización norteamericana presente en varios de los principales juegos.",
+      "founded_date": "2015-10-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.536Z",
+      "updated_at": "2026-10-15T01:12:03.536Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 18,
+    "fields": {
+      "name": "Leviatán",
+      "slug": "leviatan",
+      "abbreviation": "LEV",
+      "logo": "organizations/logos/image_2026-10-14_231055004.png",
+      "logo_url": "",
+      "country": "Chile",
+      "website": "",
+      "description": "Organización latinoamericana de élite liderada desde Chile.",
+      "founded_date": "2021-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.545Z",
+      "updated_at": "2026-10-15T01:12:03.545Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 19,
+    "fields": {
+      "name": "Top Esports",
+      "slug": "top-esports",
+      "abbreviation": "TES",
+      "logo": "organizations/logos/top-esports.png",
+      "logo_url": "",
+      "country": "China",
+      "website": "",
+      "description": "Organización china con plantilla de superestrellas.",
+      "founded_date": "2017-12-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.557Z",
+      "updated_at": "2026-10-15T01:12:03.557Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 20,
+    "fields": {
+      "name": "Weibo Gaming",
+      "slug": "weibo-gaming",
+      "abbreviation": "WBG",
+      "logo": "organizations/logos/weibo-gaming.png",
+      "logo_url": "",
+      "country": "China",
+      "website": "",
+      "description": "Organización china finalista del mundial de League of Legends.",
+      "founded_date": "2013-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.567Z",
+      "updated_at": "2026-10-15T01:12:03.567Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 21,
+    "fields": {
+      "name": "MAD Lions KOI",
+      "slug": "mad-lions-koi",
+      "abbreviation": "MAD",
+      "logo": "organizations/logos/mad-lions-koi.png",
+      "logo_url": "",
+      "country": "España",
+      "website": "",
+      "description": "Organización europea con una de las mayores hinchadas de la LEC.",
+      "founded_date": "2017-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.578Z",
+      "updated_at": "2026-10-15T01:12:03.578Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 22,
+    "fields": {
+      "name": "Team Vitality",
+      "slug": "team-vitality",
+      "abbreviation": "VIT",
+      "logo": "organizations/logos/team-vitality.png",
+      "logo_url": "",
       "country": "Francia",
       "website": "",
-      "description": "Club europeo sensación de masas, campeones de RLCS Major y fuerza dominante en Rocket League.",
-      "founded_date": "2020-03-30",
+      "description": "El club francés más importante y campeón de la LEC.",
+      "founded_date": "2013-08-05",
       "is_active": true,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "created_at": "2026-10-15T01:12:03.587Z",
+      "updated_at": "2026-10-15T01:12:03.587Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 23,
+    "fields": {
+      "name": "SK Gaming",
+      "slug": "sk-gaming",
+      "abbreviation": "SK",
+      "logo": "organizations/logos/sk-gaming.png",
+      "logo_url": "",
+      "country": "Alemania",
+      "website": "",
+      "description": "Organización alemana pionera de los esports.",
+      "founded_date": "1997-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.597Z",
+      "updated_at": "2026-10-15T01:12:03.597Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 24,
+    "fields": {
+      "name": "KT Rolster",
+      "slug": "kt-rolster",
+      "abbreviation": "KT",
+      "logo": "organizations/logos/kt-rolster.png",
+      "logo_url": "",
+      "country": "Corea del Sur",
+      "website": "",
+      "description": "Organización surcoreana histórica de la LCK.",
+      "founded_date": "1999-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.608Z",
+      "updated_at": "2026-10-15T01:12:03.608Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 25,
+    "fields": {
+      "name": "Hanwha Life Esports",
+      "slug": "hanwha-life-esports",
+      "abbreviation": "HLE",
+      "logo": "organizations/logos/hanwha-life-esports.png",
+      "logo_url": "",
+      "country": "Corea del Sur",
+      "website": "",
+      "description": "Organización coreana campeona de la LCK.",
+      "founded_date": "2018-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.618Z",
+      "updated_at": "2026-10-15T01:12:03.618Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 26,
+    "fields": {
+      "name": "Dplus KIA",
+      "slug": "dplus-kia",
+      "abbreviation": "DK",
+      "logo": "organizations/logos/dplus-kia.png",
+      "logo_url": "",
+      "country": "Corea del Sur",
+      "website": "",
+      "description": "Organización coreana campeona del mundo de LoL.",
+      "founded_date": "2012-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.629Z",
+      "updated_at": "2026-10-15T01:12:03.629Z"
+    }
+  },
+  {
+    "model": "organizations.organization",
+    "pk": 27,
+    "fields": {
+      "name": "Cloud9",
+      "slug": "cloud9",
+      "abbreviation": "C9",
+      "logo": "organizations/logos/cloud9.png",
+      "logo_url": "",
+      "country": "Estados Unidos",
+      "website": "",
+      "description": "Organización norteamericana multiplataforma.",
+      "founded_date": "2013-01-01",
+      "is_active": true,
+      "created_at": "2026-10-15T01:12:03.639Z",
+      "updated_at": "2026-10-15T01:12:03.639Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 1,
     "fields": {
-      "organization": 2,
-      "game": 1,
-      "name": "Sentinels",
-      "slug": "sentinels-valorant",
-      "description": "Roster estrella norteamericano campeón del VCT Masters Madrid.",
+      "organization": 1,
+      "game": 3,
+      "name": "T1 LoL",
+      "slug": null,
+      "logo": "",
+      "description": "",
       "status": "active",
-      "founded_date": "2020-04-28",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "organizations.team",
-    "pk": 2,
-    "fields": {
-      "organization": 3,
-      "game": 1,
-      "name": "Fnatic",
-      "slug": "fnatic-valorant",
-      "description": "Escuadra europea bicampeona de VCT LOCK//IN y VCT Masters Tokyo.",
-      "status": "active",
-      "founded_date": "2021-02-03",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": null,
+      "created_at": "2026-10-14T17:11:18.967Z",
+      "updated_at": "2026-10-14T18:00:02.134Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 3,
     "fields": {
-      "organization": 4,
+      "organization": 3,
       "game": 2,
-      "name": "T1",
-      "slug": "t1-lol",
-      "description": "Legendario equipo surcoreano pentacampeón mundial de Worlds.",
+      "name": "LBF",
+      "slug": null,
+      "logo": "",
+      "description": "",
       "status": "active",
-      "founded_date": "2012-12-13",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": null,
+      "created_at": "2026-10-14T17:36:16.329Z",
+      "updated_at": "2026-10-14T17:36:16.329Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 4,
     "fields": {
-      "organization": 5,
-      "game": 2,
-      "name": "G2 Esports",
-      "slug": "g2-lol",
-      "description": "Máximo monarca europeo de la LEC y finalista mundial.",
+      "organization": 4,
+      "game": 3,
+      "name": "Gen.G LoL",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de Gen.G en la LCK.",
       "status": "active",
-      "founded_date": "2014-02-24",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": "2017-05-01",
+      "created_at": "2026-10-14T17:55:27.422Z",
+      "updated_at": "2026-10-14T17:55:27.422Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 5,
     "fields": {
-      "organization": 6,
+      "organization": 5,
       "game": 3,
-      "name": "Natus Vincere",
-      "slug": "navi-cs2",
-      "description": "Escuadra de élite campeona del PGL Major Copenhagen 2024.",
+      "name": "JD Gaming LoL",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de JD Gaming en la LPL.",
       "status": "active",
-      "founded_date": "2009-12-17",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": "2017-03-01",
+      "created_at": "2026-10-14T17:55:27.509Z",
+      "updated_at": "2026-10-14T17:55:27.509Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 6,
     "fields": {
-      "organization": 7,
+      "organization": 6,
       "game": 3,
-      "name": "FaZe Clan",
-      "slug": "faze-cs2",
-      "description": "Alineación internacional ganadora de Intel Grand Slam y finalista de Majors.",
+      "name": "G2 Esports LoL",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de G2 Esports en la LEC.",
       "status": "active",
-      "founded_date": "2016-01-20",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": "2014-02-24",
+      "created_at": "2026-10-14T17:55:27.650Z",
+      "updated_at": "2026-10-14T17:55:27.650Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 7,
     "fields": {
-      "organization": 8,
-      "game": 4,
-      "name": "Team Spirit",
-      "slug": "team-spirit-dota2",
-      "description": "Bicampeones de The International (TI10 y TI12) y Riyadh Masters.",
+      "organization": 7,
+      "game": 3,
+      "name": "Fnatic LoL",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de Fnatic en la LEC.",
       "status": "active",
-      "founded_date": "2015-12-06",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": "2004-07-23",
+      "created_at": "2026-10-14T17:55:27.788Z",
+      "updated_at": "2026-10-14T17:55:27.788Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 8,
     "fields": {
-      "organization": 9,
-      "game": 4,
-      "name": "OG",
-      "slug": "og-dota2",
-      "description": "Pioneros del bicampeonato consecutivo de The International.",
+      "organization": 8,
+      "game": 3,
+      "name": "Team Liquid LoL",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de Team Liquid en la LCS.",
       "status": "active",
-      "founded_date": "2015-10-31",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": "2000-01-01",
+      "created_at": "2026-10-14T17:55:27.931Z",
+      "updated_at": "2026-10-14T17:55:27.931Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 9,
     "fields": {
-      "organization": 10,
-      "game": 5,
-      "name": "Team Vitality",
-      "slug": "vitality-rl",
-      "description": "Campeones mundiales del RLCS World Championship liderados por zen.",
+      "organization": 9,
+      "game": 2,
+      "name": "Sentinels Valorant",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de Sentinels en el VCT Americas.",
       "status": "active",
-      "founded_date": "2018-02-12",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": "2018-03-01",
+      "created_at": "2026-10-14T17:55:28.079Z",
+      "updated_at": "2026-10-14T17:55:28.079Z"
     }
   },
   {
     "model": "organizations.team",
     "pk": 10,
     "fields": {
-      "organization": 11,
-      "game": 5,
-      "name": "Karmine Corp",
-      "slug": "karmine-corp-rl",
-      "description": "Campeones del RLCS Major con la mayor hinchada del mundo (Blue Wall).",
+      "organization": 10,
+      "game": 2,
+      "name": "Paper Rex Valorant",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de Paper Rex en el VCT Pacific.",
       "status": "active",
-      "founded_date": "2021-07-26",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
+      "founded_date": "2020-03-01",
+      "created_at": "2026-10-14T17:55:28.232Z",
+      "updated_at": "2026-10-14T17:55:28.232Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 11,
+    "fields": {
+      "organization": 11,
+      "game": 2,
+      "name": "LOUD Valorant",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de LOUD en el VCT Americas.",
+      "status": "active",
+      "founded_date": "2019-06-01",
+      "created_at": "2026-10-14T17:55:28.375Z",
+      "updated_at": "2026-10-14T17:55:28.375Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 12,
+    "fields": {
+      "organization": 7,
+      "game": 2,
+      "name": "Fnatic Valorant",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de Fnatic en el VCT EMEA.",
+      "status": "active",
+      "founded_date": "2004-07-23",
+      "created_at": "2026-10-14T17:55:28.522Z",
+      "updated_at": "2026-10-14T17:55:28.522Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 13,
+    "fields": {
+      "organization": 6,
+      "game": 2,
+      "name": "G2 Esports Valorant",
+      "slug": null,
+      "logo": "",
+      "description": "Roster de G2 Esports en el VCT EMEA.",
+      "status": "active",
+      "founded_date": "2014-02-24",
+      "created_at": "2026-10-14T17:55:28.672Z",
+      "updated_at": "2026-10-14T17:55:28.672Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 14,
+    "fields": {
+      "organization": 12,
+      "game": 2,
+      "name": "Team Heretics Valorant",
+      "slug": "team-heretics-valorant",
+      "logo": "",
+      "description": "Escuadra española campeona de EMEA con un juego explosivo.",
+      "status": "active",
+      "founded_date": "2016-01-01",
+      "created_at": "2026-10-15T01:12:03.654Z",
+      "updated_at": "2026-10-15T01:12:03.654Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 15,
+    "fields": {
+      "organization": 8,
+      "game": 2,
+      "name": "Team Liquid Valorant",
+      "slug": "team-liquid-valorant",
+      "logo": "",
+      "description": "Marca histórica de los esports con presencia global en Valorant.",
+      "status": "active",
+      "founded_date": "2000-08-01",
+      "created_at": "2026-10-15T01:12:03.884Z",
+      "updated_at": "2026-10-15T01:12:03.884Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 16,
+    "fields": {
+      "organization": 13,
+      "game": 2,
+      "name": "DRX Valorant",
+      "slug": "drx-valorant",
+      "logo": "",
+      "description": "Escuadra coreana referente del Pacífico en el VCT.",
+      "status": "active",
+      "founded_date": "2019-01-01",
+      "created_at": "2026-10-15T01:12:04.113Z",
+      "updated_at": "2026-10-15T01:12:04.113Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 17,
+    "fields": {
+      "organization": 4,
+      "game": 2,
+      "name": "Gen.G Valorant",
+      "slug": "geng-valorant",
+      "logo": "",
+      "description": "Organización global con una plantilla de élite en el VCT Pacífico.",
+      "status": "active",
+      "founded_date": "2017-07-01",
+      "created_at": "2026-10-15T01:12:04.324Z",
+      "updated_at": "2026-10-15T01:12:04.324Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 18,
+    "fields": {
+      "organization": 1,
+      "game": 2,
+      "name": "T1 Valorant",
+      "slug": "t1-valorant",
+      "logo": "",
+      "description": "Equipo legendario con presencia competitiva en múltiples títulos.",
+      "status": "active",
+      "founded_date": "2019-12-01",
+      "created_at": "2026-10-15T01:12:04.546Z",
+      "updated_at": "2026-10-15T01:12:04.546Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 19,
+    "fields": {
+      "organization": 14,
+      "game": 2,
+      "name": "EDward Gaming Valorant",
+      "slug": "edward-gaming-valorant",
+      "logo": "",
+      "description": "Organización china dominante de la VCT China.",
+      "status": "active",
+      "founded_date": "2013-09-01",
+      "created_at": "2026-10-15T01:12:04.762Z",
+      "updated_at": "2026-10-15T01:12:04.762Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 20,
+    "fields": {
+      "organization": 15,
+      "game": 2,
+      "name": "FunPlus Phoenix Valorant",
+      "slug": "funplus-phoenix-valorant",
+      "logo": "",
+      "description": "Escuadra china con experiencia en escenarios internacionales.",
+      "status": "active",
+      "founded_date": "2017-12-01",
+      "created_at": "2026-10-15T01:12:04.961Z",
+      "updated_at": "2026-10-15T01:12:04.961Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 21,
+    "fields": {
+      "organization": 16,
+      "game": 2,
+      "name": "Bilibili Gaming Valorant",
+      "slug": "bilibili-gaming-valorant",
+      "logo": "",
+      "description": "Potencia china en Valorant con un roster consolidado.",
+      "status": "active",
+      "founded_date": "2017-01-01",
+      "created_at": "2026-10-15T01:12:05.108Z",
+      "updated_at": "2026-10-15T01:12:05.108Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 22,
+    "fields": {
+      "organization": 17,
+      "game": 2,
+      "name": "NRG Valorant",
+      "slug": "nrg-valorant",
+      "logo": "",
+      "description": "Organización norteamericana con roster de veteranos.",
+      "status": "active",
+      "founded_date": "2015-10-01",
+      "created_at": "2026-10-15T01:12:05.251Z",
+      "updated_at": "2026-10-15T01:12:05.251Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 23,
+    "fields": {
+      "organization": 18,
+      "game": 2,
+      "name": "Leviatán Valorant",
+      "slug": "leviatan-valorant",
+      "logo": "",
+      "description": "Organización latinoamericana de élite en Valorant.",
+      "status": "active",
+      "founded_date": "2021-01-01",
+      "created_at": "2026-10-15T01:12:05.403Z",
+      "updated_at": "2026-10-15T01:12:05.403Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 24,
+    "fields": {
+      "organization": 16,
+      "game": 3,
+      "name": "Bilibili Gaming LoL",
+      "slug": "bilibili-gaming-lol",
+      "logo": "",
+      "description": "Escuadra china dominante de la LPL.",
+      "status": "active",
+      "founded_date": "2017-01-01",
+      "created_at": "2026-10-15T01:12:05.549Z",
+      "updated_at": "2026-10-15T01:12:05.549Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 25,
+    "fields": {
+      "organization": 19,
+      "game": 3,
+      "name": "Top Esports LoL",
+      "slug": "top-esports-lol",
+      "logo": "",
+      "description": "Organización china con plantilla de superestrellas.",
+      "status": "active",
+      "founded_date": "2017-12-01",
+      "created_at": "2026-10-15T01:12:05.699Z",
+      "updated_at": "2026-10-15T01:12:05.699Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 26,
+    "fields": {
+      "organization": 20,
+      "game": 3,
+      "name": "Weibo Gaming LoL",
+      "slug": "weibo-gaming-lol",
+      "logo": "",
+      "description": "Escuadra china finalista mundial.",
+      "status": "active",
+      "founded_date": "2013-01-01",
+      "created_at": "2026-10-15T01:12:05.832Z",
+      "updated_at": "2026-10-15T01:12:05.832Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 27,
+    "fields": {
+      "organization": 21,
+      "game": 3,
+      "name": "MAD Lions KOI LoL",
+      "slug": "mad-lions-koi-lol",
+      "logo": "",
+      "description": "Organización europea con hinchada masiva en la LEC.",
+      "status": "active",
+      "founded_date": "2017-01-01",
+      "created_at": "2026-10-15T01:12:05.967Z",
+      "updated_at": "2026-10-15T01:12:05.967Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 28,
+    "fields": {
+      "organization": 22,
+      "game": 3,
+      "name": "Team Vitality LoL",
+      "slug": "team-vitality-lol",
+      "logo": "",
+      "description": "El club francés más importante y campeón de la LEC.",
+      "status": "active",
+      "founded_date": "2013-08-05",
+      "created_at": "2026-10-15T01:12:06.117Z",
+      "updated_at": "2026-10-15T01:12:06.117Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 29,
+    "fields": {
+      "organization": 23,
+      "game": 3,
+      "name": "SK Gaming LoL",
+      "slug": "sk-gaming-lol",
+      "logo": "",
+      "description": "Organización alemana con larga trayectoria competitiva.",
+      "status": "active",
+      "founded_date": "1997-01-01",
+      "created_at": "2026-10-15T01:12:06.264Z",
+      "updated_at": "2026-10-15T01:12:06.264Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 30,
+    "fields": {
+      "organization": 24,
+      "game": 3,
+      "name": "KT Rolster LoL",
+      "slug": "kt-rolster-lol",
+      "logo": "",
+      "description": "Escuadra coreana histórica de la LCK.",
+      "status": "active",
+      "founded_date": "1999-01-01",
+      "created_at": "2026-10-15T01:12:06.407Z",
+      "updated_at": "2026-10-15T01:12:06.407Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 31,
+    "fields": {
+      "organization": 25,
+      "game": 3,
+      "name": "Hanwha Life Esports LoL",
+      "slug": "hanwha-life-esports-lol",
+      "logo": "",
+      "description": "Equipo coreano campeón de la LCK.",
+      "status": "active",
+      "founded_date": "2018-01-01",
+      "created_at": "2026-10-15T01:12:06.560Z",
+      "updated_at": "2026-10-15T01:12:06.560Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 32,
+    "fields": {
+      "organization": 26,
+      "game": 3,
+      "name": "Dplus KIA LoL",
+      "slug": "dplus-kia-lol",
+      "logo": "",
+      "description": "Organización coreana campeona del mundo de LoL.",
+      "status": "active",
+      "founded_date": "2012-01-01",
+      "created_at": "2026-10-15T01:12:06.727Z",
+      "updated_at": "2026-10-15T01:12:06.727Z"
+    }
+  },
+  {
+    "model": "organizations.team",
+    "pk": 33,
+    "fields": {
+      "organization": 27,
+      "game": 3,
+      "name": "Cloud9 LoL",
+      "slug": "cloud9-lol",
+      "logo": "",
+      "description": "Máximo referente norteamericano de la LCS.",
+      "status": "active",
+      "founded_date": "2013-01-01",
+      "created_at": "2026-10-15T01:12:06.884Z",
+      "updated_at": "2026-10-15T01:12:06.884Z"
     }
   }
 ]

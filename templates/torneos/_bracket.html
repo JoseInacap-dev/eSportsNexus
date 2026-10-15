@@ -1,0 +1,97 @@
+<div class="nexus-card mb-4">
+    <div class="nexus-card-header d-flex align-items-center justify-content-between">
+        <h3 class="nexus-card-title">
+            {% if bracket.brackets|length > 1 %}Cuadro de eliminación{% else %}Llave de eliminación{% endif %}
+        </h3>
+        <span class="text-secondary small">
+            {{ bracket.participants }} equipos · {{ bracket.size }} posiciones{% if bracket.byes %} · {{ bracket.byes }} bye(s){% endif %}
+        </span>
+    </div>
+    <div class="nexus-card-body p-4">
+        {% if bracket.participants < 2 %}
+            <div class="bracket-empty text-center py-5">
+                <i class="bi bi-diagram-3 fs-1 text-secondary d-block mb-2"></i>
+                <h5 class="text-light fw-bold">Llave no disponible</h5>
+                <p class="text-secondary small mb-0">Se necesitan al menos 2 equipos para generar el cuadro.</p>
+            </div>
+        {% else %}
+            {% for current in bracket.brackets %}
+                {% if current.layout %}
+                    <div class="nexus-bracket-block{% if not forloop.last %} mb-4{% endif %}">
+                        <div class="nexus-bracket-title">{{ current.name }}</div>
+                        <div class="nexus-bracket-scroll">
+                            <div class="nexus-bracket-canvas" style="width: {{ current.layout.width|stringformat:".1f" }}px; height: {{ current.layout.height|stringformat:".1f" }}px;">
+                                <svg class="bracket-lines" width="{{ current.layout.width|stringformat:".1f" }}" height="{{ current.layout.height|stringformat:".1f" }}" aria-hidden="true" focusable="false">
+                                    {% for path in current.layout.paths %}
+                                        <path d="{{ path }}"></path>
+                                    {% endfor %}
+                                </svg>
+                                {% for title in current.layout.titles %}
+                                    <div class="bracket-col-title" style="left: {{ title.x|stringformat:".1f" }}px; width: {{ current.layout.node_w|stringformat:".1f" }}px;">
+                                        <span>{{ title.name }}</span>
+                                        <span class="bracket-round-count">{{ title.count }}</span>
+                                    </div>
+                                {% endfor %}
+                                {% for round in current.rounds %}
+                                    {% for match in round.matches %}
+                                        <div class="bracket-node" style="left: {{ match.x|stringformat:".1f" }}px; top: {{ match.y|stringformat:".1f" }}px; width: {{ current.layout.node_w|stringformat:".1f" }}px; height: {{ current.layout.node_h|stringformat:".1f" }}px;">
+                                            <div class="bracket-match{% if match.bye %} is-bye{% endif %}{% if match.is_live %} is-live{% endif %}{% if match.is_finished %} is-finished{% endif %}{% if match.winner %} has-winner{% endif %}">
+                                                {% if match.match_pk %}
+                                                    <a href="{% url 'matches:match-detail' match.match_pk %}" class="bracket-match-link" title="Ver partido" aria-label="Ver partido"></a>
+                                                {% endif %}
+                                                <div class="bracket-slot{% if match.winner and match.home and match.home == match.winner %} is-winner{% endif %}{% if not match.home and match.home_label != 'BYE' %} is-empty{% endif %}">
+                                                    <span class="bracket-team-logo{% if not match.home %} is-placeholder{% endif %}">
+                                                        {% if match.home %}
+                                                            {% if match.home.logo %}
+                                                                <img src="{{ match.home.logo.url }}" alt="{{ match.home.name }}">
+                                                            {% elif match.home.organization.logo_display %}
+                                                                <img src="{{ match.home.organization.logo_display }}" alt="{{ match.home.name }}">
+                                                            {% else %}
+                                                                <span class="bracket-team-initial">{{ match.home.name|slice:":1"|upper }}</span>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <i class="bi bi-dash"></i>
+                                                        {% endif %}
+                                                    </span>
+                                                    <span class="bracket-slot-name">{{ match.home_label }}</span>
+                                                    {% if match.has_score %}<span class="bracket-score{% if match.winner and match.home == match.winner %} is-winner{% endif %}">{{ match.home_score }}</span>{% endif %}
+                                                </div>
+                                                <div class="bracket-slot{% if match.winner and match.away and match.away == match.winner %} is-winner{% endif %}{% if not match.away and match.away_label != 'BYE' %} is-empty{% endif %}">
+                                                    <span class="bracket-team-logo{% if not match.away %} is-placeholder{% endif %}">
+                                                        {% if match.away %}
+                                                            {% if match.away.logo %}
+                                                                <img src="{{ match.away.logo.url }}" alt="{{ match.away.name }}">
+                                                            {% elif match.away.organization.logo_display %}
+                                                                <img src="{{ match.away.organization.logo_display }}" alt="{{ match.away.name }}">
+                                                            {% else %}
+                                                                <span class="bracket-team-initial">{{ match.away.name|slice:":1"|upper }}</span>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <i class="bi bi-dash"></i>
+                                                        {% endif %}
+                                                    </span>
+                                                    <span class="bracket-slot-name">{{ match.away_label }}</span>
+                                                    {% if match.has_score %}<span class="bracket-score{% if match.winner and match.away == match.winner %} is-winner{% endif %}">{{ match.away_score }}</span>{% endif %}
+                                                </div>
+                                                <div class="bracket-match-foot">
+                                                    {% if match.match_pk %}
+                                                        <span class="bracket-status{% if match.is_live %} is-live{% elif match.is_finished %} is-finished{% endif %}">
+                                                            {% if match.is_live %}<span class="live-dot"></span>{% endif %}{{ match.status_display }}
+                                                        </span>
+                                                        {% if match.scheduled_at %}<span class="bracket-when">{{ match.scheduled_at|date:"d/m H:i" }}</span>{% endif %}
+                                                    {% elif match.bye %}
+                                                        <span class="bracket-status">Pase directo</span>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

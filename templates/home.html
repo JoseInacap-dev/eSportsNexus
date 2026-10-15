@@ -18,7 +18,7 @@
 
 <!-- Tarjetas KPI Principales -->
 <div class="row g-3 mb-4">
-    <div class="col-12 col-sm-6 col-xl-3">
+    <div class="col-12 col-sm-6 col-xl-4">
         <div class="nexus-card p-3">
             <div class="d-flex align-items-center justify-content-between mb-2">
                 <span class="text-secondary small fw-bold">EQUIPOS ACTIVOS</span>
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="col-12 col-sm-6 col-xl-3">
+    <div class="col-12 col-sm-6 col-xl-4">
         <div class="nexus-card p-3">
             <div class="d-flex align-items-center justify-content-between mb-2">
                 <span class="text-secondary small fw-bold">JUGADORES FICHADOS</span>
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class="col-12 col-sm-6 col-xl-3">
+    <div class="col-12 col-sm-6 col-xl-4">
         <div class="nexus-card p-3">
             <div class="d-flex align-items-center justify-content-between mb-2">
                 <span class="text-secondary small fw-bold">PARTIDOS DEL MES</span>
@@ -48,17 +48,6 @@
             </div>
             <div class="h3 text-light fw-bold mb-1">{{ partidos_mes|default:0 }}</div>
             <div class="text-muted" style="font-size: 0.75rem;">Oficiales y entrenamientos</div>
-        </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-xl-3">
-        <div class="nexus-card p-3">
-            <div class="d-flex align-items-center justify-content-between mb-2">
-                <span class="text-secondary small fw-bold">TASA DE VICTORIAS</span>
-                <span class="badge bg-dark border border-secondary text-success p-2 rounded"><i class="bi bi-trophy"></i></span>
-            </div>
-            <div class="h3 text-accent fw-bold mb-1">{{ winrate_global|default:0 }}%</div>
-            <div class="text-success small" style="font-size: 0.75rem;"><i class="bi bi-graph-up-arrow"></i> Global histórica</div>
         </div>
     </div>
 </div>

@@ -225,18 +225,3 @@ class Team(models.Model):
             .count()
         )
 
-    @property
-    def winrate(self):
-        """Porcentaje de victorias en partidos finalizados (0-100)."""
-        finished = self.home_matches.filter(status="finished").values_list(
-            "home_score", "away_score"
-        )
-        played = 0
-        wins = 0
-        for home_score, away_score in finished:
-            if home_score is None or away_score is None:
-                continue
-            played += 1
-            if home_score > away_score:
-                wins += 1
-        return round(wins / played * 100, 1) if played else 0

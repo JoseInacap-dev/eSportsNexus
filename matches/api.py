@@ -2,13 +2,18 @@ from rest_framework import viewsets
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 
-from core.permissions import IsOrganizationManager, user_can_manage_organization
+from core.permissions import (
+    IsOrganizationManager,
+    IsStaffOrReadOnly,
+    user_can_manage_organization,
+)
 from matches.models import (
     Match,
     MatchMap,
     PlayerMatchStat,
     StatDefinition,
     TeamMatchStat,
+    Tournament,
 )
 from matches.serializers import (
     MatchMapSerializer,
@@ -16,19 +21,30 @@ from matches.serializers import (
     PlayerMatchStatSerializer,
     StatDefinitionSerializer,
     TeamMatchStatSerializer,
+    TournamentSerializer,
 )
+
+
+class TournamentViewSet(viewsets.ModelViewSet):
+    queryset = Tournament.objects.select_related("game").prefetch_related(
+        "participants__team"
+    )
+    serializer_class = TournamentSerializer
+    permission_classes = [IsAuthenticated, IsStaffOrReadOnly]
+    search_fields = ["name", "game__name"]
+    ordering_fields = ["name", "start_date", "created_at"]
 
 
 class MatchViewSet(viewsets.ModelViewSet):
     queryset = Match.objects.select_related(
-        "game", "home_team", "home_team__organization", "away_team"
+        "game", "home_team", "home_team__organization", "away_team", "tournament"
     )
     serializer_class = MatchSerializer
     permission_classes = [IsAuthenticated, IsOrganizationManager]
     search_fields = [
         "home_team__name",
         "away_team__name",
-        "tournament_name",
+        "tournament__name",
     ]
     ordering_fields = ["scheduled_at", "status"]
 

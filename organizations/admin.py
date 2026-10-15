@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from core.admin import NexusDateAdminMixin
 from organizations.models import Game, GameRole, Organization, Team
 
 
@@ -18,14 +19,14 @@ class GameRoleAdmin(admin.ModelAdmin):
 
 
 @admin.register(Organization)
-class OrganizationAdmin(admin.ModelAdmin):
+class OrganizationAdmin(NexusDateAdminMixin, admin.ModelAdmin):
     list_display = ("name", "abbreviation", "country", "is_active")
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name", "abbreviation")
 
 
 @admin.register(Team)
-class TeamAdmin(admin.ModelAdmin):
+class TeamAdmin(NexusDateAdminMixin, admin.ModelAdmin):
     list_display = ("name", "abbreviation", "organization", "game", "status", "has_logo")
     list_filter = ("status", "game", "organization")
     prepopulated_fields = {"slug": ("name",)}

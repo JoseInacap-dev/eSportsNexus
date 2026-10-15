@@ -2,6 +2,7 @@ from django import forms
 from django.utils.text import slugify
 
 from core.permissions import MANAGEMENT_ROLES
+from core.widgets import NexusDateInput
 from organizations.models import Organization, Team
 
 
@@ -25,9 +26,7 @@ class OrganizationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["founded_date"].widget = forms.DateInput(
-            attrs={"type": "date"}, format="%Y-%m-%d"
-        )
+        self.fields["founded_date"].widget = NexusDateInput()
         self.fields["founded_date"].input_formats = ["%Y-%m-%d"]
 
     def save(self, commit=True):
@@ -77,7 +76,5 @@ class TeamForm(forms.ModelForm):
             ).distinct()
         else:
             self.fields["organization"].queryset = Organization.objects.all()
-        self.fields["founded_date"].widget = forms.DateInput(
-            attrs={"type": "date"}, format="%Y-%m-%d"
-        )
+        self.fields["founded_date"].widget = NexusDateInput()
         self.fields["founded_date"].input_formats = ["%Y-%m-%d"]

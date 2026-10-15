@@ -68,12 +68,36 @@
                 <table class="table table-nexus">
                     <thead>
                         <tr>
-                            <th>Jugador / Nickname</th>
-                            <th>Tipo</th>
-                            <th>Equipo Actual</th>
-                            <th>Rol Competitivo</th>
-                            <th>País</th>
-                            <th>Estado</th>
+                            <th>
+                                <a href="{{ sort.links.nickname.url }}" class="text-decoration-none {% if sort.links.nickname.active %}text-accent{% else %}text-secondary{% endif %}" title="Ordenar por nickname">
+                                    {{ sort.links.nickname.label }} <i class="bi {{ sort.links.nickname.icon }}"></i>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="{{ sort.links.tipo.url }}" class="text-decoration-none {% if sort.links.tipo.active %}text-accent{% else %}text-secondary{% endif %}" title="Ordenar por tipo">
+                                    {{ sort.links.tipo.label }} <i class="bi {{ sort.links.tipo.icon }}"></i>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="{{ sort.links.equipo.url }}" class="text-decoration-none {% if sort.links.equipo.active %}text-accent{% else %}text-secondary{% endif %}" title="Ordenar por equipo">
+                                    {{ sort.links.equipo.label }} <i class="bi {{ sort.links.equipo.icon }}"></i>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="{{ sort.links.rol.url }}" class="text-decoration-none {% if sort.links.rol.active %}text-accent{% else %}text-secondary{% endif %}" title="Ordenar por rol competitivo">
+                                    {{ sort.links.rol.label }} <i class="bi {{ sort.links.rol.icon }}"></i>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="{{ sort.links.pais.url }}" class="text-decoration-none {% if sort.links.pais.active %}text-accent{% else %}text-secondary{% endif %}" title="Ordenar por país">
+                                    {{ sort.links.pais.label }} <i class="bi {{ sort.links.pais.icon }}"></i>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="{{ sort.links.estado.url }}" class="text-decoration-none {% if sort.links.estado.active %}text-accent{% else %}text-secondary{% endif %}" title="Ordenar por estado">
+                                    {{ sort.links.estado.label }} <i class="bi {{ sort.links.estado.icon }}"></i>
+                                </a>
+                            </th>
                             <th class="text-end">Acciones</th>
                         </tr>
                     </thead>
@@ -140,11 +164,11 @@
                 <div class="p-3 border-top border-secondary">
                     <ul class="pagination pagination-sm justify-content-center mb-0">
                         {% if page_obj.has_previous %}
-                            <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+                            <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="{% querystring page=page_obj.previous_page_number %}">Anterior</a></li>
                         {% endif %}
                         <li class="page-item disabled"><span class="page-link bg-dark border-secondary text-secondary">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span></li>
                         {% if page_obj.has_next %}
-                            <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="?page={{ page_obj.next_page_number }}">Siguiente</a></li>
+                            <li class="page-item"><a class="page-link bg-dark border-secondary text-light" href="{% querystring page=page_obj.next_page_number %}">Siguiente</a></li>
                         {% endif %}
                     </ul>
                 </div>

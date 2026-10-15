@@ -82,20 +82,16 @@
                         <p class="text-secondary small mb-3 text-truncate-2">{{ equipo.description|default:"Sin descripción registrada para este equipo." }}</p>
 
                         <div class="row g-2 text-center py-2 border-top border-bottom border-secondary mb-3">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <span class="d-block text-secondary" style="font-size: 0.7rem;">JUGADORES</span>
                                 <span class="fw-bold text-light">{{ equipo.players_count }}</span>
                             </div>
-                            <div class="col-4 border-start border-end border-secondary">
+                            <div class="col-6 border-start border-secondary">
                                 <span class="d-block text-secondary" style="font-size: 0.7rem;">ORG</span>
                                 <span class="d-inline-flex align-items-center justify-content-center gap-1">
                                     {% include "_org_logo.html" with org=equipo.organization size=18 %}
                                     <span class="fw-bold text-light" style="font-size: 0.8rem;">{{ equipo.organization.abbreviation|default:equipo.organization.name }}</span>
                                 </span>
-                            </div>
-                            <div class="col-4">
-                                <span class="d-block text-secondary" style="font-size: 0.7rem;">WINRATE</span>
-                                <span class="fw-bold text-accent">{{ equipo.winrate }}%</span>
                             </div>
                         </div>
 

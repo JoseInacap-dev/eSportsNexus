@@ -45,7 +45,7 @@
         <div class="d-flex flex-wrap justify-content-center gap-4 text-secondary small border-top border-secondary mt-4 pt-3">
             <span><i class="bi bi-controller me-1 text-accent"></i>{{ match.game.name }}</span>
             <span><i class="bi bi-calendar3 me-1"></i>{{ match.scheduled_at|date:"d/m/Y H:i" }}</span>
-            <span><i class="bi bi-trophy me-1"></i>{{ match.tournament_name|default:"Sin torneo" }}</span>
+            <span><i class="bi bi-trophy me-1"></i>{{ match.tournament.name|default:"Sin torneo" }}</span>
         </div>
 
         {% if can_manage %}

@@ -88,27 +88,10 @@ class TeamDetailView(OrganizationAccessMixin, DetailView):
         context["partidos"] = team.home_matches.select_related(
             "game", "away_team"
         ).order_by("-scheduled_at")[:10]
-        context["estadisticas"] = self._stats(team)
         context["can_manage"] = user_can_manage_organization(
             self.request.user, team.organization
         )
         return context
-
-    @staticmethod
-    def _stats(team):
-        scores = list(
-            team.home_matches.filter(status="finished").values_list(
-                "home_score", "away_score"
-            )
-        )
-        played = [s for s in scores if s[0] is not None and s[1] is not None]
-        victorias = sum(1 for h, a in played if h > a)
-        derrotas = len(played) - victorias
-        return {
-            "victorias": victorias,
-            "derrotas": derrotas,
-            "winrate": round(victorias / len(played) * 100, 1) if played else 0,
-        }
 
 
 

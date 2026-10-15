@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.forms',
     # Terceros
     'rest_framework',
     'rest_framework.authtoken',
@@ -82,6 +83,11 @@ TEMPLATES = [
         },
     },
 ]
+
+# Los widgets/formularios se renderizan con el motor de plantillas del
+# proyecto (TEMPLATES), de modo que las plantillas personalizadas de widgets
+# pueden vivir junto al resto en ``templates/``.
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 WSGI_APPLICATION = 'config.wsgi.application'
 

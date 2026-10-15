@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from core.admin import NexusDateAdminMixin
 from training.models import TrainingAttendance, TrainingSession
 
 
@@ -9,7 +10,7 @@ class TrainingAttendanceInline(admin.TabularInline):
 
 
 @admin.register(TrainingSession)
-class TrainingSessionAdmin(admin.ModelAdmin):
+class TrainingSessionAdmin(NexusDateAdminMixin, admin.ModelAdmin):
     list_display = ("title", "team", "scheduled_at", "status")
     list_filter = ("status", "team")
     search_fields = ("title", "team__name")

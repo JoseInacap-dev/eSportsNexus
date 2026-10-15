@@ -1,9 +1,163 @@
 from decimal import Decimal
 
 from django.core.exceptions import ValidationError
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.db.models import F, Q
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
+
+
+class Tournament(models.Model):
+    """Competición organizada (imagen, formato y número de participantes).
+
+    Es una entidad global: cualquier usuario autenticado puede consultarla,
+    pero solo el staff administra su creación y edición. Los partidos se
+    asocian opcionalmente mediante :attr:`Match.tournament`.
+    """
+
+    class Format(models.TextChoices):
+        SWISS = "swiss", _("Suizo")
+        SINGLE_ELIMINATION = "single_elimination", _("Eliminación simple (Playoffs)")
+        DOUBLE_ELIMINATION = "double_elimination", _("Eliminación doble")
+        ROUND_ROBIN = "round_robin", _("Round Robin (liga)")
+        GROUPS_PLAYOFFS = "groups_playoffs", _("Grupos + Playoffs")
+
+    name = models.CharField(_("nombre"), max_length=150)
+    slug = models.SlugField(_("slug"), max_length=160, unique=True, blank=True)
+    game = models.ForeignKey(
+        "organizations.Game",
+        on_delete=models.PROTECT,
+        related_name="tournaments",
+        verbose_name=_("juego"),
+    )
+    format = models.CharField(
+        _("formato"), max_length=32, choices=Format.choices, default=Format.SWISS
+    )
+    participants_count = models.PositiveSmallIntegerField(
+        _("participantes"),
+        default=2,
+        validators=[MinValueValidator(2)],
+        help_text=_("Número de participantes del torneo."),
+    )
+    groups_count = models.PositiveSmallIntegerField(
+        _("número de grupos"),
+        default=2,
+        validators=[MinValueValidator(1)],
+        help_text=_("Cantidad de grupos (solo para el formato Grupos + Playoffs)."),
+    )
+    image = models.ImageField(
+        _("imagen"),
+        upload_to="tournaments/images/",
+        blank=True,
+        null=True,
+        help_text=_("Imagen representativa del torneo."),
+    )
+    image_url = models.URLField(_("imagen (URL)"), blank=True)
+    start_date = models.DateField(_("fecha de inicio"), null=True, blank=True)
+    end_date = models.DateField(_("fecha de fin"), null=True, blank=True)
+    description = models.TextField(_("descripción"), blank=True)
+    created_at = models.DateTimeField(_("creado"), auto_now_add=True)
+    updated_at = models.DateTimeField(_("actualizado"), auto_now=True)
+
+    class Meta:
+        verbose_name = _("torneo")
+        verbose_name_plural = _("torneos")
+        ordering = ["name"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["game", "name"], name="unique_tournament_name_per_game"
+            )
+        ]
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base = slugify(self.name)[:150] or "torneo"
+            slug = base
+            suffix = 2
+            while (
+                Tournament.objects.filter(slug=slug)
+                .exclude(pk=self.pk)
+                .exists()
+            ):
+                slug = f"{base}-{suffix}"
+                suffix += 1
+            self.slug = slug
+        super().save(*args, **kwargs)
+
+    @property
+    def image_display(self):
+        """URL de la imagen: archivo subido si existe, si no el enlace externo."""
+        if self.image:
+            return self.image.url
+        return self.image_url
+
+    @property
+    def participants_total(self):
+        """Número de participantes realmente inscritos."""
+        return self.participants.count()
+
+    @property
+    def has_participants_mismatch(self):
+        """True si lo inscrito no coincide con lo especificado en el torneo."""
+        return self.participants_total != self.participants_count
+
+
+class TournamentParticipant(models.Model):
+    """Inscripción de un equipo registrado en un torneo.
+
+    El equipo debe pertenecer al juego del torneo. ``seed`` define su posición
+    (siembra) y ``group_name`` su grupo en los formatos con fase de grupos.
+    """
+
+    tournament = models.ForeignKey(
+        Tournament,
+        on_delete=models.CASCADE,
+        related_name="participants",
+        verbose_name=_("torneo"),
+    )
+    team = models.ForeignKey(
+        "organizations.Team",
+        on_delete=models.PROTECT,
+        related_name="tournament_participations",
+        verbose_name=_("equipo"),
+    )
+    seed = models.PositiveSmallIntegerField(
+        _("posición"), null=True, blank=True, help_text=_("Siembra u orden dentro del torneo.")
+    )
+    group_name = models.CharField(
+        _("grupo"), max_length=8, blank=True, help_text=_("Grupo (p. ej. A, B, C).")
+    )
+    created_at = models.DateTimeField(_("creado"), auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("participante")
+        verbose_name_plural = _("participantes")
+        ordering = ["seed", "team__name"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["tournament", "team"],
+                name="unique_participant_per_tournament",
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.team} · {self.tournament}"
+
+    def clean(self):
+        """El equipo inscrito debe compartir el juego del torneo."""
+        super().clean()
+        if (
+            self.team_id
+            and self.tournament_id
+            and self.team.game_id != self.tournament.game_id
+        ):
+            raise ValidationError(
+                {"team": _("El equipo debe pertenecer al juego del torneo.")}
+            )
 
 
 class StatDefinition(models.Model):
@@ -103,7 +257,14 @@ class Match(models.Model):
         _("estado"), max_length=16, choices=Status.choices, default=Status.SCHEDULED
     )
     scheduled_at = models.DateTimeField(_("fecha y hora"))
-    tournament_name = models.CharField(_("torneo"), max_length=150, blank=True)
+    tournament = models.ForeignKey(
+        Tournament,
+        on_delete=models.SET_NULL,
+        related_name="matches",
+        null=True,
+        blank=True,
+        verbose_name=_("torneo"),
+    )
     best_of = models.PositiveSmallIntegerField(_("al mejor de"), default=1)
     home_score = models.PositiveSmallIntegerField(_("marcador local"), null=True, blank=True)
     away_score = models.PositiveSmallIntegerField(_("marcador visitante"), null=True, blank=True)
@@ -145,6 +306,23 @@ class Match(models.Model):
             errors["away_team"] = _(
                 "El equipo visitante debe pertenecer al juego del partido."
             )
+        if self.tournament_id:
+            if self.game_id and self.tournament.game_id != self.game_id:
+                errors["tournament"] = _(
+                    "El torneo debe pertenecer al juego del partido."
+                )
+            else:
+                enrolled_team_ids = set(
+                    self.tournament.participants.values_list("team_id", flat=True)
+                )
+                if self.home_team_id and self.home_team_id not in enrolled_team_ids:
+                    errors["home_team"] = _(
+                        "El equipo local no está inscrito en el torneo seleccionado."
+                    )
+                if self.away_team_id and self.away_team_id not in enrolled_team_ids:
+                    errors["away_team"] = _(
+                        "El equipo visitante no está inscrito en el torneo seleccionado."
+                    )
         if errors:
             raise ValidationError(errors)
 

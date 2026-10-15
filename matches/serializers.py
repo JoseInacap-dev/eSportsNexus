@@ -6,7 +6,53 @@ from matches.models import (
     PlayerMatchStat,
     StatDefinition,
     TeamMatchStat,
+    Tournament,
+    TournamentParticipant,
 )
+
+
+class TournamentParticipantSerializer(serializers.ModelSerializer):
+    team_name = serializers.CharField(source="team.name", read_only=True)
+    game_id = serializers.IntegerField(source="team.game_id", read_only=True)
+
+    class Meta:
+        model = TournamentParticipant
+        fields = ["id", "tournament", "team", "team_name", "game_id", "group_name", "seed"]
+        read_only_fields = ["id"]
+
+
+class TournamentSerializer(serializers.ModelSerializer):
+    game_name = serializers.CharField(source="game.name", read_only=True)
+    format_display = serializers.CharField(source="get_format_display", read_only=True)
+    image_display = serializers.CharField(read_only=True)
+    matches_count = serializers.IntegerField(read_only=True, required=False)
+    participants_total = serializers.IntegerField(read_only=True)
+    participants = TournamentParticipantSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Tournament
+        fields = [
+            "id",
+            "name",
+            "slug",
+            "game",
+            "game_name",
+            "format",
+            "format_display",
+            "participants_count",
+            "participants_total",
+            "groups_count",
+            "participants",
+            "image",
+            "image_url",
+            "image_display",
+            "start_date",
+            "end_date",
+            "description",
+            "matches_count",
+            "created_at",
+        ]
+        read_only_fields = ["id", "slug", "created_at"]
 
 
 class StatDefinitionSerializer(serializers.ModelSerializer):
@@ -30,6 +76,7 @@ class MatchSerializer(serializers.ModelSerializer):
     game_name = serializers.CharField(source="game.name", read_only=True)
     home_team_name = serializers.CharField(source="home_team.name", read_only=True)
     away_team_name = serializers.CharField(source="away_team.name", read_only=True)
+    tournament_name = serializers.CharField(source="tournament.name", read_only=True)
     opponent = serializers.SerializerMethodField()
 
     class Meta:
@@ -46,6 +93,7 @@ class MatchSerializer(serializers.ModelSerializer):
             "kind",
             "status",
             "scheduled_at",
+            "tournament",
             "tournament_name",
             "best_of",
             "home_score",
@@ -57,6 +105,30 @@ class MatchSerializer(serializers.ModelSerializer):
 
     def get_opponent(self, obj):
         return obj.away_team.name if obj.away_team_id else None
+
+    def validate(self, attrs):
+        tournament = attrs.get("tournament") or getattr(
+            self.instance, "tournament", None
+        )
+        if tournament is None:
+            return attrs
+        enrolled_team_ids = set(
+            tournament.participants.values_list("team_id", flat=True)
+        )
+        home_team = attrs.get("home_team") or getattr(self.instance, "home_team", None)
+        away_team = attrs.get("away_team") or getattr(self.instance, "away_team", None)
+        errors = {}
+        if home_team is not None and home_team.pk not in enrolled_team_ids:
+            errors["home_team"] = (
+                "El equipo local no está inscrito en el torneo seleccionado."
+            )
+        if away_team is not None and away_team.pk not in enrolled_team_ids:
+            errors["away_team"] = (
+                "El equipo visitante no está inscrito en el torneo seleccionado."
+            )
+        if errors:
+            raise serializers.ValidationError(errors)
+        return attrs
 
 
 class MatchMapSerializer(serializers.ModelSerializer):

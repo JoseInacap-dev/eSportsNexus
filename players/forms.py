@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from core.permissions import MANAGEMENT_ROLES
+from core.widgets import NexusDateInput
 from organizations.models import GameRole, Team
 from players.models import Player, PlayerTeamAssignment
 
@@ -20,13 +21,10 @@ class PlayerForm(forms.ModelForm):
             "birth_date",
             "country",
         ]
-        widgets = {"birth_date": forms.DateInput(attrs={"type": "date"})}
+        widgets = {"birth_date": NexusDateInput()}
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["birth_date"].widget = forms.DateInput(
-            attrs={"type": "date"}, format="%Y-%m-%d"
-        )
         self.fields["birth_date"].input_formats = ["%Y-%m-%d"]
 
 
@@ -66,7 +64,7 @@ class PlayerTeamAssignmentForm(forms.ModelForm):
             "notes",
         ]
         widgets = {
-            "joined_at": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d"),
+            "joined_at": NexusDateInput(),
             "notes": forms.Textarea(attrs={"rows": 3}),
         }
 
@@ -195,7 +193,7 @@ class AssignmentFinishForm(forms.ModelForm):
         model = PlayerTeamAssignment
         fields = ["left_at"]
         widgets = {
-            "left_at": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d")
+            "left_at": NexusDateInput()
         }
 
     def __init__(self, *args, **kwargs):

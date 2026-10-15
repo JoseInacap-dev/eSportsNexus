@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from core.admin import NexusDateAdminMixin
 from staff.models import StaffMember, TeamStaffAssignment
 
 
@@ -10,7 +11,7 @@ class StaffMemberAdmin(admin.ModelAdmin):
 
 
 @admin.register(TeamStaffAssignment)
-class TeamStaffAssignmentAdmin(admin.ModelAdmin):
+class TeamStaffAssignmentAdmin(NexusDateAdminMixin, admin.ModelAdmin):
     list_display = ("staff", "team", "role", "started_at", "ended_at")
     list_filter = ("role", "team")
     search_fields = ("staff__first_name", "staff__last_name", "team__name")

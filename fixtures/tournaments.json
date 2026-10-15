@@ -1,0 +1,135 @@
+[
+{
+  "model": "matches.tournament",
+  "pk": 5,
+  "fields": {
+    "name": "Champions 2026 Grupos",
+    "slug": "champions-2026-grupos",
+    "game": 2,
+    "format": "single_elimination",
+    "participants_count": 16,
+    "groups_count": 2,
+    "image": "tournaments/images/image_2026-10-14_211058603.png",
+    "image_url": "",
+    "start_date": null,
+    "end_date": null,
+    "description": "",
+    "created_at": "2026-10-15T00:07:36.547Z",
+    "updated_at": "2026-10-15T00:53:20.812Z"
+  }
+},
+{
+  "model": "matches.tournament",
+  "pk": 6,
+  "fields": {
+    "name": "Mundial 2026",
+    "slug": "mundial-2026",
+    "game": 3,
+    "format": "round_robin",
+    "participants_count": 2,
+    "groups_count": 2,
+    "image": "tournaments/images/image_2026-10-14_214638846.png",
+    "image_url": "",
+    "start_date": null,
+    "end_date": null,
+    "description": "",
+    "created_at": "2026-10-15T00:07:36.547Z",
+    "updated_at": "2026-10-15T00:46:39.925Z"
+  }
+},
+{
+  "model": "matches.tournament",
+  "pk": 8,
+  "fields": {
+    "name": "Worlds 2026 Semifinal",
+    "slug": "worlds-2026-semifinal",
+    "game": 3,
+    "format": "round_robin",
+    "participants_count": 2,
+    "groups_count": 2,
+    "image": "",
+    "image_url": "",
+    "start_date": null,
+    "end_date": null,
+    "description": "",
+    "created_at": "2026-10-15T00:07:36.549Z",
+    "updated_at": "2026-10-15T00:07:36.549Z"
+  }
+},
+{
+  "model": "matches.tournament",
+  "pk": 11,
+  "fields": {
+    "name": "VCT EMEA 2026 Playoffs",
+    "slug": "vct-emea-2026-playoffs",
+    "game": 2,
+    "format": "round_robin",
+    "participants_count": 2,
+    "groups_count": 2,
+    "image": "",
+    "image_url": "",
+    "start_date": null,
+    "end_date": null,
+    "description": "",
+    "created_at": "2026-10-15T00:07:36.551Z",
+    "updated_at": "2026-10-15T00:07:36.551Z"
+  }
+},
+{
+  "model": "matches.tournament",
+  "pk": 14,
+  "fields": {
+    "name": "Worlds 2026 Grupos",
+    "slug": "worlds-2026-grupos",
+    "game": 3,
+    "format": "round_robin",
+    "participants_count": 2,
+    "groups_count": 2,
+    "image": "",
+    "image_url": "",
+    "start_date": null,
+    "end_date": null,
+    "description": "",
+    "created_at": "2026-10-15T00:07:36.553Z",
+    "updated_at": "2026-10-15T00:07:36.553Z"
+  }
+},
+{
+  "model": "matches.tournament",
+  "pk": 15,
+  "fields": {
+    "name": "VCT EMEA 2026",
+    "slug": "vct-emea-2026",
+    "game": 2,
+    "format": "round_robin",
+    "participants_count": 2,
+    "groups_count": 2,
+    "image": "",
+    "image_url": "",
+    "start_date": null,
+    "end_date": null,
+    "description": "",
+    "created_at": "2026-10-15T00:07:36.553Z",
+    "updated_at": "2026-10-15T00:07:36.553Z"
+  }
+},
+{
+  "model": "matches.tournament",
+  "pk": 19,
+  "fields": {
+    "name": "VCT Americas 2026 Stage 2",
+    "slug": "vct-americas-2026-stage-2",
+    "game": 2,
+    "format": "round_robin",
+    "participants_count": 2,
+    "groups_count": 2,
+    "image": "",
+    "image_url": "",
+    "start_date": null,
+    "end_date": null,
+    "description": "",
+    "created_at": "2026-10-15T00:07:36.555Z",
+    "updated_at": "2026-10-15T00:07:36.555Z"
+  }
+}
+]

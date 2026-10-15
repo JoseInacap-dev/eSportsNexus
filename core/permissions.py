@@ -81,5 +81,17 @@ class IsOrganizationManager(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
-            return user_can_view_organization(request.user, organization_of(obj))
+            return True
         return user_can_manage_organization(request.user, organization_of(obj))
+
+
+class IsStaffOrReadOnly(permissions.BasePermission):
+    """Permite lectura autenticada y escritura únicamente al staff."""
+
+    def has_permission(self, request, view):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        user = request.user
+        return bool(
+            user and user.is_authenticated and (user.is_staff or user.is_superuser)
+        )

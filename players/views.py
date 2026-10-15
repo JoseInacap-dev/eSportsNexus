@@ -1,6 +1,16 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
+from django.db.models import (
+    Case,
+    F,
+    IntegerField,
+    OuterRef,
+    Subquery,
+    Value,
+    When,
+)
+from django.db.models.functions import Lower, NullIf
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.urls import reverse, reverse_lazy
@@ -30,10 +40,28 @@ class PlayerListView(LoginRequiredMixin, ListView):
     context_object_name = "jugadores"
     paginate_by = 20
 
+    SORT_FIELDS = {
+        "nickname": "Jugador / Nickname",
+        "tipo": "Tipo",
+        "equipo": "Equipo Actual",
+        "rol": "Rol Competitivo",
+        "pais": "País",
+        "estado": "Estado",
+    }
+    DEFAULT_SORT = "nickname"
+    DEFAULT_DIR = "asc"
+
+    def _current_sort(self):
+        orden = self.request.GET.get("orden", self.DEFAULT_SORT)
+        if orden not in self.SORT_FIELDS:
+            orden = self.DEFAULT_SORT
+        direction = self.request.GET.get("dir", self.DEFAULT_DIR)
+        if direction not in ("asc", "desc"):
+            direction = self.DEFAULT_DIR
+        return orden, direction
+
     def get_queryset(self):
-        queryset = Player.objects.prefetch_related("team_assignments__team").order_by(
-            "nickname"
-        )
+        queryset = Player.objects.prefetch_related("team_assignments__team")
         search = self.request.GET.get("q")
         if search:
             queryset = queryset.filter(nickname__icontains=search)
@@ -52,7 +80,63 @@ class PlayerListView(LoginRequiredMixin, ListView):
         player_type = self.request.GET.get("tipo")
         if player_type:
             queryset = queryset.filter(player_type=player_type)
-        return queryset
+        return self._apply_ordering(queryset)
+
+    def _apply_ordering(self, queryset):
+        orden, direction = self._current_sort()
+
+        open_assignment = PlayerTeamAssignment.objects.filter(
+            player=OuterRef("pk"), left_at__isnull=True
+        )
+
+        if orden == "equipo":
+            queryset = queryset.annotate(
+                order_value=Subquery(open_assignment.values("team__name")[:1])
+            )
+        elif orden == "rol":
+            queryset = queryset.annotate(
+                order_value=Subquery(
+                    open_assignment.values("competitive_role__name")[:1]
+                )
+            )
+        elif orden == "estado":
+            queryset = queryset.annotate(
+                assignment_status=Subquery(open_assignment.values("status")[:1])
+            ).annotate(
+                order_value=Case(
+                    *[
+                        When(assignment_status=value, then=Value(position))
+                        for position, (value, _) in enumerate(
+                            PlayerTeamAssignment.Status.choices
+                        )
+                    ],
+                    default=Value(None, output_field=IntegerField()),
+                    output_field=IntegerField(),
+                )
+            )
+        elif orden == "pais":
+            queryset = queryset.annotate(order_value=NullIf("country", Value("")))
+        elif orden == "tipo":
+            queryset = queryset.annotate(
+                order_value=Case(
+                    *[
+                        When(player_type=value, then=Value(position))
+                        for position, (value, _) in enumerate(Player.PlayerType.choices)
+                    ],
+                    default=Value(None, output_field=IntegerField()),
+                    output_field=IntegerField(),
+                )
+            )
+        else:
+            queryset = queryset.annotate(order_value=Lower("nickname"))
+
+        if direction == "desc":
+            return queryset.order_by(
+                F("order_value").desc(nulls_last=True), Lower("nickname")
+            )
+        return queryset.order_by(
+            F("order_value").asc(nulls_last=True), Lower("nickname")
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -61,7 +145,32 @@ class PlayerListView(LoginRequiredMixin, ListView):
             "organization", "game"
         ).order_by("name")
         context["tipos_disponibles"] = Player.PlayerType.choices
+        context["sort"] = self._sort_context()
         return context
+
+    def _sort_context(self):
+        orden, direction = self._current_sort()
+        base = self.request.GET.copy()
+        base.pop("page", None)
+
+        links = {}
+        for key, label in self.SORT_FIELDS.items():
+            params = base.copy()
+            params["orden"] = key
+            params["dir"] = (
+                "desc" if key == orden and direction == "asc" else "asc"
+            )
+            if key == orden:
+                icon = "bi-caret-up-fill" if direction == "asc" else "bi-caret-down-fill"
+            else:
+                icon = "bi-arrow-down-up"
+            links[key] = {
+                "label": label,
+                "url": f"?{params.urlencode()}",
+                "icon": icon,
+                "active": key == orden,
+            }
+        return {"orden": orden, "dir": direction, "links": links}
 
 
 class PlayerDetailView(LoginRequiredMixin, DetailView):

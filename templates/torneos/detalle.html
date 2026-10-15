@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <div class="d-flex align-items-center gap-2">
+        <span class="badge bg-dark border border-secondary text-secondary">{{ torneo.game.name }}</span>
+        <span class="badge bg-dark border border-secondary text-accent">{{ torneo.get_format_display }}</span>
+    </div>
+    <div class="d-flex gap-2">
+        {% if can_manage %}
+            <a href="{% url 'matches:tournament-update' torneo.pk %}" class="btn-nexus-outline"><i class="bi bi-pencil"></i> Editar</a>
+            <a href="{% url 'matches:tournament-delete' torneo.pk %}" class="btn-nexus-outline text-danger border-danger"><i class="bi bi-trash"></i> Eliminar</a>
+        {% endif %}
+        <a href="{% url 'matches:tournament-list' %}" class="btn-nexus-subtle"><i class="bi bi-arrow-left"></i> Volver</a>
+    </div>
+</div>
+
+<div class="nexus-card mb-4">
+    <div class="nexus-card-body p-4">
+        <div class="row align-items-center g-4">
+            <div class="col-12 col-md-3 text-center">
+                {% if torneo.image_display %}
+                    <img src="{{ torneo.image_display }}" alt="{{ torneo.name }}" style="width: 120px; height: 120px; object-fit: cover; border-radius: 14px; border: 1px solid var(--nexus-border, rgba(255,255,255,0.15)); background: var(--nexus-card, #111);">
+                {% else %}
+                    <div class="rounded-4 bg-dark border border-secondary d-inline-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                        <i class="bi bi-trophy-fill text-accent display-5"></i>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-9">
+                <h2 class="h4 text-light fw-bold mb-2">{{ torneo.name }}</h2>
+                <p class="text-secondary small mb-3">{{ torneo.description|default:"Sin descripción registrada para este torneo." }}</p>
+                <div class="row g-3 text-center">
+                    <div class="col-6 col-lg-3">
+                        <div class="p-2 bg-dark rounded border border-secondary">
+                            <span class="d-block text-secondary small">PARTICIPANTES</span>
+                            <span class="h5 fw-bold text-light mb-0">{{ torneo.participants_count }}</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="p-2 bg-dark rounded border border-secondary">
+                            <span class="d-block text-secondary small">PARTIDOS</span>
+                            <span class="h5 fw-bold text-light mb-0">{{ partidos|length }}</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="p-2 bg-dark rounded border border-secondary">
+                            <span class="d-block text-secondary small">INICIO</span>
+                            <span class="fw-bold text-light" style="font-size: 0.9rem;">{{ torneo.start_date|date:"d/m/Y"|default:"—" }}</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="p-2 bg-dark rounded border border-secondary">
+                            <span class="d-block text-secondary small">FIN</span>
+                            <span class="fw-bold text-light" style="font-size: 0.9rem;">{{ torneo.end_date|date:"d/m/Y"|default:"—" }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if count_mismatch %}
+    <div class="nexus-alert nexus-alert-warning mb-4">
+        <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+        <div>
+            La cantidad de participantes inscritos ({{ participants|length }}) no coincide con la especificada para el torneo ({{ torneo.participants_count }}).
+            {% if can_manage %}<a href="{% url 'matches:tournament-participants' torneo.pk %}" class="text-accent">Gestionar participantes</a>.{% endif %}
+        </div>
+    </div>
+{% endif %}
+
+{% include 'torneos/_participants.html' %}
+
+{% if groups %}
+    {% include 'torneos/_groups.html' %}
+{% endif %}
+
+{% if standings %}
+    {% include 'torneos/_standings.html' %}
+{% endif %}
+
+{% if bracket %}
+    {% include 'torneos/_bracket.html' %}
+{% endif %}
+
+<div class="nexus-card">
+    <div class="nexus-card-header"><h3 class="nexus-card-title">Partidos del Torneo</h3></div>
+    <div class="nexus-card-body p-0">
+        {% if partidos %}
+            <div class="table-responsive">
+                <table class="table table-nexus mb-0">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Enfrentamiento</th>
+                            <th>Resultado</th>
+                            <th>Estado</th>
+                            <th class="text-end"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for partido in partidos %}
+                            <tr>
+                                <td class="text-secondary small">{{ partido.scheduled_at|date:"d/m/Y" }}<br><span class="text-muted">{{ partido.scheduled_at|date:"H:i" }}</span></td>
+                                <td>
+                                    <span class="fw-bold text-light">{{ partido.home_team.name }}</span>
+                                    <span class="text-secondary small mx-1">vs</span>
+                                    <span class="fw-medium text-light">{{ partido.opponent }}</span>
+                                </td>
+                                <td>
+                                    {% if partido.has_score %}
+                                        <span class="fw-bold {% if partido.is_finished and partido.winner == partido.home_team %}text-success{% elif partido.is_finished and partido.winner == partido.away_team %}text-danger{% else %}text-light{% endif %}">
+                                            {{ partido.home_score }} - {{ partido.away_score }}
+                                        </span>
+                                    {% else %}
+                                        <span class="text-secondary small">—</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <span class="badge-nexus {% if partido.is_live %}badge-nexus-live{% elif partido.status == 'finished' %}badge-nexus-active{% elif partido.status == 'scheduled' %}badge-nexus-warning{% else %}badge-nexus-inactive{% endif %}">
+                                        {{ partido.get_status_display }}
+                                    </span>
+                                </td>
+                                <td class="text-end">
+                                    <a href="{% url 'matches:match-detail' partido.pk %}" class="btn btn-sm btn-nexus-subtle" title="Ver detalle"><i class="bi bi-eye"></i></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="text-center py-5">
+                <i class="bi bi-calendar-x fs-1 text-secondary mb-2 d-block"></i>
+                <h5 class="text-light fw-bold">Sin partidos asociados</h5>
+                <p class="text-secondary small mb-0">Aún no hay enfrentamientos registrados para este torneo.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

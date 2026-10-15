@@ -1,282 +1,1682 @@
 [
-  {
-    "model": "staff.staffmember",
-    "pk": 1,
-    "fields": {
-      "user": null,
-      "first_name": "Adam",
-      "last_name": "Kaplan",
-      "email": "kaplan@sentinels.gg",
-      "phone": "",
-      "country": "Estados Unidos",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 1,
-    "fields": {
-      "staff": 1,
-      "team": 1,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2023-01-15",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 2,
-    "fields": {
-      "user": null,
-      "first_name": "Chris",
-      "last_name": "Sexton",
-      "email": "elmapuddy@fnatic.com",
-      "phone": "",
-      "country": "Australia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 2,
-    "fields": {
-      "staff": 2,
-      "team": 2,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2023-11-01",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 3,
-    "fields": {
-      "user": null,
-      "first_name": "Kim",
-      "last_name": "Jeong-gyun",
-      "email": "kkoma@t1.gg",
-      "phone": "",
-      "country": "Corea del Sur",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 3,
-    "fields": {
-      "staff": 3,
-      "team": 3,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2023-11-21",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 4,
-    "fields": {
-      "user": null,
-      "first_name": "Dylan",
-      "last_name": "Falco",
-      "email": "dylanfalco@g2esports.com",
-      "phone": "",
-      "country": "Canadá",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 4,
-    "fields": {
-      "staff": 4,
-      "team": 4,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2021-12-02",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 5,
-    "fields": {
-      "user": null,
-      "first_name": "Andrey",
-      "last_name": "Gorodenskiy",
-      "email": "b1ad3@navi.gg",
-      "phone": "",
-      "country": "Ucrania",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 5,
-    "fields": {
-      "staff": 5,
-      "team": 5,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2019-09-20",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 6,
-    "fields": {
-      "user": null,
-      "first_name": "Filip",
-      "last_name": "Kubski",
-      "email": "neo@fazeclan.com",
-      "phone": "",
-      "country": "Polonia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 6,
-    "fields": {
-      "staff": 6,
-      "team": 6,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2023-07-28",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 7,
-    "fields": {
-      "user": null,
-      "first_name": "Airat",
-      "last_name": "Gaziev",
-      "email": "silent@teamspirit.ru",
-      "phone": "",
-      "country": "Rusia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 7,
-    "fields": {
-      "staff": 7,
-      "team": 7,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2020-12-19",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 8,
-    "fields": {
-      "user": null,
-      "first_name": "Mikhail",
-      "last_name": "Agatov",
-      "email": "misha@og.gg",
-      "phone": "",
-      "country": "Rusia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 8,
-    "fields": {
-      "staff": 8,
-      "team": 8,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2023-03-09",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 9,
-    "fields": {
-      "user": null,
-      "first_name": "Victor",
-      "last_name": "Mossealgue",
-      "email": "fairypeak@vitality.gg",
-      "phone": "",
-      "country": "Francia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 9,
-    "fields": {
-      "staff": 9,
-      "team": 9,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2023-01-10",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.staffmember",
-    "pk": 10,
-    "fields": {
-      "user": null,
-      "first_name": "Victor",
-      "last_name": "Francal",
-      "email": "ferra@karminecorp.com",
-      "phone": "",
-      "country": "Francia",
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "staff.teamstaffassignment",
-    "pk": 10,
-    "fields": {
-      "staff": 10,
-      "team": 10,
-      "role": "head_coach",
-      "responsibilities": "Liderazgo técnico, preparación estratégica de enfrentamientos y dirección de drafts.",
-      "started_at": "2023-10-15",
-      "ended_at": null,
-      "created_at": "2026-01-01T00:00:00Z",
-      "updated_at": "2026-01-01T00:00:00Z"
-    }
+{
+  "model": "staff.staffmember",
+  "pk": 2,
+  "fields": {
+    "user": null,
+    "first_name": "Nicolás",
+    "last_name": "González",
+    "email": "nicolas.gonzalez@esports.gg",
+    "phone": "",
+    "country": "España",
+    "created_at": "2026-10-15T01:12:03.813Z",
+    "updated_at": "2026-10-15T01:12:03.813Z"
   }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 3,
+  "fields": {
+    "user": null,
+    "first_name": "Alejandro",
+    "last_name": "Ruiz",
+    "email": "alejandro.ruiz@esports.gg",
+    "phone": "",
+    "country": "España",
+    "created_at": "2026-10-15T01:12:03.841Z",
+    "updated_at": "2026-10-15T01:12:03.841Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 4,
+  "fields": {
+    "user": null,
+    "first_name": "Marta",
+    "last_name": "Pérez",
+    "email": "marta.perez@esports.gg",
+    "phone": "",
+    "country": "España",
+    "created_at": "2026-10-15T01:12:03.862Z",
+    "updated_at": "2026-10-15T01:12:03.862Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 5,
+  "fields": {
+    "user": null,
+    "first_name": "Connor",
+    "last_name": "Blomfield",
+    "email": "connor.blomfield@esports.gg",
+    "phone": "",
+    "country": "Reino Unido",
+    "created_at": "2026-10-15T01:12:04.049Z",
+    "updated_at": "2026-10-15T01:12:04.049Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 6,
+  "fields": {
+    "user": null,
+    "first_name": "Lauri",
+    "last_name": "Koski",
+    "email": "lauri.koski@esports.gg",
+    "phone": "",
+    "country": "Finlandia",
+    "created_at": "2026-10-15T01:12:04.069Z",
+    "updated_at": "2026-10-15T01:12:04.069Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 7,
+  "fields": {
+    "user": null,
+    "first_name": "Rik",
+    "last_name": "van Dijk",
+    "email": "rik.van-dijk@esports.gg",
+    "phone": "",
+    "country": "Países Bajos",
+    "created_at": "2026-10-15T01:12:04.087Z",
+    "updated_at": "2026-10-15T01:12:04.087Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 8,
+  "fields": {
+    "user": null,
+    "first_name": "Kim",
+    "last_name": "Seong-jun",
+    "email": "kim.seong-jun@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.265Z",
+    "updated_at": "2026-10-15T01:12:04.265Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 9,
+  "fields": {
+    "user": null,
+    "first_name": "Park",
+    "last_name": "Ji-hoon",
+    "email": "park.ji-hoon@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.285Z",
+    "updated_at": "2026-10-15T01:12:04.285Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 10,
+  "fields": {
+    "user": null,
+    "first_name": "Lee",
+    "last_name": "Sang-hoon",
+    "email": "lee.sang-hoon@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.303Z",
+    "updated_at": "2026-10-15T01:12:04.303Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 11,
+  "fields": {
+    "user": null,
+    "first_name": "Hwang",
+    "last_name": "Sung-min",
+    "email": "hwang.sung-min@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.484Z",
+    "updated_at": "2026-10-15T01:12:04.484Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 12,
+  "fields": {
+    "user": null,
+    "first_name": "Oh",
+    "last_name": "Jun-hyuk",
+    "email": "oh.jun-hyuk@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.507Z",
+    "updated_at": "2026-10-15T01:12:04.507Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 13,
+  "fields": {
+    "user": null,
+    "first_name": "Choi",
+    "last_name": "Min-seo",
+    "email": "choi.min-seo@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.526Z",
+    "updated_at": "2026-10-15T01:12:04.526Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 14,
+  "fields": {
+    "user": null,
+    "first_name": "Cha",
+    "last_name": "Ji-hoon",
+    "email": "cha.ji-hoon@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.699Z",
+    "updated_at": "2026-10-15T01:12:04.699Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 15,
+  "fields": {
+    "user": null,
+    "first_name": "Yoon",
+    "last_name": "Tae-sik",
+    "email": "yoon.tae-sik@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.717Z",
+    "updated_at": "2026-10-15T01:12:04.717Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 16,
+  "fields": {
+    "user": null,
+    "first_name": "Jin",
+    "last_name": "Ho-young",
+    "email": "jin.ho-young@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:04.737Z",
+    "updated_at": "2026-10-15T01:12:04.737Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 17,
+  "fields": {
+    "user": null,
+    "first_name": "Lai",
+    "last_name": "Xue-bin",
+    "email": "lai.xue-bin@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.916Z",
+    "updated_at": "2026-10-15T01:12:04.916Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 18,
+  "fields": {
+    "user": null,
+    "first_name": "Zeng",
+    "last_name": "Wei",
+    "email": "zeng.wei@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.936Z",
+    "updated_at": "2026-10-15T01:12:04.936Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 19,
+  "fields": {
+    "user": null,
+    "first_name": "Chen",
+    "last_name": "Jie",
+    "email": "chen.jie@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:04.948Z",
+    "updated_at": "2026-10-15T01:12:04.948Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 20,
+  "fields": {
+    "user": null,
+    "first_name": "Wang",
+    "last_name": "Nan",
+    "email": "wang.nan@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.065Z",
+    "updated_at": "2026-10-15T01:12:05.065Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 21,
+  "fields": {
+    "user": null,
+    "first_name": "Liu",
+    "last_name": "Chen",
+    "email": "liu.chen@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.076Z",
+    "updated_at": "2026-10-15T01:12:05.077Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 22,
+  "fields": {
+    "user": null,
+    "first_name": "Zhao",
+    "last_name": "Lin",
+    "email": "zhao.lin@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.094Z",
+    "updated_at": "2026-10-15T01:12:05.095Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 23,
+  "fields": {
+    "user": null,
+    "first_name": "Cheng",
+    "last_name": "Bai",
+    "email": "cheng.bai@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.210Z",
+    "updated_at": "2026-10-15T01:12:05.210Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 24,
+  "fields": {
+    "user": null,
+    "first_name": "Sun",
+    "last_name": "Yu",
+    "email": "sun.yu@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.226Z",
+    "updated_at": "2026-10-15T01:12:05.226Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 25,
+  "fields": {
+    "user": null,
+    "first_name": "Hu",
+    "last_name": "Yan",
+    "email": "hu.yan@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.238Z",
+    "updated_at": "2026-10-15T01:12:05.238Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 26,
+  "fields": {
+    "user": null,
+    "first_name": "Chet",
+    "last_name": "Singh",
+    "email": "chet.singh@esports.gg",
+    "phone": "",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.357Z",
+    "updated_at": "2026-10-15T01:12:05.357Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 27,
+  "fields": {
+    "user": null,
+    "first_name": "Andrew",
+    "last_name": "Park",
+    "email": "andrew.park@esports.gg",
+    "phone": "",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.375Z",
+    "updated_at": "2026-10-15T01:12:05.375Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 28,
+  "fields": {
+    "user": null,
+    "first_name": "Daniel",
+    "last_name": "Ortiz",
+    "email": "daniel.ortiz@esports.gg",
+    "phone": "",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:05.388Z",
+    "updated_at": "2026-10-15T01:12:05.388Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 29,
+  "fields": {
+    "user": null,
+    "first_name": "Onur",
+    "last_name": "Kabadayı",
+    "email": "onur.kabaday@esports.gg",
+    "phone": "",
+    "country": "Turquía",
+    "created_at": "2026-10-15T01:12:05.508Z",
+    "updated_at": "2026-10-15T01:12:05.508Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 30,
+  "fields": {
+    "user": null,
+    "first_name": "Tomás",
+    "last_name": "Rojas",
+    "email": "tomas.rojas@esports.gg",
+    "phone": "",
+    "country": "Chile",
+    "created_at": "2026-10-15T01:12:05.522Z",
+    "updated_at": "2026-10-15T01:12:05.522Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 31,
+  "fields": {
+    "user": null,
+    "first_name": "Camila",
+    "last_name": "Díaz",
+    "email": "camila.diaz@esports.gg",
+    "phone": "",
+    "country": "Chile",
+    "created_at": "2026-10-15T01:12:05.535Z",
+    "updated_at": "2026-10-15T01:12:05.535Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 32,
+  "fields": {
+    "user": null,
+    "first_name": "Yang",
+    "last_name": "Dae-in",
+    "email": "yang.dae-in@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:05.660Z",
+    "updated_at": "2026-10-15T01:12:05.660Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 33,
+  "fields": {
+    "user": null,
+    "first_name": "Wang",
+    "last_name": "Rui",
+    "email": "wang.rui@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.672Z",
+    "updated_at": "2026-10-15T01:12:05.672Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 34,
+  "fields": {
+    "user": null,
+    "first_name": "Xu",
+    "last_name": "Lei",
+    "email": "xu.lei@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.685Z",
+    "updated_at": "2026-10-15T01:12:05.685Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 35,
+  "fields": {
+    "user": null,
+    "first_name": "Chen",
+    "last_name": "Maokai",
+    "email": "chen.maokai@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.794Z",
+    "updated_at": "2026-10-15T01:12:05.794Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 36,
+  "fields": {
+    "user": null,
+    "first_name": "Guo",
+    "last_name": "Peng",
+    "email": "guo.peng@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.805Z",
+    "updated_at": "2026-10-15T01:12:05.805Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 37,
+  "fields": {
+    "user": null,
+    "first_name": "Li",
+    "last_name": "Na",
+    "email": "li.na@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.819Z",
+    "updated_at": "2026-10-15T01:12:05.819Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 38,
+  "fields": {
+    "user": null,
+    "first_name": "Zhu",
+    "last_name": "Kenzhu",
+    "email": "zhu.kenzhu@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.930Z",
+    "updated_at": "2026-10-15T01:12:05.930Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 39,
+  "fields": {
+    "user": null,
+    "first_name": "Feng",
+    "last_name": "Lei",
+    "email": "feng.lei@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.942Z",
+    "updated_at": "2026-10-15T01:12:05.942Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 40,
+  "fields": {
+    "user": null,
+    "first_name": "Deng",
+    "last_name": "Yu",
+    "email": "deng.yu@esports.gg",
+    "phone": "",
+    "country": "China",
+    "created_at": "2026-10-15T01:12:05.954Z",
+    "updated_at": "2026-10-15T01:12:05.954Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 41,
+  "fields": {
+    "user": null,
+    "first_name": "Peter",
+    "last_name": "Dun",
+    "email": "peter.dun@esports.gg",
+    "phone": "",
+    "country": "Reino Unido",
+    "created_at": "2026-10-15T01:12:06.072Z",
+    "updated_at": "2026-10-15T01:12:06.072Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 42,
+  "fields": {
+    "user": null,
+    "first_name": "Sergio",
+    "last_name": "Moya",
+    "email": "sergio.moya@esports.gg",
+    "phone": "",
+    "country": "España",
+    "created_at": "2026-10-15T01:12:06.091Z",
+    "updated_at": "2026-10-15T01:12:06.091Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 43,
+  "fields": {
+    "user": null,
+    "first_name": "Lucía",
+    "last_name": "Gil",
+    "email": "lucia.gil@esports.gg",
+    "phone": "",
+    "country": "España",
+    "created_at": "2026-10-15T01:12:06.103Z",
+    "updated_at": "2026-10-15T01:12:06.103Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 44,
+  "fields": {
+    "user": null,
+    "first_name": "Carter",
+    "last_name": "Nash",
+    "email": "carter.nash@esports.gg",
+    "phone": "",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:06.226Z",
+    "updated_at": "2026-10-15T01:12:06.226Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 45,
+  "fields": {
+    "user": null,
+    "first_name": "Hugo",
+    "last_name": "Martin",
+    "email": "hugo.martin@esports.gg",
+    "phone": "",
+    "country": "Francia",
+    "created_at": "2026-10-15T01:12:06.238Z",
+    "updated_at": "2026-10-15T01:12:06.238Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 46,
+  "fields": {
+    "user": null,
+    "first_name": "Emma",
+    "last_name": "Dubois",
+    "email": "emma.dubois@esports.gg",
+    "phone": "",
+    "country": "Francia",
+    "created_at": "2026-10-15T01:12:06.251Z",
+    "updated_at": "2026-10-15T01:12:06.251Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 47,
+  "fields": {
+    "user": null,
+    "first_name": "Gevorg",
+    "last_name": "Arzumanyan",
+    "email": "gevorg.arzumanyan@esports.gg",
+    "phone": "",
+    "country": "Alemania",
+    "created_at": "2026-10-15T01:12:06.365Z",
+    "updated_at": "2026-10-15T01:12:06.365Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 48,
+  "fields": {
+    "user": null,
+    "first_name": "Lena",
+    "last_name": "Fischer",
+    "email": "lena.fischer@esports.gg",
+    "phone": "",
+    "country": "Alemania",
+    "created_at": "2026-10-15T01:12:06.380Z",
+    "updated_at": "2026-10-15T01:12:06.380Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 49,
+  "fields": {
+    "user": null,
+    "first_name": "Tobias",
+    "last_name": "Wagner",
+    "email": "tobias.wagner@esports.gg",
+    "phone": "",
+    "country": "Alemania",
+    "created_at": "2026-10-15T01:12:06.392Z",
+    "updated_at": "2026-10-15T01:12:06.392Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 50,
+  "fields": {
+    "user": null,
+    "first_name": "Kang",
+    "last_name": "Do-hoon",
+    "email": "kang.do-hoon@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.515Z",
+    "updated_at": "2026-10-15T01:12:06.515Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 51,
+  "fields": {
+    "user": null,
+    "first_name": "Seo",
+    "last_name": "Jun-ho",
+    "email": "seo.jun-ho@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.530Z",
+    "updated_at": "2026-10-15T01:12:06.530Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 52,
+  "fields": {
+    "user": null,
+    "first_name": "Han",
+    "last_name": "Ji-min",
+    "email": "han.ji-min@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.545Z",
+    "updated_at": "2026-10-15T01:12:06.545Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 53,
+  "fields": {
+    "user": null,
+    "first_name": "Choi",
+    "last_name": "In-kyu",
+    "email": "choi.in-kyu@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.678Z",
+    "updated_at": "2026-10-15T01:12:06.678Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 54,
+  "fields": {
+    "user": null,
+    "first_name": "Ryu",
+    "last_name": "Seung-min",
+    "email": "ryu.seung-min@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.692Z",
+    "updated_at": "2026-10-15T01:12:06.692Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 55,
+  "fields": {
+    "user": null,
+    "first_name": "Shin",
+    "last_name": "Ha-eun",
+    "email": "shin.ha-eun@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.708Z",
+    "updated_at": "2026-10-15T01:12:06.708Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 56,
+  "fields": {
+    "user": null,
+    "first_name": "Kim",
+    "last_name": "Dae-ho",
+    "email": "kim.dae-ho@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.836Z",
+    "updated_at": "2026-10-15T01:12:06.836Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 57,
+  "fields": {
+    "user": null,
+    "first_name": "Baek",
+    "last_name": "Seo-yeon",
+    "email": "baek.seo-yeon@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.853Z",
+    "updated_at": "2026-10-15T01:12:06.853Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 58,
+  "fields": {
+    "user": null,
+    "first_name": "Noh",
+    "last_name": "Min-jae",
+    "email": "noh.min-jae@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:06.869Z",
+    "updated_at": "2026-10-15T01:12:06.869Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 59,
+  "fields": {
+    "user": null,
+    "first_name": "Bok",
+    "last_name": "Han-gyu",
+    "email": "bok.han-gyu@esports.gg",
+    "phone": "",
+    "country": "Corea del Sur",
+    "created_at": "2026-10-15T01:12:07.000Z",
+    "updated_at": "2026-10-15T01:12:07.000Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 60,
+  "fields": {
+    "user": null,
+    "first_name": "Michael",
+    "last_name": "Chen",
+    "email": "michael.chen@esports.gg",
+    "phone": "",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:07.017Z",
+    "updated_at": "2026-10-15T01:12:07.017Z"
+  }
+},
+{
+  "model": "staff.staffmember",
+  "pk": 61,
+  "fields": {
+    "user": null,
+    "first_name": "Sarah",
+    "last_name": "Kim",
+    "email": "sarah.kim@esports.gg",
+    "phone": "",
+    "country": "Estados Unidos",
+    "created_at": "2026-10-15T01:12:07.030Z",
+    "updated_at": "2026-10-15T01:12:07.030Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 2,
+  "fields": {
+    "staff": 2,
+    "team": 14,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:03.825Z",
+    "updated_at": "2026-10-15T01:12:03.825Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 3,
+  "fields": {
+    "staff": 3,
+    "team": 14,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:03.852Z",
+    "updated_at": "2026-10-15T01:12:03.852Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 4,
+  "fields": {
+    "staff": 4,
+    "team": 14,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:03.873Z",
+    "updated_at": "2026-10-15T01:12:03.873Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 5,
+  "fields": {
+    "staff": 5,
+    "team": 15,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.059Z",
+    "updated_at": "2026-10-15T01:12:04.059Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 6,
+  "fields": {
+    "staff": 6,
+    "team": 15,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.078Z",
+    "updated_at": "2026-10-15T01:12:04.078Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 7,
+  "fields": {
+    "staff": 7,
+    "team": 15,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.097Z",
+    "updated_at": "2026-10-15T01:12:04.097Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 8,
+  "fields": {
+    "staff": 8,
+    "team": 16,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.275Z",
+    "updated_at": "2026-10-15T01:12:04.275Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 9,
+  "fields": {
+    "staff": 9,
+    "team": 16,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.294Z",
+    "updated_at": "2026-10-15T01:12:04.294Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 10,
+  "fields": {
+    "staff": 10,
+    "team": 16,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.314Z",
+    "updated_at": "2026-10-15T01:12:04.314Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 11,
+  "fields": {
+    "staff": 11,
+    "team": 17,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.498Z",
+    "updated_at": "2026-10-15T01:12:04.498Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 12,
+  "fields": {
+    "staff": 12,
+    "team": 17,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.517Z",
+    "updated_at": "2026-10-15T01:12:04.517Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 13,
+  "fields": {
+    "staff": 13,
+    "team": 17,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.536Z",
+    "updated_at": "2026-10-15T01:12:04.536Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 14,
+  "fields": {
+    "staff": 14,
+    "team": 18,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.708Z",
+    "updated_at": "2026-10-15T01:12:04.708Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 15,
+  "fields": {
+    "staff": 15,
+    "team": 18,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.727Z",
+    "updated_at": "2026-10-15T01:12:04.727Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 16,
+  "fields": {
+    "staff": 16,
+    "team": 18,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.751Z",
+    "updated_at": "2026-10-15T01:12:04.751Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 17,
+  "fields": {
+    "staff": 17,
+    "team": 19,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.927Z",
+    "updated_at": "2026-10-15T01:12:04.927Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 18,
+  "fields": {
+    "staff": 18,
+    "team": 19,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.943Z",
+    "updated_at": "2026-10-15T01:12:04.943Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 19,
+  "fields": {
+    "staff": 19,
+    "team": 19,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:04.955Z",
+    "updated_at": "2026-10-15T01:12:04.955Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 20,
+  "fields": {
+    "staff": 20,
+    "team": 20,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.071Z",
+    "updated_at": "2026-10-15T01:12:05.071Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 21,
+  "fields": {
+    "staff": 21,
+    "team": 20,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.087Z",
+    "updated_at": "2026-10-15T01:12:05.087Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 22,
+  "fields": {
+    "staff": 22,
+    "team": 20,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.101Z",
+    "updated_at": "2026-10-15T01:12:05.101Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 23,
+  "fields": {
+    "staff": 23,
+    "team": 21,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.220Z",
+    "updated_at": "2026-10-15T01:12:05.220Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 24,
+  "fields": {
+    "staff": 24,
+    "team": 21,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.232Z",
+    "updated_at": "2026-10-15T01:12:05.232Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 25,
+  "fields": {
+    "staff": 25,
+    "team": 21,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.244Z",
+    "updated_at": "2026-10-15T01:12:05.244Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 26,
+  "fields": {
+    "staff": 26,
+    "team": 22,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.364Z",
+    "updated_at": "2026-10-15T01:12:05.364Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 27,
+  "fields": {
+    "staff": 27,
+    "team": 22,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.382Z",
+    "updated_at": "2026-10-15T01:12:05.382Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 28,
+  "fields": {
+    "staff": 28,
+    "team": 22,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.394Z",
+    "updated_at": "2026-10-15T01:12:05.394Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 29,
+  "fields": {
+    "staff": 29,
+    "team": 23,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.515Z",
+    "updated_at": "2026-10-15T01:12:05.515Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 30,
+  "fields": {
+    "staff": 30,
+    "team": 23,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.528Z",
+    "updated_at": "2026-10-15T01:12:05.528Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 31,
+  "fields": {
+    "staff": 31,
+    "team": 23,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.542Z",
+    "updated_at": "2026-10-15T01:12:05.542Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 32,
+  "fields": {
+    "staff": 32,
+    "team": 24,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.666Z",
+    "updated_at": "2026-10-15T01:12:05.666Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 33,
+  "fields": {
+    "staff": 33,
+    "team": 24,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.678Z",
+    "updated_at": "2026-10-15T01:12:05.678Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 34,
+  "fields": {
+    "staff": 34,
+    "team": 24,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.692Z",
+    "updated_at": "2026-10-15T01:12:05.692Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 35,
+  "fields": {
+    "staff": 35,
+    "team": 25,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.799Z",
+    "updated_at": "2026-10-15T01:12:05.799Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 36,
+  "fields": {
+    "staff": 36,
+    "team": 25,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.811Z",
+    "updated_at": "2026-10-15T01:12:05.811Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 37,
+  "fields": {
+    "staff": 37,
+    "team": 25,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.825Z",
+    "updated_at": "2026-10-15T01:12:05.825Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 38,
+  "fields": {
+    "staff": 38,
+    "team": 26,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.936Z",
+    "updated_at": "2026-10-15T01:12:05.936Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 39,
+  "fields": {
+    "staff": 39,
+    "team": 26,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.948Z",
+    "updated_at": "2026-10-15T01:12:05.948Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 40,
+  "fields": {
+    "staff": 40,
+    "team": 26,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:05.960Z",
+    "updated_at": "2026-10-15T01:12:05.960Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 41,
+  "fields": {
+    "staff": 41,
+    "team": 27,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.084Z",
+    "updated_at": "2026-10-15T01:12:06.084Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 42,
+  "fields": {
+    "staff": 42,
+    "team": 27,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.097Z",
+    "updated_at": "2026-10-15T01:12:06.097Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 43,
+  "fields": {
+    "staff": 43,
+    "team": 27,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.109Z",
+    "updated_at": "2026-10-15T01:12:06.109Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 44,
+  "fields": {
+    "staff": 44,
+    "team": 28,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.232Z",
+    "updated_at": "2026-10-15T01:12:06.232Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 45,
+  "fields": {
+    "staff": 45,
+    "team": 28,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.245Z",
+    "updated_at": "2026-10-15T01:12:06.245Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 46,
+  "fields": {
+    "staff": 46,
+    "team": 28,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.257Z",
+    "updated_at": "2026-10-15T01:12:06.257Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 47,
+  "fields": {
+    "staff": 47,
+    "team": 29,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.372Z",
+    "updated_at": "2026-10-15T01:12:06.372Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 48,
+  "fields": {
+    "staff": 48,
+    "team": 29,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.386Z",
+    "updated_at": "2026-10-15T01:12:06.386Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 49,
+  "fields": {
+    "staff": 49,
+    "team": 29,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.399Z",
+    "updated_at": "2026-10-15T01:12:06.399Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 50,
+  "fields": {
+    "staff": 50,
+    "team": 30,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.523Z",
+    "updated_at": "2026-10-15T01:12:06.523Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 51,
+  "fields": {
+    "staff": 51,
+    "team": 30,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.538Z",
+    "updated_at": "2026-10-15T01:12:06.538Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 52,
+  "fields": {
+    "staff": 52,
+    "team": 30,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.552Z",
+    "updated_at": "2026-10-15T01:12:06.552Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 53,
+  "fields": {
+    "staff": 53,
+    "team": 31,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.685Z",
+    "updated_at": "2026-10-15T01:12:06.685Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 54,
+  "fields": {
+    "staff": 54,
+    "team": 31,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.699Z",
+    "updated_at": "2026-10-15T01:12:06.699Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 55,
+  "fields": {
+    "staff": 55,
+    "team": 31,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.719Z",
+    "updated_at": "2026-10-15T01:12:06.719Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 56,
+  "fields": {
+    "staff": 56,
+    "team": 32,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.844Z",
+    "updated_at": "2026-10-15T01:12:06.844Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 57,
+  "fields": {
+    "staff": 57,
+    "team": 32,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.861Z",
+    "updated_at": "2026-10-15T01:12:06.861Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 58,
+  "fields": {
+    "staff": 58,
+    "team": 32,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:06.876Z",
+    "updated_at": "2026-10-15T01:12:06.876Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 59,
+  "fields": {
+    "staff": 59,
+    "team": 33,
+    "role": "head_coach",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:07.008Z",
+    "updated_at": "2026-10-15T01:12:07.008Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 60,
+  "fields": {
+    "staff": 60,
+    "team": 33,
+    "role": "analyst",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:07.023Z",
+    "updated_at": "2026-10-15T01:12:07.023Z"
+  }
+},
+{
+  "model": "staff.teamstaffassignment",
+  "pk": 61,
+  "fields": {
+    "staff": 61,
+    "team": 33,
+    "role": "manager",
+    "responsibilities": "",
+    "started_at": "2025-01-15",
+    "ended_at": null,
+    "created_at": "2026-10-15T01:12:07.038Z",
+    "updated_at": "2026-10-15T01:12:07.038Z"
+  }
+}
 ]

@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 
 from core.permissions import user_can_manage_organization, user_can_view_organization
@@ -32,3 +32,18 @@ class OrganizationAccessMixin(LoginRequiredMixin):
                         "No tienes acceso a esta organización."
                     )
         return super().dispatch(request, *args, **kwargs)
+
+
+class StaffRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
+    """Restringe el acceso a miembros del staff (gestión global)."""
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_authenticated and (user.is_staff or user.is_superuser)
+
+    def handle_no_permission(self):
+        if self.request.user.is_authenticated:
+            raise PermissionDenied(
+                "Solo el personal autorizado puede gestionar torneos."
+            )
+        return super().handle_no_permission()

@@ -1,6 +1,7 @@
 from django import forms
 
 from core.permissions import MANAGEMENT_ROLES
+from core.widgets import NexusDateTimeInput
 from organizations.models import Team
 from training.models import TrainingSession
 
@@ -35,7 +36,8 @@ class TrainingSessionForm(forms.ModelForm):
             self.fields["team"].queryset = Team.objects.select_related(
                 "organization", "game"
             )
-        self.fields["scheduled_at"].widget = forms.DateTimeInput(
-            attrs={"type": "datetime-local"}, format="%Y-%m-%dT%H:%M"
-        )
-        self.fields["scheduled_at"].input_formats = ["%Y-%m-%dT%H:%M"]
+        self.fields["scheduled_at"].widget = NexusDateTimeInput()
+        self.fields["scheduled_at"].input_formats = [
+            "%Y-%m-%d %H:%M",
+            "%Y-%m-%dT%H:%M",
+        ]

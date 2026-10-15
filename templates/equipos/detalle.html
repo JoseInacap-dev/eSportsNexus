@@ -212,7 +212,7 @@
                                     <tr>
                                         <td class="text-secondary small">{{ partido.scheduled_at|date:"d/m/Y, H:i" }}</td>
                                         <td class="fw-semibold text-light">vs {{ partido.opponent }}</td>
-                                        <td><span class="text-secondary small">{{ partido.tournament_name|default:partido.get_kind_display }}</span></td>
+                                        <td><span class="text-secondary small">{{ partido.tournament.name|default:partido.get_kind_display }}</span></td>
                                         <td>
                                             {% if partido.is_finished %}
                                                 <span class="fw-bold {% if partido.winner == equipo %}text-success{% else %}text-danger{% endif %}">
@@ -239,38 +239,6 @@
 
     <!-- Columna Derecha: Métricas y Resumen -->
     <div class="col-12 col-lg-4">
-        <div class="nexus-card mb-4">
-            <div class="nexus-card-header">
-                <h3 class="nexus-card-title">Rendimiento</h3>
-            </div>
-            <div class="nexus-card-body">
-                <div class="mb-3">
-                    <div class="d-flex justify-content-between small mb-1">
-                        <span class="text-secondary">Tasa de Victorias</span>
-                        <span class="text-accent fw-bold">{{ estadisticas.winrate }}%</span>
-                    </div>
-                    <div class="progress bg-dark" style="height: 6px;">
-                        <div class="progress-bar" style="width: {{ estadisticas.winrate }}%; background-color: var(--nexus-accent);"></div>
-                    </div>
-                </div>
-
-                <div class="row g-2 text-center pt-2">
-                    <div class="col-6">
-                        <div class="p-2 bg-dark rounded border border-secondary">
-                            <span class="d-block text-secondary small">VICTORIAS</span>
-                            <span class="h5 fw-bold text-success mb-0">{{ estadisticas.victorias }}</span>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="p-2 bg-dark rounded border border-secondary">
-                            <span class="d-block text-secondary small">DERROTAS</span>
-                            <span class="h5 fw-bold text-danger mb-0">{{ estadisticas.derrotas }}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="nexus-card mb-4">
             <div class="nexus-card-header">
                 <h3 class="nexus-card-title">Staff Técnico</h3>

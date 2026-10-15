@@ -3,20 +3,37 @@ import json
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
+from django.db.models import Count, Q
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
-from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse, reverse_lazy
 from django.views import View
-from django.views.generic import CreateView, DetailView, ListView, UpdateView
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    UpdateView,
+)
 
-from core.mixins import OrganizationAccessMixin
+from core.mixins import OrganizationAccessMixin, StaffRequiredMixin
 from core.permissions import (
     user_can_manage_organization,
     user_can_view_organization,
 )
-from matches.forms import MatchForm
-from matches.models import Match
-from organizations.models import Team
+from matches.brackets import (
+    build_bracket,
+    build_groups,
+    build_standings,
+    playoff_qualifiers,
+)
+from matches.forms import (
+    MatchForm,
+    TournamentForm,
+    TournamentParticipantFormSet,
+)
+from matches.models import Match, Tournament
+from organizations.models import Game, Team
 
 
 class MatchListView(LoginRequiredMixin, ListView):
@@ -62,6 +79,187 @@ class MatchListView(LoginRequiredMixin, ListView):
             ).distinct()
         context["equipos_disponibles"] = equipos
         return context
+
+
+class TournamentListView(LoginRequiredMixin, ListView):
+    """Catálogo de torneos (entidad global, visible para usuarios autenticados)."""
+
+    model = Tournament
+    template_name = "torneos/lista.html"
+    context_object_name = "torneos"
+    paginate_by = 12
+
+    def get_queryset(self):
+        queryset = (
+            Tournament.objects.select_related("game")
+            .annotate(matches_count=Count("matches"))
+            .order_by("name")
+        )
+        search = self.request.GET.get("q")
+        if search:
+            queryset = queryset.filter(
+                Q(name__icontains=search) | Q(game__name__icontains=search)
+            )
+        game_id = self.request.GET.get("juego")
+        if game_id:
+            queryset = queryset.filter(game_id=game_id)
+        tournament_format = self.request.GET.get("formato")
+        if tournament_format:
+            queryset = queryset.filter(format=tournament_format)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["games"] = Game.objects.order_by("name")
+        context["formats"] = Tournament.Format.choices
+        context["can_manage"] = self.request.user.is_staff or self.request.user.is_superuser
+        return context
+
+
+class TournamentDetailView(LoginRequiredMixin, DetailView):
+    model = Tournament
+    template_name = "torneos/detalle.html"
+    context_object_name = "torneo"
+
+    def get_queryset(self):
+        return Tournament.objects.select_related("game")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tournament = self.object
+        context["partidos"] = tournament.matches.select_related(
+            "game", "home_team", "away_team"
+        ).order_by("-scheduled_at")
+        context["participants"] = tournament.participants.select_related(
+            "team", "team__organization"
+        ).order_by("seed", "team__name")
+        context["count_mismatch"] = tournament.has_participants_mismatch
+        context["can_manage"] = self.request.user.is_staff or self.request.user.is_superuser
+
+        tournament_format = tournament.format
+        groups = []
+        if tournament_format == Tournament.Format.GROUPS_PLAYOFFS:
+            groups = build_groups(tournament)
+            context["groups"] = groups
+            context["bracket"] = build_bracket(
+                tournament, teams=playoff_qualifiers(groups)
+            )
+        elif tournament_format in (
+            Tournament.Format.ROUND_ROBIN,
+            Tournament.Format.SWISS,
+        ):
+            context["standings"] = build_standings(tournament)
+        elif tournament_format in (
+            Tournament.Format.SINGLE_ELIMINATION,
+            Tournament.Format.DOUBLE_ELIMINATION,
+        ):
+            context["bracket"] = build_bracket(tournament)
+        return context
+
+
+class TournamentCreateView(StaffRequiredMixin, CreateView):
+    model = Tournament
+    form_class = TournamentForm
+    template_name = "torneos/form.html"
+    extra_context = {"form_title": "Nuevo torneo"}
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        self._warn_mismatch()
+        messages.success(self.request, "Torneo creado correctamente.")
+        return response
+
+    def _warn_mismatch(self):
+        if self.object.has_participants_mismatch:
+            messages.warning(
+                self.request,
+                "El número de participantes inscritos "
+                f"({self.object.participants_total}) no coincide con el "
+                f"especificado ({self.object.participants_count}).",
+            )
+
+    def get_success_url(self):
+        return reverse("matches:tournament-detail", args=[self.object.pk])
+
+
+class TournamentUpdateView(StaffRequiredMixin, UpdateView):
+    model = Tournament
+    form_class = TournamentForm
+    template_name = "torneos/form.html"
+    extra_context = {"form_title": "Editar torneo"}
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        if self.object.has_participants_mismatch:
+            messages.warning(
+                self.request,
+                "El número de participantes inscritos "
+                f"({self.object.participants_total}) no coincide con el "
+                f"especificado ({self.object.participants_count}).",
+            )
+        messages.success(self.request, "Torneo actualizado correctamente.")
+        return response
+
+    def get_success_url(self):
+        return reverse("matches:tournament-detail", args=[self.object.pk])
+
+
+class TournamentParticipantsView(StaffRequiredMixin, View):
+    """Gestión manual de participantes: equipo, grupo y posición (seeds)."""
+
+    template_name = "torneos/participantes_form.html"
+
+    def _get_tournament(self, pk):
+        return get_object_or_404(Tournament.objects.select_related("game"), pk=pk)
+
+    def _formset(self, tournament, data=None):
+        return TournamentParticipantFormSet(
+            data=data,
+            instance=tournament,
+            form_kwargs={"tournament": tournament},
+        )
+
+    def get(self, request, pk):
+        tournament = self._get_tournament(pk)
+        formset = self._formset(tournament)
+        return self._render(request, tournament, formset)
+
+    def post(self, request, pk):
+        tournament = self._get_tournament(pk)
+        formset = self._formset(tournament, data=request.POST)
+        if formset.is_valid():
+            formset.save()
+            if tournament.has_participants_mismatch:
+                messages.warning(
+                    request,
+                    "El número de participantes inscritos "
+                    f"({tournament.participants_total}) no coincide con el "
+                    f"especificado ({tournament.participants_count}).",
+                )
+            messages.success(request, "Participantes actualizados correctamente.")
+            return redirect("matches:tournament-detail", pk=tournament.pk)
+        return self._render(request, tournament, formset)
+
+    def _render(self, request, tournament, formset):
+        return render(
+            request,
+            self.template_name,
+            {
+                "torneo": tournament,
+                "formset": formset,
+                "count_mismatch": tournament.has_participants_mismatch,
+            },
+        )
+
+
+class TournamentDeleteView(StaffRequiredMixin, DeleteView):
+    model = Tournament
+    template_name = "confirmar_eliminar.html"
+    success_url = reverse_lazy("matches:tournament-list")
+
+    def form_valid(self, form):
+        messages.success(self.request, "Torneo eliminado.")
+        return super().form_valid(form)
 
 
 class MatchDetailView(OrganizationAccessMixin, DetailView):

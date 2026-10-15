@@ -34,16 +34,23 @@ python manage.py migrate
 Para poblar la base de datos con los datos de prueba y usuarios iniciales en el orden correcto de dependencias:
 
 ```powershell
-python manage.py loaddata organizations.json users.json players.json staff.json matches.json training.json
+python manage.py loaddata organizations.json users.json players.json staff.json tournaments.json tournament_participants.json matches.json training.json
 ```
 
 > **Credenciales incluidas:**
 > - Superusuario / Admin: `admin` / `Nexus2026`
-> - Coach: `coach_marcelo` / `Nexus2026`
 
 *(Opcional) También puedes crear un superusuario adicional con:*
 ```powershell
 python manage.py createsuperuser
+```
+
+### 4b. Ampliar con equipos de primer nivel (Valorant + LoL)
+
+Para llevar Valorant y League of Legends a 16 equipos cada uno (incluyendo cuerpo técnico):
+
+```powershell
+python manage.py seed_val_lol
 ```
 
 ### 5. Arrancar el servidor
@@ -66,12 +73,12 @@ python manage.py makemigrations # detecta cambios pendientes en modelos
 ```
 proyecto backend/
 ├── config/            # settings, urls raíz, wsgi/asgi
-├── core/              # dashboard, estadísticas, ajustes, permisos, mixins
+├── core/              # dashboard, ajustes, permisos, mixins
 ├── accounts/          # usuario personalizado y autenticación
 ├── organizations/     # organizaciones, juegos, roles y equipos
 ├── players/           # jugadores y asignaciones a equipos
 ├── staff/             # integrantes del staff y asignaciones
-├── matches/           # partidos, mapas y estadísticas (jugador/equipo)
+├── matches/           # partidos, torneos, mapas y estadísticas (jugador/equipo)
 ├── training/          # sesiones de entrenamiento y asistencia
 ├── templates/         # plantillas HTML (tema NEXUS)
 ├── templates_beta/    # maquetas originales de diseño (referencia)
@@ -87,8 +94,10 @@ proyecto backend/
 | `/equipos/`    | Directorio de equipos     |
 | `/jugadores/`  | Directorio de jugadores   |
 | `/partidos/`   | Calendario de partidos    |
+| `/torneos/`    | Catálogo de torneos       |
+| `/torneos/<id>/` | Detalle del torneo (participantes, grupos y llaves) |
+| `/torneos/<id>/participantes/` | Gestión de participantes (staff) |
 | `/entrenamientos/` | Sesiones de entrenamiento |
-| `/estadisticas/` | Centro de análisis       |
 | `/configuracion/` | Ajustes                  |
 | `/api/`        | API REST (DRF)            |
 

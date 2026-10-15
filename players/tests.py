@@ -482,3 +482,122 @@ class PlayerAssignmentViewTests(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Dar de baja")
+
+
+class PlayerListViewTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username="viewer", email="viewer@example.com", password="pass12345"
+        )
+        self.org = Organization.objects.create(
+            name="Nova", slug="nova", abbreviation="NOVA"
+        )
+        self.val = Game.objects.create(name="Valorant", slug="valorant")
+        self.team_alpha = Team.objects.create(
+            organization=self.org, game=self.val, name="Alpha"
+        )
+        self.team_beta = Team.objects.create(
+            organization=self.org, game=self.val, name="Beta"
+        )
+        self.role_controller = GameRole.objects.create(
+            game=self.val, name="Controller"
+        )
+        self.role_duelist = GameRole.objects.create(game=self.val, name="Duelist")
+        self.coach = Player.objects.create(
+            first_name="A",
+            nickname="zeta",
+            country="Chile",
+            player_type=Player.PlayerType.COACH,
+        )
+        self.starter = Player.objects.create(
+            first_name="B",
+            nickname="alfa",
+            country="Argentina",
+            player_type=Player.PlayerType.PLAYER,
+        )
+        self.free_agent = Player.objects.create(
+            first_name="C",
+            nickname="mike",
+            country="",
+            player_type=Player.PlayerType.ANALYST,
+        )
+        PlayerTeamAssignment.objects.create(
+            player=self.coach,
+            team=self.team_beta,
+            competitive_role=self.role_controller,
+            status=PlayerTeamAssignment.Status.BENCH,
+            joined_at=datetime.date(2026, 1, 1),
+        )
+        PlayerTeamAssignment.objects.create(
+            player=self.starter,
+            team=self.team_alpha,
+            competitive_role=self.role_duelist,
+            status=PlayerTeamAssignment.Status.ACTIVE,
+            joined_at=datetime.date(2026, 1, 1),
+        )
+        self.url = reverse("players:player-list")
+        self.client.force_login(self.user)
+
+    def _nicknames(self, response):
+        return [player.nickname for player in response.context["jugadores"]]
+
+    def test_default_order_is_nickname_asc(self):
+        response = self.client.get(self.url)
+        self.assertEqual(self._nicknames(response), ["alfa", "mike", "zeta"])
+
+    def test_order_by_nickname_desc(self):
+        response = self.client.get(self.url, {"orden": "nickname", "dir": "desc"})
+        self.assertEqual(self._nicknames(response), ["zeta", "mike", "alfa"])
+
+    def test_order_by_country_puts_blanks_last(self):
+        response = self.client.get(self.url, {"orden": "pais"})
+        self.assertEqual(self._nicknames(response), ["alfa", "zeta", "mike"])
+
+    def test_order_by_team_puts_free_agents_last(self):
+        response = self.client.get(self.url, {"orden": "equipo"})
+        self.assertEqual(self._nicknames(response), ["alfa", "zeta", "mike"])
+
+    def test_order_by_type_follows_declared_order(self):
+        response = self.client.get(self.url, {"orden": "tipo"})
+        self.assertEqual(self._nicknames(response), ["alfa", "zeta", "mike"])
+
+    def test_order_by_role_asc_puts_unassigned_last(self):
+        response = self.client.get(self.url, {"orden": "rol"})
+        self.assertEqual(self._nicknames(response), ["zeta", "alfa", "mike"])
+
+    def test_order_by_role_desc_keeps_unassigned_last(self):
+        response = self.client.get(self.url, {"orden": "rol", "dir": "desc"})
+        self.assertEqual(self._nicknames(response), ["alfa", "zeta", "mike"])
+
+    def test_order_by_status_follows_declared_order(self):
+        response = self.client.get(self.url, {"orden": "estado"})
+        self.assertEqual(self._nicknames(response), ["alfa", "zeta", "mike"])
+
+    def test_order_by_status_desc_keeps_free_agents_last(self):
+        response = self.client.get(self.url, {"orden": "estado", "dir": "desc"})
+        self.assertEqual(self._nicknames(response), ["zeta", "alfa", "mike"])
+
+    def test_nickname_order_is_case_insensitive(self):
+        Player.objects.all().delete()
+        Player.objects.create(first_name="X", nickname="Bravo")
+        Player.objects.create(first_name="Y", nickname="alpha")
+        Player.objects.create(first_name="Z", nickname="Zulu")
+        response = self.client.get(self.url, {"orden": "nickname"})
+        self.assertEqual(self._nicknames(response), ["alpha", "Bravo", "Zulu"])
+
+    def test_invalid_sort_parameters_fall_back_to_default(self):
+        response = self.client.get(self.url, {"orden": "bogus", "dir": "sideways"})
+        self.assertEqual(self._nicknames(response), ["alfa", "mike", "zeta"])
+
+    def test_sort_links_preserve_active_filters(self):
+        response = self.client.get(self.url, {"equipo": self.team_alpha.pk})
+        url = response.context["sort"]["links"]["nickname"]["url"]
+        self.assertIn(f"equipo={self.team_alpha.pk}", url)
+        self.assertIn("orden=nickname", url)
+
+    def test_active_sort_link_toggles_direction(self):
+        response = self.client.get(self.url, {"orden": "nickname", "dir": "asc"})
+        self.assertEqual(response.context["sort"]["links"]["nickname"]["icon"], "bi-caret-up-fill")
+        response = self.client.get(self.url, {"orden": "nickname", "dir": "desc"})
+        self.assertEqual(response.context["sort"]["links"]["nickname"]["icon"], "bi-caret-down-fill")
+

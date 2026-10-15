@@ -78,7 +78,7 @@
                                     <span class="text-secondary small mx-1">vs</span>
                                     <span class="fw-medium text-light">{{ partido.opponent }}</span>
                                 </td>
-                                <td class="text-secondary small">{{ partido.tournament_name|default:partido.game.name }}</td>
+                                <td class="text-secondary small">{{ partido.tournament.name|default:partido.game.name }}</td>
                                 <td><span class="badge bg-dark border border-secondary text-secondary">{{ partido.get_kind_display }}</span></td>
                                 <td>
                                     {% if partido.has_score %}

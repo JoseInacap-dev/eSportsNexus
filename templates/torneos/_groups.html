@@ -1,0 +1,73 @@
+<div class="nexus-card mb-4">
+    <div class="nexus-card-header">
+        <h3 class="nexus-card-title">
+            <i class="bi bi-grid me-2 text-accent"></i>
+            Fase de grupos
+        </h3>
+    </div>
+    <div class="nexus-card-body p-4">
+        <div class="row g-4">
+            {% for group in groups %}
+                <div class="col-12 col-lg-6">
+                    <div class="nexus-card h-100">
+                        <div class="nexus-card-header">
+                            <h4 class="nexus-card-title mb-0">
+                                Grupo {% if group.name == "—" %}Sin grupo{% else %}{{ group.name }}{% endif %}
+                            </h4>
+                            <span class="text-secondary small">{{ group.count }} equipos</span>
+                        </div>
+                        <div class="nexus-card-body p-0">
+                            {% if group.rows %}
+                                <div class="table-responsive">
+                                    <table class="table table-nexus nexus-group-table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Equipo</th>
+                                                <th class="text-center">PJ</th>
+                                                <th class="text-center">PG</th>
+                                                <th class="text-center">PP</th>
+                                                <th class="text-center">DIF</th>
+                                                <th class="text-center">PTS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for row in group.rows %}
+                                                <tr class="{% if forloop.counter <= 2 and group.count >= 2 %}is-qualified{% endif %}">
+                                                    <td class="group-rank">{{ forloop.counter }}</td>
+                                                    <td class="fw-medium text-light">{{ row.team.name }}</td>
+                                                    <td class="text-center text-secondary">{{ row.played }}</td>
+                                                    <td class="text-center text-success">{{ row.wins }}</td>
+                                                    <td class="text-center text-danger">{{ row.losses }}</td>
+                                                    <td class="text-center text-secondary">{% if row.diff >= 0 %}+{% endif %}{{ row.diff }}</td>
+                                                    <td class="text-center fw-bold text-light">{{ row.points }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="px-3 py-2 border-top border-secondary text-secondary small">
+                                    Zona de clasificación: Top 2
+                                </div>
+                            {% else %}
+                                <div class="p-4 text-center text-secondary small">
+                                    <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+                                    Sin equipos en este grupo.
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="nexus-card">
+                        <div class="nexus-card-body p-4 text-center text-secondary small">
+                            <i class="bi bi-grid fs-2 d-block mb-2"></i>
+                            No hay grupos definidos para este torneo.
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

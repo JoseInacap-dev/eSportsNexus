@@ -1,0 +1,43 @@
+<div class="nexus-card mb-4">
+    <div class="nexus-card-header">
+        <h3 class="nexus-card-title">Tabla de posiciones</h3>
+    </div>
+    <div class="nexus-card-body p-0">
+        {% if standings.rows %}
+            <div class="table-responsive">
+                <table class="table table-nexus nexus-group-table mb-0">
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">#</th>
+                            <th>Equipo</th>
+                            <th class="text-center">PJ</th>
+                            <th class="text-center">PG</th>
+                            <th class="text-center">PP</th>
+                            <th class="text-center">DIF</th>
+                            <th class="text-center">PTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in standings.rows %}
+                            <tr class="{% if forloop.counter <= 2 %}is-qualified{% endif %}">
+                                <td class="group-rank">{{ forloop.counter }}</td>
+                                <td class="fw-medium text-light">{{ row.team.name }}</td>
+                                <td class="text-center text-secondary">{{ row.played }}</td>
+                                <td class="text-center text-success">{{ row.wins }}</td>
+                                <td class="text-center text-danger">{{ row.losses }}</td>
+                                <td class="text-center text-secondary">{% if row.diff >= 0 %}+{% endif %}{{ row.diff }}</td>
+                                <td class="text-center fw-bold text-light">{{ row.points }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="text-center py-5">
+                <i class="bi bi-list-ol fs-1 text-secondary mb-2 d-block"></i>
+                <h5 class="text-light fw-bold">Sin posiciones</h5>
+                <p class="text-secondary small mb-0">Inscribe participantes para ver la tabla.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
