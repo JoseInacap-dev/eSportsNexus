@@ -51,7 +51,9 @@
                                     <tr>
                                         <td>
                                             {% for hidden in form.hidden_fields %}{{ hidden }}{% endfor %}
-                                            {{ form.team|add_class:"form-select form-select-nexus" }}
+                                            <div class="d-flex flex-column flex-md-row align-items-md-center">
+                                                {{ form.team|add_class:"form-select form-select-nexus" }}
+                                            </div>
                                             {% for error in form.team.errors %}<div class="text-danger small mt-1">{{ error }}</div>{% endfor %}
                                         </td>
                                         <td>{{ form.group_name|add_class:"form-control form-control-nexus" }}</td>
@@ -76,4 +78,47 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block scripts %}
+{{ block.super }}
+<script>
+(function () {
+    function renderPreview(select) {
+        if (!select) return;
+        const preview = select.parentElement ? select.parentElement.querySelector('[data-team-preview]') : null;
+        if (!preview) return;
+        const option = select.options[select.selectedIndex];
+        if (!option) {
+            preview.innerHTML = '';
+            return;
+        }
+        const logo = option.getAttribute('data-logo') || option.getAttribute('data-org-logo') || '';
+        const org = option.getAttribute('data-org') || '';
+        let html = '';
+        if (logo) {
+            html += '<img src="' + logo + '" alt="" style="width: 22px; height: 22px; object-fit: contain; border-radius: 6px; border: 1px solid var(--nexus-border, rgba(255,255,255,0.15)); background: var(--nexus-card, #111);">';
+        } else {
+            html += '<span class="d-inline-flex align-items-center justify-content-center rounded-3 bg-dark border border-secondary" style="width: 22px; height: 22px;"><i class="bi bi-building text-accent" style="font-size: 0.85rem;"></i></span>';
+        }
+        if (org) {
+            html += '<span class="text-secondary">' + org + '</span>';
+        }
+        preview.innerHTML = html;
+    }
+
+    function init() {
+        const selects = document.querySelectorAll('select[name$="team"]');
+        selects.forEach(function (select) {
+            renderPreview(select);
+            select.addEventListener('change', function () { renderPreview(select); });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
 {% endblock %}

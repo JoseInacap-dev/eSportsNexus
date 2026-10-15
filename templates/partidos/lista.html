@@ -74,9 +74,29 @@
                             <tr>
                                 <td class="text-secondary small">{{ partido.scheduled_at|date:"d/m/Y" }}<br><span class="text-muted">{{ partido.scheduled_at|date:"H:i" }}</span></td>
                                 <td>
-                                    <span class="fw-bold text-light">{{ partido.home_team.name }}</span>
-                                    <span class="text-secondary small mx-1">vs</span>
-                                    <span class="fw-medium text-light">{{ partido.opponent }}</span>
+                                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                                        <div class="d-flex align-items-center gap-1">
+                                            {% if partido.home_team.logo %}
+                                                <div class="rounded-3 border border-secondary bg-dark d-flex align-items-center justify-content-center overflow-hidden" style="width: 22px; height: 22px;">
+                                                    <img src="{{ partido.home_team.logo.url }}" alt="{{ partido.home_team.name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                                </div>
+                                            {% else %}
+                                                {% include "_org_logo.html" with org=partido.home_team.organization size=22 %}
+                                            {% endif %}
+                                            <span class="fw-bold text-light">{{ partido.home_team.name }}</span>
+                                        </div>
+                                        <span class="text-secondary small">vs</span>
+                                        <div class="d-flex align-items-center gap-1">
+                                            {% if partido.away_team.logo %}
+                                                <div class="rounded-3 border border-secondary bg-dark d-flex align-items-center justify-content-center overflow-hidden" style="width: 22px; height: 22px;">
+                                                    <img src="{{ partido.away_team.logo.url }}" alt="{{ partido.away_team.name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                                </div>
+                                            {% else %}
+                                                {% include "_org_logo.html" with org=partido.away_team.organization size=22 %}
+                                            {% endif %}
+                                            <span class="fw-medium text-light">{{ partido.away_team.name }}</span>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="text-secondary small">{{ partido.tournament.name|default:partido.game.name }}</td>
                                 <td><span class="badge bg-dark border border-secondary text-secondary">{{ partido.get_kind_display }}</span></td>

@@ -4,10 +4,10 @@ from django import forms
 
 
 class TeamCheckboxGrid(forms.CheckboxSelectMultiple):
-    """Selección múltiple de equipos en una grilla de casillas.
+    """SelecciA3n mA�ltiple de equipos en una grilla de casillas.
 
     Cada casilla recibe un atributo ``data-game`` con el identificador del
-    juego del equipo, lo que permite filtrar dinámicamente por juego desde el
+    juego del equipo, lo que permite filtrar dinA�micamente por juego desde el
     navegador. El diccionario ``games`` (``{"<pk>": "<game_id>"}``) se inyecta
     desde el formulario una vez definido el ``queryset``.
     """
@@ -26,6 +26,33 @@ class TeamCheckboxGrid(forms.CheckboxSelectMultiple):
             game_id = self.games.get(str(value))
             if game_id is not None:
                 option["attrs"]["data-game"] = str(game_id)
+        return option
+
+
+class TeamChoiceSelect(forms.Select):
+    """Selector de equipo con metadatos para vista previa de logo/organización."""
+
+    template_name = "widgets/team_select.html"
+
+    def __init__(self, *args, teams_meta=None, **kwargs):
+        self.teams_meta = teams_meta or {}
+        super().__init__(*args, **kwargs)
+
+    def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
+        option = super().create_option(
+            name, value, label, selected, index, subindex=subindex, attrs=attrs
+        )
+        if value is not None:
+            meta = self.teams_meta.get(str(value))
+            if meta:
+                if meta.get("logo"):
+                    option["attrs"]["data-logo"] = meta["logo"]
+                if meta.get("org"):
+                    option["attrs"]["data-org"] = meta["org"]
+                if meta.get("org_logo"):
+                    option["attrs"]["data-org-logo"] = meta["org_logo"]
+                if meta.get("team"):
+                    option["attrs"]["data-team-name"] = meta["team"]
         return option
 
 

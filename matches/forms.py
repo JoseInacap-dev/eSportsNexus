@@ -194,6 +194,36 @@ class TournamentParticipantForm(forms.ModelForm):
             ).select_related("organization")
         else:
             self.fields["team"].queryset = Team.objects.none()
+        from core.widgets import TeamChoiceSelect
+
+        teams_meta = {}
+        for team in self.fields["team"].queryset:
+            org_logo = None
+            if getattr(team.organization, "logo_display", None):
+                org_logo = team.organization.logo_display
+            elif getattr(team.organization, "logo", None):
+                try:
+                    org_logo = team.organization.logo.url
+                except Exception:
+                    org_logo = None
+            logo = None
+            if getattr(team, "logo", None):
+                try:
+                    logo = team.logo.url
+                except Exception:
+                    logo = None
+            teams_meta[str(team.pk)] = {
+                "team": str(team),
+                "org": str(team.organization.name) if team.organization else "",
+                "logo": logo or "",
+                "org_logo": org_logo or logo or "",
+            }
+        self.fields["team"].widget = TeamChoiceSelect(teams_meta=teams_meta)
+        self.fields["team"].widget.choices = self.fields["team"].choices
+        try:
+            self.fields["team"].label_from_instance = lambda obj: f"{obj} \u00b7 {obj.organization.name}"
+        except Exception:
+            pass
         self.fields["team"].label = "Equipo"
         self.fields["group_name"].label = "Grupo"
         self.fields["seed"].label = "Posición"

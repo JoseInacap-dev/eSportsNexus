@@ -35,7 +35,18 @@
                                             {% for row in group.rows %}
                                                 <tr class="{% if forloop.counter <= 2 and group.count >= 2 %}is-qualified{% endif %}">
                                                     <td class="group-rank">{{ forloop.counter }}</td>
-                                                    <td class="fw-medium text-light">{{ row.team.name }}</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            {% if row.team.logo %}
+                                                                <div class="rounded-3 border border-secondary bg-dark d-flex align-items-center justify-content-center overflow-hidden" style="width: 24px; height: 24px;">
+                                                                    <img src="{{ row.team.logo.url }}" alt="{{ row.team.name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                                                </div>
+                                                            {% else %}
+                                                                {% include "_org_logo.html" with org=row.team.organization size=24 %}
+                                                            {% endif %}
+                                                            <span class="fw-medium text-light">{{ row.team.name }}</span>
+                                                        </div>
+                                                    </td>
                                                     <td class="text-center text-secondary">{{ row.played }}</td>
                                                     <td class="text-center text-success">{{ row.wins }}</td>
                                                     <td class="text-center text-danger">{{ row.losses }}</td>
