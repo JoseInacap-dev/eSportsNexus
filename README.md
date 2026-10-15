@@ -29,9 +29,9 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-### 4. Cargar datos iniciales (Fixtures)
+### 4. Cargar datos iniciales (Fixtures JSON)
 
-Para poblar la base de datos con los datos de prueba y usuarios iniciales en el orden correcto de dependencias:
+Para poblar la base de datos con todo el catálogo de juegos, organizaciones, equipos (16 equipos para Valorant y LoL, más CS2, OW2, R6, Apex, CoD, PUBG, MLBB, HoK, SC2, Tekken 8 y SF6), jugadores, cuerpo técnico, torneos y partidos:
 
 ```powershell
 python manage.py loaddata organizations.json users.json players.json staff.json tournaments.json tournament_participants.json matches.json training.json
@@ -43,14 +43,6 @@ python manage.py loaddata organizations.json users.json players.json staff.json 
 *(Opcional) También puedes crear un superusuario adicional con:*
 ```powershell
 python manage.py createsuperuser
-```
-
-### 4b. Ampliar con equipos de primer nivel (Valorant + LoL)
-
-Para llevar Valorant y League of Legends a 16 equipos cada uno (incluyendo cuerpo técnico):
-
-```powershell
-python manage.py seed_val_lol
 ```
 
 ### 5. Arrancar el servidor
